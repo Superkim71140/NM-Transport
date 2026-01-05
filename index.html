@@ -512,6 +512,25 @@
         }
         @media(min-width: 768px) { .sticky-bar { display: none; } body { padding-bottom: 0; } }
 
+        /* --- MOBILE OPTIMIZATIONS (NEW) --- */
+        @media(max-width: 768px) {
+            .nav-wrapper { justify-content: center; }
+            .logo-img { height: 60px; }
+            .hero { padding: 100px 0 60px; }
+            .hero h1 { font-size: 2.5rem; }
+            .section-header h2 { font-size: 2rem; }
+            body { background-attachment: scroll; } /* แก้ปัญหาภาพพื้นหลังกระตุกในมือถือ */
+            
+            /* ปรับ Step Process ในมือถือให้ดูดีขึ้น */
+            .process-steps { gap: 30px; margin-top: 30px; }
+            .step-icon { width: 90px; height: 90px; font-size: 2rem; }
+            .step-number { width: 30px; height: 30px; font-size: 1rem; transform: translateX(35px); }
+            
+            /* ปรับ Stats Grid */
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+            .stat-number { font-size: 2.5rem; }
+        }
+
     </style>
 </head>
 <body>
