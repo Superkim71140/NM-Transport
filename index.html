@@ -161,32 +161,65 @@
         }
         .logo-img:hover { transform: scale(1.05); }
 
-        .menu-items { display: none; align-items: center; gap: 25px; }
-        @media(min-width: 768px) { .menu-items { display: flex; } .top-bar-left { display: block; } }
-        @media(max-width: 767px) { .top-bar-left { display: none; } .top-bar-right { width: 100%; justify-content: center; } }
+        /* --- MENU ITEMS & MOBILE NAV --- */
+        .menu-items { display: flex; align-items: center; gap: 25px; }
+        .mobile-menu-btn { display: none; font-size: 1.8rem; color: var(--white); cursor: pointer; }
+
+        /* Mobile Responsive Navigation */
+        @media(max-width: 767px) {
+            .top-bar-left { display: none; }
+            .top-bar-right { width: 100%; justify-content: center; }
+            
+            .mobile-menu-btn { display: block; } /* โชว์ปุ่มเมนู */
+            
+            /* เมนูในมือถือ (ซ่อนปกติ กดแล้วโชว์) */
+            .menu-items {
+                display: none;
+                position: absolute;
+                top: 100%; left: 0; width: 100%;
+                background: rgba(5, 10, 20, 0.98); /* พื้นหลังทึบ */
+                flex-direction: column;
+                padding: 20px 0;
+                gap: 0;
+                border-bottom: 2px solid var(--orange-lava);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+            }
+            .menu-items.active { display: flex; animation: slideDown 0.3s ease; }
+            
+            .nav-link { 
+                display: block; width: 100%; text-align: center; 
+                padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); 
+                font-size: 1.2rem;
+            }
+            .nav-link:last-child { border-bottom: none; }
+            
+            /* ปุ่มติดต่อในเมนูมือถือ */
+            .btn-outline-contact {
+                margin-top: 15px; width: 80%; text-align: center;
+            }
+        }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media(min-width: 768px) { 
+            .top-bar-left { display: block; } 
+        }
 
         /* --- NAV LINK EFFECTS --- */
         .nav-link { 
             color: var(--text-gray); 
             font-weight: 500; 
             position: relative; 
-            padding: 5px 0;
             transition: 0.3s;
         }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            background-color: var(--orange-lava);
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 0 10px var(--orange-lava);
-        }
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-            left: 0;
+        /* เส้นวิ่งด้านล่าง (เฉพาะ Desktop) */
+        @media(min-width: 768px) {
+            .nav-link { padding: 5px 0; }
+            .nav-link::after {
+                content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%;
+                background-color: var(--orange-lava); transition: all 0.3s ease-in-out;
+                box-shadow: 0 0 10px var(--orange-lava);
+            }
+            .nav-link:hover::after, .nav-link.active::after { width: 100%; left: 0; }
         }
         .nav-link:hover, .nav-link.active { 
             color: var(--white); 
@@ -288,22 +321,17 @@
             color: var(--white);
             position: relative;
             z-index: 1;
-            
-            /* Glassy Background & Border Gradient */
             background: rgba(15, 28, 56, 0.4);
             backdrop-filter: blur(5px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            
             border: 2px solid transparent;
             background-image: linear-gradient(rgba(15, 28, 56, 0.9), rgba(15, 28, 56, 0.9)), 
                               linear-gradient(135deg, var(--neon-blue), var(--orange-lava));
             background-origin: border-box;
             background-clip: content-box, border-box;
-            
             transition: all 0.4s ease;
         }
 
-        /* Hover Action */
         .step-item:hover .step-icon {
             transform: translateY(-10px) scale(1.05);
             box-shadow: 0 0 25px rgba(0, 242, 255, 0.4);
@@ -346,7 +374,6 @@
             transform: translateX(45px) rotate(360deg);
         }
         
-        /* Dashed Line */
         @media(min-width: 992px) {
              .step-item:not(:last-child)::after {
                 content: ''; position: absolute; top: 55px; right: -50%; width: 100%; height: 2px;
@@ -512,21 +539,19 @@
         }
         @media(min-width: 768px) { .sticky-bar { display: none; } body { padding-bottom: 0; } }
 
-        /* --- MOBILE OPTIMIZATIONS (NEW) --- */
+        /* --- MOBILE OPTIMIZATIONS (FIXED LOGO SIZE) --- */
         @media(max-width: 768px) {
-            .nav-wrapper { justify-content: center; }
-            .logo-img { height: 60px; }
+            .nav-wrapper { justify-content: space-between; }
+            .logo-img { height: 60px; } /* ลดขนาดโลโก้ในมือถือ */
             .hero { padding: 100px 0 60px; }
             .hero h1 { font-size: 2.5rem; }
             .section-header h2 { font-size: 2rem; }
-            body { background-attachment: scroll; } /* แก้ปัญหาภาพพื้นหลังกระตุกในมือถือ */
+            body { background-attachment: scroll; }
             
-            /* ปรับ Step Process ในมือถือให้ดูดีขึ้น */
             .process-steps { gap: 30px; margin-top: 30px; }
             .step-icon { width: 90px; height: 90px; font-size: 2rem; }
             .step-number { width: 30px; height: 30px; font-size: 1rem; transform: translateX(35px); }
             
-            /* ปรับ Stats Grid */
             .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
             .stat-number { font-size: 2.5rem; }
         }
@@ -558,6 +583,11 @@
             <a href="index.html" class="logo-container">
                 <img src="Logo nm tp.png" alt="NM Transport Logo" class="logo-img">
             </a>
+            
+            <div class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
             <div class="menu-items">
                 <a href="index.html" class="nav-link active">หน้าแรก</a>
                 <a href="#services" class="nav-link">บริการ</a>
@@ -849,6 +879,33 @@
     </div>
 
     <script>
+        // MOBILE MENU TOGGLE
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        const menuItems = document.querySelector('.menu-items');
+
+        mobileBtn.addEventListener('click', () => {
+            menuItems.classList.toggle('active');
+            // Toggle icon
+            const icon = mobileBtn.querySelector('i');
+            if(menuItems.classList.contains('active')){
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuItems.classList.remove('active');
+                const icon = mobileBtn.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+
         // SCRIPT FOR LOADING SCREEN
         window.addEventListener('load', function() {
             const loader = document.getElementById('loading-screen');
