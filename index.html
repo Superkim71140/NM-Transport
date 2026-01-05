@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NM Transport - ขนส่งด่วน ย้ายบ้าน ย้ายมอเตอร์ไซค์ บริการ 24 ชม.</title>
+    <meta name="description" content="บริการรถกระบะรับจ้าง NM Transport ขนส่งสินค้า รถกระบะตู้ทึบ ย้ายหอ ย้ายบ้าน ขนย้ายมอเตอร์ไซค์ ราคาถูก บริการดี สุภาพ ปลอดภัย พื้นที่นครสวรรค์และทั่วประเทศ โทร 095-801-0958">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- THEME VARIABLES --- */
+        :root {
+            --navy-dark: #050a14;
+            --navy-primary: #0f1c38;
+            --orange-lava: #FF4500;
+            --orange-glow: #ff6b35;
+            --neon-blue: #00f2ff;
+            --gold: #FFD700;
+            --white: #FFFFFF;
+            --text-gray: #B0B8C4;
+            --line-green: #06C755;
+            --fb-blue: #1877F2;
+            
+            --glass-bg: rgba(15, 28, 56, 0.95);
+            --neon-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+            --neon-shadow-line: 0 0 15px rgba(6, 199, 85, 0.6);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: var(--navy-dark);
+            color: var(--text-gray);
+            line-height: 1.6;
+            padding-bottom: 70px;
+            
+            background-image: 
+                linear-gradient(rgba(5, 10, 20, 0.9), rgba(5, 10, 20, 0.95)), 
+                url('S__2531437.jpg'); 
+            
+            background-size: cover;      
+            background-position: center; 
+            background-attachment: fixed; 
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, .price-tag, .btn {
+            font-family: 'Prompt', sans-serif;
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        /* --- LOADING SCREEN --- */
+        #loading-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--navy-dark); z-index: 9999;
+            display: flex; justify-content: center; align-items: center;
+            transition: opacity 0.5s ease-out;
+        }
+        .spinner {
+            width: 60px; height: 60px;
+            border: 5px solid rgba(255, 69, 0, 0.2);
+            border-top: 5px solid var(--orange-lava);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            box-shadow: 0 0 20px var(--orange-lava);
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        a { text-decoration: none; transition: 0.3s; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 80px 0; }
+        
+        h1, h2, h3, h4 { color: var(--white); }
+        .text-orange { color: var(--orange-lava); }
+        
+        /* Buttons */
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 35px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; position: relative; overflow: hidden; transition: all 0.3s ease; letter-spacing: 0.5px; }
+        
+        .btn-primary { 
+            background: var(--orange-lava); color: var(--white); 
+            box-shadow: var(--neon-shadow);
+            border: 2px solid var(--orange-lava);
+        }
+        .btn-primary:hover { 
+            background: var(--orange-glow); 
+            box-shadow: 0 0 25px rgba(255, 69, 0, 0.8);
+            transform: translateY(-3px);
+        }
+
+        .btn-line {
+            background: var(--line-green); color: var(--white);
+            box-shadow: var(--neon-shadow-line);
+            border: 2px solid var(--line-green);
+        }
+        .btn-line:hover {
+            background: #05a84a;
+            box-shadow: 0 0 25px rgba(6, 199, 85, 0.8);
+            transform: translateY(-3px);
+        }
+        
+        .btn-blue {
+            background: var(--fb-blue); color: var(--white);
+            box-shadow: 0 0 15px rgba(24, 119, 242, 0.6);
+            border: 2px solid var(--fb-blue);
+        }
+        .btn-blue:hover {
+            background: #1464c4;
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(24, 119, 242, 0.8);
+        }
+
+        .btn-outline-contact {
+            border: 2px solid var(--orange-lava);
+            color: var(--orange-lava);
+            background: transparent;
+        }
+        .btn-outline-contact:hover {
+            background: var(--orange-lava); color: var(--white);
+            box-shadow: var(--neon-shadow);
+        }
+
+        /* --- HEADER --- */
+        .top-bar {
+            background-color: rgba(0,0,0,0.4);
+            color: rgba(255,255,255,0.8);
+            padding: 8px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .top-bar-content { display: flex; justify-content: space-between; align-items: center; }
+        .top-bar-left i { color: var(--neon-blue); }
+        .top-bar-left span { color: var(--orange-lava); font-weight: 600; }
+        .top-bar-right { display: flex; gap: 20px; }
+        .contact-link { color: var(--text-gray); display: flex; align-items: center; gap: 8px; }
+        .contact-link:hover { color: var(--orange-lava); }
+
+        header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 69, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        
+        /* --- LOGO STYLE --- */
+        .logo-container {
+            display: flex; align-items: center; justify-content: center; padding: 0;
+        }
+        .logo-img {
+            height: 85px; width: auto; object-fit: contain;
+            filter: contrast(1.1); transition: transform 0.3s ease; display: block;
+        }
+        .logo-img:hover { transform: scale(1.05); }
+
+        .menu-items { display: none; align-items: center; gap: 25px; }
+        @media(min-width: 768px) { .menu-items { display: flex; } .top-bar-left { display: block; } }
+        @media(max-width: 767px) { .top-bar-left { display: none; } .top-bar-right { width: 100%; justify-content: center; } }
+
+        /* --- NAV LINK EFFECTS --- */
+        .nav-link { 
+            color: var(--text-gray); 
+            font-weight: 500; 
+            position: relative; 
+            padding: 5px 0;
+            transition: 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--orange-lava);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px var(--orange-lava);
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+            left: 0;
+        }
+        .nav-link:hover, .nav-link.active { 
+            color: var(--white); 
+            text-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
+        }
+        
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, rgba(5, 10, 20, 0.85), rgba(15, 28, 56, 0.9)), url('S__2531437.jpg');
+            background-size: cover; background-position: center;
+            color: var(--white);
+            padding: 130px 0 90px;
+            text-align: center;
+            position: relative; overflow: hidden;
+        }
+        .hero::after {
+            content: ''; position: absolute; top: 0; left: -50%; width: 50%; height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+            transform: skewX(-25deg); animation: shine 5s infinite;
+        }
+        @keyframes shine { 0% { left: -50%; } 100% { left: 150%; } }
+
+        .hero h1 { font-size: 3rem; line-height: 1.2; margin-bottom: 20px; font-weight: 700; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .hero h1 span { color: var(--orange-lava); text-shadow: 0 0 15px rgba(255, 69, 0, 0.8); }
+        
+        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+        .hero-badges { display: flex; justify-content: center; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
+        .badge { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 8px 20px; border-radius: 30px; font-size: 0.9rem; backdrop-filter: blur(5px); }
+        .badge i { color: var(--neon-blue); margin-right: 5px; }
+
+        @media(min-width: 768px) { .hero h1 { font-size: 4.5rem; } }
+
+        /* --- TRUST BADGE --- */
+        .trust-badge-container {
+            text-align: center; margin-bottom: 60px; 
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(15, 28, 56, 0.9));
+            padding: 40px 30px; border-radius: 20px; 
+            border: 2px solid transparent; background-clip: padding-box; position: relative;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+        }
+        .trust-badge-container::before {
+            content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: -1; margin: -2px; border-radius: inherit;
+            background: linear-gradient(to right, var(--orange-lava), #FFD700, var(--orange-lava));
+            opacity: 0.6;
+        }
+        .trust-title { color: var(--white); margin-bottom: 15px; font-size: 1.3rem; font-weight: 700; display: inline-block; }
+        .trust-highlight {
+            display: block; font-size: 1.6rem;
+            background: linear-gradient(to right, #ffffff, #ffb700);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5)); margin-bottom: 10px; font-weight: 700;
+        }
+        .trust-img-box {
+            max-width: 500px; margin: 20px auto 0; overflow: hidden; border-radius: 10px; 
+            border: 4px solid var(--navy-primary); box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: 0.3s;
+        }
+        .trust-img-box:hover { transform: scale(1.02); border-color: var(--gold); }
+
+        /* --- SERVICES --- */
+        .section-header { text-align: center; margin-bottom: 60px; margin-top: -20px; }
+        .section-header h2 { font-size: 2.5rem; font-weight: 700; position: relative; display: inline-block; margin-bottom: 20px; }
+        .section-header h2::after { content: ''; display: block; width: 80px; height: 5px; background: var(--orange-lava); margin: 15px auto 0; box-shadow: var(--neon-shadow); border-radius: 5px; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-card {
+            background: var(--navy-primary); border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 20px; padding: 40px 30px; text-align: center; transition: 0.4s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .service-card:hover { border-color: var(--orange-lava); transform: translateY(-10px); box-shadow: 0 15px 40px rgba(255, 69, 0, 0.15); }
+        .service-icon {
+            width: 80px; height: 80px; background: rgba(255, 69, 0, 0.1); color: var(--orange-lava); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 25px;
+            border: 2px solid rgba(255, 69, 0, 0.3);
+        }
+        .service-card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 15px; }
+
+        /* --- HOW IT WORKS (REDESIGNED) --- */
+        .process-steps { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 40px; 
+            text-align: center; 
+            margin-top: 50px; 
+        }
+        .step-item { 
+            position: relative; 
+            padding: 10px;
+            transition: 0.3s;
+        }
+        
+        /* New Icon Style */
+        .step-icon {
+            width: 110px; height: 110px; 
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.5rem; 
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+            
+            /* Glassy Background & Border Gradient */
+            background: rgba(15, 28, 56, 0.4);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            
+            border: 2px solid transparent;
+            background-image: linear-gradient(rgba(15, 28, 56, 0.9), rgba(15, 28, 56, 0.9)), 
+                              linear-gradient(135deg, var(--neon-blue), var(--orange-lava));
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            
+            transition: all 0.4s ease;
+        }
+
+        /* Hover Action */
+        .step-item:hover .step-icon {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 242, 255, 0.4);
+            border-color: transparent;
+            background-image: linear-gradient(rgba(15, 28, 56, 0.8), rgba(15, 28, 56, 0.8)), 
+                              linear-gradient(135deg, var(--orange-lava), var(--neon-blue));
+        }
+        
+        .step-item:hover .step-icon i {
+            animation: pulse-icon 1.5s infinite;
+            text-shadow: 0 0 15px var(--white);
+        }
+
+        @keyframes pulse-icon {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* New Badge Style */
+        .step-number {
+            position: absolute; 
+            top: -5px; right: 50%; 
+            transform: translateX(45px);
+            width: 38px; height: 38px; 
+            background: linear-gradient(135deg, var(--orange-lava), #ff2a00); 
+            color: var(--white);
+            border: 3px solid var(--navy-dark);
+            border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; 
+            font-weight: 800;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 2;
+            transition: 0.5s;
+        }
+        
+        .step-item:hover .step-number {
+            background: linear-gradient(135deg, var(--neon-blue), #0099ff);
+            transform: translateX(45px) rotate(360deg);
+        }
+        
+        /* Dashed Line */
+        @media(min-width: 992px) {
+             .step-item:not(:last-child)::after {
+                content: ''; position: absolute; top: 55px; right: -50%; width: 100%; height: 2px;
+                background: linear-gradient(90deg, var(--neon-blue) 0%, transparent 100%); 
+                opacity: 0.3;
+                z-index: -1;
+            }
+        }
+
+        /* --- GALLERY --- */
+        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        @media(min-width: 992px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+        .gallery-item {
+            aspect-ratio: 4/3; border-radius: 15px; overflow: hidden; position: relative;
+            border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; background: var(--navy-primary);
+        }
+        .gallery-item:hover { border-color: var(--orange-lava); box-shadow: 0 0 20px rgba(255, 69, 0, 0.3); transform: translateY(-5px); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gallery-item:hover img { transform: scale(1.1); }
+
+        /* --- STATS --- */
+        .stats-section {
+            padding: 60px 0; background: linear-gradient(90deg, rgba(15, 28, 56, 0.6), rgba(5, 10, 20, 0.9));
+            border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); margin: 40px 0;
+        }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+        .stat-item { padding: 20px; border-right: 1px solid rgba(255,255,255,0.1); }
+        .stat-item:last-child { border-right: none; }
+        .stat-icon { font-size: 2.5rem; color: var(--neon-blue); margin-bottom: 10px; filter: drop-shadow(0 0 10px var(--neon-blue)); }
+        .stat-number { font-size: 3.5rem; font-weight: 800; color: var(--white); line-height: 1; margin-bottom: 5px; font-family: 'Prompt', sans-serif; }
+        .stat-item:nth-child(2) .stat-number { color: var(--orange-lava); text-shadow: var(--neon-shadow); }
+        .stat-item p { color: var(--text-gray); font-size: 1.1rem; }
+        @media(max-width: 768px) {
+            .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .stat-item:last-child { border-bottom: none; }
+        }
+
+        /* --- PRICING --- */
+        .pricing-banner {
+            background: linear-gradient(135deg, var(--navy-primary), var(--navy-dark));
+            text-align: center; padding: 60px 30px; border-radius: 25px; margin: 40px auto; max-width: 1000px;
+            border: 2px solid rgba(255, 69, 0, 0.3); box-shadow: 0 0 30px rgba(255, 69, 0, 0.1);
+            position: relative; overflow: hidden;
+        }
+        .price-tag { font-size: 5rem; font-weight: 700; color: var(--orange-lava); line-height: 1; margin: 15px 0; text-shadow: var(--neon-shadow); }
+
+        /* --- FAQ --- */
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item {
+            margin-bottom: 15px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px;
+            background: rgba(15, 28, 56, 0.6); overflow: hidden; transition: all 0.3s ease;
+        }
+        .faq-item:hover { border-color: var(--orange-lava); box-shadow: 0 0 15px rgba(255, 69, 0, 0.2); }
+        .faq-question {
+            width: 100%; padding: 20px; background: none; border: none; color: var(--white);
+            font-size: 1.1rem; font-weight: 500; text-align: left; display: flex; justify-content: space-between; align-items: center; cursor: pointer;
+            font-family: 'Prompt', sans-serif; outline: none;
+        }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: rgba(0, 0, 0, 0.2); }
+        .faq-answer p { padding: 20px; color: #ccc; line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .faq-item.active { background: var(--navy-primary); border-color: var(--orange-lava); }
+        .faq-item.active .arrow { transform: rotate(180deg); }
+        .faq-item.active .faq-answer { max-height: 200px; }
+
+        /* --- FOOTER & STICKY --- */
+        footer {
+            background: #02060d;
+            padding-top: 60px;
+            padding-bottom: 30px;
+            color: #B0B8C4;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 60px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        .footer-logo {
+            height: 80px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 1px white);
+        }
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--orange-lava);
+            border-radius: 3px;
+        }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a {
+            color: #B0B8C4;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .footer-links a:hover {
+            color: var(--orange-lava);
+            transform: translateX(5px);
+        }
+        .footer-contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            align-items: start;
+        }
+        .footer-contact-item i {
+            color: var(--orange-lava);
+            margin-top: 5px;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 25px;
+            text-align: center;
+            font-size: 0.9rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 15px;
+            align-items: center;
+        }
+        .dev-credit a {
+            color: var(--neon-blue);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .dev-credit a:hover {
+            color: var(--white);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        @media(max-width: 768px) {
+            .footer-grid { text-align: center; }
+            .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+            .footer-bottom { justify-content: center; text-align: center; flex-direction: column; }
+            .footer-contact-item { justify-content: center; }
+            .footer-logo { margin: 0 auto 20px; display: block; }
+        }
+
+        .sticky-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%; background: var(--glass-bg); backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 69, 0, 0.3); display: flex; padding: 10px; gap: 10px; z-index: 2000;
+        }
+        .sticky-btn {
+            flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; height: 50px;
+            border-radius: 50px; font-weight: 700; color: var(--white); font-size: 1.1rem; transition: 0.3s;
+            font-family: 'Prompt', sans-serif;
+        }
+        @media(min-width: 768px) { .sticky-bar { display: none; } body { padding-bottom: 0; } }
+
+    </style>
+</head>
+<body>
+
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <i class="fa-solid fa-bolt-lightning"></i> บริการด่วน 24 ชม. <span>ส่งไว ปลอดภัย 100%</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:0958010958" class="contact-link"><i class="fa-solid fa-phone"></i> 095-801-0958</a>
+                <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" class="contact-link">
+                    <i class="fa-brands fa-facebook"></i> Facebook
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo-container">
+                <img src="Logo nm tp.png" alt="NM Transport Logo" class="logo-img">
+            </a>
+            <div class="menu-items">
+                <a href="index.html" class="nav-link active">หน้าแรก</a>
+                <a href="#services" class="nav-link">บริการ</a>
+                <a href="works.html" class="nav-link">ผลงาน</a>
+                <a href="#how-it-works" class="nav-link">ขั้นตอน</a>
+                <a href="contact.html" class="btn btn-outline-contact" style="padding: 8px 25px;">ติดต่อเรา</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>ขนส่งด่วน มั่นใจ<br><span>ถึงไว ปลอดภัย 100%</span></h1>
+            <p style="font-size: 1.2rem;">บริการรถกระบะรับจ้าง รถตู้ทึบ ขนย้ายบ้าน ขนย้ายมอเตอร์ไซค์<br>นครสวรรค์และทั่วประเทศ ประเมินราคาฟรี บริการด้วยใจ</p>
+            <br>
+            
+            <div class="hero-buttons">
+                <a href="tel:0958010958" class="btn btn-primary" style="padding: 15px 35px; font-size: 1.2rem;">
+                    <i class="fa-solid fa-phone-volume"></i> โทรจองรถเลย!
+                </a>
+                <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" class="btn btn-line" style="padding: 15px 35px; font-size: 1.2rem;">
+                    <i class="fa-brands fa-line" style="font-size: 1.4rem;"></i> ทักไลน์จองคิว
+                </a>
+            </div>
+
+            <div class="hero-badges">
+                <div class="badge"><i class="fa-solid fa-shield-halved"></i> รับประกันสินค้า</div>
+                <div class="badge"><i class="fa-solid fa-clock"></i> บริการ 24 ชม.</div>
+                <div class="badge"><i class="fa-solid fa-thumbs-up"></i> ราคาเป็นกันเอง</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="services">
+        <div class="container">
+            
+            <div class="trust-badge-container">
+                <h3 class="trust-title">
+                    <span class="trust-highlight">
+                        <i class="fa-solid fa-certificate" style="color: #FFD700;"></i> มั่นใจได้!
+                    </span>
+                    เราจดทะเบียนขนส่งถูกต้องตามกฎหมาย
+                </h3>
+                <p style="margin-bottom: 20px; color: #ccc; font-size: 1.1rem;">บริษัท เอ็นแอนด์เอ็ม 18 ทรานสปอร์ต จำกัด (N&M 18 TRANSPORT)</p>
+                
+                <div class="trust-img-box">
+                    <img src="S__17556166.jpg" alt="ใบอนุญาตประกอบการขนส่ง N&M 18 TRANSPORT" style="width: 100%; height: auto; display: block;">
+                </div>
+            </div>
+            <div class="section-header">
+                <h2>บริการของเรา</h2>
+                <p>ตอบโจทย์ทุกการขนย้าย ด้วยรถกระบะตู้ทึบมาตรฐาน</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-motorcycle"></i></div>
+                    <h3>รับส่งมอเตอร์ไซค์</h3>
+                    <p>มีอุปกรณ์ล็อคล้อ เชือกมัดแน่นหนา ยกขึ้น-ลงให้ ไม่ต้องเหนื่อยเอง ส่งถึงหน้าบ้าน</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-box-open"></i></div>
+                    <h3>ย้ายบ้าน / ย้ายหอ</h3>
+                    <p>ขนย้ายเฟอร์นิเจอร์ ตู้เย็น เครื่องซักผ้า รถตู้ทึบกันฝน 100% ของเยอะแค่ไหนก็จัดให้คุ้ม</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-truck-pickup"></i></div>
+                    <h3>ฝากส่งสินค้า/เหมาคัน</h3>
+                    <p>รับฝากส่งสินค้าชิ้นใหญ่ ชิ้นเล็ก ไปต่างจังหวัด วิ่งงานด่วน งานเหมา ทั่วราชอาณาจักร</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="gallery" style="background: rgba(15, 28, 56, 0.3);">
+        <div class="container">
+            <div class="section-header">
+                <h2>ผลงานการขนส่ง</h2>
+                <p>ตัวอย่างงานจริง มั่นใจได้ทุกการขนส่ง</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="S__2531437.jpg" alt="รถรับจ้างตู้ทึบ"></div>
+                <div class="gallery-item"><img src="S__17556285.png" alt="ขนย้ายหอพัก"></div>
+                <div class="gallery-item"><img src="S__2531426.jpg" alt="รถ 6 ล้อรับจ้าง"></div>
+                <div class="gallery-item"><img src="S__17556168.jpg" alt="ขนส่ง Big Bike"></div>
+                <div class="gallery-item"><img src="S__2531424.jpg" alt="แพ็คของขนย้าย"></div>
+                <div class="gallery-item"><img src="S__2531422.jpg" alt="ขนส่งทั่วไป"></div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" class="btn btn-blue">
+                    <i class="fa-brands fa-facebook"></i> ดูรีวิวเพิ่มเติม (คลิก)
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <div class="stat-number" data-target="1500">0</div>
+                    <p>เที่ยวขนส่งสำเร็จ</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-face-smile"></i></div>
+                    <div class="stat-number" data-target="100">0</div>
+                    <p>% ลูกค้าพึงพอใจ</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <div class="stat-number" data-target="77">0</div>
+                    <p>จังหวัดให้บริการ</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div class="stat-number" data-target="24">0</div>
+                    <p>ชั่วโมงพร้อมลุย</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="pricing-banner">
+            <h3>ค่าบริการเริ่มต้นเพียง</h3>
+            <div class="price-tag">1,000.-</div>
+            <p>ราคาขึ้นอยู่กับระยะทางและประเภทงาน (โทรสอบถามได้เลยครับ)</p>
+            <br>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="tel:0958010958" class="btn btn-primary">
+                    <i class="fa-solid fa-calculator"></i> เช็คราคาผ่านโทรศัพท์
+                </a>
+                 <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" class="btn btn-line">
+                    <i class="fa-brands fa-line"></i> เช็คราคาผ่าน LINE
+                </a>
+            </div>
+        </div>
+    </div>
+
+     <section class="section-padding" id="how-it-works" style="background: rgba(15, 28, 56, 0.5);">
+        <div class="container">
+            <div class="section-header">
+                <h2>4 ขั้นตอนง่ายๆ ในการใช้บริการ</h2>
+                <p>สะดวก รวดเร็ว ไม่ยุ่งยาก</p>
+            </div>
+            <div class="process-steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                    <h4>โทร/ไลน์ จองคิว</h4>
+                    <p style="font-size: 0.9rem;">แจ้งต้นทาง-ปลายทาง และรายละเอียดของ</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+                    <h4>รถเข้ารับสินค้า</h4>
+                    <p style="font-size: 0.9rem;">ทีมงานเข้ายกของ และแพ็คป้องกันตามนัดหมาย</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-icon"><i class="fa-solid fa-route"></i></div>
+                    <h4>ขนส่งปลอดภัย</h4>
+                    <p style="font-size: 0.9rem;">ขับขี่อย่างระมัดระวัง ตรวจสอบสถานะได้</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fa-solid fa-house-circle-check"></i></div>
+                    <h4>ส่งถึงที่หมาย</h4>
+                    <p style="font-size: 0.9rem;">ส่งมอบสินค้าถึงมือผู้รับปลายทางอย่างปลอดภัย</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>คำถามที่พบบ่อย</h2>
+                <p>คลายข้อสงสัย เพื่อความมั่นใจก่อนจ้างงาน</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span><i class="fa-solid fa-calculator text-orange"></i> คิดค่าบริการขนส่งอย่างไร?</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>ราคาขึ้นอยู่กับ <strong>ระยะทาง + ประเภทรถ + จำนวนคนยกของ</strong> ครับ แนะนำให้ทักแชทหรือโทรแจ้งต้นทาง-ปลายทาง เพื่อให้เราประเมินราคาเหมาจ่ายที่คุ้มที่สุดให้ฟรีครับ</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span><i class="fa-solid fa-shield-halved text-orange"></i> สินค้าจะปลอดภัยไหม มีประกันหรือเปล่า?</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>มั่นใจได้ 100% ครับ เรามีทีมงานมืออาชีพช่วยแพ็คกันกระแทก และมีการรัดตึงสินค้าไม่ให้ขยับระหว่างขนส่ง หากเกิดความเสียหายจากการขนส่ง เรารับผิดชอบตามตกลงครับ</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span><i class="fa-solid fa-users text-orange"></i> มีคนช่วยยกของให้ด้วยไหม?</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>มีครับ! ท่านสามารถแจ้งได้เลยว่าต้องการคนช่วยยกกี่คน ทางเรามีทีมงานพร้อมบริการยกของขึ้น-ลงรถ และจัดเรียงเข้าบ้านให้เรียบร้อย ท่านไม่ต้องเหนื่อยเองครับ</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span><i class="fa-solid fa-clock text-orange"></i> ควรจองคิวรถล่วงหน้ากี่วัน?</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>แนะนำให้จองล่วงหน้า <strong>1-2 วัน</strong> เพื่อล็อคคิวรถและเวลาที่แน่นอนครับ แต่ถ้าเป็นงานด่วน เรามีบริการรถสแตนด์บายตลอด 24 ชม. โทรเช็คคิวได้ทันทีครับ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="Logo nm tp.png" alt="NM Transport Logo" class="footer-logo">
+                    <p>บริการรถรับจ้างขนของ ย้ายบ้าน ย้ายหอพัก ขนส่งมอเตอร์ไซค์ รถกระบะตู้ทึบกันฝน 100% ดูแลสินค้าเหมือนของตัวเอง บริการด้วยใจ ในราคามิตรภาพ</p>
+                    <div style="margin-top: 20px;">
+                        <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" style="font-size: 1.5rem; color: #1877F2; margin-right: 15px;"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" style="font-size: 1.5rem; color: #06C755;"><i class="fa-brands fa-line"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>เมนูนำทาง</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> หน้าแรก</a></li>
+                        <li><a href="#services"><i class="fa-solid fa-angle-right"></i> บริการของเรา</a></li>
+                        <li><a href="works.html"><i class="fa-solid fa-angle-right"></i> ผลงานขนส่ง</a></li>
+                        <li><a href="#how-it-works"><i class="fa-solid fa-angle-right"></i> ขั้นตอนการใช้บริการ</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> ติดต่อเรา</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>ติดต่อเรา</h4>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>ให้บริการหลัก: นครสวรรค์, กำแพงเพชร, พิจิตร, อุทัยธานี และวิ่งทั่วไทย</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>095-801-0958 (คุณมาร์ค)<br>บริการ 24 ชั่วโมง</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-brands fa-line"></i>
+                        <span>Line ID: 0958010958</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2026 NM Transport. All Rights Reserved.
+                </div>
+                <div class="dev-credit">
+                    Developed by <a href="https://kimx-wed.vercel.app/" target="_blank">kimx-wed</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="sticky-bar">
+        <a href="tel:0958010958" class="sticky-btn" style="background: var(--orange-lava); box-shadow: var(--neon-shadow);">
+            <i class="fa-solid fa-phone"></i> โทรเลย
+        </a>
+        <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" class="sticky-btn" style="background: var(--line-green); box-shadow: var(--neon-shadow-line);">
+            <i class="fa-brands fa-line" style="font-size: 1.3rem;"></i> Line
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" class="sticky-btn" style="background: #1877F2;">
+            <i class="fa-brands fa-facebook-messenger"></i> ทักแชท
+        </a>
+    </div>
+
+    <script>
+        // SCRIPT FOR LOADING SCREEN
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loading-screen');
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500); 
+        });
+
+        // FAQ Script
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                item.classList.toggle('active');
+            });
+        });
+
+        // SCRIPT FOR RUNNING NUMBERS (COUNTER)
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200; // Speed of counting
+
+        const startCounters = () => {
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText.replace(/\D/g,''); // เอาเฉพาะตัวเลขก่อนคำนวณ
+                    
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target;
+                        if(target > 100) counter.innerText += '+';
+                        if(target === 100) counter.innerText += '%';
+                    }
+                };
+                updateCount();
+            });
+        };
+
+        const statsSection = document.querySelector('.stats-section');
+        let hasStarted = false;
+
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !hasStarted) {
+                startCounters();
+                hasStarted = true;
+            }
+        });
+
+        if(statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
+
+</body>
+</html>

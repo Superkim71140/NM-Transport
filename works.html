@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผลงานของเรา - NM Transport | ขนส่งด่วน มั่นใจ ปลอดภัย 100%</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- THEME VARIABLES (เหมือน Index) --- */
+        :root {
+            --navy-dark: #050a14;
+            --navy-primary: #0f1c38;
+            --orange-lava: #FF4500;
+            --orange-glow: #ff6b35;
+            --neon-blue: #00f2ff;
+            --white: #FFFFFF;
+            --text-gray: #B0B8C4;
+            --glass-bg: rgba(15, 28, 56, 0.95);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: var(--navy-dark);
+            color: var(--text-gray); /* ปรับสีตัวอักษรหลักให้เข้ากับธีมมืด */
+            padding-bottom: 70px;
+        }
+        a { text-decoration: none; transition: 0.3s; }
+
+        /* --- HEADER & NAV (ยกมาจาก Index พร้อมปรับปรุง) --- */
+        header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 69, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+
+        /* --- LOGO STYLE --- */
+        .logo-container {
+            display: flex; align-items: center; justify-content: center; padding: 0;
+        }
+        .logo-img {
+            height: 85px; width: auto; object-fit: contain;
+            filter: contrast(1.1); transition: transform 0.3s ease; display: block;
+        }
+        .logo-img:hover { transform: scale(1.05); }
+
+        /* --- MENU ITEMS --- */
+        .menu-items { display: none; align-items: center; gap: 25px; }
+        @media(min-width: 768px) { .menu-items { display: flex; } }
+
+        /* --- NAV LINK EFFECTS --- */
+        .nav-link { 
+            color: var(--text-gray); 
+            font-weight: 500; 
+            position: relative; 
+            padding: 5px 0;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background-color: var(--orange-lava);
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px var(--orange-lava);
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+            left: 0;
+        }
+        .nav-link:hover, .nav-link.active { 
+            color: var(--white); 
+            text-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
+        }
+
+        .btn-outline-contact {
+            border: 2px solid var(--orange-lava);
+            color: var(--orange-lava);
+            background: transparent;
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .btn-outline-contact:hover {
+            background: var(--orange-lava); color: var(--white);
+            box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+        }
+
+        /* --- HERO BANNER (WORKS PAGE) --- */
+        .page-header {
+            /* ปรับพื้นหลังให้เข้ากับธีมมืด */
+            background: linear-gradient(rgba(5, 10, 20, 0.9), rgba(15, 28, 56, 0.9)), url('S__2531426.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 100px 20px 80px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 15px; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
+        .page-header p { font-size: 1.1rem; opacity: 0.8; }
+
+        /* --- GALLERY GRID --- */
+        .gallery-section { padding: 60px 0; background-color: var(--navy-dark); }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-card {
+            background: var(--navy-primary); /* ปรับสีการ์ดให้เป็นธีมมืด */
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .gallery-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 30px rgba(255, 69, 0, 0.1); /* เงาสีส้มจางๆ */
+            border-color: var(--orange-lava);
+        }
+        
+        .img-wrapper {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+        .gallery-card:hover .img-wrapper img { transform: scale(1.1); }
+
+        .card-content { padding: 25px; }
+        .card-tag {
+            display: inline-block;
+            background: rgba(255, 69, 0, 0.15); /* ปรับสี Tag */
+            color: var(--orange-lava);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 69, 0, 0.3);
+        }
+        .card-title { font-size: 1.3rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+        .card-desc { font-size: 0.95rem; color: var(--text-gray); line-height: 1.6; }
+
+        /* --- TRUST SECTION --- */
+        .trust-box {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(15, 28, 56, 0.9));
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 60px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            flex-wrap: wrap;
+        }
+        .trust-img {
+            width: 150px; height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--orange-lava);
+            flex-shrink: 0;
+            box-shadow: 0 0 20px rgba(255, 69, 0, 0.4);
+        }
+        .trust-content h3 { color: var(--white); font-size: 1.8rem; margin-bottom: 15px; }
+        .trust-content p { color: var(--text-gray); }
+
+        /* --- STICKY BAR (Mobile) --- */
+        .sticky-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: var(--glass-bg); backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 69, 0, 0.3);
+            display: flex; padding: 10px; gap: 10px; z-index: 2000;
+        }
+        .sticky-btn {
+            flex: 1; display: flex; align-items: center; justify-content: center;
+            gap: 8px; height: 45px; border-radius: 50px; font-weight: 700; color: var(--white);
+            font-family: 'Prompt', sans-serif; transition: 0.3s;
+        }
+        .btn-call { background: var(--orange-lava); box-shadow: 0 0 15px rgba(255, 69, 0, 0.4); }
+        .btn-fb { background: #1877F2; box-shadow: 0 0 15px rgba(24, 119, 242, 0.4); }
+        @media(min-width: 768px) { .sticky-bar { display: none; } body { padding-bottom: 0; } }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo-container">
+                <img src="Logo nm tp.png" alt="NM Transport Logo" class="logo-img">
+            </a>
+            
+            <div class="menu-items">
+                <a href="index.html" class="nav-link">หน้าแรก</a>
+                <a href="index.html#services" class="nav-link">บริการ</a>
+                <a href="works.html" class="nav-link active">ผลงาน</a>
+                <a href="index.html#how-it-works" class="nav-link">ขั้นตอน</a>
+                <a href="contact.html" class="btn-outline-contact">ติดต่อเรา</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <h1>ผลงานที่ผ่านมา</h1>
+        <p>ภาพจริงจากหน้างาน ลูกค้าจริง การันตีความใส่ใจทุกเที่ยววิ่ง</p>
+    </div>
+
+    <section class="gallery-section">
+        <div class="container">
+            
+            <div class="gallery-grid">
+                
+                <div class="gallery-card">
+                    <div class="img-wrapper">
+                        <img src="S__17556168.jpg" alt="ขนส่ง Big Bike">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag"><i class="fa-solid fa-motorcycle"></i> ขนส่งมอเตอร์ไซค์</span>
+                        <h3 class="card-title">Big Bike ส่งถึงที่ ปลอดภัย 100%</h3>
+                        <p class="card-desc">รถใหญ่ touring เราก็รับจบ มีสะพานขึ้นลงมาตรฐาน ห่อหุ้มกันรอยรอบคัน มัดยึดแน่นหนาไม่ไหวติง</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="img-wrapper">
+                        <img src="S__2531424.jpg" alt="ย้ายหอของเยอะ">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag"><i class="fa-solid fa-box-open"></i> ย้ายหอพัก</span>
+                        <h3 class="card-title">ของเยอะแค่ไหน ก็จัดเรียงให้คุ้ม</h3>
+                        <p class="card-desc">ทีมงานมืออาชีพ ช่วยจัดเรียงของขึ้นรถให้เต็มพื้นที่ คุ้มค่าจ้างที่สุด ไม่ต้องกลัวของตกหล่น</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="img-wrapper">
+                        <img src="S__2531426.jpg" alt="รถ 6 ล้อรับจ้าง">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag"><i class="fa-solid fa-truck-moving"></i> งานเหมาคันใหญ่</span>
+                        <h3 class="card-title">บริการรถบรรทุกขนาดใหญ่</h3>
+                        <p class="card-desc">สำหรับงานย้ายสำนักงาน หรือย้ายบ้านทั้งหลัง เรามีรถขนาดใหญ่รองรับ พร้อมทีมงานขนยก</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="img-wrapper">
+                        <img src="S__2531422.jpg" alt="แพ็คเฟอร์นิเจอร์">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag"><i class="fa-solid fa-couch"></i> ถนอมสินค้า</span>
+                        <h3 class="card-title">ห่อกันกระแทกทุกชิ้นใหญ่</h3>
+                        <p class="card-desc">เฟอร์นิเจอร์ ตู้ เตียง เรามีบริการแรปพลาสติกและบับเบิ้ลกันกระแทกอย่างดี ป้องกันรอยขีดข่วน</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="img-wrapper">
+                        <img src="S__17556173.jpg" alt="ส่งด่วน 24 ชม">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag"><i class="fa-solid fa-clock"></i> บริการ 24 ชม.</span>
+                        <h3 class="card-title">ส่งด่วนได้ทุกเวลา</h3>
+                        <p class="card-desc">ไม่ว่าจะเช้า หรือดึกแค่ไหน นัดเวลารับรถได้เลย เราพร้อมวิ่งงานทั่วประเทศ</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="img-wrapper">
+                        <img src="S__17556170.jpg" alt="ห่อรถมอเตอร์ไซค์">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag"><i class="fa-solid fa-shield-cat"></i> ใส่ใจทุกรายละเอียด</span>
+                        <h3 class="card-title">แรปกันรอยรอบคัน</h3>
+                        <p class="card-desc">ดูแลรถของคุณเหมือนรถของเรา ห่อหุ้มกันรอยขีดข่วนก่อนขึ้นรถทุกคัน สบายใจหายห่วง</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <div class="img-wrapper">
+                        <img src="S__2531423.jpg" alt="ขนย้ายสัตว์เลี้ยง">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag"><i class="fa-solid fa-paw"></i> สัตว์เลี้ยง</span>
+                        <h3 class="card-title">รับส่งน้องหมา น้องแมว</h3>
+                        <p class="card-desc">อุปกรณ์สัตว์เลี้ยง กรงขนาดใหญ่ เราจัดวางให้อย่างดี มีพื้นที่เพียงพอ ไม่ทับเสียหาย</p>
+                    </div>
+                </div>
+
+                 <div class="gallery-card">
+                    <div class="img-wrapper">
+                        <img src="S__2531439.jpg" alt="มอเตอร์ไซค์ไปพร้อมของ">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag"><i class="fa-solid fa-truck-pickup"></i> เหมาเที่ยวเดียวจบ</span>
+                        <h3 class="card-title">ย้ายห้อง + รถมอเตอร์ไซค์</h3>
+                        <p class="card-desc">ไปพร้อมกันได้เลย ทั้งของใช้ในห้องและรถคู่ใจ ประหยัดกว่าแยกส่ง สะดวกเที่ยวเดียวจบ</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="trust-box">
+                <img src="S__17556285.png" alt="ทีมงาน NM Transport" class="trust-img">
+                <div class="trust-content">
+                    <h3>บริการด้วยรอยยิ้ม เป็นกันเอง</h3>
+                    <p>NM Transport (นครสวรรค์) เราเน้นบริการที่สุภาพ จริงใจ และราคาเป็นมิตร คุยง่าย ต่อรองได้ ไม่ทิ้งงานแน่นอนครับ/ค่ะ</p>
+                    <div style="margin-top: 20px;">
+                        <a href="tel:0958010958" class="btn-outline-contact" style="background: var(--orange-lava); color: white; border: none; padding: 10px 25px;">
+                            <i class="fa-solid fa-phone"></i> โทรปรึกษาฟรี
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="sticky-bar">
+        <a href="tel:0958010958" class="sticky-btn btn-call">
+            <i class="fa-solid fa-phone"></i> โทรเลย
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" class="sticky-btn btn-fb">
+            <i class="fa-brands fa-facebook-messenger"></i> ทักแชท
+        </a>
+    </div>
+
+</body>
+</html>
