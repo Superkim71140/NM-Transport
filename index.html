@@ -285,7 +285,7 @@
 
         @media(min-width: 768px) { .hero h1 { font-size: 4rem; } .hero h1 .highlight-text { font-size: 5rem; } }
 
-        /* --- WHY CHOOSE US (NEW) --- */
+        /* --- WHY CHOOSE US --- */
         .why-us-section { margin-top: -40px; position: relative; z-index: 10; padding-bottom: 50px; }
         .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .feature-card {
@@ -311,6 +311,56 @@
         }
         .feature-content h4 { color: var(--white); margin-bottom: 5px; font-size: 1.1rem; }
         .feature-content p { color: var(--text-gray); font-size: 0.9rem; line-height: 1.5; }
+
+        /* --- NEW: COMPARISON TABLE SECTION --- */
+        .comparison-section {
+            padding: 60px 0;
+            background: rgba(15, 28, 56, 0.4);
+            margin-bottom: 40px;
+        }
+        .compare-box {
+            background: var(--navy-primary);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .compare-header {
+            display: grid;
+            grid-template-columns: 1.2fr 1.2fr 1fr;
+            padding: 20px;
+            background: rgba(0,0,0,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+            font-weight: 700;
+            color: var(--white);
+        }
+        .compare-row {
+            display: grid;
+            grid-template-columns: 1.2fr 1.2fr 1fr;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            align-items: center;
+            transition: 0.2s;
+        }
+        .compare-row:last-child { border-bottom: none; }
+        .compare-row:hover { background: rgba(255,255,255,0.02); }
+        
+        .col-topic { color: var(--text-gray); font-weight: 500; display: flex; align-items: center; gap: 10px; }
+        .col-nm { color: var(--orange-lava); font-weight: 700; text-align: center; font-size: 1.1rem; text-shadow: 0 0 10px rgba(255,69,0,0.3); }
+        .col-other { color: #64748b; text-align: center; text-decoration: line-through; opacity: 0.7; }
+        
+        .check-icon { color: var(--line-green); margin-right: 5px; font-size: 1.2rem; }
+        .cross-icon { color: #ef4444; font-size: 1.2rem; }
+        
+        @media(max-width: 768px) {
+            .compare-header, .compare-row { grid-template-columns: 1fr 1fr; font-size: 0.9rem; }
+            .col-other { display: none; } /* Hide competitor column on mobile to save space */
+            .compare-header div:nth-child(3) { display: none; }
+            .compare-header div:nth-child(2) { color: var(--orange-lava); }
+        }
 
 
         /* --- TRUST BADGE --- */
@@ -429,6 +479,110 @@
         .gallery-item:hover { border-color: var(--orange-lava); box-shadow: 0 0 20px rgba(255, 69, 0, 0.3); transform: translateY(-5px); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .gallery-item:hover img { transform: scale(1.1); }
+
+        /* --- REVIEWS SECTION --- */
+        .reviews-section {
+            background: linear-gradient(180deg, rgba(15, 28, 56, 0.3) 0%, rgba(5, 10, 20, 0.95) 100%);
+            padding: 80px 0;
+            position: relative;
+        }
+        .reviews-slider-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 50px; /* Space for arrows */
+        }
+        .review-card {
+            background: linear-gradient(145deg, rgba(15, 28, 56, 0.95), rgba(255, 255, 255, 0.02));
+            border: 1px solid rgba(255, 69, 0, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            align-items: center;
+            animation: fadeIn 0.6s ease;
+        }
+        .review-card.active {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .review-img-wrapper {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            border: 3px solid var(--orange-lava);
+            padding: 3px;
+            margin-bottom: 20px;
+            box-shadow: var(--neon-shadow);
+        }
+        .review-img {
+            width: 100%; height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .review-stars {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+        }
+        .review-quote-icon {
+            font-size: 3rem;
+            color: rgba(255, 69, 0, 0.2);
+            position: absolute;
+            top: 20px; left: 30px;
+        }
+        .review-text {
+            font-size: 1.15rem;
+            font-style: italic;
+            margin-bottom: 25px;
+            color: #e2e8f0;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+        .review-author h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        .review-author span {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        /* Slider Buttons */
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 5;
+        }
+        .slider-btn:hover {
+            background: var(--orange-lava);
+            box-shadow: var(--neon-shadow);
+            border-color: var(--orange-lava);
+        }
+        .prev-btn { left: 0; }
+        .next-btn { right: 0; }
+
+        @media(max-width: 768px) {
+            .reviews-slider-container { padding: 0; }
+            .review-card { padding: 30px 20px; }
+            .slider-btn { display: none; } /* Hide arrows on mobile, use auto-slide or swipe (simplified to auto-slide for now) */
+        }
 
         /* --- STATS --- */
         .stats-section {
@@ -693,24 +847,69 @@
         </div>
     </div>
 
-    <section class="section-padding" id="services">
+    <section class="comparison-section">
         <div class="container">
-            
-            <div class="trust-badge-container">
-                <h3 class="trust-title">
-                    <span class="trust-highlight">
-                        <i class="fa-solid fa-certificate" style="color: #FFD700;"></i> มั่นใจได้!
-                    </span>
-                    เราจดทะเบียนขนส่งถูกต้องตามกฎหมาย
-                </h3>
-                <p style="margin-bottom: 20px; color: #ccc; font-size: 1.1rem;">บริษัท เอ็นแอนด์เอ็ม 18 ทรานสปอร์ต จำกัด (N&M 18 TRANSPORT)</p>
+            <div class="section-header">
+                <h2>ทำไมต้องเลือก NM Transport?</h2>
+                <p>เปรียบเทียบให้เห็นชัดๆ ว่าเราแตกต่างและคุ้มค่ากว่าอย่างไร</p>
+            </div>
+            <div class="compare-box">
+                <div class="compare-header">
+                    <div>หัวข้อเปรียบเทียบ</div>
+                    <div style="color: var(--orange-lava);">NM Transport</div>
+                    <div style="color: #94a3b8;">รถรับจ้างทั่วไป</div>
+                </div>
                 
-                <div class="trust-img-box">
-                    <img src="S__17556166.jpg" alt="ใบอนุญาตประกอบการขนส่ง N&M 18 TRANSPORT" style="width: 100%; height: auto; display: block;">
+                <div class="compare-row">
+                    <div class="col-topic"><i class="fa-solid fa-tag text-orange"></i> ราคาค่าบริการ</div>
+                    <div class="col-nm"><i class="fa-solid fa-check check-icon"></i> ชัดเจน จบที่ตกลง</div>
+                    <div class="col-other"><i class="fa-solid fa-xmark cross-icon"></i> อาจมีบวกเพิ่มหน้างาน</div>
+                </div>
+
+                <div class="compare-row">
+                    <div class="col-topic"><i class="fa-solid fa-shield-cat text-orange"></i> การรับประกัน</div>
+                    <div class="col-nm"><i class="fa-solid fa-check check-icon"></i> รับผิดชอบ 100%</div>
+                    <div class="col-other"><i class="fa-solid fa-question cross-icon" style="color:#f59e0b"></i> ไม่แน่นอน</div>
+                </div>
+
+                <div class="compare-row">
+                    <div class="col-topic"><i class="fa-solid fa-truck-ramp-box text-orange"></i> บริการยกของ</div>
+                    <div class="col-nm"><i class="fa-solid fa-check check-icon"></i> ทีมงานมืออาชีพ</div>
+                    <div class="col-other"><i class="fa-solid fa-xmark cross-icon"></i> คนขับคนเดียว/ไม่ช่วยยก</div>
+                </div>
+
+                <div class="compare-row">
+                    <div class="col-topic"><i class="fa-solid fa-umbrella text-orange"></i> สภาพรถ</div>
+                    <div class="col-nm"><i class="fa-solid fa-check check-icon"></i> ตู้ทึบกันฝน ใหม่สะอาด</div>
+                    <div class="col-other"><i class="fa-solid fa-xmark cross-icon"></i> รถเก่า/ผ้าใบรั่วซึม</div>
+                </div>
+
+                <div class="compare-row">
+                    <div class="col-topic"><i class="fa-solid fa-headset text-orange"></i> การติดต่อ</div>
+                    <div class="col-nm"><i class="fa-solid fa-check check-icon"></i> แอดมินดูแล 24 ชม.</div>
+                    <div class="col-other"><i class="fa-solid fa-xmark cross-icon"></i> ติดต่อยาก/ทิ้งงาน</div>
                 </div>
             </div>
+        </div>
+    </section>
 
-             <section class="section-padding" id="gallery" style="background: rgba(15, 28, 56, 0.3);">
+    <div class="container">
+        <div class="trust-badge-container">
+            <h3 class="trust-title">
+                <span class="trust-highlight">
+                    <i class="fa-solid fa-certificate" style="color: #FFD700;"></i> มั่นใจได้!
+                </span>
+                เราจดทะเบียนขนส่งถูกต้องตามกฎหมาย
+            </h3>
+            <p style="margin-bottom: 20px; color: #ccc; font-size: 1.1rem;">บริษัท เอ็นแอนด์เอ็ม 18 ทรานสปอร์ต จำกัด (N&M 18 TRANSPORT)</p>
+            
+            <div class="trust-img-box">
+                <img src="S__17556166.jpg" alt="ใบอนุญาตประกอบการขนส่ง N&M 18 TRANSPORT" style="width: 100%; height: auto; display: block;">
+            </div>
+        </div>
+    </div>
+
+    <section class="section-padding" id="gallery" style="background: rgba(15, 28, 56, 0.3);">
         <div class="container">
             <div class="section-header">
                 <h2>ผลงานการขนส่ง</h2>
@@ -736,8 +935,79 @@
         </div>
     </section>
 
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>รีวิวจากผู้ใช้งานจริง</h2>
+                <p>ความประทับใจจากลูกค้าที่ไว้วางใจ NM Transport</p>
+            </div>
+            
+            <div class="reviews-slider-container">
+                <button class="slider-btn prev-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="slider-btn next-btn"><i class="fa-solid fa-chevron-right"></i></button>
 
-               <section class="stats-section">
+                <div class="review-card active">
+                    <i class="fa-solid fa-quote-left review-quote-icon"></i>
+                    <div class="review-img-wrapper">
+                        <img src="ลูกกค้ารีวืว 1.jpg" alt="รีวิวลูกค้า 1" class="review-img">
+                    </div>
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"บริการดี ราคาเป็นกันเองแนะนำครับ จากผู้ใช้บริการจริงมาแล้ว"</p>
+                    <div class="review-author">
+                        <span>ลูกค้าผู้ใช้บริการจริง</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <i class="fa-solid fa-quote-left review-quote-icon"></i>
+                    <div class="review-img-wrapper">
+                        <img src="ลูกค้ารีวิว 2.jpg" alt="รีวิวลูกค้า 2" class="review-img">
+                    </div>
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"บริการดี บริการเด่น เน้นบริการ เอาเป็นว่าถูกใจครับ"</p>
+                    <div class="review-author">
+                        <span>ลูกค้าผู้ใช้บริการจริง</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <i class="fa-solid fa-quote-left review-quote-icon"></i>
+                    <div class="review-img-wrapper">
+                        <img src="ลูกค้ารีวิว 3.jpg" alt="รีวิวลูกค้า 3" class="review-img">
+                    </div>
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"บริการดี ปลอดภัย รวดเร็ว ราคาไม่แพง แนะนำเลยค่ะ วันนี้ส่งชุดโต๊ะทานข้าวหินอ่อน จากขอนแก่น ไป อ.บ้านผือ จ.อุดรธานี จัดแพ็คห่อกันกระแทก กันรอยดีมาก เข้ามารับสินค้า 10 โมง แพ็คเสร็จเกือบเที่ยง ส่งสินค้าเสร็จเรียบร้อยบ่ายสามโมง คือแนะนำเลยค่าา"</p>
+                    <div class="review-author">
+                        <span>ลูกค้าผู้ใช้บริการจริง</span>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <i class="fa-solid fa-quote-left review-quote-icon"></i>
+                    <div class="review-img-wrapper">
+                        <img src="ลูกค้ารีวิว 4.jpg" alt="รีวิวลูกค้า 4" class="review-img">
+                    </div>
+                    <div class="review-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="review-text">"บริการดีส่งใวค่ะ..สินค้าเรียบร้อยดีค่ะใว้ใช้บริการใหม่นะค่ะ"</p>
+                    <div class="review-author">
+                        <span>ลูกค้าผู้ใช้บริการจริง</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
@@ -764,8 +1034,8 @@
         </div>
     </section>
 
-            
-
+    <section class="section-padding" id="services">
+        <div class="container">
             <div class="section-header">
                 <h2>บริการของเรา</h2>
                 <p>ตอบโจทย์ทุกการขนย้าย ด้วยรถกระบะตู้ทึบมาตรฐาน</p>
@@ -790,17 +1060,17 @@
         </div>
     </section>
 
-
     <div class="container">
         <div class="pricing-banner">
+            <p style="color: var(--white); font-size: 1.1rem; margin-bottom: 5px;">โปรโมชั่นพิเศษ! จองล่วงหน้ามีราคาพิเศษ</p>
             <h3>ค่าบริการเริ่มต้นเพียง</h3>
             <div class="price-tag">1,000.-</div>
             <p>ราคาขึ้นอยู่กับระยะทางและประเภทงาน (โทรสอบถามได้เลยครับ)</p>
             <br>
             <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
               <a href="tel:0958010958" class="btn btn-primary">
-    <i class="fa-solid fa-calculator"></i> เช็คราคาผ่านโทรศัพท์
-</a>
+                <i class="fa-solid fa-calculator"></i> เช็คราคาผ่านโทรศัพท์
+              </a>
                  <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" class="btn btn-line">
                     <i class="fa-brands fa-line"></i> เช็คราคาผ่าน LINE
                 </a>
@@ -1039,6 +1309,34 @@
             }
         });
         if(statsSection) { observer.observe(statsSection); }
+
+        // REVIEW SLIDER SCRIPT
+        const slides = document.querySelectorAll('.review-card');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        if(prevBtn && nextBtn) {
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            // Auto slide every 5 seconds
+            setInterval(nextSlide, 5000);
+        }
     </script>
 
 </body>

@@ -50,6 +50,13 @@
             background-attachment: fixed;
         }
 
+        /* --- แก้ไข 1: เพิ่มระยะด้านล่างสำหรับมือถือ เพื่อไม่ให้ปุ่มบัง Footer --- */
+        @media (max-width: 768px) {
+            body {
+                padding-bottom: 90px; /* เพิ่มพื้นที่ด้านล่างให้พ้น Sticky Bar */
+            }
+        }
+
         a { text-decoration: none; transition: 0.3s; }
         ul { list-style: none; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -571,11 +578,12 @@
             </div>
         </div>
     </footer>
+    
     <div class="sticky-bar">
         <a href="tel:0958010958" class="sticky-btn" style="background: var(--orange-lava); box-shadow: var(--neon-shadow);">
             <i class="fa-solid fa-phone"></i> โทรเลย
         </a>
-        <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" class="sticky-btn" style="background: var(--line-green); box-shadow: var(--neon-shadow-line);">
+        <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" class="sticky-btn" style="background: var(--green-neon); box-shadow: 0 0 15px rgba(6, 199, 85, 0.4);">
             <i class="fa-brands fa-line" style="font-size: 1.3rem;"></i> Line
         </a>
         <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" class="sticky-btn" style="background: #1877F2;">
