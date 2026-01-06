@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- THEME VARIABLES (เหมือน Index) --- */
+        /* --- THEME VARIABLES --- */
         :root {
             --navy-dark: #050a14;
             --navy-primary: #0f1c38;
@@ -18,7 +18,12 @@
             --neon-blue: #00f2ff;
             --white: #FFFFFF;
             --text-gray: #B0B8C4;
+            --line-green: #06C755;
+            --fb-blue: #1877F2;
+            
             --glass-bg: rgba(15, 28, 56, 0.95);
+            --card-bg: rgba(15, 28, 56, 0.7);
+            --neon-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,12 +32,55 @@
         body {
             font-family: 'Prompt', sans-serif;
             background-color: var(--navy-dark);
-            color: var(--text-gray); /* ปรับสีตัวอักษรหลักให้เข้ากับธีมมืด */
+            color: var(--text-gray);
+            line-height: 1.6;
             padding-bottom: 70px;
+            
+            background-image: 
+                linear-gradient(rgba(5, 10, 20, 0.95), rgba(5, 10, 20, 0.98)), 
+                url('S__2531437.jpg'); 
+            background-size: cover;      
+            background-position: center; 
+            background-attachment: fixed; 
         }
-        a { text-decoration: none; transition: 0.3s; }
 
-        /* --- HEADER & NAV (ยกมาจาก Index พร้อมปรับปรุง) --- */
+        a { text-decoration: none; transition: 0.3s; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* --- LOADING SCREEN --- */
+        #loading-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--navy-dark); z-index: 9999;
+            display: flex; justify-content: center; align-items: center;
+            transition: opacity 0.5s ease-out;
+        }
+        .spinner {
+            width: 60px; height: 60px;
+            border: 5px solid rgba(255, 69, 0, 0.2);
+            border-top: 5px solid var(--orange-lava);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            box-shadow: 0 0 20px var(--orange-lava);
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+        /* --- TOP BAR --- */
+        .top-bar {
+            background-color: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+            color: rgba(255,255,255,0.8);
+            padding: 8px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .top-bar-content { display: flex; justify-content: space-between; align-items: center; }
+        .top-bar-left i { color: var(--neon-blue); }
+        .top-bar-left span { color: var(--orange-lava); font-weight: 600; }
+        .top-bar-right { display: flex; gap: 20px; }
+        .contact-link { color: var(--text-gray); display: flex; align-items: center; gap: 8px; }
+        .contact-link:hover { color: var(--orange-lava); }
+
+        /* --- HEADER & NAV --- */
         header {
             background: var(--glass-bg);
             backdrop-filter: blur(15px);
@@ -43,175 +91,251 @@
             border-bottom: 1px solid rgba(255, 69, 0, 0.2);
             transition: all 0.3s ease;
         }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-
-        /* --- LOGO STYLE --- */
-        .logo-container {
-            display: flex; align-items: center; justify-content: center; padding: 0;
-        }
+        
+        .logo-container { display: flex; align-items: center; justify-content: center; padding: 0; }
         .logo-img {
             height: 85px; width: auto; object-fit: contain;
             filter: contrast(1.1); transition: transform 0.3s ease; display: block;
         }
         .logo-img:hover { transform: scale(1.05); }
 
-        /* --- MENU ITEMS --- */
-        .menu-items { display: none; align-items: center; gap: 25px; }
-        @media(min-width: 768px) { .menu-items { display: flex; } }
+        .menu-items { display: flex; align-items: center; gap: 25px; }
+        .mobile-menu-btn { display: none; font-size: 1.8rem; color: var(--white); cursor: pointer; }
 
-        /* --- NAV LINK EFFECTS --- */
         .nav-link { 
-            color: var(--text-gray); 
-            font-weight: 500; 
-            position: relative; 
-            padding: 5px 0;
-            transition: 0.3s;
-            font-size: 1rem;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 50%;
-            background-color: var(--orange-lava);
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 0 10px var(--orange-lava);
-        }
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-            left: 0;
+            color: var(--text-gray); font-weight: 500; position: relative; transition: 0.3s;
         }
         .nav-link:hover, .nav-link.active { 
-            color: var(--white); 
-            text-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
+            color: var(--white); text-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
         }
 
+        /* Outline Button */
         .btn-outline-contact {
-            border: 2px solid var(--orange-lava);
-            color: var(--orange-lava);
-            background: transparent;
-            padding: 8px 25px;
-            border-radius: 50px;
-            font-weight: 600;
+            border: 2px solid var(--orange-lava); color: var(--orange-lava); background: transparent;
+            padding: 8px 25px; border-radius: 50px; font-weight: 600;
         }
-        .btn-outline-contact:hover {
-            background: var(--orange-lava); color: var(--white);
-            box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+        .btn-outline-contact:hover, .btn-outline-contact.active-page {
+            background: var(--orange-lava); color: var(--white); box-shadow: var(--neon-shadow);
         }
 
         /* --- HERO BANNER (WORKS PAGE) --- */
         .page-header {
-            /* ปรับพื้นหลังให้เข้ากับธีมมืด */
-            background: linear-gradient(rgba(5, 10, 20, 0.9), rgba(15, 28, 56, 0.9)), url('S__2531426.jpg');
+            background: linear-gradient(to bottom, rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 1)), url('S__2531426.jpg');
             background-size: cover;
             background-position: center;
             color: var(--white);
-            padding: 100px 20px 80px;
+            padding: 120px 20px 80px;
             text-align: center;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255, 69, 0, 0.2);
+            position: relative;
         }
-        .page-header h1 { font-size: 2.5rem; margin-bottom: 15px; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
-        .page-header p { font-size: 1.1rem; opacity: 0.8; }
+       .page-header h1 { 
+    font-size: 3rem; 
+    margin-bottom: 15px; 
+    text-shadow: 0 0 20px rgba(0,0,0,0.8); 
+    background: linear-gradient(to right, #fff, var(--orange-lava));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
-        /* --- GALLERY GRID --- */
-        .gallery-section { padding: 60px 0; background-color: var(--navy-dark); }
+        .page-header p { font-size: 1.2rem; opacity: 0.9; color: var(--text-gray); }
+
+        /* --- GALLERY GRID (IMPROVED) --- */
+        .gallery-section { padding: 60px 0; }
         
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
         .gallery-card {
-            background: var(--navy-primary); /* ปรับสีการ์ดให้เป็นธีมมืด */
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 15px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
+        
+        /* Neon Glow on Hover */
         .gallery-card:hover { 
             transform: translateY(-10px); 
-            box-shadow: 0 15px 30px rgba(255, 69, 0, 0.1); /* เงาสีส้มจางๆ */
+            box-shadow: 0 15px 40px rgba(255, 69, 0, 0.2);
             border-color: var(--orange-lava);
         }
         
         .img-wrapper {
-            height: 250px;
+            height: 240px;
             overflow: hidden;
             position: relative;
         }
         .img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s;
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.6s ease;
         }
         .gallery-card:hover .img-wrapper img { transform: scale(1.1); }
+        
+        /* Overlay Gradient on Image */
+        .img-wrapper::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 50%;
+            background: linear-gradient(to top, var(--navy-primary), transparent);
+            opacity: 0.8;
+        }
 
-        .card-content { padding: 25px; }
+        .card-content { padding: 25px; position: relative; z-index: 2; margin-top: -30px; }
+        
         .card-tag {
             display: inline-block;
-            background: rgba(255, 69, 0, 0.15); /* ปรับสี Tag */
+            background: rgba(0, 0, 0, 0.6);
             color: var(--orange-lava);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 15px;
-            border: 1px solid rgba(255, 69, 0, 0.3);
+            border: 1px solid var(--orange-lava);
+            box-shadow: 0 0 10px rgba(255, 69, 0, 0.2);
+            backdrop-filter: blur(5px);
         }
-        .card-title { font-size: 1.3rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
-        .card-desc { font-size: 0.95rem; color: var(--text-gray); line-height: 1.6; }
+        
+        .card-title { font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
+        .card-desc { font-size: 0.95rem; color: #ccc; line-height: 1.6; }
 
-        /* --- TRUST SECTION --- */
+        /* --- TRUST SECTION (REDESIGNED) --- */
         .trust-box {
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(15, 28, 56, 0.9));
+            background: linear-gradient(145deg, rgba(15, 28, 56, 0.9), rgba(5, 10, 20, 0.95));
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 40px;
-            margin-top: 60px;
+            border-radius: 25px;
+            padding: 50px;
+            margin-top: 80px;
             display: flex;
             align-items: center;
-            gap: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            flex-wrap: wrap;
+            gap: 50px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
         }
+        /* Decor Elements */
+        .trust-box::before {
+            content: ''; position: absolute; top: -50%; right: -10%; width: 300px; height: 300px;
+            background: var(--orange-lava); filter: blur(150px); opacity: 0.2;
+        }
+
         .trust-img {
-            width: 150px; height: 150px;
+            width: 180px; height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--orange-lava);
+            border: 4px solid var(--navy-primary);
+            outline: 3px solid var(--orange-lava);
             flex-shrink: 0;
-            box-shadow: 0 0 20px rgba(255, 69, 0, 0.4);
+            box-shadow: 0 0 30px rgba(255, 69, 0, 0.4);
         }
-        .trust-content h3 { color: var(--white); font-size: 1.8rem; margin-bottom: 15px; }
-        .trust-content p { color: var(--text-gray); }
+        
+        .trust-content h3 { 
+            color: var(--white); font-size: 2rem; margin-bottom: 15px; 
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        .trust-content p { color: var(--text-gray); font-size: 1.1rem; margin-bottom: 25px; }
 
-        /* --- STICKY BAR (Mobile) --- */
+        /* --- MOBILE & RESPONSIVE --- */
+        @media(max-width: 768px) {
+            .nav-wrapper { justify-content: space-between; }
+            .logo-img { height: 60px; }
+            .mobile-menu-btn { display: block; }
+            .top-bar-left { display: none; }
+            .top-bar-right { width: 100%; justify-content: center; }
+
+            .menu-items {
+                display: none; position: absolute; top: 100%; left: 0; width: 100%;
+                background: rgba(5, 10, 20, 0.98); flex-direction: column;
+                padding: 20px 0; gap: 0; border-bottom: 2px solid var(--orange-lava);
+            }
+            .menu-items.active { display: flex; animation: slideDown 0.3s ease; }
+            
+            .nav-link { 
+                display: block; width: 100%; text-align: center; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 1.2rem;
+            }
+            .nav-link:last-child { border-bottom: none; }
+            .btn-outline-contact { margin-top: 15px; width: 80%; text-align: center; }
+
+            /* Page Specific Mobile */
+            .page-header { padding: 100px 20px 60px; }
+            .page-header h1 { font-size: 2.2rem; }
+            
+            .trust-box { 
+                flex-direction: column; text-align: center; padding: 30px; gap: 20px; 
+                border-radius: 15px;
+            }
+            .trust-img { width: 140px; height: 140px; }
+            .trust-content h3 { font-size: 1.5rem; }
+        }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- FOOTER & STICKY --- */
+        footer {
+            background: #02060d; padding-top: 60px; padding-bottom: 30px; color: #B0B8C4;
+            border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px;
+        }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-logo { height: 80px; margin-bottom: 20px; filter: drop-shadow(0 0 1px white); }
+        .footer-col h4 { color: var(--white); font-size: 1.2rem; margin-bottom: 20px; position: relative; padding-bottom: 10px; }
+        .footer-col h4::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--orange-lava); border-radius: 3px; }
+        .footer-links li { margin-bottom: 12px; list-style: none; }
+        .footer-links a { color: #B0B8C4; display: inline-flex; align-items: center; gap: 8px; }
+        .footer-links a:hover { color: var(--orange-lava); transform: translateX(5px); }
+        .footer-contact-item { display: flex; gap: 15px; margin-bottom: 15px; }
+        .footer-contact-item i { color: var(--orange-lava); margin-top: 5px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; text-align: center; font-size: 0.9rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px; }
+        .dev-credit a { color: var(--neon-blue); font-weight: 600; }
+
+        @media(max-width: 768px) {
+            .footer-grid { text-align: center; }
+            .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+            .footer-bottom { justify-content: center; flex-direction: column; }
+            .footer-contact-item { justify-content: center; }
+            .footer-logo { margin: 0 auto 20px; display: block; }
+        }
+
         .sticky-bar {
-            position: fixed; bottom: 0; left: 0; width: 100%;
-            background: var(--glass-bg); backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 69, 0, 0.3);
-            display: flex; padding: 10px; gap: 10px; z-index: 2000;
+            position: fixed; bottom: 0; left: 0; width: 100%; background: var(--glass-bg); backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 69, 0, 0.3); display: flex; padding: 10px; gap: 10px; z-index: 2000;
         }
         .sticky-btn {
-            flex: 1; display: flex; align-items: center; justify-content: center;
-            gap: 8px; height: 45px; border-radius: 50px; font-weight: 700; color: var(--white);
-            font-family: 'Prompt', sans-serif; transition: 0.3s;
+            flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; height: 50px;
+            border-radius: 50px; font-weight: 700; color: var(--white); font-size: 1.1rem; transition: 0.3s; font-family: 'Prompt', sans-serif;
         }
-        .btn-call { background: var(--orange-lava); box-shadow: 0 0 15px rgba(255, 69, 0, 0.4); }
-        .btn-fb { background: #1877F2; box-shadow: 0 0 15px rgba(24, 119, 242, 0.4); }
+        .btn-call { background: var(--orange-lava); box-shadow: var(--neon-shadow); }
+        .btn-line { background: var(--line-green); box-shadow: 0 0 15px rgba(6, 199, 85, 0.6); }
+        .btn-fb { background: #1877F2; }
         @media(min-width: 768px) { .sticky-bar { display: none; } body { padding-bottom: 0; } }
 
     </style>
 </head>
 <body>
+
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <i class="fa-solid fa-bolt-lightning"></i> บริการด่วน 24 ชม. <span>ส่งไว ปลอดภัย 100%</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:0958010958" class="contact-link"><i class="fa-solid fa-phone"></i> 095-801-0958</a>
+                <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" class="contact-link">
+                    <i class="fa-brands fa-facebook"></i> Facebook
+                </a>
+            </div>
+        </div>
+    </div>
 
     <header>
         <div class="container nav-wrapper">
@@ -219,12 +343,16 @@
                 <img src="Logo nm tp.png" alt="NM Transport Logo" class="logo-img">
             </a>
             
+            <div class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
             <div class="menu-items">
                 <a href="index.html" class="nav-link">หน้าแรก</a>
                 <a href="index.html#services" class="nav-link">บริการ</a>
                 <a href="works.html" class="nav-link active">ผลงาน</a>
                 <a href="index.html#how-it-works" class="nav-link">ขั้นตอน</a>
-                <a href="contact.html" class="btn-outline-contact">ติดต่อเรา</a>
+                <a href="contact.html" class="btn btn-outline-contact">ติดต่อเรา</a>
             </div>
         </div>
     </header>
@@ -327,16 +455,27 @@
                     </div>
                 </div>
 
+                <div class="gallery-card">
+                    <div class="img-wrapper">
+                        <img src="S__17556176.jpg" alt="ขนส่งมอเตอร์ไซค์หลายคัน">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-tag"><i class="fa-solid fa-layer-group"></i> เหมาหลายคัน</span>
+                        <h3 class="card-title">ขนส่งมอเตอร์ไซค์ ยกแก๊ง</h3>
+                        <p class="card-desc">จะขนย้ายรถสะสม หรือออกทริปเป็นกลุ่ม เราจัดให้ได้ในเที่ยวเดียว ห่อหุ้มหนาพิเศษ แยกคันชัดเจน ปลอดภัย 100%</p>
+                    </div>
+                </div>
+
             </div>
 
             <div class="trust-box">
                 <img src="S__17556285.png" alt="ทีมงาน NM Transport" class="trust-img">
                 <div class="trust-content">
                     <h3>บริการด้วยรอยยิ้ม เป็นกันเอง</h3>
-                    <p>NM Transport (นครสวรรค์) เราเน้นบริการที่สุภาพ จริงใจ และราคาเป็นมิตร คุยง่าย ต่อรองได้ ไม่ทิ้งงานแน่นอนครับ/ค่ะ</p>
-                    <div style="margin-top: 20px;">
-                        <a href="tel:0958010958" class="btn-outline-contact" style="background: var(--orange-lava); color: white; border: none; padding: 10px 25px;">
-                            <i class="fa-solid fa-phone"></i> โทรปรึกษาฟรี
+                    <p>NM Transport (นครสวรรค์) เราเน้นบริการที่สุภาพ จริงใจ และราคาเป็นมิตร คุยง่าย ต่อรองได้ เราดูแลสินค้าของท่านเหมือนเป็นของคนในครอบครัว</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: start;">
+                        <a href="tel:0958010958" class="btn-outline-contact" style="background: var(--orange-lava); color: white; border: none; padding: 12px 30px; font-size: 1.1rem;">
+                            <i class="fa-solid fa-phone-volume"></i> โทรปรึกษาฟรี
                         </a>
                     </div>
                 </div>
@@ -345,14 +484,114 @@
         </div>
     </section>
 
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-about">
+                    <img src="Logo nm tp.png" alt="NM Transport Logo" class="footer-logo">
+                    <p>บริการรถรับจ้างขนของ ย้ายบ้าน ย้ายหอพัก ขนส่งมอเตอร์ไซค์ รถกระบะตู้ทึบกันฝน 100% ดูแลสินค้าเหมือนของตัวเอง บริการด้วยใจ ในราคามิตรภาพ</p>
+                    <div style="margin-top: 20px;">
+                        <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" style="font-size: 1.5rem; color: #1877F2; margin-right: 15px;"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" style="font-size: 1.5rem; color: #06C755;"><i class="fa-brands fa-line"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>เมนูนำทาง</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> หน้าแรก</a></li>
+                        <li><a href="index.html#services"><i class="fa-solid fa-angle-right"></i> บริการของเรา</a></li>
+                        <li><a href="works.html"><i class="fa-solid fa-angle-right"></i> ผลงานขนส่ง</a></li>
+                        <li><a href="index.html#how-it-works"><i class="fa-solid fa-angle-right"></i> ขั้นตอนการใช้บริการ</a></li>
+                        <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> ติดต่อเรา</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>ติดต่อเรา</h4>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>ให้บริการหลัก: นครสวรรค์, กำแพงเพชร, พิจิตร, อุทัยธานี และวิ่งทั่วไทย</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>095-801-0958 (คุณมาร์ค)<br>บริการ 24 ชั่วโมง</span>
+                    </div>
+                                        
+                    <div class="footer-contact-item">
+                        <i class="fa-brands fa-line"></i>
+                        <span>Line ID: 0958010958</span>
+                    </div>
+
+                   
+                    <div class="footer-contact-item">
+                        <i class="fa-brands fa-facebook"></i>
+                        <a href="#" style="color: inherit; text-decoration: none;">N&m บริการ รถรับจ้าง กระบะตู้ทึบ ขนส่ง ทั่วไทย</a>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2026 NM Transport. All Rights Reserved.
+                </div>
+                <div class="dev-credit">
+                    Developed by <a href="https://kimx-wed.vercel.app/" target="_blank">kimx-wed</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <div class="sticky-bar">
         <a href="tel:0958010958" class="sticky-btn btn-call">
             <i class="fa-solid fa-phone"></i> โทรเลย
+        </a>
+        <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" class="sticky-btn btn-line">
+            <i class="fa-brands fa-line"></i> Line
         </a>
         <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" class="sticky-btn btn-fb">
             <i class="fa-brands fa-facebook-messenger"></i> ทักแชท
         </a>
     </div>
+
+    <script>
+        // MOBILE MENU TOGGLE
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        const menuItems = document.querySelector('.menu-items');
+
+        mobileBtn.addEventListener('click', () => {
+            menuItems.classList.toggle('active');
+            const icon = mobileBtn.querySelector('i');
+            if(menuItems.classList.contains('active')){
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuItems.classList.remove('active');
+                const icon = mobileBtn.querySelector('i');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // SCRIPT FOR LOADING SCREEN
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loading-screen');
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500); 
+        });
+    </script>
 
 </body>
 </html>
