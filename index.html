@@ -738,22 +738,56 @@
         }
         @media(min-width: 768px) { .sticky-bar { display: none; } body { padding-bottom: 0; } }
 
-        /* --- MOBILE OPTIMIZATIONS --- */
+       /* --- MOBILE OPTIMIZATIONS (ฉบับแก้ไข: ปรับ UI ให้เล็กลง/กระชับ) --- */
         @media(max-width: 768px) {
-            .nav-wrapper { justify-content: space-between; }
-            .logo-img { height: 60px; }
-            .hero { padding: 100px 0 60px; }
-            .hero h1 { font-size: 2.2rem; }
-            .hero h1 .highlight-text { font-size: 3rem; }
-            .section-header h2 { font-size: 2rem; }
+            /* 1. จัด Header และ Logo ให้ไม่ล้น */
+            .nav-wrapper { justify-content: space-between; padding: 0 10px; }
+            .logo-img { height: 50px; } /* ลดขนาดโลโก้ลงเหลือ 50px */
+            
+            /* 2. ปรับ Hero (ส่วนบนสุด) ให้ตัวหนังสือไม่ใหญ่คับจอ */
+            .hero { padding: 90px 0 40px; }
+            .hero h1 { font-size: 1.8rem; line-height: 1.3; } 
+            .hero h1 .highlight-text { font-size: 2.2rem; margin-top: 5px; } /* ลดขนาดตัวส้ม */
+            .hero p { font-size: 1rem; margin-bottom: 20px; padding: 0 10px; }
+            
+            /* ปรับปุ่มให้กดง่ายแต่ไม่เทอะทะ */
+            .hero-buttons { gap: 10px; }
+            .hero-buttons .btn { 
+                padding: 10px 20px !important; 
+                font-size: 1rem !important; 
+                width: 100%; max-width: 300px;
+            }
+
+            /* 3. หัวข้อต่างๆ ในเว็บ */
+            .section-header { margin-bottom: 30px; }
+            .section-header h2 { font-size: 1.6rem; }
+            
+            /* 4. ขั้นตอนการทำงาน (How it works) - ปรับเป็น 2 แถว ไอคอนเล็ก */
+            .process-steps { 
+                grid-template-columns: 1fr 1fr; /* แบ่งเป็น 2 คอลัมน์ซ้ายขวา */
+                gap: 15px; margin-top: 20px; 
+            }
+            .step-icon { width: 60px; height: 60px; font-size: 1.4rem; margin-bottom: 10px; }
+            .step-number { width: 25px; height: 25px; font-size: 0.9rem; transform: translateX(20px); top: -5px; }
+            .step-item h4 { font-size: 0.95rem; }
+            .step-item p { font-size: 0.8rem; display: none; } /* ซ่อนคำอธิบายยาวๆ ในมือถือเพื่อให้ดูง่าย */
+            
+            /* 5. สถิติ (Stats) */
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+            .stat-number { font-size: 2rem; }
+            .stat-icon { font-size: 1.5rem; }
+
+            /* 6. ราคา (Pricing) */
+            .pricing-banner { padding: 30px 15px; margin: 20px auto; }
+            .price-tag { font-size: 3.5rem; margin: 10px 0; } /* ลดขนาดตัวเลขราคาลง */
+            
+            /* 7. Footer จัดกึ่งกลาง */
+            .footer-grid { text-align: center; gap: 30px; }
+            .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+            .footer-logo { margin: 0 auto 20px; display: block; }
+
+            /* แก้พื้นหลังไม่ให้กระตุกในมือถือ */
             body { background-attachment: scroll; }
-            
-            .process-steps { gap: 30px; margin-top: 30px; }
-            .step-icon { width: 90px; height: 90px; font-size: 2rem; }
-            .step-number { width: 30px; height: 30px; font-size: 1rem; transform: translateX(35px); }
-            
-            .stats-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
-            .stat-number { font-size: 2.5rem; }
         }
 
     </style>
