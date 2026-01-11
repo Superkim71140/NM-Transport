@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>บริการรับส่งสัตว์เลี้ยง VIP - N&M18 TRANSPORT</title>
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- THEME VARIABLES (Based on Index) --- */
+        :root {
+            --navy-dark: #050a14;
+            --navy-primary: #0f1c38;
+            --orange-lava: #FF4500;
+            --pet-gold: #FFD700; /* สีพิเศษสำหรับหน้าสัตว์เลี้ยง */
+            --white: #FFFFFF;
+            --text-gray: #B0B8C4;
+            --green-neon: #06C755;
+            
+            /* Glass Effects */
+            --glass-bg: rgba(15, 28, 56, 0.95);
+            --glass-card: rgba(255, 255, 255, 0.03);
+            --neon-glow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body { 
+            font-family: 'Prompt', sans-serif; 
+            background-color: var(--navy-dark); 
+            color: var(--text-gray); 
+            line-height: 1.6; 
+            padding-bottom: 70px; /* Space for Sticky Bar */
+            background-image: radial-gradient(circle at 50% 10%, #1a2c4e 0%, var(--navy-dark) 60%);
+            background-attachment: fixed;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- HEADER --- */
+        .top-bar {
+            background-color: rgba(0,0,0,0.6); color: rgba(255,255,255,0.8);
+            padding: 8px 0; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .top-bar-content { display: flex; justify-content: space-between; align-items: center; }
+        .top-bar-left i { color: var(--pet-gold); }
+        .top-bar-right { display: flex; gap: 20px; }
+        
+        header {
+            background: var(--glass-bg); backdrop-filter: blur(15px);
+            padding: 10px 0; position: sticky; top: 0; z-index: 1000;
+            border-bottom: 1px solid rgba(255, 69, 0, 0.2);
+        }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 60px; width: auto; filter: contrast(1.1); }
+        .menu-items { display: flex; align-items: center; gap: 25px; }
+        .nav-link { color: var(--text-gray); font-weight: 500; padding: 5px 0; position: relative; }
+        .nav-link:hover { color: var(--white); text-shadow: 0 0 10px rgba(255,255,255,0.5); }
+
+        /* Dropdown */
+        .dropdown { position: relative; }
+        .dropdown-menu {
+            display: none; position: absolute; top: 100%; left: -20px;
+            background: rgba(5, 10, 20, 0.98); min-width: 240px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-top: 2px solid var(--orange-lava);
+            flex-direction: column; padding: 10px 0; border-radius: 0 0 10px 10px;
+        }
+        .dropdown:hover .dropdown-menu { display: flex; animation: slideUp 0.3s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .dropdown-menu a { padding: 12px 20px; color: var(--text-gray); display: block; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .dropdown-menu a:hover { background: rgba(255, 69, 0, 0.1); color: var(--orange-lava); padding-left: 25px; }
+
+        .btn-outline-contact {
+            border: 2px solid var(--orange-lava); color: var(--orange-lava); background: transparent;
+            padding: 8px 25px; border-radius: 50px; font-weight: 600;
+        }
+        .btn-outline-contact:hover { background: var(--orange-lava); color: var(--white); box-shadow: 0 0 15px rgba(255,69,0,0.6); }
+
+        /* --- HERO SECTION --- */
+        .hero-pet {
+            position: relative; padding: 100px 0 60px; text-align: center; overflow: hidden;
+        }
+        .hero-pet h1 {
+            font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; color: white;
+            text-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .highlight-gold {
+            background: linear-gradient(to right, #FFD700, #FFA500);
+            -webkit-background-clip: text; background-clip: text; 
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        .hero-pet p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        
+        .hero-bg-icon {
+            position: absolute; font-size: 15rem; color: rgba(255,215,0,0.03);
+            z-index: -1; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        }
+
+        /* --- FEATURE CARDS --- */
+        .glass-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;
+        }
+        .glass-card {
+            background: var(--glass-card); backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 35px;
+            text-align: center; transition: 0.4s; position: relative; overflow: hidden;
+        }
+        .glass-card:hover {
+            transform: translateY(-10px); border-color: var(--pet-gold);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.15);
+        }
+        .icon-glow {
+            font-size: 3rem; color: var(--pet-gold); margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+        }
+        .glass-card h3 { color: white; font-size: 1.4rem; margin-bottom: 10px; }
+        
+        /* --- IMAGE GALLERY --- */
+        .gallery-showcase {
+            margin: 80px 0; padding: 40px; border-radius: 30px;
+            background: linear-gradient(145deg, rgba(255,255,255,0.02), rgba(0,0,0,0.2));
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            text-align: center; position: relative;
+        }
+        .gallery-showcase::before {
+            content: 'REAL WORKS'; position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+            background: var(--navy-dark); padding: 0 20px; color: var(--pet-gold); font-weight: bold; letter-spacing: 2px;
+        }
+        .main-image {
+            width: 100%; max-width: 900px; border-radius: 15px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1);
+            transition: 0.5s;
+        }
+        .main-image:hover { transform: scale(1.02); }
+
+        /* --- SYSTEM & SAFETY LIST --- */
+        .system-section { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; margin: 60px 0; }
+        .system-content { flex: 1; min-width: 300px; }
+        .system-list { margin-top: 20px; }
+        .system-item {
+            display: flex; align-items: center; gap: 15px; margin-bottom: 20px;
+            background: rgba(255,255,255,0.03); padding: 15px 20px; border-radius: 10px;
+            border-left: 4px solid var(--pet-gold);
+        }
+        .system-item i { color: var(--green-neon); font-size: 1.2rem; }
+        .system-item h4 { color: white; margin: 0; font-size: 1.1rem; }
+        .system-item p { margin: 0; font-size: 0.9rem; color: #999; }
+
+        /* --- CTA BUTTONS --- */
+        .btn-vip {
+            background: linear-gradient(45deg, #FFD700, #FFC107); color: #000;
+            padding: 15px 40px; border-radius: 50px; font-weight: 800; font-size: 1.2rem;
+            display: inline-flex; align-items: center; gap: 10px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); border: none; cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn-vip:hover { transform: scale(1.05); box-shadow: 0 0 35px rgba(255, 215, 0, 0.7); }
+
+        /* --- MOBILE NAV & RESPONSIVE FIXES --- */
+        .mobile-menu-btn { display: none; font-size: 1.8rem; color: white; cursor: pointer; }
+        
+        @media(max-width: 768px) {
+            /* 1. Navbar Compact */
+            .nav-wrapper { justify-content: space-between; }
+            .top-bar-left { display: none; }
+            .top-bar-right { width: 100%; justify-content: center; font-size: 0.8rem; }
+            .mobile-menu-btn { display: block; }
+            .logo-img { height: 50px; } /* ลดขนาดโลโก้ */
+            
+            .menu-items { 
+                display: none; position: absolute; top: 100%; left: 0; width: 100%; 
+                background: rgba(5,10,20,0.98); flex-direction: column; padding: 10px 0; 
+                border-bottom: 2px solid var(--orange-lava);
+            }
+            .menu-items.active { display: flex; }
+            .nav-link { width: 100%; text-align: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 1rem; }
+
+            /* 2. Hero Section Compact */
+            .hero-pet { padding: 50px 0 30px; } /* ลด Padding */
+            .hero-pet h1 { font-size: 1.8rem; margin-bottom: 10px; line-height: 1.3; }
+            .hero-pet p { font-size: 0.95rem; margin-bottom: 20px; padding: 0 10px; }
+            .hero-bg-icon { font-size: 8rem; top: 40%; } /* ไอคอนพื้นหลังเล็กลง */
+            
+            /* ปุ่มในมือถือเต็มจอ กดง่าย */
+            .hero-pet div { flex-direction: column; align-items: center; gap: 15px; }
+            .btn-vip { width: 90%; max-width: 320px; justify-content: center; padding: 12px; font-size: 1rem; }
+
+            /* 3. Cards Compact */
+            .glass-grid { grid-template-columns: 1fr; gap: 15px; margin-top: 30px; }
+            .glass-card { padding: 20px; }
+            .icon-glow { font-size: 2rem; margin-bottom: 10px; }
+            .glass-card h3 { font-size: 1.2rem; }
+            .glass-card p { font-size: 0.9rem; }
+
+            /* 4. Gallery Compact */
+            .gallery-showcase { padding: 20px 15px; margin: 40px 0; border-radius: 20px; }
+            .gallery-showcase h2 { font-size: 1.5rem; }
+            
+            /* 5. System List Compact */
+            .system-section { margin: 40px 0; gap: 30px; }
+            .system-content h2 { font-size: 1.8rem; text-align: center; }
+            .system-content p { text-align: center; font-size: 0.9rem; }
+            .system-list { margin-top: 15px; }
+            .system-item { padding: 12px 15px; margin-bottom: 10px; gap: 10px; }
+            .system-item h4 { font-size: 1rem; }
+            .system-item p { font-size: 0.85rem; }
+        }
+
+        /* --- STICKY BAR --- */
+        .sticky-bar {
+            position: fixed; bottom: 0; left: 0; width: 100%; 
+            background: rgba(15, 28, 56, 0.95); backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 69, 0, 0.3); 
+            display: flex; padding: 10px; gap: 10px; z-index: 2000;
+        }
+        .sticky-btn {
+            flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; height: 50px;
+            border-radius: 50px; font-weight: 700; color: var(--white); font-size: 1rem;
+        }
+        @media(min-width: 768px) { .sticky-bar { display: none; } }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-bar-left">
+                <i class="fa-solid fa-star"></i> บริการระดับ VIP <span>ใส่ใจเหมือนลูกหลาน</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="tel:0958010958" style="color:#ccc"><i class="fa-solid fa-phone"></i> 095-801-0958</a>
+                <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" style="color:#ccc">
+                    <i class="fa-brands fa-facebook"></i> Facebook
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo-container">
+                <img src="logo-nm18.png" alt="N&M18 TRANSPORT Logo" class="logo-img">
+            </a>
+            
+            <div class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+
+            <div class="menu-items">
+                <a href="index.html" class="nav-link">หน้าแรก</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link" style="color:var(--white);">บริการ <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="service-moving.html"><i class="fa-solid fa-box-open"></i> ขนย้ายของ / ย้ายบ้าน</a>
+                        <a href="service-pets.html" style="color:var(--orange-lava);"><i class="fa-solid fa-paw"></i> รับส่งสัตว์เลี้ยง</a>
+                        <a href="service-moto.html"><i class="fa-solid fa-motorcycle"></i> ขนส่งมอเตอร์ไซค์</a>
+                    </div>
+                </div>
+                <a href="works.html" class="nav-link">ผลงาน</a>
+                <a href="contact.html" class="btn-outline-contact">ติดต่อเรา</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-pet">
+        <i class="fa-solid fa-paw hero-bg-icon"></i>
+        <div class="container">
+            <h1>ส่งสัตว์เลี้ยง <span class="highlight-gold">VIP CLASS</span><br>ปลอดภัย ไม่ร้อน ถึงไว</h1>
+            <p>เราเข้าใจว่าเขาไม่ใช่แค่สัตว์เลี้ยง แต่คือ "คนสำคัญ" ของครอบครัว บริการขนส่งด้วยรถปรับอากาศ ดูแลตลอดการเดินทาง รายงานผล Real-time</p>
+            
+            <div style="margin-top: 40px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="tel:0958010958" class="btn-vip">
+                    <i class="fa-solid fa-phone-volume"></i> โทรจองคิวรถ
+                </a>
+                <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" class="btn-vip" style="background: var(--green-neon); color: white; box-shadow: 0 0 20px rgba(6,199,85,0.4);">
+                    <i class="fa-brands fa-line"></i> ทักไลน์ (24ชม.)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="glass-grid">
+            <div class="glass-card">
+                <div class="icon-glow"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+                <h3>Cool Air System</h3>
+                <p>รถห้องโดยสารปรับอากาศ 100% เปิดแอร์เย็นฉ่ำตลอดเส้นทาง ไม่นำน้องไปตากแดดตากลมหลังกระบะ ป้องกัน Heat Stroke</p>
+            </div>
+            <div class="glass-card">
+                <div class="icon-glow"><i class="fa-solid fa-pump-medical"></i></div>
+                <h3>Hygiene Standard</h3>
+                <p>ฉีดพ่นน้ำยาฆ่าเชื้อเกรดโรงพยาบาลทุกครั้งก่อนและหลังรับงาน ไม่มีกลิ่นเหม็น ไม่เสี่ยงติดโรค ปลอดภัยต่อน้องๆ</p>
+            </div>
+            <div class="glass-card">
+                <div class="icon-glow"><i class="fa-solid fa-video"></i></div>
+                <h3>Live Updates</h3>
+                <p>อุ่นใจได้ตลอดทาง คนขับถ่ายรูป/วิดีโอส่งรายงานทุกจุดพักรถ เห็นหน้าน้องตลอด ไม่ต้องกังวลว่าจะเหงา</p>
+            </div>
+        </div>
+
+        <div class="gallery-showcase">
+            <h2 style="color: white; margin-bottom: 20px;">ภาพการทำงานจริง</h2>
+            <p style="color: #999; margin-bottom: 30px;">ดูแลอย่างใกล้ชิด ทั้งน้องหมา น้องแมว รับจากหน้าบ้าน ส่งถึงมือผู้รับ</p>
+            
+            <img src="pet.jpg" alt="รีวิวการขนส่งสัตว์เลี้ยง N&M18" class="main-image">
+            
+            <div style="margin-top: 20px; font-size: 0.9rem; color: var(--pet-gold);">
+                <i class="fa-solid fa-circle-check"></i> รถเก๋งส่วนตัว / รถ SUV กว้างขวาง นั่งสบาย ไม่แออัด
+            </div>
+        </div>
+
+        <div class="system-section">
+            <div class="system-content">
+                <h2 style="font-size: 2.5rem; color: white;">ระบบความปลอดภัย <span style="color:var(--green-neon);">สูงสุด</span></h2>
+                <p style="margin-bottom: 30px;">เราเตรียมความพร้อมในทุกด้าน เพื่อให้การเดินทางราบรื่นที่สุด</p>
+                
+                <div class="system-list">
+                    <div class="system-item">
+                        <i class="fa-solid fa-shield-cat"></i>
+                        <div>
+                            <h4>Door-to-Door Service</h4>
+                            <p>รับถึงหน้าบ้าน ส่งถึงห้องนอน ไม่ต้องนัดเจอระหว่างทาง</p>
+                        </div>
+                    </div>
+                    <div class="system-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <h4>Express Delivery</h4>
+                            <p>วิ่งตรง ไม่ดองงาน ไม่แวะรับของจุกจิก ถึงปลายทางรวดเร็ว</p>
+                        </div>
+                    </div>
+                    <div class="system-item">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        <div>
+                            <h4>Pet Lover Driver</h4>
+                            <p>คนขับรักสัตว์ เข้าใจธรรมชาติ จอดพักให้น้ำ/ขับถ่ายตามเหมาะสม</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="flex: 1; text-align: center; background: rgba(255,255,255,0.02); padding: 40px; border-radius: 20px; border: 1px dashed var(--pet-gold);">
+                <i class="fa-solid fa-clipboard-list" style="font-size: 4rem; color: #555; margin-bottom: 20px;"></i>
+                <h3 style="color: white;">สิ่งที่ลูกค้าต้องเตรียม</h3>
+                <ul style="text-align: left; margin-top: 20px; color: #ccc; line-height: 2; list-style: disc; padding-left: 20px;">
+                    <li>กรง/Box เดินทางที่แข็งแรง</li>
+                    <li>อาหารและน้ำสำหรับระหว่างทาง</li>
+                    <li>แผ่นรองซับขับถ่าย (ถ้ามี)</li>
+                    <li>ของเล่นหรือผ้าที่มีกลิ่นเจ้าของ (ช่วยลดเครียด)</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <footer style="background: #02060d; padding: 40px 0 20px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
+        <div class="container">
+            <img src="logo-nm18.png" alt="Logo" style="height: 60px; margin-bottom: 20px;">
+            <p style="color: #777;">© 2026 N&M18 TRANSPORT - Pet Delivery Service</p>
+            <div style="margin-top: 25px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
+    <a href="index.html" style="color: #555; margin: 0 10px; font-size: 0.9rem; transition: 0.3s;" onmouseover="this.style.color='#00f2ff'" onmouseout="this.style.color='#555'">หน้าแรก</a>
+    <a href="service-moving.html" style="color: #555; margin: 0 10px; font-size: 0.9rem; transition: 0.3s;" onmouseover="this.style.color='#00f2ff'" onmouseout="this.style.color='#555'">ย้ายของ</a>
+    <a href="service-pets.html" style="color: #555; margin: 0 10px; font-size: 0.9rem; transition: 0.3s;" onmouseover="this.style.color='#00f2ff'" onmouseout="this.style.color='#555'">สัตว์เลี้ยง</a>
+    <a href="service-moto.html" style="color: #555; margin: 0 10px; font-size: 0.9rem; transition: 0.3s;" onmouseover="this.style.color='#00f2ff'" onmouseout="this.style.color='#555'">ส่งรถ</a>
+</div>
+        </div>
+    </footer>
+
+    <div class="sticky-bar">
+        <a href="tel:0958010958" class="sticky-btn" style="background: var(--orange-lava); box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);">
+            <i class="fa-solid fa-phone"></i> โทรเลย
+        </a>
+        <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" class="sticky-btn" style="background: var(--green-neon);">
+            <i class="fa-brands fa-line" style="font-size: 1.3rem;"></i> Line
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" class="sticky-btn" style="background: #1877F2;">
+            <i class="fa-brands fa-facebook-messenger"></i> แชท
+        </a>
+    </div>
+
+    <script>
+        const mobileBtn = document.querySelector('.mobile-menu-btn');
+        const menuItems = document.querySelector('.menu-items');
+        mobileBtn.addEventListener('click', () => {
+            menuItems.classList.toggle('active');
+            const icon = mobileBtn.querySelector('i');
+            if(menuItems.classList.contains('active')){
+                icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars');
+            }
+        });
+    </script>
+
+</body>
+</html>

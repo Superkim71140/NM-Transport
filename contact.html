@@ -262,6 +262,82 @@
             /* ดันเนื้อหาขึ้นเพื่อไม่ให้ Sticky Bar บัง */
             body { padding-bottom: 80px; }
         }
+
+        /* --- DROPDOWN MENU STYLE (เพิ่มส่วนนี้เข้าไป) --- */
+.dropdown { position: relative; }
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -20px; /* ปรับตำแหน่งให้ตรงกับดีไซน์ */
+    background: rgba(5, 10, 20, 0.98);
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-top: 2px solid var(--orange-lava);
+    flex-direction: column;
+    padding: 10px 0;
+    border-radius: 0 0 10px 10px;
+    z-index: 1100;
+}
+
+.dropdown-menu a {
+    padding: 12px 20px;
+    color: #B0B8C4; /* ใช้สีเทาตามธีมเดิม */
+    font-size: 0.95rem;
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    width: 100%; /* ให้เต็มความกว้าง */
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255, 69, 0, 0.1);
+    color: var(--orange-lava);
+    padding-left: 25px; /* Effect ขยับ */
+}
+
+/* แสดงเมนูเมื่อเอาเมาส์ชี้ (Desktop) */
+@media(min-width: 768px) {
+    .dropdown:hover .dropdown-menu { 
+        display: flex; 
+        animation: slideUp 0.3s ease; 
+    }
+    @keyframes slideUp { 
+        from { opacity: 0; transform: translateY(10px); } 
+        to { opacity: 1; transform: translateY(0); } 
+    }
+}
+
+/* ปรับแต่งสำหรับมือถือ (Mobile) */
+@media(max-width: 768px) {
+    .dropdown-menu {
+        display: none; /* ซ่อนไว้ก่อน */
+        position: static; /* ให้เรียงต่อกันลงมา */
+        background: rgba(255,255,255,0.02);
+        box-shadow: none;
+        border-top: none;
+        padding-left: 0;
+        width: 100%;
+    }
+    
+    /* ให้แสดงเมนูย่อยเสมอ หรือเมื่อกด (ขึ้นอยู่กับดีไซน์) */
+    .dropdown:hover .dropdown-menu, 
+    .menu-items.active .dropdown-menu { 
+        display: flex; 
+    }
+
+    .dropdown > a::after { 
+        content: ' ▼'; 
+        font-size: 0.7rem; 
+        margin-left: 5px; 
+    }
+    
+    .dropdown-menu a {
+        text-align: center; /* จัดกลางในมือถือ */
+        padding-left: 0;
+    }
+}
     </style>
 </head>
 <body>
@@ -291,7 +367,14 @@
 </a>
             <div class="menu-items">
                 <a href="index.html" class="nav-link">หน้าแรก</a>
-                <a href="index.html#services" class="nav-link">บริการ</a>
+                <div class="dropdown">
+    <a href="index.html#services" class="nav-link">บริการ <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+    <div class="dropdown-menu">
+        <a href="service-moving.html"><i class="fa-solid fa-box-open"></i> ขนย้ายของ / ย้ายบ้าน</a>
+        <a href="service-pets.html"><i class="fa-solid fa-paw"></i> รับส่งสัตว์เลี้ยง</a>
+        <a href="service-moto.html"><i class="fa-solid fa-motorcycle"></i> ขนส่งมอเตอร์ไซค์</a>
+    </div>
+</div>
                 <a href="works.html" class="nav-link">ผลงาน</a>
                 <a href="index.html#how-it-works" class="nav-link">ขั้นตอน</a>
                 <a href="contact.html" class="btn-outline-contact active-page">ติดต่อเรา</a>

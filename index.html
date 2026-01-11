@@ -801,6 +801,58 @@
             body { background-attachment: scroll; }
         }
 
+        /* --- DROPDOWN MENU STYLE --- */
+.dropdown { position: relative; }
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(5, 10, 20, 0.98);
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-top: 2px solid var(--orange-lava);
+    flex-direction: column;
+    padding: 10px 0;
+    border-radius: 0 0 10px 10px;
+    z-index: 1100;
+}
+
+.dropdown-menu a {
+    padding: 12px 20px;
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    display: block;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.dropdown-menu a:hover {
+    background: rgba(255, 69, 0, 0.1);
+    color: var(--orange-lava);
+    padding-left: 25px; /* Effect ขยับ */
+}
+
+/* Hover เพื่อโชว์เมนูใน Desktop */
+@media(min-width: 768px) {
+    .dropdown:hover .dropdown-menu { display: flex; animation: slideUp 0.3s ease; }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+}
+
+/* Mobile Adjust */
+@media(max-width: 768px) {
+    .dropdown-menu {
+        display: none; /* ซ่อนก่อน เดี๋ยวใช้ JS หรือ CSS เปิด */
+        position: static;
+        background: rgba(255,255,255,0.02);
+        box-shadow: none;
+        border-top: none;
+        padding-left: 20px;
+    }
+    .dropdown.active .dropdown-menu { display: flex; }
+    .dropdown > a::after { content: ' ▼'; font-size: 0.7rem; margin-left: 5px; }
+}
+
     </style>
 </head>
 <body>
@@ -835,7 +887,14 @@
 
             <div class="menu-items">
                 <a href="index.html" class="nav-link active">หน้าแรก</a>
-                <a href="#services" class="nav-link">บริการ</a>
+                <div class="dropdown">
+    <a href="#services" class="nav-link">บริการ <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+    <div class="dropdown-menu">
+    <a href="service-moving.html"><i class="fa-solid fa-box-open"></i> ขนย้ายของ / ย้ายบ้าน</a>
+    <a href="service-pets.html"><i class="fa-solid fa-paw"></i> รับส่งสัตว์เลี้ยง</a>
+    <a href="service-moto.html"><i class="fa-solid fa-motorcycle"></i> ขนส่งมอเตอร์ไซค์</a>
+</div>
+</div>
                 <a href="works.html" class="nav-link">ผลงาน</a>
                 <a href="#how-it-works" class="nav-link">ขั้นตอน</a>
                 <a href="contact.html" class="btn btn-outline-contact" style="padding: 8px 25px;">ติดต่อเรา</a>
