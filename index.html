@@ -887,13 +887,13 @@
 
             <div class="menu-items">
                 <a href="index.html" class="nav-link active">หน้าแรก</a>
-                <div class="dropdown">
-    <a href="#services" class="nav-link">บริการ <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+               <div class="dropdown">
+    <a href="javascript:void(0)" class="nav-link dropdown-toggle">บริการ <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></a>
     <div class="dropdown-menu">
-    <a href="service-moving.html"><i class="fa-solid fa-box-open"></i> ขนย้ายของ / ย้ายบ้าน</a>
-    <a href="service-pets.html"><i class="fa-solid fa-paw"></i> รับส่งสัตว์เลี้ยง</a>
-    <a href="service-moto.html"><i class="fa-solid fa-motorcycle"></i> ขนส่งมอเตอร์ไซค์</a>
-</div>
+        <a href="service-moving.html"><i class="fa-solid fa-box-open"></i> ขนย้ายของ / ย้ายบ้าน</a>
+        <a href="service-pets.html"><i class="fa-solid fa-paw"></i> รับส่งสัตว์เลี้ยง</a>
+        <a href="service-moto.html"><i class="fa-solid fa-motorcycle"></i> ขนส่งมอเตอร์ไซค์</a>
+    </div>
 </div>
                 <a href="works.html" class="nav-link">ผลงาน</a>
                 <a href="#how-it-works" class="nav-link">ขั้นตอน</a>
@@ -1345,10 +1345,11 @@
     </div>
 
     <script>
-        // MOBILE MENU TOGGLE
+        // --- MOBILE MENU TOGGLE (Logic ใหม่) ---
         const mobileBtn = document.querySelector('.mobile-menu-btn');
         const menuItems = document.querySelector('.menu-items');
 
+        // 1. เปิด/ปิด เมนูหลัก
         mobileBtn.addEventListener('click', () => {
             menuItems.classList.toggle('active');
             const icon = mobileBtn.querySelector('i');
@@ -1361,14 +1362,42 @@
             }
         });
 
+        // 2. Logic สำหรับปุ่ม "บริการ" (ไม่ให้เลื่อน และเปิดเมนูย่อย)
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownContainer = document.querySelector('.dropdown');
+
+        if (dropdownToggle) {
+            dropdownToggle.addEventListener('click', (e) => {
+                e.preventDefault();   // ห้ามเลื่อนหน้าจอ
+                e.stopPropagation();  // ห้ามส่งคำสั่งไปปิดเมนูหลัก
+                dropdownContainer.classList.toggle('active'); // สลับเปิด/ปิด เมนูย่อย
+            });
+        }
+
+        // 3. ปิดเมนูเมื่อกดลิงก์อื่นๆ (ที่ไม่ใช่ปุ่มบริการ)
         document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
+                // ถ้าเป็นปุ่มบริการ ให้ข้ามไป (ทำงานในข้อ 2 แทน)
+                if (link.classList.contains('dropdown-toggle')) return;
+
+                // ถ้าเป็นปุ่มอื่น ให้ปิดเมนู
                 menuItems.classList.remove('active');
                 const icon = mobileBtn.querySelector('i');
                 icon.classList.remove('fa-xmark');
                 icon.classList.add('fa-bars');
             });
         });
+
+        // ... (Script ส่วนอื่นๆ เช่น Loading Screen / Slider เก็บไว้เหมือนเดิม) ...
+        // SCRIPT FOR LOADING SCREEN
+        window.addEventListener('load', function() {
+            const loader = document.getElementById('loading-screen');
+            loader.style.opacity = '0';
+            setTimeout(() => { loader.style.display = 'none'; }, 500); 
+        });
+        
+        // ... (Script ส่วน Slider / FAQ วางต่อท้ายได้เลย) ...
+    </script>
 
         // LOADING SCREEN
         window.addEventListener('load', function() {
