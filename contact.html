@@ -169,8 +169,11 @@
             .top-bar-left { display: block; }
         }
 
-        /* --- MOBILE RESPONSIVE NAV --- */
+        /* --- MOBILE RESPONSIVE NAV & LAYOUT --- */
         @media(max-width: 768px) {
+            .container { padding: 0 15px; } /* ปรับขอบข้างให้ไม่ชิดเกินไป */
+            
+            /* Header */
             .nav-wrapper { justify-content: space-between; padding: 0 10px; }
             .logo-img { height: 50px; }
             .top-bar-left { display: none; }
@@ -216,24 +219,51 @@
             .dropdown.active .dropdown-menu { display: flex; }
             .dropdown-menu a { text-align: center; }
 
-            /* Contact Page Specific Mobile Fixes */
-            .contact-section { padding: 40px 0 80px; }
+            /* Contact Page Specific Mobile Fixes (Optimized) */
+            .contact-section { padding: 30px 0 100px; } /* ลด Padding บน */
+            
+            .section-header { margin-bottom: 30px; }
+            .section-header h1 { font-size: 1.8rem; line-height: 1.2; margin-bottom: 5px; }
+            .section-header p { font-size: 0.95rem; padding: 0 10px; }
+
             .glass-panel { 
                 grid-template-columns: 1fr;
-                padding: 20px; gap: 25px; 
+                padding: 25px 15px; /* ลด Padding ข้างในกล่องให้เนื้อหาดูกว้างขึ้น */
+                gap: 25px; 
                 border-radius: 16px;
             }
-            .section-header h1 { font-size: 1.8rem; }
-            .contact-card { padding: 15px; gap: 15px; }
-            .icon-box { width: 40px; height: 40px; font-size: 1.1rem; border-radius: 8px; }
-            .map-frame { min-height: 250px; }
-            .action-buttons { flex-direction: column; }
             
-            .footer-grid { text-align: center; }
+            .contact-card { 
+                padding: 15px; 
+                gap: 12px; /* ลดช่องว่างระหว่างไอคอนกับข้อความ */
+            }
+            
+            .icon-box { 
+                width: 45px; height: 45px; /* ปรับขนาดไอคอนให้พอดี */
+                font-size: 1.2rem; 
+                border-radius: 10px; 
+            }
+            
+            .info-box h3 { font-size: 0.85rem; }
+            .info-box p { font-size: 1.1rem; }
+            
+            .map-frame { min-height: 250px; border-radius: 12px; }
+            
+            .action-buttons { 
+                flex-direction: column; 
+                gap: 12px; /* ระยะห่างปุ่ม */
+            }
+            .action-buttons .btn {
+                width: 100%; /* ปุ่มเต็มความกว้าง กดง่าย */
+                padding: 12px 0;
+            }
+            
+            /* Footer Mobile */
+            .footer-grid { text-align: center; gap: 30px; }
             .footer-col h4::after { left: 50%; transform: translateX(-50%); }
-            .footer-bottom { justify-content: center; text-align: center; flex-direction: column; }
+            .footer-bottom { justify-content: center; text-align: center; flex-direction: column; gap: 10px; }
             .footer-contact-item { justify-content: center; }
-            .footer-logo { margin: 0 auto 20px; display: block; }
+            .footer-logo { margin: 0 auto 15px; display: block; height: 60px; }
             
             body { padding-bottom: 80px; }
         }
