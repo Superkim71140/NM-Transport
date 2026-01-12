@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>บริการขนย้ายบ้าน หอพัก คอนโด - N&M18 TRANSPORT</title>
     
+    <title>รถรับจ้างย้ายบ้าน ย้ายหอพัก คอนโด รถกระบะ/4ล้อ ตู้ทึบ ราคาถูก - N&M18 TRANSPORT</title>
+    <meta name="description" content="บริการรถรับจ้างย้ายบ้าน ย้ายหอพัก ย้ายคอนโด ขนย้ายเฟอร์นิเจอร์ รถกระบะตู้ทึบ รถ 4 ล้อรับจ้าง พร้อมคนยกของ ราคาถูก ประเมินราคาฟรี วิ่งทั่วกรุงเทพฯ และต่างจังหวัด โทร 095-801-0958">
+    <meta name="keywords" content="รถรับจ้างย้ายบ้าน, รถรับจ้างขนของ, ย้ายหอพัก, รถ 4 ล้อรับจ้าง, รถกระบะรับจ้างขนของ, จ้างรถขนของ, ย้ายบ้านราคาถูก, รถรับจ้าง กรุงเทพ, ขนย้ายเฟอร์นิเจอร์, N&M18 TRANSPORT">
+
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" href="favicon.ico">
+    
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -232,6 +240,25 @@
         .packing-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; transition: 0.5s; }
         .packing-img-box:hover img { transform: scale(1.05); }
 
+        /* --- 2. FAQ STYLES (เพิ่มมาใหม่เพื่อให้เหมือนหน้า Index) --- */
+        .faq-section { margin-bottom: 60px; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item {
+            margin-bottom: 15px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px;
+            background: rgba(15, 28, 56, 0.6); overflow: hidden; transition: all 0.3s ease;
+        }
+        .faq-item:hover { border-color: var(--orange-lava); box-shadow: 0 0 15px rgba(255, 69, 0, 0.2); }
+        .faq-question {
+            width: 100%; padding: 20px; background: none; border: none; color: var(--white);
+            font-size: 1.1rem; font-weight: 500; text-align: left; display: flex; justify-content: space-between; align-items: center; cursor: pointer;
+            font-family: 'Prompt', sans-serif; outline: none;
+        }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: rgba(0, 0, 0, 0.2); }
+        .faq-answer p { padding: 20px; color: #ccc; line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .faq-item.active { background: var(--navy-primary); border-color: var(--orange-lava); }
+        .faq-item.active .arrow { transform: rotate(180deg); transition: 0.3s; }
+        .faq-item.active .faq-answer { max-height: 200px; }
+
         /* --- CTA BUTTONS --- */
         .btn-action {
             display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -270,6 +297,11 @@
             .menu-items.active { display: flex; }
             .nav-link { width: 100%; text-align: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
             
+            /* Mobile Dropdown Fix */
+            .dropdown-menu { display: none; position: static; background: transparent; box-shadow: none; border: none; padding-left: 0; width: 100%; }
+            .dropdown.active .dropdown-menu { display: flex; }
+            .dropdown-menu a { background: rgba(255,255,255,0.03); padding-left: 0; text-align: center; }
+
             /* Content Fixes */
             .hero-move { padding: 50px 0 20px; }
             .hero-move h1 { font-size: 2rem; }
@@ -385,7 +417,7 @@
             <div class="feature-card">
                 <div class="feature-icon"><i class="fa-solid fa-truck-front"></i></div>
                 <h3>รถตู้ทึบ 100%</h3>
-                <p>รถกระบะและ 6 ล้อตู้ทึบ ปิดมิดชิด กันแดด กันฝน ของไม่หล่นหาย</p>
+                <p>รถกระบะและ 4 ล้อตู้ทึบ ปิดมิดชิด กันแดด กันฝน ของไม่หล่นหาย</p>
             </div>
         </div>
 
@@ -473,6 +505,77 @@
             </div>
         </div>
 
+        <section class="container" style="margin-top: 40px; margin-bottom: 60px; padding: 30px; background: rgba(15, 28, 56, 0.6); border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
+            <h3 style="color: var(--white); text-align: center; margin-bottom: 25px; font-size: 1.5rem;">
+                <i class="fa-solid fa-map-location-dot" style="color: var(--orange-lava);"></i> พื้นที่ให้บริการขนย้ายยอดนิยม
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: left; color: #d0d7e1;">
+                <div>
+                    <h4 style="color: var(--blue-neon); font-size: 1.1rem; margin-bottom: 10px;">กรุงเทพฯ & ปริมณฑล</h4>
+                    <ul style="list-style: none; font-size: 0.9rem; line-height: 1.8;">
+                        <li><i class="fa-solid fa-check" style="color: var(--green-neon); margin-right: 5px;"></i> ลาดพร้าว / จตุจักร / รัชดา</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--green-neon); margin-right: 5px;"></i> บางแค / ฝั่งธน / พระราม 2</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--green-neon); margin-right: 5px;"></i> นนทบุรี / ปทุมธานี / สมุทรปราการ</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--blue-neon); font-size: 1.1rem; margin-bottom: 10px;">เส้นทางต่างจังหวัด</h4>
+                    <ul style="list-style: none; font-size: 0.9rem; line-height: 1.8;">
+                        <li><i class="fa-solid fa-check" style="color: var(--green-neon); margin-right: 5px;"></i> ภาคเหนือ (เชียงใหม่/นครสวรรค์)</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--green-neon); margin-right: 5px;"></i> ภาคอีสาน (โคราช/ขอนแก่น/อุดร)</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--green-neon); margin-right: 5px;"></i> ภาคใต้ / ภาคตะวันออก</li>
+                    </ul>
+                </div>
+                <div>
+                     <h4 style="color: var(--blue-neon); font-size: 1.1rem; margin-bottom: 10px;">ประเภทรถให้บริการ</h4>
+                    <ul style="list-style: none; font-size: 0.9rem; line-height: 1.8;">
+                        <li><i class="fa-solid fa-check" style="color: var(--green-neon); margin-right: 5px;"></i> รถกระบะตู้ทึบ (ขนของทั่วไป/ย้ายหอ)</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--green-neon); margin-right: 5px;"></i> รถกระบะคอก (ขนสินค้าเกษตร/มอไซค์)</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--green-neon); margin-right: 5px;"></i> รถ 4 ล้อรับจ้าง (ย้ายบ้านทั้งหลัง)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="work-header">
+                <h2>คำถามที่พบบ่อย (FAQ)</h2>
+                <p style="color:#aaa;">ข้อสงสัยเกี่ยวกับการขนย้ายบ้าน/หอพัก</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span><i class="fa-solid fa-calculator" style="color:var(--orange-lava)"></i> คิดราคาค่าขนย้ายยังไงครับ?</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>ราคาขึ้นอยู่กับ 3 ปัจจัยหลักครับ: <strong>1. ระยะทาง (ต้นทาง-ปลายทาง)</strong> <strong>2. ประเภทรถที่ใช้ (กระบะ/6ล้อ)</strong> และ <strong>3. จำนวนคนยกของ</strong> แนะนำให้ทักแชทแจ้งรายละเอียดเพื่อรับราคาเหมาที่คุ้มค่าที่สุดครับ</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span><i class="fa-solid fa-box" style="color:var(--orange-lava)"></i> ต้องเก็บของลงกล่องเองไหม?</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>สำหรับของจุกจิก เสื้อผ้า หนังสือ แนะนำให้ลูกค้าใส่กล่องหรือถุงไว้เพื่อความรวดเร็วครับ ส่วน <strong>เฟอร์นิเจอร์ชิ้นใหญ่</strong> (ตู้, เตียง, ทีวี) ทางทีมงานจะช่วยห่อกันกระแทกและยกให้ครับ</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span><i class="fa-solid fa-users" style="color:var(--orange-lava)"></i> ไปช่วยขนด้วยได้ไหม นั่งไปกับรถได้ไหม?</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>ได้ครับ! ลูกค้าสามารถติดรถไปกับคนขับได้ 1 ท่าน (สำหรับรถกระบะ) และถ้าลูกค้ามีคนช่วยยกอยู่แล้ว สามารถจ้างเฉพาะรถอย่างเดียวได้ ราคาจะถูกลงครับ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
     <footer>
@@ -501,17 +604,83 @@
     </div>
 
     <script>
+        // --- MOBILE MENU SYSTEM ---
         const mobileBtn = document.querySelector('.mobile-menu-btn');
         const menuItems = document.querySelector('.menu-items');
-        mobileBtn.addEventListener('click', () => {
-            menuItems.classList.toggle('active');
-            const icon = mobileBtn.querySelector('i');
-            if(menuItems.classList.contains('active')){
-                icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars');
-            }
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownContainer = document.querySelector('.dropdown');
+
+        // 1. ปุ่ม Hamburger
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                menuItems.classList.toggle('active');
+                const icon = mobileBtn.querySelector('i');
+                if (menuItems.classList.contains('active')) {
+                    icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // 2. ปุ่ม Dropdown
+        if (dropdownToggle) {
+            dropdownToggle.addEventListener('click', (e) => {
+                e.preventDefault(); e.stopPropagation();
+                dropdownContainer.classList.toggle('active');
+            });
+        }
+
+        // 3. ปิดเมนูเมื่อกดลิงก์
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.classList.contains('dropdown-toggle')) return;
+                if (menuItems) menuItems.classList.remove('active');
+                if (mobileBtn) {
+                    const icon = mobileBtn.querySelector('i');
+                    icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars');
+                }
+            });
         });
+
+        // 4. FAQ Toggle Script (เพิ่มใหม่สำหรับหน้านี้)
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) otherItem.classList.remove('active');
+                });
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MovingCompany",
+      "name": "N&M18 TRANSPORT",
+      "image": "https://nm-transport.com/logo-nm18.png",
+      "telephone": "095-801-0958",
+      "url": "https://nm-transport.com/service-moving.html",
+      "priceRange": "฿500 - ฿10,000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bang Khae",
+        "addressRegion": "Bangkok",
+        "addressCountry": "TH"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Bangkok" },
+        { "@type": "City", "name": "Nonthaburi" },
+        { "@type": "City", "name": "Pathum Thani" },
+        { "@type": "City", "name": "Samut Prakan" },
+        { "@type": "Country", "name": "Thailand" }
+      ],
+      "description": "บริการรถรับจ้างย้ายบ้าน หอพัก คอนโด ขนย้ายเฟอร์นิเจอร์ รถกระบะตู้ทึบและรถ 4 ล้อรับจ้าง พร้อมคนยกของมืออาชีพ ราคาถูก บริการ 24 ชม.",
+      "openingHours": "Mo-Su 00:00-23:59"
+    }
     </script>
 
 </body>

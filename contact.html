@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>ติดต่อเรา จองคิวรถรับจ้าง ย้ายบ้าน ขนส่งสินค้า 24 ชม. - N&M18 TRANSPORT</title>
+    <meta name="description" content="ติดต่อ N&M18 TRANSPORT โทร 095-801-0958 (คุณนิว) จองคิวรถกระบะรับจ้าง รถ 4 ล้อ ย้ายบ้าน ย้ายหอ ขนส่งสินค้าทั่วไทย ปรึกษาประเมินราคาฟรี แอดไลน์ @952yyanc บริการ 24 ชม.">
+    <meta name="keywords" content="ติดต่อรถรับจ้าง, จองรถขนของ, เบอร์โทรถรับจ้าง, แผนที่ N&M18 TRANSPORT, รถรับจ้าง นครสวรรค์, รถรับจ้าง กรุงเทพ, ไลน์รถรับจ้าง, จองคิวรถย้ายบ้าน, ขนส่งสินค้าทั่วไทย">
+
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-
-<link rel="manifest" href="site.webmanifest">
-
-<link rel="shortcut icon" href="favicon.ico">
-    <title>ติดต่อเรา - N&M18 TRANSPORT ขนส่งด่วน</title>
-    <meta name="description" content="ติดต่อ N&M18 TRANSPORT สอบถามราคาจองคิวรถกระบะรับจ้าง ย้ายของ โทร 095-801-0958 หรือแอดไลน์ บริการ 24 ชม.">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" href="favicon.ico">
 
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -74,7 +74,7 @@
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* --- HEADER & NAV --- */
+        /* --- HEADER & NAV (UPDATED TO MATCH INDEX) --- */
         a { text-decoration: none; transition: 0.3s; }
         ul { list-style: none; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -99,22 +99,143 @@
         }
         .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
         
-        .logo-container { display: flex; align-items: center; justify-content: center; }
-        .logo-img { height: 85px; width: auto; object-fit: contain; filter: contrast(1.1); transition: transform 0.3s ease; }
+        /* Logo */
+        .logo-container { display: flex; align-items: center; justify-content: center; padding: 0;}
+        .logo-img { height: 85px; width: auto; object-fit: contain; filter: contrast(1.1); transition: transform 0.3s ease; display: block; }
         .logo-img:hover { transform: scale(1.05); }
 
+        /* Menu */
         .menu-items { display: flex; align-items: center; gap: 25px; }
+        .mobile-menu-btn { display: none; font-size: 1.8rem; color: var(--white); cursor: pointer; }
 
         .nav-link { color: var(--text-gray); font-weight: 500; position: relative; padding: 5px 0; transition: 0.3s; font-size: 1rem; }
         .nav-link:hover, .nav-link.active { color: var(--white); text-shadow: 0 0 15px rgba(255, 69, 0, 0.8); }
 
+        /* Button Style match Index */
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 35px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; position: relative; overflow: hidden; transition: all 0.3s ease; letter-spacing: 0.5px; z-index: 10; }
+        
         .btn-outline-contact {
             border: 2px solid var(--orange-lava); color: var(--orange-lava); background: transparent;
-            padding: 8px 25px; border-radius: 50px; font-weight: 600; display: inline-flex;
-            align-items: center; justify-content: center; transition: 0.3s;
         }
         .btn-outline-contact:hover, .btn-outline-contact.active-page {
-            background: var(--orange-lava); color: var(--white); box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+            background: var(--orange-lava); color: var(--white); box-shadow: var(--neon-shadow);
+        }
+
+        /* --- DROPDOWN MENU --- */
+        .dropdown { position: relative; }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(5, 10, 20, 0.98);
+            min-width: 220px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-top: 2px solid var(--orange-lava);
+            flex-direction: column;
+            padding: 10px 0;
+            border-radius: 0 0 10px 10px;
+            z-index: 1100;
+        }
+
+        .dropdown-menu a {
+            padding: 12px 20px;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            display: block;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            width: 100%;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(255, 69, 0, 0.1);
+            color: var(--orange-lava);
+            padding-left: 25px;
+        }
+
+        /* Desktop Hover */
+        @media(min-width: 768px) {
+            .dropdown:hover .dropdown-menu { display: flex; animation: slideUp 0.3s ease; }
+            @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+            
+            /* Nav Link Underline Effect */
+            .nav-link::after {
+                content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%;
+                background-color: var(--orange-lava); transition: all 0.3s ease-in-out;
+                box-shadow: 0 0 10px var(--orange-lava);
+            }
+            .nav-link:hover::after, .nav-link.active::after { width: 100%; left: 0; }
+            .top-bar-left { display: block; }
+        }
+
+        /* --- MOBILE RESPONSIVE NAV --- */
+        @media(max-width: 768px) {
+            .nav-wrapper { justify-content: space-between; padding: 0 10px; }
+            .logo-img { height: 50px; }
+            .top-bar-left { display: none; }
+            .top-bar-right { width: 100%; justify-content: center; }
+            
+            .mobile-menu-btn { display: block; }
+            
+            .menu-items {
+                display: none;
+                position: absolute;
+                top: 100%; left: 0; width: 100%;
+                background: rgba(5, 10, 20, 0.98);
+                flex-direction: column;
+                padding: 20px 0;
+                gap: 0;
+                border-bottom: 2px solid var(--orange-lava);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+            }
+            .menu-items.active { display: flex; animation: slideDown 0.3s ease; }
+            @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+            .nav-link { 
+                display: block; width: 100%; text-align: center; 
+                padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); 
+                font-size: 1.2rem;
+            }
+            .nav-link:last-child { border-bottom: none; }
+            
+            .btn-outline-contact {
+                margin-top: 15px; width: 80%; text-align: center;
+            }
+
+            /* Dropdown Mobile */
+            .dropdown-menu {
+                display: none; 
+                position: static;
+                background: rgba(255,255,255,0.02);
+                box-shadow: none;
+                border-top: none;
+                padding-left: 0;
+                width: 100%;
+            }
+            .dropdown.active .dropdown-menu { display: flex; }
+            .dropdown-menu a { text-align: center; }
+
+            /* Contact Page Specific Mobile Fixes */
+            .contact-section { padding: 40px 0 80px; }
+            .glass-panel { 
+                grid-template-columns: 1fr;
+                padding: 20px; gap: 25px; 
+                border-radius: 16px;
+            }
+            .section-header h1 { font-size: 1.8rem; }
+            .contact-card { padding: 15px; gap: 15px; }
+            .icon-box { width: 40px; height: 40px; font-size: 1.1rem; border-radius: 8px; }
+            .map-frame { min-height: 250px; }
+            .action-buttons { flex-direction: column; }
+            
+            .footer-grid { text-align: center; }
+            .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+            .footer-bottom { justify-content: center; text-align: center; flex-direction: column; }
+            .footer-contact-item { justify-content: center; }
+            .footer-logo { margin: 0 auto 20px; display: block; }
+            
+            body { padding-bottom: 80px; }
         }
 
         /* --- MAIN SECTION --- */
@@ -186,10 +307,7 @@
         }
 
         .action-buttons { display: flex; gap: 15px; margin-top: 25px; }
-        .btn {
-            flex: 1; padding: 14px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem;
-            cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
-        }
+        
         .btn-call { background: var(--orange-lava); color: #fff; box-shadow: 0 0 15px rgba(255, 69, 0, 0.4); }
         .btn-line { background: var(--green-neon); color: #fff; box-shadow: 0 0 15px rgba(6, 199, 85, 0.4); }
 
@@ -224,120 +342,11 @@
             text-decoration: none;
         }
 
-        /* --- MOBILE RESPONSIVE --- */
+        /* --- MOBILE RESPONSIVE STICKY --- */
         @media(min-width: 768px) {
-            .sticky-bar { display: none; } /* ซ่อน Sticky bar บน PC */
+            .sticky-bar { display: none; } 
         }
 
-        @media(max-width: 768px) {
-            .nav-wrapper { justify-content: space-between; }
-            .logo-img { height: 60px; }
-            .top-bar-left { display: none; }
-            .top-bar-right { width: 100%; justify-content: center; }
-            .menu-items { display: none; } 
-
-            /* แก้ไขส่วน Contact ให้เรียงแนวตั้ง */
-            .contact-section { padding: 40px 0 80px; }
-            .glass-panel { 
-                grid-template-columns: 1fr; /* เปลี่ยนจาก 2 คอลัมน์เป็น 1 */
-                padding: 20px; gap: 25px; 
-                border-radius: 16px;
-            }
-            .section-header h1 { font-size: 1.8rem; }
-            
-            .contact-card { padding: 15px; gap: 15px; }
-            .icon-box { width: 40px; height: 40px; font-size: 1.1rem; border-radius: 8px; }
-            
-            /* แผนที่และปุ่ม */
-            .map-frame { min-height: 250px; }
-            .action-buttons { flex-direction: column; }
-
-            /* Footer */
-            .footer-grid { text-align: center; }
-            .footer-col h4::after { left: 50%; transform: translateX(-50%); }
-            .footer-bottom { justify-content: center; text-align: center; flex-direction: column; }
-            .footer-contact-item { justify-content: center; }
-            .footer-logo { margin: 0 auto 20px; display: block; }
-
-            /* ดันเนื้อหาขึ้นเพื่อไม่ให้ Sticky Bar บัง */
-            body { padding-bottom: 80px; }
-        }
-
-        /* --- DROPDOWN MENU STYLE (เพิ่มส่วนนี้เข้าไป) --- */
-.dropdown { position: relative; }
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: -20px; /* ปรับตำแหน่งให้ตรงกับดีไซน์ */
-    background: rgba(5, 10, 20, 0.98);
-    min-width: 220px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border-top: 2px solid var(--orange-lava);
-    flex-direction: column;
-    padding: 10px 0;
-    border-radius: 0 0 10px 10px;
-    z-index: 1100;
-}
-
-.dropdown-menu a {
-    padding: 12px 20px;
-    color: #B0B8C4; /* ใช้สีเทาตามธีมเดิม */
-    font-size: 0.95rem;
-    display: block;
-    text-align: left;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-    width: 100%; /* ให้เต็มความกว้าง */
-}
-
-.dropdown-menu a:hover {
-    background: rgba(255, 69, 0, 0.1);
-    color: var(--orange-lava);
-    padding-left: 25px; /* Effect ขยับ */
-}
-
-/* แสดงเมนูเมื่อเอาเมาส์ชี้ (Desktop) */
-@media(min-width: 768px) {
-    .dropdown:hover .dropdown-menu { 
-        display: flex; 
-        animation: slideUp 0.3s ease; 
-    }
-    @keyframes slideUp { 
-        from { opacity: 0; transform: translateY(10px); } 
-        to { opacity: 1; transform: translateY(0); } 
-    }
-}
-
-/* ปรับแต่งสำหรับมือถือ (Mobile) */
-@media(max-width: 768px) {
-    .dropdown-menu {
-        display: none; /* ซ่อนไว้ก่อน */
-        position: static; /* ให้เรียงต่อกันลงมา */
-        background: rgba(255,255,255,0.02);
-        box-shadow: none;
-        border-top: none;
-        padding-left: 0;
-        width: 100%;
-    }
-    
-    /* ให้แสดงเมนูย่อยเสมอ หรือเมื่อกด (ขึ้นอยู่กับดีไซน์) */
-    .dropdown:hover .dropdown-menu, 
-    .menu-items.active .dropdown-menu { 
-        display: flex; 
-    }
-
-    .dropdown > a::after { 
-        
-        font-size: 0.7rem; 
-        margin-left: 5px; 
-    }
-    
-    .dropdown-menu a {
-        text-align: center; /* จัดกลางในมือถือ */
-        padding-left: 0;
-    }
-}
     </style>
 </head>
 <body>
@@ -362,23 +371,27 @@
 
     <header>
         <div class="container nav-wrapper">
-          <a href="index.html" class="logo-container">
-    <img src="logo-nm18.png" alt="N&M18 TRANSPORT Logo" class="logo-img">
-</a>
+           <a href="index.html" class="logo-container">
+                <img src="logo-nm18.png" alt="N&M18 TRANSPORT Logo" class="logo-img">
+            </a>
+            
+            <div class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
             <div class="menu-items">
                 <a href="index.html" class="nav-link">หน้าแรก</a>
-                <div class="dropdown">
-   <div class="dropdown">
-    <a href="javascript:void(0)" class="nav-link dropdown-toggle">บริการ <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></a>
-    <div class="dropdown-menu">
-        <a href="service-moving.html"><i class="fa-solid fa-box-open"></i> ขนย้ายของ / ย้ายบ้าน</a>
-        <a href="service-pets.html"><i class="fa-solid fa-paw"></i> รับส่งสัตว์เลี้ยง</a>
-        <a href="service-moto.html"><i class="fa-solid fa-motorcycle"></i> ขนส่งมอเตอร์ไซค์</a>
-    </div>
-</div>
+               <div class="dropdown">
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle">บริการ <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="service-moving.html"><i class="fa-solid fa-box-open"></i> ขนย้ายของ / ย้ายบ้าน</a>
+                        <a href="service-pets.html"><i class="fa-solid fa-paw"></i> รับส่งสัตว์เลี้ยง</a>
+                        <a href="service-moto.html"><i class="fa-solid fa-motorcycle"></i> ขนส่งมอเตอร์ไซค์</a>
+                    </div>
+                </div>
                 <a href="works.html" class="nav-link">ผลงาน</a>
                 <a href="index.html#how-it-works" class="nav-link">ขั้นตอน</a>
-                <a href="contact.html" class="btn-outline-contact active-page">ติดต่อเรา</a>
+                <a href="contact.html" class="btn btn-outline-contact active-page" style="padding: 8px 25px;">ติดต่อเรา</a>
             </div>
         </div>
     </header>
@@ -532,19 +545,6 @@
     </div>
 
     <script>
-        // SCRIPT FOR LOADING SCREEN
-        window.addEventListener('load', function() {
-            const loader = document.getElementById('loading-screen');
-            if (loader) {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                }, 500);
-            }
-        });
-    </script>
-
-    <script>
         // --- 1. SCRIPT FOR LOADING SCREEN ---
         window.addEventListener('load', function() {
             const loader = document.getElementById('loading-screen');
@@ -599,6 +599,51 @@
                 }
             });
         });
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TransportationService",
+      "name": "N&M18 TRANSPORT",
+      "telephone": "095-801-0958",
+      "image": "https://nm-transport.com/logo-nm18.png",
+      "url": "https://nm-transport.com/contact.html",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "232/8 หมู่ 3 ซอยมหาโพธิ 15/1",
+        "addressLocality": "เก้าเลี้ยว",
+        "addressRegion": "นครสวรรค์",
+        "postalCode": "60230",
+        "addressCountry": "TH"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "15.8456", 
+        "longitude": "100.0871"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "095-801-0958",
+        "contactType": "customer service",
+        "areaServed": "TH",
+        "availableLanguage": "Thai"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    }
     </script>
 
 </body>

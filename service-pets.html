@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>บริการรับส่งสัตว์เลี้ยง VIP - N&M18 TRANSPORT</title>
     
+    <title>รับส่งสัตว์เลี้ยง Pet Taxi รถเก๋ง/SUV แอร์เย็นฉ่ำ รับส่งน้องหมาน้องแมวทั่วไทย - N&M18 TRANSPORT</title>
+    <meta name="description" content="บริการรับส่งสัตว์เลี้ยง Pet Taxi รับส่งน้องหมา น้องแมว ไปต่างจังหวัดและในกรุงเทพฯ ด้วยรถยนต์ส่วนตัว (รถเก๋ง/SUV) แอร์เย็น ไม่ร้อน ดูแลเหมือนลูกหลาน ไม่ต้องขังหลังกระบะ โทร 095-801-0958">
+    <meta name="keywords" content="รับส่งสัตว์เลี้ยง, Pet Taxi, แท็กซี่สัตว์เลี้ยง, รับส่งน้องหมา, รับส่งน้องแมว, รถรับส่งสัตว์เลี้ยง, ส่งสัตว์เลี้ยงไปต่างจังหวัด, Pet Transport Thailand, รถรับจ้างขนสัตว์เลี้ยง, รถเก๋งรับจ้าง">
+
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" href="favicon.ico">
+    
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -164,6 +172,23 @@
         }
         .btn-vip:hover { transform: scale(1.05); box-shadow: 0 0 35px rgba(255, 215, 0, 0.7); }
 
+        /* --- 2. ADDED STYLES FOR FAQ & SERVICE AREA --- */
+        .faq-item {
+            margin-bottom: 15px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px;
+            background: rgba(15, 28, 56, 0.6); overflow: hidden; transition: all 0.3s ease;
+        }
+        .faq-item:hover { border-color: var(--pet-gold); box-shadow: 0 0 15px rgba(255, 215, 0, 0.2); }
+        .faq-question {
+            width: 100%; padding: 20px; background: none; border: none; color: var(--white);
+            font-size: 1.1rem; font-weight: 500; text-align: left; display: flex; justify-content: space-between; align-items: center; cursor: pointer;
+            font-family: 'Prompt', sans-serif; outline: none;
+        }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: rgba(0, 0, 0, 0.2); }
+        .faq-answer p { padding: 20px; color: #ccc; line-height: 1.6; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .faq-item.active { background: var(--navy-primary); border-color: var(--pet-gold); }
+        .faq-item.active .arrow { transform: rotate(180deg); transition: 0.3s; }
+        .faq-item.active .faq-answer { max-height: 200px; }
+
         /* --- MOBILE NAV & RESPONSIVE FIXES --- */
         .mobile-menu-btn { display: none; font-size: 1.8rem; color: white; cursor: pointer; }
         
@@ -212,6 +237,11 @@
             .system-item { padding: 12px 15px; margin-bottom: 10px; gap: 10px; }
             .system-item h4 { font-size: 1rem; }
             .system-item p { font-size: 0.85rem; }
+            
+            /* Dropdown Mobile */
+            .dropdown-menu { display: none; position: static; background: transparent; box-shadow: none; border: none; padding-left: 0; width: 100%; }
+            .dropdown.active .dropdown-menu { display: flex; }
+            .dropdown-menu a { background: rgba(255,255,255,0.03); padding-left: 0; text-align: center; }
         }
 
         /* --- STICKY BAR --- */
@@ -357,6 +387,76 @@
             </div>
         </div>
 
+        <section class="container" style="margin-top: 40px; margin-bottom: 60px; padding: 30px; background: rgba(15, 28, 56, 0.6); border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
+            <h3 style="color: var(--white); text-align: center; margin-bottom: 25px; font-size: 1.5rem;">
+                <i class="fa-solid fa-map-location-dot" style="color: var(--pet-gold);"></i> พื้นที่รับ-ส่งน้องๆ ยอดนิยม
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: left; color: #d0d7e1;">
+                <div>
+                    <h4 style="color: var(--green-neon); font-size: 1.1rem; margin-bottom: 10px;">ในกรุงเทพฯ & ปริมณฑล</h4>
+                    <ul style="list-style: none; font-size: 0.9rem; line-height: 1.8;">
+                        <li><i class="fa-solid fa-check" style="color: var(--pet-gold); margin-right: 5px;"></i> ลาดพร้าว / จตุจักร / รามอินทรา</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--pet-gold); margin-right: 5px;"></i> บางแค / พระราม 2 / ฝั่งธน</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--pet-gold); margin-right: 5px;"></i> รังสิต / นนทบุรี / สมุทรปราการ</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--green-neon); font-size: 1.1rem; margin-bottom: 10px;">ต่างจังหวัด (เหมาคัน)</h4>
+                    <ul style="list-style: none; font-size: 0.9rem; line-height: 1.8;">
+                        <li><i class="fa-solid fa-check" style="color: var(--pet-gold); margin-right: 5px;"></i> ชลบุรี / พัทยา / ระยอง</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--pet-gold); margin-right: 5px;"></i> หัวหิน / ประจวบฯ</li>
+                        <li><i class="fa-solid fa-check" style="color: var(--pet-gold); margin-right: 5px;"></i> เชียงใหม่ / โคราช (นัดล่วงหน้า)</li>
+                    </ul>
+                </div>
+                <div>
+                     <h4 style="color: var(--green-neon); font-size: 1.1rem; margin-bottom: 10px;">ประเภทรถที่ใช้ (4 ล้อเท่านั้น)</h4>
+                    <ul style="list-style: none; font-size: 0.9rem; line-height: 1.8;">
+                        <li><i class="fa-solid fa-car" style="color: var(--pet-gold); margin-right: 5px;"></i> รถเก๋งส่วนตัว (Private Car)</li>
+                        <li><i class="fa-solid fa-truck-pickup" style="color: var(--pet-gold); margin-right: 5px;"></i> รถ SUV (สำหรับน้องตัวใหญ่)</li>
+                        <li><i class="fa-solid fa-wind" style="color: var(--pet-gold); margin-right: 5px;"></i> แอร์เย็นฉ่ำ ไม่ขังกรงหลังกระบะ</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="container" style="margin-bottom: 60px;">
+            <div class="gallery-showcase" style="margin: 0; padding: 20px; background: transparent; border: none; box-shadow: none;">
+                <h2 style="color: white; margin-bottom: 20px;">คำถามที่พบบ่อย (FAQ)</h2>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span><i class="fa-solid fa-user-plus" style="color:var(--pet-gold)"></i> เจ้าของนั่งรถไปด้วยได้ไหม?</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>ได้ครับ!</strong> เนื่องจากเราใช้รถเก๋ง/SUV ส่วนตัว ลูกค้าสามารถนั่งไปกับน้องได้เลย (1 ท่าน) ช่วยให้ประหยัดค่าเดินทางและได้ดูแลน้องอย่างใกล้ชิดครับ</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span><i class="fa-solid fa-box" style="color:var(--pet-gold)"></i> ไม่มีกรง น้องขึ้นรถได้ไหม?</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>แนะนำให้ใส่กรงหรือ Box เดินทางเพื่อความปลอดภัยสูงสุดครับ แต่ถ้าน้องเชื่องมากและลูกค้าเตรียมผ้ารองกันเปื้อนมาเอง สามารถสอบถามเป็นกรณีไปได้ครับ</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span><i class="fa-solid fa-clock" style="color:var(--pet-gold)"></i> ต้องจองล่วงหน้ากี่วัน?</span>
+                        <i class="fa-solid fa-chevron-down arrow"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>แนะนำให้จองล่วงหน้า <strong>1-3 วัน</strong> ครับ โดยเฉพาะช่วงเสาร์-อาทิตย์ หรือวันหยุดยาว คิวจะเต็มเร็วมาก แต่ถ้าเคสด่วนลองโทรเช็คคิวได้ตลอด 24 ชม. ครับ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
     <footer style="background: #02060d; padding: 40px 0 20px; border-top: 1px solid rgba(255,255,255,0.05); text-align: center;">
@@ -385,17 +485,84 @@
     </div>
 
     <script>
+        // --- MOBILE MENU SYSTEM ---
         const mobileBtn = document.querySelector('.mobile-menu-btn');
         const menuItems = document.querySelector('.menu-items');
-        mobileBtn.addEventListener('click', () => {
-            menuItems.classList.toggle('active');
-            const icon = mobileBtn.querySelector('i');
-            if(menuItems.classList.contains('active')){
-                icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars');
-            }
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownContainer = document.querySelector('.dropdown');
+
+        // 1. ปุ่ม Hamburger
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                menuItems.classList.toggle('active');
+                const icon = mobileBtn.querySelector('i');
+                if (menuItems.classList.contains('active')) {
+                    icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // 2. ปุ่ม Dropdown
+        if (dropdownToggle) {
+            dropdownToggle.addEventListener('click', (e) => {
+                e.preventDefault(); e.stopPropagation();
+                dropdownContainer.classList.toggle('active');
+            });
+        }
+
+        // 3. ปิดเมนูเมื่อกดลิงก์
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.classList.contains('dropdown-toggle')) return;
+                if (menuItems) menuItems.classList.remove('active');
+                if (mobileBtn) {
+                    const icon = mobileBtn.querySelector('i');
+                    icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars');
+                }
+            });
         });
+
+        // 4. FAQ Toggle Script
+        const questions = document.querySelectorAll('.faq-question');
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) otherItem.classList.remove('active');
+                });
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TaxiService",
+      "name": "N&M18 TRANSPORT Pet Taxi",
+      "image": "https://nm-transport.com/logo-nm18.png",
+      "telephone": "095-801-0958",
+      "url": "https://nm-transport.com/service-pets.html",
+      "priceRange": "฿500 - ฿5,000",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bang Khae",
+        "addressRegion": "Bangkok",
+        "addressCountry": "TH"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Bangkok" },
+        { "@type": "City", "name": "Nonthaburi" },
+        { "@type": "City", "name": "Pathum Thani" },
+        { "@type": "City", "name": "Samut Prakan" },
+        { "@type": "City", "name": "Chon Buri" },
+        { "@type": "City", "name": "Hua Hin" }
+      ],
+      "description": "บริการรับส่งสัตว์เลี้ยง Pet Taxi ทั่วไทย รถเก๋ง/SUV ส่วนตัว แอร์เย็น ไม่ขังกรงกระบะ เจ้าของนั่งไปด้วยได้ สะอาด ปลอดภัย",
+      "openingHours": "Mo-Su 00:00-23:59"
+    }
     </script>
 
 </body>
