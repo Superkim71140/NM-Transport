@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผลงานของเรา - N&M18 TRANSPORT | รถกระบะรับจ้าง 4 ล้อ ตู้ทึบ</title>
     
-    <title>รวมผลงาน รีวิวรถรับจ้าง 4 ล้อ รถกระบะตู้ทึบ ย้ายบ้าน ส่งรถมอเตอร์ไซค์ - N&M18 TRANSPORT</title>
-    <meta name="description" content="ชมภาพผลงานจริงและรีวิว N&M18 TRANSPORT บริการรถกระบะรับจ้าง 4 ล้อ ตู้ทึบ ย้ายบ้าน ย้ายหอ ขนส่งมอเตอร์ไซค์ทั่วไทย งานดี แพ็คแน่น ปลอดภัย 100% โทร 095-801-0958">
-    <meta name="keywords" content="ผลงานรถรับจ้าง, รีวิวรถขนของ, รถกระบะตู้ทึบ 4 ล้อ, ภาพงานย้ายบ้าน, ขนส่งมอเตอร์ไซค์ รีวิว, จ้างรถขนของ 4 ล้อ, รถรับจ้าง N&M18, ขนของย้ายหอพัก รูปงานจริง">
-
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -43,7 +40,7 @@
             background-color: var(--navy-dark);
             color: var(--text-gray);
             line-height: 1.6;
-            padding-bottom: 0; /* แก้ไข: ให้พอดีกับ Sticky bar */
+            padding-bottom: 70px; /* เผื่อพื้นที่ให้ Sticky Bar ในมือถือ */
             
             background-image: 
                 linear-gradient(rgba(5, 10, 20, 0.95), rgba(5, 10, 20, 0.98)), 
@@ -281,63 +278,6 @@
         .btn-line { background: var(--line-green); box-shadow: 0 0 15px rgba(6, 199, 85, 0.6); }
         .btn-fb { background: var(--fb-blue); }
 
-        /* --- MOBILE & RESPONSIVE (รวมทั้งหมดที่นี่) --- */
-        @media(min-width: 768px) {
-            .sticky-bar { display: none; } 
-            body { padding-bottom: 0; }
-        }
-
-        @media(max-width: 768px) {
-            /* Navbar */
-            .nav-wrapper { justify-content: space-between; }
-            .logo-img { height: 60px; }
-            .mobile-menu-btn { display: block; }
-            .top-bar-left { display: none; }
-            .top-bar-right { width: 100%; justify-content: center; }
-
-            .menu-items {
-                display: none; position: absolute; top: 100%; left: 0; width: 100%;
-                background: rgba(5, 10, 20, 0.98); flex-direction: column;
-                padding: 20px 0; gap: 0; border-bottom: 2px solid var(--orange-lava);
-            }
-            .menu-items.active { display: flex; animation: slideDown 0.3s ease; }
-            
-            .nav-link { 
-                display: block; width: 100%; text-align: center; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 1.2rem;
-            }
-            .nav-link:last-child { border-bottom: none; }
-            .btn-outline-contact { margin-top: 15px; width: 80%; text-align: center; }
-
-            /* Page Header & Gallery */
-            .page-header { padding: 90px 20px 40px; }
-            .page-header h1 { font-size: 1.8rem; }
-            
-            .gallery-grid { gap: 20px; padding: 0 10px; }
-            .img-wrapper { height: 180px; } /* รูปไม่ล้นจอ */
-            .card-content { padding: 20px; }
-            .card-title { font-size: 1.25rem; }
-            
-            /* Trust Box */
-            .trust-box { 
-                flex-direction: column; text-align: center; padding: 30px 20px; gap: 20px; 
-                border-radius: 15px;
-            }
-            .trust-img { width: 120px; height: 120px; margin: 0 auto; }
-            .trust-content h3 { font-size: 1.4rem; }
-
-            /* Footer */
-            .footer-grid { text-align: center; }
-            .footer-col h4::after { left: 50%; transform: translateX(-50%); }
-            .footer-bottom { justify-content: center; text-align: center; flex-direction: column; }
-            .footer-contact-item { justify-content: center; }
-            .footer-logo { margin: 0 auto 20px; display: block; }
-            
-            /* Body Padding for Sticky Bar */
-            body { padding-bottom: 80px; }
-        }
-
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-
         /* --- DROPDOWN MENU STYLE --- */
         .dropdown { position: relative; }
 
@@ -376,10 +316,36 @@
         @media(min-width: 768px) {
             .dropdown:hover .dropdown-menu { display: flex; animation: slideUp 0.3s ease; }
             @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+            .sticky-bar { display: none; } 
+            body { padding-bottom: 0; }
         }
 
-        /* Mobile Dropdown */
+        /* --- MOBILE & RESPONSIVE CONFIG --- */
         @media(max-width: 768px) {
+            /* 1. Navbar Adjustments */
+            .nav-wrapper { justify-content: space-between; padding: 0 15px; }
+            .logo-img { height: 55px; }
+            .mobile-menu-btn { display: block; }
+            .top-bar-left { display: none; }
+            .top-bar-right { width: 100%; justify-content: center; }
+
+            /* 2. Menu Items (Hamburger) */
+            .menu-items {
+                display: none; position: absolute; top: 100%; left: 0; width: 100%;
+                background: rgba(5, 10, 20, 0.98); flex-direction: column;
+                padding: 20px 0; gap: 0; border-bottom: 2px solid var(--orange-lava);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            }
+            .menu-items.active { display: flex; animation: slideDown 0.3s ease; }
+            
+            .nav-link { 
+                display: block; width: 100%; text-align: center; padding: 15px 0; 
+                border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 1.1rem;
+            }
+            .nav-link:last-child { border-bottom: none; }
+            .btn-outline-contact { margin-top: 15px; width: 80%; text-align: center; }
+
+            /* 3. Dropdown for Mobile */
             .dropdown-menu {
                 display: none; position: static;
                 background: rgba(255,255,255,0.02);
@@ -387,8 +353,41 @@
                 padding-left: 0; width: 100%;
             }
             .dropdown.active .dropdown-menu { display: flex; }
-            .dropdown-menu a { text-align: center; padding-left: 0; }
+            .dropdown-menu a { text-align: center; padding-left: 0; background: rgba(0,0,0,0.2); }
+
+            /* 4. Page Header & Content */
+            .page-header { padding: 100px 20px 40px; }
+            .page-header h1 { font-size: 1.8rem; line-height: 1.3; }
+            
+            /* 5. Gallery Grid (สำคัญ: ปรับให้เป็น 1 คอลัมน์) */
+            .gallery-grid { 
+                grid-template-columns: 1fr; /* 1 แถวต่อรูป */
+                gap: 25px; 
+                padding: 0 10px; 
+            }
+            .img-wrapper { height: 220px; } /* ความสูงรูปในมือถือ */
+            .card-content { padding: 20px; }
+            .card-title { font-size: 1.3rem; }
+            
+            /* 6. Trust Box (เรียงแนวตั้ง) */
+            .trust-box { 
+                flex-direction: column; text-align: center; 
+                padding: 40px 20px; gap: 20px; 
+                border-radius: 15px;
+                margin-top: 40px;
+            }
+            .trust-img { width: 140px; height: 140px; margin: 0 auto; }
+            .trust-content h3 { font-size: 1.5rem; }
+
+            /* 7. Footer Alignment */
+            .footer-grid { text-align: center; gap: 30px; }
+            .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+            .footer-bottom { justify-content: center; text-align: center; flex-direction: column; }
+            .footer-contact-item { justify-content: center; }
+            .footer-logo { margin: 0 auto 20px; display: block; }
         }
+
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
 
     </style>
 </head>
@@ -473,12 +472,12 @@
 
                 <div class="gallery-card">
                     <div class="img-wrapper">
-                        <img src="S__2531426.jpg" alt="รถกระบะตู้ทึบหลังคาสูง จุของเยอะ">
+                        <img src="S__2531426.jpg" alt="รถกระบะตู้ทึบหลังคาสูง รับงานเหมา">
                     </div>
                     <div class="card-content">
-                        <span class="card-tag"><i class="fa-solid fa-truck-moving"></i> งานเหมาคัน</span>
-                        <h3 class="card-title">รถกระบะตู้ทึบ จุของได้เยอะ</h3>
-                        <p class="card-desc">สำหรับงานย้ายสำนักงาน หรือย้ายบ้านทั้งหลัง เรามีรถตู้ทึบหลังคาสูง ใส่ของได้จุใจ พร้อมทีมงานขนยก</p>
+                        <span class="card-tag"><i class="fa-solid fa-truck-pickup"></i> รถตู้ทึบหลังคาสูง</span>
+                        <h3 class="card-title">กระบะตู้ทึบ จุของได้เยอะ</h3>
+                        <p class="card-desc">สำหรับงานย้ายสำนักงาน หรือย้ายบ้านทั้งหลัง เรามีรถตู้ทึบหลังคาสูง 2.10 เมตร ใส่ของได้จุใจ พร้อมทีมงานขนยก</p>
                     </div>
                 </div>
 
@@ -555,7 +554,7 @@
                 <div class="trust-content">
                     <h3>บริการด้วยรอยยิ้ม เป็นกันเอง</h3>
                     <p>N&M18 TRANSPORT เราเน้นบริการที่สุภาพ จริงใจ และราคาเป็นมิตร คุยง่าย ต่อรองได้ เราดูแลสินค้าของท่านเหมือนเป็นของคนในครอบครัว</p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: start;">
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; /* จัดกึ่งกลางในมือถือ */">
                         <a href="tel:0958010958" class="btn-outline-contact" style="background: var(--orange-lava); color: white; border: none; padding: 12px 30px; font-size: 1.1rem;">
                             <i class="fa-solid fa-phone-volume"></i> โทรปรึกษาฟรี
                         </a>
