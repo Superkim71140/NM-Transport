@@ -187,6 +187,31 @@
             .nav-wrapper { justify-content: space-between; }
             .top-bar-left { display: none; }
             .top-bar-right { width: 100%; justify-content: flex-end; }
+
+            @media(max-width: 768px) {
+    /* ... (โค้ดเดิมอื่นๆ) ... */
+
+    .dropdown-menu {
+        display: none; /* ซ่อนไว้ก่อน */
+        position: static;
+        background: rgba(255,255,255,0.02);
+        box-shadow: none;
+        border-top: none;
+        padding-left: 0; /* จัดชิดซ้าย */
+        width: 100%;
+    }
+    
+    /* บรรทัดนี้สำคัญมาก! สั่งให้โชว์เมนูเมื่อมี class 'active' */
+    .dropdown.active .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .dropdown-menu a {
+        padding-left: 20px; /* ขยับตัวหนังสือย่อยเข้าไปนิดนึงให้ดูง่าย */
+        background: rgba(0,0,0,0.2);
+    }
+}
             
             /* Mobile Menu */
             .mobile-menu-btn { display: block; }
@@ -259,14 +284,16 @@
 
             <div class="menu-items">
                 <a href="index.html" class="nav-link">หน้าแรก</a>
-                <div class="dropdown">
-                    <a href="#" class="nav-link" style="color:var(--white);">บริการ <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></a>
-                    <div class="dropdown-menu">
-                        <a href="service-moving.html"><i class="fa-solid fa-box-open"></i> ขนย้ายของ / ย้ายบ้าน</a>
-                        <a href="service-pets.html"><i class="fa-solid fa-paw"></i> รับส่งสัตว์เลี้ยง</a>
-                        <a href="service-moto.html" style="color:var(--blue-neon);"><i class="fa-solid fa-motorcycle"></i> ขนส่งมอเตอร์ไซค์</a>
-                    </div>
-                </div>
+               <div class="dropdown">
+    <a href="javascript:void(0)" class="nav-link dropdown-toggle" style="color:var(--white);">
+        บริการ <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i>
+    </a>
+    <div class="dropdown-menu">
+        <a href="service-moving.html"><i class="fa-solid fa-box-open"></i> ขนย้ายของ / ย้ายบ้าน</a>
+        <a href="service-pets.html"><i class="fa-solid fa-paw"></i> รับส่งสัตว์เลี้ยง</a>
+        <a href="service-moto.html" style="color:var(--blue-neon);"><i class="fa-solid fa-motorcycle"></i> ขนส่งมอเตอร์ไซค์</a>
+    </div>
+</div>
                 <a href="works.html" class="nav-link">ผลงาน</a>
                 <a href="contact.html" class="btn-outline-contact">ติดต่อเรา</a>
             </div>
@@ -357,19 +384,49 @@
         </a>
     </div>
 
-    <script>
+   <script>
+        // --- MOBILE MENU SYSTEM ---
         const mobileBtn = document.querySelector('.mobile-menu-btn');
         const menuItems = document.querySelector('.menu-items');
-        mobileBtn.addEventListener('click', () => {
-            menuItems.classList.toggle('active');
-            const icon = mobileBtn.querySelector('i');
-            if(menuItems.classList.contains('active')){
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownContainer = document.querySelector('.dropdown');
+
+        // 1. ปุ่ม Hamburger เปิด/ปิด เมนูหลัก
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                menuItems.classList.toggle('active');
+                const icon = mobileBtn.querySelector('i');
+                if (menuItems.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        }
+
+        // 2. ปุ่ม "บริการ" (กดแล้วเปิดเมนูย่อย)
+        if (dropdownToggle) {
+            dropdownToggle.addEventListener('click', (e) => {
+                e.preventDefault();   // ห้ามเปลี่ยนหน้า
+                e.stopPropagation();  // ห้ามส่งคำสั่งไปปิดเมนูหลัก
+                dropdownContainer.classList.toggle('active'); // สลับเปิด/ปิด เมนูย่อย
+            });
+        }
+
+        // 3. ปิดเมนูเมื่อกดลิงก์อื่นๆ
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.classList.contains('dropdown-toggle')) return; // ถ้ากดปุ่มบริการ ไม่ต้องปิด
+
+                if (menuItems) menuItems.classList.remove('active');
+                if (mobileBtn) {
+                    const icon = mobileBtn.querySelector('i');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
         });
     </script>
 
