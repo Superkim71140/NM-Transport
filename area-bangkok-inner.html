@@ -111,46 +111,69 @@
         .nav-link { color: var(--text-gray); font-weight: 500; position: relative; }
         .nav-link:hover, .nav-link.active { color: var(--white); text-shadow: 0 0 10px rgba(255, 69, 0, 0.6); }
 
-        /* Dropdown */
-       .dropdown-menu { 
-    display: none; 
-    position: absolute; 
-    top: 100%; 
-    left: 0; 
-    background: var(--navy-primary); 
-    min-width: 260px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
-    border-top: 3px solid var(--orange-lava); 
-    flex-direction: column; 
-    padding: 10px 0; 
-    border-radius: 0 0 10px 10px; 
-    z-index: 1100; 
-}
+       .dropdown { position: relative; }
+        
+        .dropdown-menu { 
+            display: none; 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            background: var(--navy-primary); /* ใช้สีพื้นหลังตามธีม */
+            min-width: 260px; /* กำหนดความกว้างขั้นต่ำ */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+            border-top: 3px solid var(--orange-lava); 
+            flex-direction: column; 
+            padding: 10px 0; 
+            border-radius: 0 0 10px 10px; 
+            z-index: 1100; 
+        }
 
-.dropdown-menu a { 
-    padding: 12px 20px; 
-    color: var(--text-gray); 
-    display: flex; /* ใช้ Flex จัดเรียง */
-    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
-    border-bottom: 1px solid rgba(255,255,255,0.05); 
-    transition: 0.2s; 
-    white-space: nowrap; /* ห้ามตัดบรรทัด (สำคัญ!) */
-}
+        .dropdown-menu a { 
+            padding: 12px 20px; 
+            color: var(--text-gray); 
+            display: flex; /* ★ แก้ตรงนี้: ใช้ Flex เพื่อจัดแนวนอน */
+            align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+            gap: 15px; /* ★ ระยะห่างระหว่าง ไอคอน กับ ตัวหนังสือ */
+            border-bottom: 1px solid rgba(255,255,255,0.05); 
+            transition: 0.3s; 
+            text-decoration: none;
+        }
 
+        /* ★ เพิ่มตรงนี้: บังคับให้ไอคอนทุกตัวกว้างเท่ากัน (25px) ตัวหนังสือจะได้เริ่มตรงกัน */
+        .dropdown-menu a i {
+            width: 25px;       
+            text-align: center; 
+            flex-shrink: 0; /* ห้ามไอคอนหดตัว */
+        }
 
-.dropdown-menu a i {
-    width: 25px;       /* กำหนดความกว้างไอคอนให้เท่ากัน */
-    text-align: center; /* จัดไอคอนให้อยู่กลางช่อง */
-    margin-right: 10px; /* ระยะห่างจากตัวหนังสือ */
-}
+        .dropdown-menu a:hover { 
+            background: rgba(255, 255, 255, 0.05); 
+            color: var(--orange-lava); 
+            padding-left: 25px; /* เอฟเฟกต์ขยับขวาเวลาเอาเมาส์ชี้ */
+        }
 
-.dropdown-menu a:hover { 
-    background: rgba(255, 69, 0, 0.1); 
-    color: var(--orange-lava); 
-    padding-left: 25px; /
-}
-        @media(min-width: 992px) { .dropdown:hover .dropdown-menu { display: flex; animation: slideUp 0.3s ease; } }
+        /* Desktop Only Animation */
+        @media(min-width: 992px) { 
+            .dropdown:hover .dropdown-menu { 
+                display: flex; 
+                animation: slideUp 0.3s ease; 
+            } 
+        }
         @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Mobile Menu Adjustments */
+        @media(max-width: 991px) {
+            .dropdown-menu { 
+                position: static; 
+                background: rgba(0,0,0,0.2); 
+                display: none; 
+                border-top: none; 
+                box-shadow: none; 
+                padding-left: 20px; 
+                min-width: 100%;
+            }
+            .dropdown.active .dropdown-menu { display: flex; }
+        }
 
         /* Mobile Menu */
         .mobile-menu-btn { display: none; font-size: 1.8rem; color: var(--white); cursor: pointer; }
