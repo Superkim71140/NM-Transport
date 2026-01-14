@@ -112,10 +112,43 @@
         .nav-link:hover, .nav-link.active { color: var(--white); text-shadow: 0 0 10px rgba(255, 69, 0, 0.6); }
 
         /* Dropdown */
-        .dropdown { position: relative; }
-        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; background: var(--navy-primary); min-width: 240px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border-top: 3px solid var(--orange-lava); flex-direction: column; padding: 10px 0; border-radius: 0 0 10px 10px; z-index: 1100; }
-        .dropdown-menu a { padding: 12px 20px; color: var(--text-gray); display: block; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.2s; }
-        .dropdown-menu a:hover { background: rgba(255, 69, 0, 0.1); color: var(--orange-lava); padding-left: 25px; }
+       .dropdown-menu { 
+    display: none; 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    background: var(--navy-primary); 
+    min-width: 260px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
+    border-top: 3px solid var(--orange-lava); 
+    flex-direction: column; 
+    padding: 10px 0; 
+    border-radius: 0 0 10px 10px; 
+    z-index: 1100; 
+}
+
+.dropdown-menu a { 
+    padding: 12px 20px; 
+    color: var(--text-gray); 
+    display: flex; /* ใช้ Flex จัดเรียง */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    border-bottom: 1px solid rgba(255,255,255,0.05); 
+    transition: 0.2s; 
+    white-space: nowrap; /* ห้ามตัดบรรทัด (สำคัญ!) */
+}
+
+
+.dropdown-menu a i {
+    width: 25px;       /* กำหนดความกว้างไอคอนให้เท่ากัน */
+    text-align: center; /* จัดไอคอนให้อยู่กลางช่อง */
+    margin-right: 10px; /* ระยะห่างจากตัวหนังสือ */
+}
+
+.dropdown-menu a:hover { 
+    background: rgba(255, 69, 0, 0.1); 
+    color: var(--orange-lava); 
+    padding-left: 25px; /
+}
         @media(min-width: 992px) { .dropdown:hover .dropdown-menu { display: flex; animation: slideUp 0.3s ease; } }
         @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -261,9 +294,8 @@
     <a href="area-thonburi.html"><i class="fa-solid fa-location-dot"></i> โซนฝั่งธน (Thonburi)</a>
     <a href="area-bangkok-inner.html"><i class="fa-solid fa-location-dot"></i> โซนกรุงเทพชั้นใน</a>
     <a href="area-perimeter.html"><i class="fa-solid fa-location-dot"></i> โซนปริมณฑล</a>
-    <a href="area-chiangmai.html"><i class="fa-solid fa-map-location-dot"></i> โซนเชียงใหม่ (Chiang Mai)</a>
     
-    <a href="area-chiangrai.html"><i class="fa-solid fa-map-location-dot"></i> โซนเชียงราย (Chiang Rai)</a>
+    <a href="area-chiangmai.html"><i class="fa-solid fa-map-location-dot"></i> โซนเชียงใหม่ (Chiang Mai)</a>
 </div>
 </div>
                 <a href="works.html" class="nav-link">ผลงาน</a>
