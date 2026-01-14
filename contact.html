@@ -74,7 +74,7 @@
         }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* --- HEADER & NAV (UPDATED TO MATCH INDEX) --- */
+        /* --- HEADER & NAV --- */
         a { text-decoration: none; transition: 0.3s; }
         ul { list-style: none; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -111,7 +111,7 @@
         .nav-link { color: var(--text-gray); font-weight: 500; position: relative; padding: 5px 0; transition: 0.3s; font-size: 1rem; }
         .nav-link:hover, .nav-link.active { color: var(--white); text-shadow: 0 0 15px rgba(255, 69, 0, 0.8); }
 
-        /* Button Style match Index */
+        /* Button Style */
         .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 35px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; position: relative; overflow: hidden; transition: all 0.3s ease; letter-spacing: 0.5px; z-index: 10; }
         
         .btn-outline-contact {
@@ -129,7 +129,7 @@
             top: 100%;
             left: 0;
             background: rgba(5, 10, 20, 0.98);
-            min-width: 220px;
+            min-width: 260px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             border-top: 2px solid var(--orange-lava);
             flex-direction: column;
@@ -142,10 +142,18 @@
             padding: 12px 20px;
             color: var(--text-gray);
             font-size: 0.95rem;
-            display: block;
-            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 15px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
             width: 100%;
+            text-decoration: none;
+        }
+
+        .dropdown-menu a i {
+            width: 25px;       
+            text-align: center; 
+            flex-shrink: 0; 
         }
 
         .dropdown-menu a:hover {
@@ -154,12 +162,10 @@
             padding-left: 25px;
         }
 
-        /* Desktop Hover */
         @media(min-width: 768px) {
             .dropdown:hover .dropdown-menu { display: flex; animation: slideUp 0.3s ease; }
             @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
             
-            /* Nav Link Underline Effect */
             .nav-link::after {
                 content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 50%;
                 background-color: var(--orange-lava); transition: all 0.3s ease-in-out;
@@ -169,11 +175,10 @@
             .top-bar-left { display: block; }
         }
 
-        /* --- MOBILE RESPONSIVE NAV & LAYOUT --- */
+        /* --- MOBILE RESPONSIVE --- */
         @media(max-width: 768px) {
-            .container { padding: 0 15px; } /* ปรับขอบข้างให้ไม่ชิดเกินไป */
+            .container { padding: 0 15px; } 
             
-            /* Header */
             .nav-wrapper { justify-content: space-between; padding: 0 10px; }
             .logo-img { height: 50px; }
             .top-bar-left { display: none; }
@@ -202,63 +207,50 @@
             }
             .nav-link:last-child { border-bottom: none; }
             
-            .btn-outline-contact {
-                margin-top: 15px; width: 80%; text-align: center;
-            }
+            .btn-outline-contact { margin-top: 15px; width: 80%; text-align: center; }
 
-            /* Dropdown Mobile */
             .dropdown-menu {
                 display: none; 
                 position: static;
                 background: rgba(255,255,255,0.02);
                 box-shadow: none;
                 border-top: none;
-                padding-left: 0;
+                padding-left: 20px;
                 width: 100%;
             }
+            .dropdown-menu a { text-align: left; }
             .dropdown.active .dropdown-menu { display: flex; }
-            .dropdown-menu a { text-align: center; }
 
-            /* Contact Page Specific Mobile Fixes (Optimized) */
-            .contact-section { padding: 30px 0 100px; } /* ลด Padding บน */
+            .contact-section { padding: 30px 0 100px; } 
             
-            .section-header { margin-bottom: 30px; }
-            .section-header h1 { font-size: 1.8rem; line-height: 1.2; margin-bottom: 5px; }
-            .section-header p { font-size: 0.95rem; padding: 0 10px; }
-
             .glass-panel { 
                 grid-template-columns: 1fr;
-                padding: 25px 15px; /* ลด Padding ข้างในกล่องให้เนื้อหาดูกว้างขึ้น */
+                padding: 25px 15px; 
                 gap: 25px; 
                 border-radius: 16px;
             }
             
-            .contact-card { 
-                padding: 15px; 
-                gap: 12px; /* ลดช่องว่างระหว่างไอคอนกับข้อความ */
+            /* --- แก้ไขแผนที่ล้นจอในมือถือ --- */
+            .map-container { 
+                width: 100% !important; 
+                min-height: 300px;
+                display: block;
+                overflow: hidden; /* ป้องกันส่วนเกิน */
+            }
+            .map-frame { 
+                width: 100% !important;
+                min-height: 300px; 
+                height: auto; 
+            }
+            .map-frame iframe {
+                width: 100% !important;
+                height: 300px !important;
+                max-width: 100%;
             }
             
-            .icon-box { 
-                width: 45px; height: 45px; /* ปรับขนาดไอคอนให้พอดี */
-                font-size: 1.2rem; 
-                border-radius: 10px; 
-            }
+            .action-buttons { flex-direction: column; gap: 12px; }
+            .action-buttons .btn { width: 100%; padding: 12px 0; }
             
-            .info-box h3 { font-size: 0.85rem; }
-            .info-box p { font-size: 1.1rem; }
-            
-            .map-frame { min-height: 250px; border-radius: 12px; }
-            
-            .action-buttons { 
-                flex-direction: column; 
-                gap: 12px; /* ระยะห่างปุ่ม */
-            }
-            .action-buttons .btn {
-                width: 100%; /* ปุ่มเต็มความกว้าง กดง่าย */
-                padding: 12px 0;
-            }
-            
-            /* Footer Mobile */
             .footer-grid { text-align: center; gap: 30px; }
             .footer-col h4::after { left: 50%; transform: translateX(-50%); }
             .footer-bottom { justify-content: center; text-align: center; flex-direction: column; gap: 10px; }
@@ -275,7 +267,6 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
 
-        /* Effects Glow */
         .bg-glow {
             position: absolute; width: 300px; height: 300px; background: var(--orange-lava);
             filter: blur(150px); opacity: 0.15; border-radius: 50%; z-index: -1; pointer-events: none;
@@ -287,7 +278,6 @@
         .section-header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; }
         .section-header p { color: var(--text-muted); font-size: 1.1rem; }
 
-        /* GLASS CARD LAYOUT */
         .glass-panel {
             background: var(--glass-bg); backdrop-filter: blur(30px);
             border: 1px solid var(--glass-border); border-radius: 24px; padding: 40px;
@@ -358,7 +348,7 @@
         .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; text-align: center; font-size: 0.9rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px; }
         .dev-credit a { color: var(--blue-neon); font-weight: 600; }
 
-        /* --- STICKY BAR (Mobile Only) --- */
+        /* --- STICKY BAR --- */
         .sticky-bar {
             position: fixed; bottom: 0; left: 0; width: 100%; 
             background: var(--glass-bg); backdrop-filter: blur(10px);
@@ -371,11 +361,7 @@
             font-family: 'Prompt', sans-serif;
             text-decoration: none;
         }
-
-        /* --- MOBILE RESPONSIVE STICKY --- */
-        @media(min-width: 768px) {
-            .sticky-bar { display: none; } 
-        }
+        @media(min-width: 768px) { .sticky-bar { display: none; } }
 
     </style>
 </head>
@@ -409,7 +395,7 @@
                 <a href="index.html" class="nav-link">หน้าแรก</a>
                 
                 <div class="dropdown">
-                    <a href="javascript:void(0)" class="nav-link dropdown-toggle active">บริการ <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle">บริการ <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></a>
                     <div class="dropdown-menu">
                         <a href="service-moving.html"><i class="fa-solid fa-box-open"></i> ขนย้ายของ / ย้ายบ้าน</a>
                         <a href="service-pets.html"><i class="fa-solid fa-paw"></i> รับส่งสัตว์เลี้ยง</a>
@@ -418,18 +404,18 @@
                 </div>
 
                 <div class="dropdown">
-    <a href="javascript:void(0)" class="nav-link dropdown-toggle">พื้นที่ให้บริการ <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></a>
-    <div class="dropdown-menu">
-        <a href="area-thonburi.html"><i class="fa-solid fa-location-dot"></i> โซนฝั่งธน (Thonburi)</a>
-        <a href="area-bangkok-inner.html"><i class="fa-solid fa-location-dot"></i> โซนกรุงเทพชั้นใน</a>
-        <a href="area-perimeter.html"><i class="fa-solid fa-location-dot"></i> โซนปริมณฑล</a>
-        <a href="area-chiangmai.html"><i class="fa-solid fa-map-location-dot"></i> โซนเชียงใหม่ (Chiang Mai)</a>
-        <a href="area-chiangrai.html"><i class="fa-solid fa-map-location-dot"></i> โซนเชียงราย (Chiang Rai)</a>
-    </div>
-</div>
+                    <a href="javascript:void(0)" class="nav-link dropdown-toggle">พื้นที่ให้บริการ <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="area-thonburi.html"><i class="fa-solid fa-location-dot"></i> โซนฝั่งธน (Thonburi)</a>
+                        <a href="area-bangkok-inner.html"><i class="fa-solid fa-city"></i> โซนกรุงเทพชั้นใน</a>
+                        <a href="area-perimeter.html"><i class="fa-solid fa-road"></i> โซนปริมณฑล</a>
+                        <a href="area-chiangmai.html" style="color:#D92B2B;"><i class="fa-solid fa-mountain"></i> โซนเชียงใหม่ (Chiang Mai)</a>
+                        <a href="area-chiangrai.html" style="color:#10B981;"><i class="fa-solid fa-tree"></i> โซนเชียงราย (Chiang Rai)</a>
+                    </div>
+                </div>
 
                 <a href="works.html" class="nav-link">ผลงาน</a>
-                <a href="contact.html" class="btn btn-outline-contact" style="padding: 8px 25px;">ติดต่อเรา</a>
+                <a href="contact.html" class="btn btn-outline-contact active-page" style="padding: 8px 25px;">ติดต่อเรา</a>
             </div>
         </div>
     </header>
@@ -489,7 +475,7 @@
                 <div class="map-container">
                     <div class="map-frame">
                         <iframe 
-                            src="https://maps.google.com/maps?q=232/8%20%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%88%203%20%E0%B8%95.%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B9%82%E0%B8%9E%E0%B8%98%E0%B8%B4%20%E0%B8%AD.%E0%B9%80%E0%B8%81%E0%B9%89%E0%B8%B2%E0%B9%80%E0%B8%A5%E0%B8%B5%E0%B9%89%E0%B8%A2%E0%B8%A7%20%E0%B8%99%E0%B8%84%E0%B8%A3%E0%B8%AA%E0%B8%A7%E0%B8%A3%E0%B8%A3%E0%B8%84%E0%B9%8C&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3839.8000676442646!2d100.08453007512891!3d15.866999984784232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTXCsDUyJzAxLjIiTiAxMDDCsDA1JzEzLjYiRQ!5e0!3m2!1sth!2sth!4v1709628394875!5m2!1sth!2sth" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade">
@@ -595,8 +581,9 @@
         // --- 2. MOBILE MENU & DROPDOWN LOGIC ---
         const mobileBtn = document.querySelector('.mobile-menu-btn');
         const menuItems = document.querySelector('.menu-items');
-        const dropdownToggle = document.querySelector('.dropdown-toggle');
-        const dropdownContainer = document.querySelector('.dropdown');
+        
+        // ใช้ querySelectorAll เพื่อให้กดได้ทุก Dropdown (ทั้ง "บริการ" และ "พื้นที่ให้บริการ")
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
         // A. ปุ่ม Hamburger (เปิด/ปิด เมนูหลัก)
         if (mobileBtn) {
@@ -613,14 +600,16 @@
             });
         }
 
-        // B. ปุ่ม "บริการ" (กดแล้วเปิดเมนูย่อย ไม่ดีดไปหน้าอื่น)
-        if (dropdownToggle) {
-            dropdownToggle.addEventListener('click', (e) => {
+        // B. Logic สำหรับปุ่ม Dropdown (กดแล้วเปิดเมนูย่อย)
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
                 e.preventDefault();   // ห้ามเปลี่ยนหน้า
                 e.stopPropagation();  // ห้ามส่งคำสั่งไปปิดเมนูหลัก
-                dropdownContainer.classList.toggle('active'); // สลับเปิด/ปิด เมนูย่อย
+                
+                // สลับ class active ให้กับแม่ของปุ่ม (div.dropdown)
+                toggle.parentElement.classList.toggle('active');
             });
-        }
+        });
 
         // C. ปิดเมนูเมื่อกดลิงก์อื่นๆ (ที่ไม่ใช่ปุ่มบริการ)
         document.querySelectorAll('.nav-link').forEach(link => {
