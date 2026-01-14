@@ -1476,16 +1476,25 @@
         }
 
         // 2. Logic สำหรับปุ่ม "บริการ"
-        const dropdownToggle = document.querySelector('.dropdown-toggle');
-        const dropdownContainer = document.querySelector('.dropdown');
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
 
-        if (dropdownToggle) {
-            dropdownToggle.addEventListener('click', (e) => {
-                e.preventDefault();   // ห้ามเลื่อนหน้าจอ
-                e.stopPropagation();  // ห้ามส่งคำสั่งไปปิดเมนูหลัก
-                dropdownContainer.classList.toggle('active'); // สลับเปิด/ปิด เมนูย่อย
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                // ป้องกันไม่ให้ลิงก์ดีดไปหน้าบนสุด
+                e.preventDefault();
+                e.stopPropagation();
+
+                // ปิดเมนูอื่นๆ ก่อน (ถ้าต้องการให้เปิดทีละอัน)
+                // dropdownToggles.forEach(other => {
+                //     if (other !== toggle) {
+                //         other.parentElement.classList.remove('active');
+                //     }
+                // });
+
+                // สลับสถานะ เปิด/ปิด ของเมนูที่ถูกกด
+                toggle.parentElement.classList.toggle('active');
             });
-        }
+        });
 
         // 3. ปิดเมนูเมื่อกดลิงก์อื่นๆ
         document.querySelectorAll('.nav-link').forEach(link => {
