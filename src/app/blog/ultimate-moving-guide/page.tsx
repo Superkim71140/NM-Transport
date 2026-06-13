@@ -1,3 +1,5 @@
+import { FaCalendarCheck, FaListCheck, FaBoxesStacked, FaTruck, FaTriangleExclamation, FaArrowRight, FaFileInvoiceDollar, FaCircleXmark } from 'react-icons/fa6';
+import { FaClock, FaBuilding, FaBoxOpen, FaMotorcycle, FaPhone, FaLine } from 'react-icons/fa6';
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -71,7 +73,7 @@ export default function UltimateMovingGuidePage() {
         {/* Section 1: Why Advance Planning Matters */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-calendar-check text-orange-lava"></i> 1. ทำไมการวางแผนล่วงหน้าถึงสำคัญ?
+            <FaCalendarCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 1. ทำไมการวางแผนล่วงหน้าถึงสำคัญ?
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             ความโกลาหลและความเสียหายระหว่างการย้ายที่อยู่อาศัย มักเกิดจากการไม่ได้วางแผนล่วงหน้า การจัดลำดับสิ่งของผิดพลาด และการรีบเร่งในวันย้ายจริง การเตรียมตัวล่วงหน้าอย่างน้อย 1-2 สัปดาห์ จะช่วยให้คุณคัดแยกสิ่งของได้สมบูรณ์ ไม่ลืมของสำคัญ และเลือกจองคิวบริการรถรับจ้างได้ในช่วงเวลาที่คุณสะดวกที่สุด
@@ -81,7 +83,7 @@ export default function UltimateMovingGuidePage() {
         {/* Section 2: Moving Checklist */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-list-check text-orange-lava"></i> 2. รายการตรวจสอบก่อนการขนย้าย (Moving Checklist)
+            <FaListCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 2. รายการตรวจสอบก่อนการขนย้าย (Moving Checklist)
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             เพื่อให้การดำเนินการเป็นไปอย่างเป็นระบบ ควรจัดทำเช็คลิสต์ดังนี้:
@@ -96,7 +98,7 @@ export default function UltimateMovingGuidePage() {
         {/* Section 3: Choosing Moving Date/Time */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-clock text-orange-lava"></i> 3. การเลือกวันและเวลาในการขนย้าย
+            <FaClock aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 3. การเลือกวันและเวลาในการขนย้าย
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             วันหยุดสุดสัปดาห์ (เสาร์-อาทิตย์) หรือช่วงสิ้นเดือน มักเป็นช่วงเวลาที่การจองรถรับจ้างแน่นที่สุด หากคุณสามารถเลือกวันธรรมดาหรือช่วงกลางเดือนได้ จะช่วยให้การนัดหมายมีความยืดหยุ่นและหลีกเลี่ยงปัญหารถติดได้ดีกว่า นอกจากนี้ ควรเลี่ยงเวลาเร่งด่วนในกรุงเทพฯ และปริมณฑล (07:00 - 09:00 น. และ 17:00 - 19:00 น.) เพื่อการเดินทางที่รวดเร็ว
@@ -106,7 +108,7 @@ export default function UltimateMovingGuidePage() {
         {/* Section 4: Belongings Estimation */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-boxes-stacked text-orange-lava"></i> 4. การประเมินปริมาณและประเภทสิ่งของ
+            <FaBoxesStacked aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 4. การประเมินปริมาณและประเภทสิ่งของ
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             ก่อนจองรถ ควรจดบันทึกของชิ้นใหญ่ที่มีมิติชัดเจน (เช่น เตียง ตู้เสื้อผ้า ตู้เย็น โซฟา) เพื่อแจ้งบริษัทขนย้ายได้อย่างแม่นยำ ของส่วนใหญ่ควรจัดลงกล่องกระดาษเพื่อความเป็นระเบียบและประหยัดพื้นที่ในการจัดเรียงบนรถ การคำนวณจำนวนสัมภาระอย่างถูกต้องจะช่วยป้องกับการใช้รถขนาดเล็กเกินไปจนต้องวิ่งหลายเที่ยว ซึ่งจะทำให้เสียค่าใช้จ่ายซ้ำซ้อน
@@ -116,7 +118,7 @@ export default function UltimateMovingGuidePage() {
         {/* Section 5: Choosing Vehicle Type */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-truck-moving text-orange-lava"></i> 5. วิธีเลือกประเภทรถขนของให้เหมาะสม
+            <FaTruck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 -moving text-orange-lava" /> 5. วิธีเลือกประเภทรถขนของให้เหมาะสม
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-4">
             <div className="bg-white/5 border border-white/10 p-5 rounded-xl text-center">
@@ -137,7 +139,7 @@ export default function UltimateMovingGuidePage() {
         {/* Section 6: Condo/Estate Rules */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-building text-orange-lava"></i> 6. ข้อกำหนดนิติบุคคลของหอพัก คอนโด และหมู่บ้านจัดสรร
+            <FaBuilding aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 6. ข้อกำหนดนิติบุคคลของหอพัก คอนโด และหมู่บ้านจัดสรร
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             หากคุณพักอาศัยอยู่ในคอนโดมิเนียมหรือหมู่บ้านจัดสรร ควรติดต่อแจ้งนิติบุคคลล่วงหน้าเพื่อ:
@@ -152,7 +154,7 @@ export default function UltimateMovingGuidePage() {
         {/* Section 7: Packing Basics */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-box-open text-orange-lava"></i> 7. พื้นฐานการแพ็คของอย่างถูกวิธี
+            <FaBoxOpen aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 7. พื้นฐานการแพ็คของอย่างถูกวิธี
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             จัดวางของที่มีน้ำหนักมากลงที่ก้นกล่อง และของที่มีน้ำหนักเบาไว้ด้านบน ปิดกล่องและซีลเทปกาวให้แน่นหนาทั้งด้านบนและด้านล่าง การพันฟิล์มยืดรอบเฟอร์นิเจอร์ชิ้นใหญ่จะช่วยป้องกันไม่ให้หน้าลิ้นชักหรือประตูตู้เปิดออกระหว่างการเคลื่อนย้ายและป้องกันฝุ่นละออง
@@ -162,7 +164,7 @@ export default function UltimateMovingGuidePage() {
         {/* Section 8: Fragile Items Warning & Link */}
         <section className="mb-10 p-6 bg-gradient-to-br from-orange-lava/10 to-transparent border border-orange-lava/20 rounded-2xl">
           <h2 className="text-[1.3rem] md:text-[1.5rem] font-bold text-white mb-3 flex items-center gap-2">
-            <i className="fa-solid fa-triangle-exclamation text-orange-lava"></i> ข้อควรระวังในการย้ายของแตกง่าย
+            <FaTriangleExclamation aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> ข้อควรระวังในการย้ายของแตกง่าย
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             ของเปราะบางจำพวกแก้วน้ำ จานชาม ถ้วยเซรามิก และเครื่องใช้ไฟฟ้า ต้องการการห่อหุ้มและการจัดวางเป็นพิเศษเพื่อหลีกเลี่ยงความเสียหายระหว่างการเคลื่อนย้ายบนรถขนส่ง
@@ -174,14 +176,14 @@ export default function UltimateMovingGuidePage() {
             href="/blog/packing-fragile-items" 
             className="text-orange-lava hover:text-orange-glow font-bold underline inline-flex items-center gap-1.5 transition-colors"
           >
-            วิธีแพ็คของแตกง่ายก่อนขนย้าย ให้ปลอดภัยและลดความเสียหาย <i className="fa-solid fa-arrow-right text-sm"></i>
+            วิธีแพ็คของแตกง่ายก่อนขนย้าย ให้ปลอดภัยและลดความเสียหาย <FaArrowRight aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-sm" />
           </Link>
         </section>
 
         {/* Section 9: Motorcycle & Special Items */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-motorcycle text-orange-lava"></i> 9. การขนย้ายรถจักรยานยนต์และของชิ้นใหญ่
+            <FaMotorcycle aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 9. การขนย้ายรถจักรยานยนต์และของชิ้นใหญ่
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             สำหรับรถมอเตอร์ไซค์หรือ Big Bike จะต้องใช้อุปกรณ์ยึดจับที่แน่นหนา เช่น สายรัดแบบ Webbing Strap และตัวบล็อกล้อ เพื่อไม่ให้รถล้มระหว่างเลี้ยวโค้งหรือเบรกกะทันหัน N&M18 TRANSPORT มีบริการขนย้ายรถจักรยานยนต์เฉพาะทาง สามารถเข้าไปดูรายละเอียดเพิ่มเติมได้ที่หน้า <Link href="/service/moto" className="text-orange-lava hover:underline font-semibold">บริการขนส่งมอเตอร์ไซค์</Link> ของเรา
@@ -191,7 +193,7 @@ export default function UltimateMovingGuidePage() {
         {/* Section 10: Information for Quotation */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-file-invoice-dollar text-orange-lava"></i> 10. ข้อมูลที่ต้องเตรียมสำหรับเสนอราคา
+            <FaFileInvoiceDollar aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 10. ข้อมูลที่ต้องเตรียมสำหรับเสนอราคา
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             เมื่อต้องการติดต่อใช้บริการรถขนของ เพื่อให้ได้ราคาที่แม่นยำและรวดเร็ว ควรเตรียมข้อมูลดังนี้:
@@ -206,7 +208,7 @@ export default function UltimateMovingGuidePage() {
         {/* Section 11: Common Mistakes */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-circle-xmark text-orange-lava"></i> 11. ข้อผิดพลาดที่ควรหลีกเลี่ยง
+            <FaCircleXmark aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 11. ข้อผิดพลาดที่ควรหลีกเลี่ยง
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             หลีกเลี่ยงการใช้กล่องเก่าที่นิ่มหรือชำรุดเนื่องจากเสี่ยงต่อการแตกทะลุก้นกล่อง และไม่ควรใส่ของมีค่าน้ำหนักมาก (เช่น ทองคำ เอกสารสิทธิ์ เงินสด เครื่องประดับ) ไปกับรถขนของ ให้แยกพกพาติดตัวไว้เสมอเพื่อความปลอดภัยสูงสุด
@@ -244,7 +246,7 @@ export default function UltimateMovingGuidePage() {
               href="tel:0958010958" 
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold bg-orange-lava text-white hover:bg-orange-glow transition-all shadow-neon-orange"
             >
-              <i className="fa-solid fa-phone"></i> โทร 095-801-0958
+              <FaPhone aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> โทร 095-801-0958
             </Link>
             <a 
               href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" 
@@ -252,7 +254,7 @@ export default function UltimateMovingGuidePage() {
               rel="noopener noreferrer" 
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold bg-[#06C755] text-white hover:bg-[#05a84a] transition-all"
             >
-              <i className="fa-brands fa-line"></i> แชทประเมินราคาผ่าน LINE
+              <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> แชทประเมินราคาผ่าน LINE
             </a>
           </div>
         </footer>

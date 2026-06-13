@@ -1,3 +1,4 @@
+import { FaPhone, FaLine } from 'react-icons/fa6';
 import React from 'react';
 import { Container } from '../ui/Container';
 import { Button } from '../ui/Button';
@@ -22,10 +23,10 @@ export const CTASection: React.FC = () => {
       
       <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
         <Button href="tel:0958010958" aria-label="โทรติดต่อ N&M18 TRANSPORT เพื่อจองคิวรถรับจ้าง" className="w-full md:w-auto px-8 py-4 text-lg">
-          <i className="fa-solid fa-phone" aria-hidden="true"></i> โทรสอบถามราคา
+          <FaPhone aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> โทรสอบถามราคา
         </Button>
         <Button variant="line" href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" aria-label="แอดไลน์ N&M18 TRANSPORT เพื่อประเมินราคาค่าขนย้ายฟรี" className="w-full md:w-auto px-8 py-4 text-lg">
-          <i className="fa-brands fa-line text-2xl" aria-hidden="true"></i> ทักไลน์ ประเมินราคา
+          <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-2xl" /> ทักไลน์ ประเมินราคา
         </Button>
       </div>
     </section>

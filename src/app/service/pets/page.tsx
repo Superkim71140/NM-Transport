@@ -1,3 +1,5 @@
+import { FaTemperatureArrowDown, FaPumpMedical, FaVideo, FaCircleCheck, FaHandHoldingHeart, FaClipboardList, FaCar, FaWind } from 'react-icons/fa6';
+import { FaPaw, FaPhoneVolume, FaLine, FaShieldCat, FaClock, FaMapLocationDot, FaCheck, FaTruckPickup } from 'react-icons/fa6';
 import React from 'react';
 import type { Metadata } from 'next';
 import Script from 'next/script';
@@ -57,7 +59,7 @@ export default function ServicePetsPage() {
       
       {/* HERO SECTION */}
       <section className="pt-[50px] pb-[30px] md:pt-[100px] md:pb-[60px] text-center relative overflow-hidden px-[15px] md:px-[20px]">
-        <i className="fa-solid fa-paw absolute text-[8rem] md:text-[15rem] text-[rgba(255,215,0,0.03)] -z-10 top-[40%] md:top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2"></i>
+        <FaPaw aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 absolute text-[8rem] md:text-[15rem] text-[rgba(255,215,0,0.03)] -z-10 top-[40%] md:top-[50%] left-1/2 -translate-x-1/2 -translate-y-1/2" />
         <div className="max-w-[1200px] mx-auto flex flex-col items-center">
           <h1 className="text-[1.8rem] md:text-[3.5rem] leading-[1.3] md:leading-[1.2] mb-[10px] md:mb-[20px] text-white font-extrabold drop-shadow-[0_0_20px_rgba(0,0,0,0.5)]">
             ส่งสัตว์เลี้ยง <span className="font-[800] text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#FFA500]">VIP CLASS</span><br/>ปลอดภัย ไม่ร้อน ถึงไว
@@ -68,10 +70,10 @@ export default function ServicePetsPage() {
           
           <div className="mt-[20px] md:mt-[40px] flex flex-col md:flex-row justify-center items-center gap-[15px] md:gap-[20px] w-full">
             <a href="tel:0958010958" className="inline-flex items-center justify-center gap-[10px] p-[12px_20px] md:p-[15px_40px] rounded-[50px] font-[800] text-[#000] text-[1rem] md:text-[1.2rem] bg-gradient-to-r from-[#FFD700] to-[#FFC107] border-none shadow-[0_0_20px_rgba(255,215,0,0.4)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(255,215,0,0.7)] w-[90%] md:w-auto max-w-[320px]">
-              <i className="fa-solid fa-phone-volume"></i> โทรจองคิวรถ
+              <FaPhoneVolume aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> โทรจองคิวรถ
             </a>
             <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-[10px] p-[12px_20px] md:p-[15px_40px] rounded-[50px] font-[800] text-[#fff] text-[1rem] md:text-[1.2rem] bg-[#06C755] border-none shadow-[0_0_20px_rgba(6,199,85,0.4)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_35px_rgba(6,199,85,0.7)] w-[90%] md:w-auto max-w-[320px]">
-              <i className="fa-brands fa-line"></i> ทักไลน์ (24ชม.)
+              <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> ทักไลน์ (24ชม.)
             </a>
           </div>
         </div>
@@ -83,7 +85,7 @@ export default function ServicePetsPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[15px] md:gap-[30px] mt-[30px] md:mt-[50px]">
           <div className="bg-[rgba(255,255,255,0.03)] backdrop-blur-[10px] border border-[rgba(255,255,255,0.1)] rounded-[20px] p-[20px] md:p-[35px] text-center transition-all duration-400 relative overflow-hidden group hover:-translate-y-[10px] hover:border-[#FFD700] hover:shadow-[0_0_30px_rgba(255,215,0,0.15)]">
             <div className="text-[2rem] md:text-[3rem] text-[#FFD700] mb-[10px] md:mb-[20px] drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">
-              <i className="fa-solid fa-temperature-arrow-down"></i>
+              <FaTemperatureArrowDown aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
             </div>
             <h3 className="text-white text-[1.2rem] md:text-[1.4rem] mb-[10px] font-medium">Cool Air System</h3>
             <p className="text-[#B0B8C4] text-[0.9rem] md:text-[1rem]">รถห้องโดยสารปรับอากาศ 100% เปิดแอร์เย็นฉ่ำตลอดเส้นทาง ไม่นำน้องไปตากแดดตากลมหลังกระบะ ป้องกัน Heat Stroke</p>
@@ -91,7 +93,7 @@ export default function ServicePetsPage() {
 
           <div className="bg-[rgba(255,255,255,0.03)] backdrop-blur-[10px] border border-[rgba(255,255,255,0.1)] rounded-[20px] p-[20px] md:p-[35px] text-center transition-all duration-400 relative overflow-hidden group hover:-translate-y-[10px] hover:border-[#FFD700] hover:shadow-[0_0_30px_rgba(255,215,0,0.15)]">
             <div className="text-[2rem] md:text-[3rem] text-[#FFD700] mb-[10px] md:mb-[20px] drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">
-              <i className="fa-solid fa-pump-medical"></i>
+              <FaPumpMedical aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
             </div>
             <h3 className="text-white text-[1.2rem] md:text-[1.4rem] mb-[10px] font-medium">Hygiene Standard</h3>
             <p className="text-[#B0B8C4] text-[0.9rem] md:text-[1rem]">ฉีดพ่นน้ำยาฆ่าเชื้อเกรดโรงพยาบาลทุกครั้งก่อนและหลังรับงาน ไม่มีกลิ่นเหม็น ไม่เสี่ยงติดโรค ปลอดภัยต่อน้องๆ</p>
@@ -99,7 +101,7 @@ export default function ServicePetsPage() {
 
           <div className="bg-[rgba(255,255,255,0.03)] backdrop-blur-[10px] border border-[rgba(255,255,255,0.1)] rounded-[20px] p-[20px] md:p-[35px] text-center transition-all duration-400 relative overflow-hidden group hover:-translate-y-[10px] hover:border-[#FFD700] hover:shadow-[0_0_30px_rgba(255,215,0,0.15)]">
             <div className="text-[2rem] md:text-[3rem] text-[#FFD700] mb-[10px] md:mb-[20px] drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">
-              <i className="fa-solid fa-video"></i>
+              <FaVideo aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
             </div>
             <h3 className="text-white text-[1.2rem] md:text-[1.4rem] mb-[10px] font-medium">Live Updates</h3>
             <p className="text-[#B0B8C4] text-[0.9rem] md:text-[1rem]">อุ่นใจได้ตลอดทาง คนขับถ่ายรูป/วิดีโอส่งรายงานทุกจุดพักรถ เห็นหน้าน้องตลอด ไม่ต้องกังวลว่าจะเหงา</p>
@@ -117,7 +119,7 @@ export default function ServicePetsPage() {
           </div>
           
           <div className="mt-[20px] text-[0.9rem] text-[#FFD700]">
-            <i className="fa-solid fa-circle-check"></i> รถเก๋งส่วนตัว / รถ SUV กว้างขวาง นั่งสบาย ไม่แออัด
+            <FaCircleCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> รถเก๋งส่วนตัว / รถ SUV กว้างขวาง นั่งสบาย ไม่แออัด
           </div>
         </div>
 
@@ -129,21 +131,21 @@ export default function ServicePetsPage() {
             
             <div className="mt-[15px] lg:mt-[20px] flex flex-col gap-[10px] lg:gap-[20px] text-left">
               <div className="flex items-center gap-[10px] lg:gap-[15px] bg-[rgba(255,255,255,0.03)] p-[12px_15px] lg:p-[15px_20px] rounded-[10px] border-l-[4px] border-[#FFD700]">
-                <i className="fa-solid fa-shield-cat text-[#06C755] text-[1.2rem]"></i>
+                <FaShieldCat aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] text-[1.2rem]" />
                 <div>
                   <h4 className="text-white m-0 text-[1rem] lg:text-[1.1rem]">Door-to-Door Service</h4>
                   <p className="m-0 text-[0.85rem] lg:text-[0.9rem] text-[#999]">รับถึงหน้าบ้าน ส่งถึงห้องนอน ไม่ต้องนัดเจอระหว่างทาง</p>
                 </div>
               </div>
               <div className="flex items-center gap-[10px] lg:gap-[15px] bg-[rgba(255,255,255,0.03)] p-[12px_15px] lg:p-[15px_20px] rounded-[10px] border-l-[4px] border-[#FFD700]">
-                <i className="fa-solid fa-clock text-[#06C755] text-[1.2rem]"></i>
+                <FaClock aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] text-[1.2rem]" />
                 <div>
                   <h4 className="text-white m-0 text-[1rem] lg:text-[1.1rem]">Express Delivery</h4>
                   <p className="m-0 text-[0.85rem] lg:text-[0.9rem] text-[#999]">วิ่งตรง ไม่ดองงาน ไม่แวะรับของจุกจิก ถึงปลายทางรวดเร็ว</p>
                 </div>
               </div>
               <div className="flex items-center gap-[10px] lg:gap-[15px] bg-[rgba(255,255,255,0.03)] p-[12px_15px] lg:p-[15px_20px] rounded-[10px] border-l-[4px] border-[#FFD700]">
-                <i className="fa-solid fa-hand-holding-heart text-[#06C755] text-[1.2rem]"></i>
+                <FaHandHoldingHeart aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] text-[1.2rem]" />
                 <div>
                   <h4 className="text-white m-0 text-[1rem] lg:text-[1.1rem]">Pet Lover Driver</h4>
                   <p className="m-0 text-[0.85rem] lg:text-[0.9rem] text-[#999]">คนขับรักสัตว์ เข้าใจธรรมชาติ จอดพักให้น้ำ/ขับถ่ายตามเหมาะสม</p>
@@ -153,7 +155,7 @@ export default function ServicePetsPage() {
           </div>
           
           <div className="flex-1 w-full text-center bg-[rgba(255,255,255,0.02)] p-[40px] rounded-[20px] border border-dashed border-[#FFD700]">
-            <i className="fa-solid fa-clipboard-list text-[4rem] text-[#555] mb-[20px]"></i>
+            <FaClipboardList aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[4rem] text-[#555] mb-[20px]" />
             <h3 className="text-white text-[1.5rem] font-bold">สิ่งที่ลูกค้าต้องเตรียม</h3>
             <ul className="text-left mt-[20px] text-[#ccc] leading-[2] list-disc pl-[20px] max-w-[300px] mx-auto">
               <li>กรง/Box เดินทางที่แข็งแรง</li>
@@ -167,31 +169,31 @@ export default function ServicePetsPage() {
         {/* SERVICE AREA SECTION */}
         <section className="mt-[40px] mb-[60px] p-[30px] bg-[rgba(15,28,56,0.6)] rounded-[15px] border border-[rgba(255,255,255,0.05)]">
           <h3 className="text-white text-center mb-[25px] text-[1.5rem]">
-            <i className="fa-solid fa-map-location-dot text-[#FFD700]"></i> พื้นที่รับ-ส่งน้องๆ ยอดนิยม
+            <FaMapLocationDot aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FFD700]" /> พื้นที่รับ-ส่งน้องๆ ยอดนิยม
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px] text-left text-[#d0d7e1]">
             <div>
               <h4 className="text-[#06C755] text-[1.1rem] mb-[10px]">ในกรุงเทพฯ & ปริมณฑล</h4>
               <ul className="list-none font-[0.9rem] leading-[1.8]">
-                <li><i className="fa-solid fa-check text-[#FFD700] mr-[5px]"></i> ลาดพร้าว / จตุจักร / รามอินทรา</li>
-                <li><i className="fa-solid fa-check text-[#FFD700] mr-[5px]"></i> บางแค / พระราม 2 / ฝั่งธน</li>
-                <li><i className="fa-solid fa-check text-[#FFD700] mr-[5px]"></i> รังสิต / นนทบุรี / สมุทรปราการ</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FFD700] mr-[5px]" /> ลาดพร้าว / จตุจักร / รามอินทรา</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FFD700] mr-[5px]" /> บางแค / พระราม 2 / ฝั่งธน</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FFD700] mr-[5px]" /> รังสิต / นนทบุรี / สมุทรปราการ</li>
               </ul>
             </div>
             <div>
               <h4 className="text-[#06C755] text-[1.1rem] mb-[10px]">ต่างจังหวัด (เหมาคัน)</h4>
               <ul className="list-none font-[0.9rem] leading-[1.8]">
-                <li><i className="fa-solid fa-check text-[#FFD700] mr-[5px]"></i> ชลบุรี / พัทยา / ระยอง</li>
-                <li><i className="fa-solid fa-check text-[#FFD700] mr-[5px]"></i> หัวหิน / ประจวบฯ</li>
-                <li><i className="fa-solid fa-check text-[#FFD700] mr-[5px]"></i> เชียงใหม่ / โคราช (นัดล่วงหน้า)</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FFD700] mr-[5px]" /> ชลบุรี / พัทยา / ระยอง</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FFD700] mr-[5px]" /> หัวหิน / ประจวบฯ</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FFD700] mr-[5px]" /> เชียงใหม่ / โคราช (นัดล่วงหน้า)</li>
               </ul>
             </div>
             <div>
               <h4 className="text-[#06C755] text-[1.1rem] mb-[10px]">ประเภทรถที่ใช้ (4 ล้อเท่านั้น)</h4>
               <ul className="list-none font-[0.9rem] leading-[1.8]">
-                <li><i className="fa-solid fa-car text-[#FFD700] mr-[5px]"></i> รถเก๋งส่วนตัว (Private Car)</li>
-                <li><i className="fa-solid fa-truck-pickup text-[#FFD700] mr-[5px]"></i> รถ SUV (สำหรับน้องตัวใหญ่)</li>
-                <li><i className="fa-solid fa-wind text-[#FFD700] mr-[5px]"></i> แอร์เย็นฉ่ำ ไม่ขังกรงหลังกระบะ</li>
+                <li><FaCar aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FFD700] mr-[5px]" /> รถเก๋งส่วนตัว (Private Car)</li>
+                <li><FaTruckPickup aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FFD700] mr-[5px]" /> รถ SUV (สำหรับน้องตัวใหญ่)</li>
+                <li><FaWind aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FFD700] mr-[5px]" /> แอร์เย็นฉ่ำ ไม่ขังกรงหลังกระบะ</li>
               </ul>
             </div>
           </div>

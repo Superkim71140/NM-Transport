@@ -1,3 +1,5 @@
+import { FaTruck, FaCircleCheck, FaHouse } from 'react-icons/fa6';
+import { FaPhone, FaLine } from 'react-icons/fa6';
 import React from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -287,7 +289,7 @@ export default function LongHaulRoutePage({ params }: Props) {
               {route.recommendedVehicles.map((vehicle, idx) => (
                 <div key={idx} className="bg-white/5 border border-white/10 p-4 rounded-xl">
                   <h3 className="text-orange-lava font-bold mb-1">
-                    <i className="fa-solid fa-truck-moving mr-2"></i> {vehicle}
+                    <FaTruck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 -moving mr-2" /> {vehicle}
                   </h3>
                   <p className="text-sm text-text-gray">
                     บริการขนย้ายบ้าน คอนโด ยานพาหนะ หรือขนส่งกระจายสินค้าเหมาคันข้ามจังหวัด พร้อมตู้อะลูมิเนียมมิดชิด ปลอดภัยจากน้ำฝนและฝุ่น 100%
@@ -303,7 +305,7 @@ export default function LongHaulRoutePage({ params }: Props) {
             <ul className="list-none space-y-3">
               {route.routeHighlights.map((highlight, idx) => (
                 <li key={idx} className="flex items-start gap-3 text-[#ccc]">
-                  <i className="fa-solid fa-circle-check text-line-green text-lg mt-1 shrink-0"></i>
+                  <FaCircleCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green text-lg mt-1 shrink-0" />
                   <span>{highlight}</span>
                 </li>
               ))}
@@ -353,7 +355,7 @@ export default function LongHaulRoutePage({ params }: Props) {
                 href="tel:0958010958" 
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold bg-orange-lava text-white hover:bg-orange-glow transition-all shadow-neon-orange"
               >
-                <i className="fa-solid fa-phone"></i> โทร 095-801-0958
+                <FaPhone aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> โทร 095-801-0958
               </Link>
               <a 
                 href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" 
@@ -361,7 +363,7 @@ export default function LongHaulRoutePage({ params }: Props) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold bg-[#06C755] text-white hover:bg-[#05a84a] transition-all"
               >
-                <i className="fa-brands fa-line"></i> แชท LINE ประเมินราคาฟรี
+                <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> แชท LINE ประเมินราคาฟรี
               </a>
             </div>
           </footer>
@@ -382,7 +384,7 @@ export default function LongHaulRoutePage({ params }: Props) {
             </div>
             <div className="mt-8 text-center">
               <Link href="/" className="inline-flex items-center gap-2 text-orange-lava hover:underline text-sm font-semibold">
-                <i className="fa-solid fa-house"></i> กลับสู่หน้าแรก N&M18 TRANSPORT
+                <FaHouse aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> กลับสู่หน้าแรก N&M18 TRANSPORT
               </Link>
             </div>
           </div>

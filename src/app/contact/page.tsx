@@ -1,4 +1,6 @@
+import { FaPhoneVolume, FaLine, FaFacebookF, FaLocationDot, FaPhone } from 'react-icons/fa6';
 import React from 'react';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -111,10 +113,8 @@ export default function ContactPage() {
       
       <section className="py-[60px] pb-[100px] relative overflow-hidden bg-[#02040a] min-h-[calc(100vh-80px)]">
         {/* Background Overlay mapped from the HTML's background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-fixed" 
-          style={{ backgroundImage: "linear-gradient(to bottom, rgba(2, 4, 10, 0.85), rgba(2, 4, 10, 0.95)), url('/images/portfolio/S__2531437.webp')" }}
-        ></div>
+        <Image src="/images/portfolio/S__2531437.webp" alt="Background" fill priority fetchPriority="high" className="object-cover absolute inset-0 -z-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(2,4,10,0.85)] to-[rgba(2,4,10,0.95)] -z-10"></div>
 
         {/* Glow Effects */}
         <div className="absolute w-[300px] h-[300px] bg-[#FF4500] blur-[150px] opacity-[0.15] rounded-full z-0 pointer-events-none top-[10%] -left-[50px]"></div>
@@ -136,7 +136,7 @@ export default function ContactPage() {
               
               <a href="tel:+66958010958" aria-label="โทรติดต่อ N&M18 TRANSPORT เพื่อประเมินราคาและจองคิวรถรับจ้าง" className="group flex items-center gap-[20px] p-[20px] bg-gradient-to-br from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.01)] border border-[rgba(255,255,255,0.08)] rounded-[16px] transition-all duration-400 cursor-pointer hover:-translate-y-[5px] hover:border-[#FF4500] hover:bg-gradient-to-br hover:from-[rgba(255,69,0,0.1)] hover:to-[rgba(255,255,255,0.01)] hover:shadow-[0_10px_20px_rgba(0,0,0,0.3)]">
                 <div className="w-[50px] h-[50px] rounded-[12px] bg-[rgba(255,255,255,0.05)] flex items-center justify-center text-[1.4rem] text-[#FF4500] transition-all duration-400 flex-shrink-0 group-hover:bg-[#FF4500] group-hover:text-white group-hover:shadow-[0_0_20px_#FF4500]">
-                  <i className="fa-solid fa-phone-volume" aria-hidden="true"></i>
+                  <FaPhoneVolume aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
                 </div>
                 <div>
                   <h3 className="text-[0.9rem] text-[#94a3b8] font-medium mb-[2px]">โทรด่วน (คุณนัท)</h3>
@@ -147,7 +147,7 @@ export default function ContactPage() {
 
               <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" rel="noreferrer" className="group flex items-center gap-[20px] p-[20px] bg-gradient-to-br from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.01)] border border-[rgba(255,255,255,0.08)] rounded-[16px] transition-all duration-400 cursor-pointer hover:-translate-y-[5px] hover:border-[#FF4500] hover:bg-gradient-to-br hover:from-[rgba(255,69,0,0.1)] hover:to-[rgba(255,255,255,0.01)] hover:shadow-[0_10px_20px_rgba(0,0,0,0.3)]">
                 <div className="w-[50px] h-[50px] rounded-[12px] bg-[rgba(255,255,255,0.05)] flex items-center justify-center text-[1.4rem] text-[#FF4500] transition-all duration-400 flex-shrink-0 group-hover:bg-[#FF4500] group-hover:text-white group-hover:shadow-[0_0_20px_#FF4500]">
-                  <i className="fa-brands fa-line" aria-hidden="true"></i>
+                  <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
                 </div>
                 <div>
                   <h3 className="text-[0.9rem] text-[#94a3b8] font-medium mb-[2px]">Line Official</h3>
@@ -158,7 +158,7 @@ export default function ContactPage() {
 
               <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" rel="noreferrer" className="group flex items-center gap-[20px] p-[20px] bg-gradient-to-br from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.01)] border border-[rgba(255,255,255,0.08)] rounded-[16px] transition-all duration-400 cursor-pointer hover:-translate-y-[5px] hover:border-[#FF4500] hover:bg-gradient-to-br hover:from-[rgba(255,69,0,0.1)] hover:to-[rgba(255,255,255,0.01)] hover:shadow-[0_10px_20px_rgba(0,0,0,0.3)]">
                 <div className="w-[50px] h-[50px] rounded-[12px] bg-[rgba(255,255,255,0.05)] flex items-center justify-center text-[1.4rem] text-[#FF4500] transition-all duration-400 flex-shrink-0 group-hover:bg-[#FF4500] group-hover:text-white group-hover:shadow-[0_0_20px_#FF4500]">
-                  <i className="fa-brands fa-facebook-messenger" aria-hidden="true"></i>
+                  <FaFacebookF aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 -messenger" />
                 </div>
                 <div>
                   <h3 className="text-[0.9rem] text-[#94a3b8] font-medium mb-[2px]">Facebook Page</h3>
@@ -169,7 +169,7 @@ export default function ContactPage() {
 
               <address className="mt-[10px] p-[20px] rounded-[16px] bg-[rgba(0,0,0,0.3)] border border-dashed border-[rgba(255,255,255,0.15)] not-italic">
                 <h4 className="text-[#00f2ff] text-[1rem] mb-[8px]">
-                  <i className="fa-solid fa-location-dot" aria-hidden="true"></i> ที่ตั้งสำนักงาน
+                  <FaLocationDot aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> ที่ตั้งสำนักงาน
                 </h4>
                 <p className="text-[0.95rem] text-[#ccc] leading-[1.5]">
                   232/8 หมู่ 3 ซอยมหาโพธิ 15/1<br/>
@@ -194,10 +194,10 @@ export default function ContactPage() {
 
               <div className="flex flex-col md:flex-row gap-[12px] md:gap-[15px] mt-[25px]">
                 <a href="tel:+66958010958" aria-label="โทรติดต่อ N&M18 TRANSPORT เพื่อประเมินราคาและจองคิวรถรับจ้าง" className="inline-flex flex-1 items-center justify-center gap-[10px] py-[12px] rounded-[50px] font-semibold transition-all duration-300 tracking-[0.5px] bg-[#FF4500] text-white shadow-[0_0_15px_rgba(255,69,0,0.4)] hover:shadow-[0_0_25px_rgba(255,69,0,0.6)]">
-                  <i className="fa-solid fa-phone" aria-hidden="true"></i> โทรสอบถาม
+                  <FaPhone aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> โทรสอบถาม
                 </a>
                 <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" rel="noreferrer" className="inline-flex flex-1 items-center justify-center gap-[10px] py-[12px] rounded-[50px] font-semibold transition-all duration-300 tracking-[0.5px] bg-[#06C755] text-white shadow-[0_0_15px_rgba(6,199,85,0.4)] hover:shadow-[0_0_25px_rgba(6,199,85,0.6)]">
-                  <i className="fa-brands fa-line" aria-hidden="true"></i> แอดไลน์จองคิว
+                  <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> แอดไลน์จองคิว
                 </a>
               </div>
             </div>

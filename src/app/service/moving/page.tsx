@@ -1,3 +1,5 @@
+import { FaPeopleCarryBox, FaBox, FaLayerGroup, FaHeart, FaFileInvoiceDollar, FaDolly } from 'react-icons/fa6';
+import { FaPhoneVolume, FaLine, FaTruckFront, FaBoxOpen, FaTruckFast, FaShieldHalved, FaMapLocationDot, FaCheck } from 'react-icons/fa6';
 import React from 'react';
 import type { Metadata } from 'next';
 import Script from 'next/script';
@@ -66,10 +68,10 @@ export default function ServiceMovingPage() {
           
           <div className="mt-[25px] flex justify-center gap-[15px] flex-wrap">
             <a href="tel:0958010958" className="inline-flex items-center justify-center gap-[10px] py-[12px] px-[35px] rounded-[50px] font-bold border-none text-[1rem] md:text-[1.1rem] cursor-pointer transition-all duration-300 bg-[#FF4500] text-white shadow-[0_0_15px_rgba(255,69,0,0.4)] hover:-translate-y-[2px] hover:shadow-[0_0_25px_rgba(255,69,0,0.7)] w-full md:w-auto max-w-[300px]">
-              <i className="fa-solid fa-phone-volume"></i> ประเมินราคาฟรี
+              <FaPhoneVolume aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> ประเมินราคาฟรี
             </a>
             <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-[10px] py-[12px] px-[35px] rounded-[50px] font-bold border-none text-[1rem] md:text-[1.1rem] cursor-pointer transition-all duration-300 bg-[#06C755] text-white shadow-[0_0_15px_rgba(6,199,85,0.4)] hover:-translate-y-[2px] w-full md:w-auto max-w-[300px]">
-              <i className="fa-brands fa-line"></i> ทักไลน์จองคิว
+              <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> ทักไลน์จองคิว
             </a>
           </div>
         </div>
@@ -81,7 +83,7 @@ export default function ServiceMovingPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[15px] md:gap-[20px] my-[40px]">
           <div className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-[20px] p-[20px] md:p-[30px] text-left transition-all duration-300 relative overflow-hidden group hover:-translate-y-[5px] hover:border-[#FF4500] hover:bg-gradient-to-br hover:from-[rgba(255,69,0,0.05)] hover:to-[rgba(255,255,255,0.01)]">
             <div className="w-[60px] h-[60px] bg-[rgba(255,69,0,0.1)] rounded-[12px] flex items-center justify-center text-[1.8rem] text-[#FF4500] mb-[20px]">
-              <i className="fa-solid fa-people-carry-box"></i>
+              <FaPeopleCarryBox aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
             </div>
             <h3 className="text-white mb-[10px] text-[1.3rem] font-medium">ทีมงานยกของ</h3>
             <p className="text-[#94a3b8] text-[0.95rem]">มีพนักงานช่วยยกของขึ้น-ลงรถ และจัดวางเข้าที่ ไม่ต้องเหนื่อยทำเอง</p>
@@ -89,7 +91,7 @@ export default function ServiceMovingPage() {
 
           <div className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-[20px] p-[20px] md:p-[30px] text-left transition-all duration-300 relative overflow-hidden group hover:-translate-y-[5px] hover:border-[#FF4500] hover:bg-gradient-to-br hover:from-[rgba(255,69,0,0.05)] hover:to-[rgba(255,255,255,0.01)]">
             <div className="w-[60px] h-[60px] bg-[rgba(255,69,0,0.1)] rounded-[12px] flex items-center justify-center text-[1.8rem] text-[#FF4500] mb-[20px]">
-              <i className="fa-solid fa-box"></i>
+              <FaBox aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
             </div>
             <h3 className="text-white mb-[10px] text-[1.3rem] font-medium">บริการแพ็คกิ้ง</h3>
             <p className="text-[#94a3b8] text-[0.95rem]">ห่อหุ้มเฟอร์นิเจอร์ ตู้ เตียง ทีวี ด้วยพลาสติกกันกระแทกอย่างดี</p>
@@ -97,7 +99,7 @@ export default function ServiceMovingPage() {
 
           <div className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-[20px] p-[20px] md:p-[30px] text-left transition-all duration-300 relative overflow-hidden group hover:-translate-y-[5px] hover:border-[#FF4500] hover:bg-gradient-to-br hover:from-[rgba(255,69,0,0.05)] hover:to-[rgba(255,255,255,0.01)]">
             <div className="w-[60px] h-[60px] bg-[rgba(255,69,0,0.1)] rounded-[12px] flex items-center justify-center text-[1.8rem] text-[#FF4500] mb-[20px]">
-              <i className="fa-solid fa-truck-front"></i>
+              <FaTruckFront aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
             </div>
             <h3 className="text-white mb-[10px] text-[1.3rem] font-medium">รถตู้ทึบ 100%</h3>
             <p className="text-[#94a3b8] text-[0.95rem]">รถกระบะและ 4 ล้อตู้ทึบ ปิดมิดชิด กันแดด กันฝน ของไม่หล่นหาย</p>
@@ -115,7 +117,7 @@ export default function ServiceMovingPage() {
             <div className="rounded-[15px] overflow-hidden relative border border-[rgba(255,255,255,0.1)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] group lg:col-span-2 aspect-[4/3] lg:aspect-[16/9]">
               <Image src="/images/portfolio/S__2531438.webp" alt="รถตู้ทึบขนของเต็มคัน N&M18" fill className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-70" />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[rgba(5,10,20,0.95)] to-[rgba(5,10,20,0.6)] p-[10px] md:p-[15px] text-white text-[0.9rem] md:text-[1rem] font-medium flex items-center gap-[10px] transition-all duration-400 opacity-100 md:opacity-0 md:translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
-                <i className="fa-solid fa-layer-group text-[#FF4500] text-[1.1rem]"></i> 
+                <FaLayerGroup aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FF4500] text-[1.1rem]" /> 
                 จัดเรียงของเป็นระเบียบ เต็มคันคุ้มค่า
               </div>
             </div>
@@ -123,7 +125,7 @@ export default function ServiceMovingPage() {
             <div className="rounded-[15px] overflow-hidden relative border border-[rgba(255,255,255,0.1)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] group aspect-[4/3]">
               <Image src="/images/portfolio/S__2531423.webp" alt="การแพ็คกิ้งของในรถ" fill className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-70" />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[rgba(5,10,20,0.95)] to-[rgba(5,10,20,0.6)] p-[10px] md:p-[15px] text-white text-[0.9rem] md:text-[1rem] font-medium flex items-center gap-[10px] transition-all duration-400 opacity-100 md:opacity-0 md:translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
-                <i className="fa-solid fa-box-open text-[#FF4500] text-[1.1rem]"></i> 
+                <FaBoxOpen aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FF4500] text-[1.1rem]" /> 
                 แพ็คกันกระแทกทุกชิ้น
               </div>
             </div>
@@ -131,7 +133,7 @@ export default function ServiceMovingPage() {
             <div className="rounded-[15px] overflow-hidden relative border border-[rgba(255,255,255,0.1)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] group aspect-[4/3]">
               <Image src="/images/services/บริการขนย้ายบ้าน.png" alt="รวมภาพรีวิวขนย้ายบ้าน" fill className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-70" />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[rgba(5,10,20,0.95)] to-[rgba(5,10,20,0.6)] p-[10px] md:p-[15px] text-white text-[0.9rem] md:text-[1rem] font-medium flex items-center gap-[10px] transition-all duration-400 opacity-100 md:opacity-0 md:translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
-                <i className="fa-solid fa-heart text-[#FF4500] text-[1.1rem]"></i> 
+                <FaHeart aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FF4500] text-[1.1rem]" /> 
                 บริการประทับใจลูกค้า
               </div>
             </div>
@@ -139,7 +141,7 @@ export default function ServiceMovingPage() {
             <div className="rounded-[15px] overflow-hidden relative border border-[rgba(255,255,255,0.1)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] group aspect-[4/3]">
               <Image src="/images/portfolio/S__17556285.webp" alt="ขนย้ายหอพัก" fill className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-70" />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[rgba(5,10,20,0.95)] to-[rgba(5,10,20,0.6)] p-[10px] md:p-[15px] text-white text-[0.9rem] md:text-[1rem] font-medium flex items-center gap-[10px] transition-all duration-400 opacity-100 md:opacity-0 md:translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
-                <i className="fa-solid fa-truck-fast text-[#FF4500] text-[1.1rem]"></i> 
+                <FaTruckFast aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FF4500] text-[1.1rem]" /> 
                 ย้ายหอพัก/คอนโด รวดเร็ว
               </div>
             </div>
@@ -157,7 +159,7 @@ export default function ServiceMovingPage() {
             <div className="flex flex-col gap-[15px]">
               <div className="flex items-center gap-[20px] bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.05)] p-[20px] rounded-[16px] transition-all duration-300 hover:bg-gradient-to-r hover:from-[rgba(255,69,0,0.1)] hover:to-transparent hover:border-[#FF4500] hover:translate-x-[10px] hover:shadow-[0_5px_15px_rgba(0,0,0,0.2)] lg:hover:-translate-y-0 hover:-translate-y-[5px]">
                 <div className="w-[50px] h-[50px] flex-shrink-0 bg-[rgba(255,69,0,0.15)] rounded-[12px] flex items-center justify-center text-[#FF4500] text-[1.5rem] shadow-[0_0_10px_rgba(255,69,0,0.2)]">
-                  <i className="fa-solid fa-file-invoice-dollar"></i>
+                  <FaFileInvoiceDollar aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
                 </div>
                 <div>
                   <h4 className="m-0 mb-[5px] text-white text-[1.1rem]">ประเมินราคาชัดเจน</h4>
@@ -167,7 +169,7 @@ export default function ServiceMovingPage() {
 
               <div className="flex items-center gap-[20px] bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.05)] p-[20px] rounded-[16px] transition-all duration-300 hover:bg-gradient-to-r hover:from-[rgba(255,69,0,0.1)] hover:to-transparent hover:border-[#FF4500] hover:translate-x-[10px] hover:shadow-[0_5px_15px_rgba(0,0,0,0.2)] lg:hover:-translate-y-0 hover:-translate-y-[5px]">
                 <div className="w-[50px] h-[50px] flex-shrink-0 bg-[rgba(255,69,0,0.15)] rounded-[12px] flex items-center justify-center text-[#FF4500] text-[1.5rem] shadow-[0_0_10px_rgba(255,69,0,0.2)]">
-                  <i className="fa-solid fa-shield-halved"></i>
+                  <FaShieldHalved aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
                 </div>
                 <div>
                   <h4 className="m-0 mb-[5px] text-white text-[1.1rem]">รับประกันสินค้า 100%</h4>
@@ -177,7 +179,7 @@ export default function ServiceMovingPage() {
 
               <div className="flex items-center gap-[20px] bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.05)] p-[20px] rounded-[16px] transition-all duration-300 hover:bg-gradient-to-r hover:from-[rgba(255,69,0,0.1)] hover:to-transparent hover:border-[#FF4500] hover:translate-x-[10px] hover:shadow-[0_5px_15px_rgba(0,0,0,0.2)] lg:hover:-translate-y-0 hover:-translate-y-[5px]">
                 <div className="w-[50px] h-[50px] flex-shrink-0 bg-[rgba(255,69,0,0.15)] rounded-[12px] flex items-center justify-center text-[#FF4500] text-[1.5rem] shadow-[0_0_10px_rgba(255,69,0,0.2)]">
-                  <i className="fa-solid fa-dolly"></i>
+                  <FaDolly aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
                 </div>
                 <div>
                   <h4 className="m-0 mb-[5px] text-white text-[1.1rem]">อุปกรณ์ครบครัน</h4>
@@ -187,7 +189,7 @@ export default function ServiceMovingPage() {
 
               <div className="flex items-center gap-[20px] bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.05)] p-[20px] rounded-[16px] transition-all duration-300 hover:bg-gradient-to-r hover:from-[rgba(255,69,0,0.1)] hover:to-transparent hover:border-[#FF4500] hover:translate-x-[10px] hover:shadow-[0_5px_15px_rgba(0,0,0,0.2)] lg:hover:-translate-y-0 hover:-translate-y-[5px]">
                 <div className="w-[50px] h-[50px] flex-shrink-0 bg-[rgba(255,69,0,0.15)] rounded-[12px] flex items-center justify-center text-[#FF4500] text-[1.5rem] shadow-[0_0_10px_rgba(255,69,0,0.2)]">
-                  <i className="fa-solid fa-map-location-dot"></i>
+                  <FaMapLocationDot aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
                 </div>
                 <div>
                   <h4 className="m-0 mb-[5px] text-white text-[1.1rem]">ชำนาญเส้นทาง</h4>
@@ -205,31 +207,31 @@ export default function ServiceMovingPage() {
         {/* SERVICE AREA SECTION */}
         <section className="mt-[40px] mb-[60px] p-[30px] bg-[rgba(15,28,56,0.6)] rounded-[15px] border border-[rgba(255,255,255,0.05)]">
           <h3 className="text-white text-center mb-[25px] text-[1.5rem]">
-            <i className="fa-solid fa-map-location-dot text-[#FF4500]"></i> พื้นที่ให้บริการขนย้ายยอดนิยม
+            <FaMapLocationDot aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#FF4500]" /> พื้นที่ให้บริการขนย้ายยอดนิยม
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px] text-left text-[#d0d7e1]">
             <div>
               <h4 className="text-[#00f2ff] text-[1.1rem] mb-[10px]">กรุงเทพฯ & ปริมณฑล</h4>
               <ul className="list-none font-[0.9rem] leading-[1.8]">
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> ลาดพร้าว / จตุจักร / รัชดา</li>
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> บางแค / ฝั่งธน / พระราม 2</li>
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> นนทบุรี / ปทุมธานี / สมุทรปราการ</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> ลาดพร้าว / จตุจักร / รัชดา</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> บางแค / ฝั่งธน / พระราม 2</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> นนทบุรี / ปทุมธานี / สมุทรปราการ</li>
               </ul>
             </div>
             <div>
               <h4 className="text-[#00f2ff] text-[1.1rem] mb-[10px]">เส้นทางต่างจังหวัด</h4>
               <ul className="list-none font-[0.9rem] leading-[1.8]">
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> ภาคเหนือ (เชียงใหม่/นครสวรรค์)</li>
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> ภาคอีสาน (โคราช/ขอนแก่น/อุดร)</li>
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> ภาคใต้ / ภาคตะวันออก</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> ภาคเหนือ (เชียงใหม่/นครสวรรค์)</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> ภาคอีสาน (โคราช/ขอนแก่น/อุดร)</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> ภาคใต้ / ภาคตะวันออก</li>
               </ul>
             </div>
             <div>
               <h4 className="text-[#00f2ff] text-[1.1rem] mb-[10px]">ประเภทรถให้บริการ</h4>
               <ul className="list-none font-[0.9rem] leading-[1.8]">
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> รถกระบะตู้ทึบ (ขนของทั่วไป/ย้ายหอ)</li>
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> รถกระบะคอก (ขนสินค้าเกษตร/มอไซค์)</li>
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> รถ 4 ล้อรับจ้าง (ย้ายบ้านทั้งหลัง)</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> รถกระบะตู้ทึบ (ขนของทั่วไป/ย้ายหอ)</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> รถกระบะคอก (ขนสินค้าเกษตร/มอไซค์)</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> รถ 4 ล้อรับจ้าง (ย้ายบ้านทั้งหลัง)</li>
               </ul>
             </div>
           </div>

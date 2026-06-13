@@ -1,3 +1,4 @@
+import { FaPhoneVolume } from 'react-icons/fa6';
 import Image from "next/image";
 import { Metadata } from "next";
 import { portfolioItems } from "@/data/portfolio";
@@ -20,14 +21,13 @@ export const metadata: Metadata = {
 export default function WorksPage() {
   return (
     <>
-      <div 
-        className="relative bg-cover bg-center text-white pt-[120px] px-5 pb-[80px] text-center border-b border-[rgba(255,69,0,0.2)]"
-        style={{ backgroundImage: "linear-gradient(to bottom, rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 1)), url('/images/portfolio/S__2531426.webp')" }}
-      >
-        <h1 className="text-[1.8rem] md:text-[3rem] font-bold mb-[15px] leading-[1.3] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#FF4500]" style={{ textShadow: "0 0 20px rgba(0,0,0,0.8)" }}>
+      <div className="relative text-white pt-[120px] px-5 pb-[80px] text-center border-b border-[rgba(255,69,0,0.2)] overflow-hidden">
+        <Image src="/images/portfolio/S__2531426.webp" alt="Background" fill priority fetchPriority="high" className="object-cover absolute inset-0 -z-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(5,10,20,0.7)] to-[rgba(5,10,20,1)] -z-10"></div>
+        <h1 className="relative z-10 text-[1.8rem] md:text-[3rem] font-bold mb-[15px] leading-[1.3] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#FF4500]" style={{ textShadow: "0 0 20px rgba(0,0,0,0.8)" }}>
           ผลงานที่ผ่านมา
         </h1>
-        <p className="text-[1.2rem] opacity-90 text-[#B0B8C4]">ภาพจริงจากหน้างาน ลูกค้าจริง การันตีความใส่ใจทุกเที่ยววิ่ง</p>
+        <p className="relative z-10 text-[1.2rem] opacity-90 text-[#B0B8C4]">ภาพจริงจากหน้างาน ลูกค้าจริง การันตีความใส่ใจทุกเที่ยววิ่ง</p>
       </div>
 
       <section className="py-[60px]">
@@ -108,7 +108,7 @@ export default function WorksPage() {
                   href="tel:0958010958" 
                   className="bg-[#FF4500] text-white py-[12px] px-[30px] rounded-[50px] text-[1.1rem] font-semibold hover:shadow-[0_0_15px_rgba(255,69,0,0.6)] transition-all flex items-center justify-center gap-2"
                 >
-                  <i className="fa-solid fa-phone-volume"></i> โทรปรึกษาฟรี
+                  <FaPhoneVolume aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> โทรปรึกษาฟรี
                 </a>
               </div>
             </div>

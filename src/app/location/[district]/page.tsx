@@ -1,3 +1,4 @@
+import { FaTruckPickup, FaTruckFront, FaPhone, FaLine } from 'react-icons/fa6';
 import React from 'react';
 import type { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
@@ -126,11 +127,11 @@ export default function LocationPage({ params }: Props) {
             <h3 className="text-white text-lg font-bold mb-3">ประเภทรถรับจ้างที่ให้บริการในพื้นที่ {location.thaiName}:</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="bg-white/5 border border-white/10 p-4 rounded-xl">
-                <h4 className="text-orange-lava font-bold mb-1"><i className="fa-solid fa-truck-pickup"></i> รถกระบะรับจ้างตู้ทึบ</h4>
+                <h4 className="text-orange-lava font-bold mb-1"><FaTruckPickup aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> รถกระบะรับจ้างตู้ทึบ</h4>
                 <p className="text-sm text-text-gray">เหมาะสำหรับการย้ายหอพัก ย้ายคอนโด 1 ห้องพัก ขนของทั่วไป ของแห้ง เครื่องใช้ไฟฟ้า</p>
               </div>
               <div className="bg-white/5 border border-white/10 p-4 rounded-xl">
-                <h4 className="text-orange-lava font-bold mb-1"><i className="fa-solid fa-truck-front"></i> รถ 4 ล้อใหญ่ตู้ทึบ</h4>
+                <h4 className="text-orange-lava font-bold mb-1"><FaTruckFront aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> รถ 4 ล้อใหญ่ตู้ทึบ</h4>
                 <p className="text-sm text-text-gray">เหมาะสำหรับการย้ายบ้านทาวน์โฮม ย้ายสำนักงาน ขนของขนาดใหญ่ สัมภาระเยอะพิเศษ</p>
               </div>
             </div>
@@ -162,7 +163,7 @@ export default function LocationPage({ params }: Props) {
                 href="tel:0958010958" 
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold bg-orange-lava text-white hover:bg-orange-glow transition-all shadow-neon-orange"
               >
-                <i className="fa-solid fa-phone"></i> โทร 095-801-0958
+                <FaPhone aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> โทร 095-801-0958
               </Link>
               <a 
                 href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" 
@@ -170,7 +171,7 @@ export default function LocationPage({ params }: Props) {
                 rel="noopener noreferrer" 
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold bg-[#06C755] text-white hover:bg-[#05a84a] transition-all"
               >
-                <i className="fa-brands fa-line"></i> แชท LINE ประเมินราคาฟรี
+                <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> แชท LINE ประเมินราคาฟรี
               </a>
             </div>
           </footer>

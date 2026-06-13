@@ -7,6 +7,7 @@ import { usePathname } from 'next/navigation';
 import { Container } from '../ui/Container';
 import { DropdownMenu } from '../navigation/DropdownMenu';
 import { Button } from '../ui/Button';
+import { FaBoxOpen, FaPaw, FaMotorcycle, FaLocationDot, FaMapLocationDot, FaBars, FaXmark } from 'react-icons/fa6';
 
 export const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -46,17 +47,17 @@ export const Header: React.FC = () => {
   };
 
   const serviceItems = [
-    { label: 'ขนย้ายของ / ย้ายบ้าน', href: '/service/moving', icon: 'fa-solid fa-box-open' },
-    { label: 'รับส่งสัตว์เลี้ยง', href: '/service/pets', icon: 'fa-solid fa-paw' },
-    { label: 'ขนส่งมอเตอร์ไซค์', href: '/service/moto', icon: 'fa-solid fa-motorcycle' },
+    { label: 'ขนย้ายของ / ย้ายบ้าน', href: '/service/moving', icon: FaBoxOpen },
+    { label: 'รับส่งสัตว์เลี้ยง', href: '/service/pets', icon: FaPaw },
+    { label: 'ขนส่งมอเตอร์ไซค์', href: '/service/moto', icon: FaMotorcycle },
   ];
 
   const areaItems = [
-    { label: 'โซนฝั่งธน (Thonburi)', href: '/area/thonburi', icon: 'fa-solid fa-location-dot' },
-    { label: 'โซนกรุงเทพชั้นใน', href: '/area/bangkok-inner', icon: 'fa-solid fa-location-dot' },
-    { label: 'โซนปริมณฑล', href: '/area/perimeter', icon: 'fa-solid fa-location-dot' },
-    { label: 'โซนเชียงใหม่', href: '/area/chiangmai', icon: 'fa-solid fa-map-location-dot' },
-    { label: 'โซนเชียงราย', href: '/area/chiangrai', icon: 'fa-solid fa-map-location-dot' },
+    { label: 'โซนฝั่งธน (Thonburi)', href: '/area/thonburi', icon: FaLocationDot },
+    { label: 'โซนกรุงเทพชั้นใน', href: '/area/bangkok-inner', icon: FaLocationDot },
+    { label: 'โซนปริมณฑล', href: '/area/perimeter', icon: FaLocationDot },
+    { label: 'โซนเชียงใหม่', href: '/area/chiangmai', icon: FaMapLocationDot },
+    { label: 'โซนเชียงราย', href: '/area/chiangrai', icon: FaMapLocationDot },
   ];
 
   return (
@@ -73,7 +74,7 @@ export const Header: React.FC = () => {
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-menu"
         >
-          <i className={`fa-solid ${isMobileMenuOpen ? 'fa-xmark' : 'fa-bars'}`}></i>
+          {isMobileMenuOpen ? <FaXmark aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> : <FaBars aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />}
         </button>
 
         {/* Desktop Navigation */}

@@ -1,3 +1,5 @@
+import { FaTruck, FaStopwatch20, FaHandHoldingDollar } from 'react-icons/fa6';
+import { FaRoad, FaCheck, FaPhoneVolume, FaLine, FaMapLocationDot, FaCalculator } from 'react-icons/fa6';
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -51,7 +53,9 @@ export default function PerimeterAreaPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden text-center bg-cover bg-center" style={{ backgroundImage: "linear-gradient(to bottom, rgba(2, 6, 13, 0.8), rgba(15, 28, 56, 0.95)), url('/images/portfolio/S__2531437.webp')" }}>
+      <section className="relative py-24 md:py-32 overflow-hidden text-center">
+        <Image src="/images/portfolio/S__2531437.webp" alt="Background" fill priority fetchPriority="high" className="object-cover absolute inset-0 -z-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(2,6,13,0.8)] to-[rgba(15,28,56,0.95)] -z-10"></div>
         <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-orange-lava to-neon-blue shadow-[0_-5px_20px_rgba(255,69,0,0.5)]"></div>
         <Container className="relative z-10">
           <div className="text-sm md:text-base mb-6 tracking-wider text-text-gray uppercase">
@@ -73,23 +77,23 @@ export default function PerimeterAreaPage() {
           {/* Badges */}
           <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-10">
             <div className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-orange-lava/30 text-white text-sm backdrop-blur-sm">
-              <i className="fa-solid fa-truck text-orange-lava"></i> รถใหญ่ 4 ล้อจัมโบ้
+              <FaTruck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> รถใหญ่ 4 ล้อจัมโบ้
             </div>
             <div className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-orange-lava/30 text-white text-sm backdrop-blur-sm">
-              <i className="fa-solid fa-road text-orange-lava"></i> วิ่งงานทางไกล
+              <FaRoad aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> วิ่งงานทางไกล
             </div>
             <div className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-orange-lava/30 text-white text-sm backdrop-blur-sm">
-              <i className="fa-solid fa-check-double text-orange-lava"></i> ราคาเหมาสุดคุ้ม
+              <FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 -double text-orange-lava" /> ราคาเหมาสุดคุ้ม
             </div>
           </div>
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
             <a href="tel:0958010958" className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-orange-lava to-[#ff2a00] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(255,69,0,0.5)] hover:shadow-[0_0_30px_rgba(255,69,0,0.8)]">
-              <i className="fa-solid fa-phone-volume"></i> โทรเรียกเลย (ด่วน)
+              <FaPhoneVolume aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> โทรเรียกเลย (ด่วน)
             </a>
             <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-white bg-line-green hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(6,199,85,0.6)] hover:bg-[#05a84a]">
-              <i className="fa-brands fa-line text-xl"></i> แอดไลน์จองคิว
+              <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-xl" /> แอดไลน์จองคิว
             </a>
           </div>
         </Container>
@@ -106,7 +110,7 @@ export default function PerimeterAreaPage() {
               <ul className="space-y-6">
                 <li className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-orange-lava/10 border border-orange-lava/30 flex items-center justify-center text-orange-lava text-xl">
-                    <i className="fa-solid fa-truck-moving"></i>
+                    <FaTruck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 -moving" />
                   </div>
                   <div>
                     <h4 className="text-white text-lg font-bold mb-1">รถใหญ่ จุของได้ทั้งหลัง</h4>
@@ -115,7 +119,7 @@ export default function PerimeterAreaPage() {
                 </li>
                 <li className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-orange-lava/10 border border-orange-lava/30 flex items-center justify-center text-orange-lava text-xl">
-                    <i className="fa-solid fa-stopwatch-20"></i>
+                    <FaStopwatch20 aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
                   </div>
                   <div>
                     <h4 className="text-white text-lg font-bold mb-1">ชำนาญเส้นทางเลี่ยงเมือง/ทางด่วน</h4>
@@ -124,7 +128,7 @@ export default function PerimeterAreaPage() {
                 </li>
                 <li className="flex gap-4">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-orange-lava/10 border border-orange-lava/30 flex items-center justify-center text-orange-lava text-xl">
-                    <i className="fa-solid fa-hand-holding-dollar"></i>
+                    <FaHandHoldingDollar aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
                   </div>
                   <div>
                     <h4 className="text-white text-lg font-bold mb-1">ราคาเหมาทางไกล คุ้มกว่า</h4>
@@ -154,7 +158,7 @@ export default function PerimeterAreaPage() {
         <Container>
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              <i className="fa-solid fa-map-location-dot text-neon-blue mr-2"></i> 
+              <FaMapLocationDot aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-neon-blue mr-2" /> 
               พื้นที่ให้บริการหลัก (ปริมณฑล)
             </h2>
             <p className="text-text-gray text-base max-w-xl mx-auto">ครอบคลุม นนทบุรี ปทุมธานี สมุทรปราการ และพื้นที่ใกล้เคียง</p>
@@ -205,10 +209,10 @@ export default function PerimeterAreaPage() {
             
             <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
               <a href="tel:0958010958" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-orange-lava to-[#ff2a00] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(255,69,0,0.5)]">
-                <i className="fa-solid fa-calculator"></i> เช็คราคาเหมา (โทรเลย)
+                <FaCalculator aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> เช็คราคาเหมา (โทรเลย)
               </a>
               <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-bold text-white bg-line-green hover:scale-105 transition-all duration-300 shadow-[0_0_15px_rgba(6,199,85,0.6)]">
-                <i className="fa-brands fa-line fa-lg"></i> สอบถามทางไลน์
+                <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> สอบถามทางไลน์
               </a>
             </div>
           </div>

@@ -1,3 +1,4 @@
+import { FaAngleRight, FaLocationDot, FaPhone, FaLine, FaFacebookF } from 'react-icons/fa6';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -20,9 +21,9 @@ export const Footer: React.FC = () => {
               บริการของเรา
             </h4>
             <ul className="list-none space-y-3">
-              <li><Link href="/service/moving" className="text-[#B0B8C4] hover:text-orange-lava transition-all duration-300 flex items-center justify-center md:justify-start gap-2 hover:translate-x-1"><i className="fa-solid fa-angle-right"></i> ขนย้ายของ / ย้ายบ้าน</Link></li>
-              <li><Link href="/service/pets" className="text-[#B0B8C4] hover:text-orange-lava transition-all duration-300 flex items-center justify-center md:justify-start gap-2 hover:translate-x-1"><i className="fa-solid fa-angle-right"></i> รับส่งสัตว์เลี้ยง</Link></li>
-              <li><Link href="/service/moto" className="text-[#B0B8C4] hover:text-orange-lava transition-all duration-300 flex items-center justify-center md:justify-start gap-2 hover:translate-x-1"><i className="fa-solid fa-angle-right"></i> ขนส่งมอเตอร์ไซค์</Link></li>
+              <li><Link href="/service/moving" className="text-[#B0B8C4] hover:text-orange-lava transition-all duration-300 flex items-center justify-center md:justify-start gap-2 hover:translate-x-1"><FaAngleRight aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> ขนย้ายของ / ย้ายบ้าน</Link></li>
+              <li><Link href="/service/pets" className="text-[#B0B8C4] hover:text-orange-lava transition-all duration-300 flex items-center justify-center md:justify-start gap-2 hover:translate-x-1"><FaAngleRight aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> รับส่งสัตว์เลี้ยง</Link></li>
+              <li><Link href="/service/moto" className="text-[#B0B8C4] hover:text-orange-lava transition-all duration-300 flex items-center justify-center md:justify-start gap-2 hover:translate-x-1"><FaAngleRight aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> ขนส่งมอเตอร์ไซค์</Link></li>
             </ul>
           </div>
 
@@ -31,9 +32,9 @@ export const Footer: React.FC = () => {
               เมนูหลัก
             </h4>
             <ul className="list-none space-y-3">
-              <li><Link href="/" className="text-[#B0B8C4] hover:text-orange-lava transition-all duration-300 flex items-center justify-center md:justify-start gap-2 hover:translate-x-1"><i className="fa-solid fa-angle-right"></i> หน้าแรก</Link></li>
-              <li><Link href="/works" className="text-[#B0B8C4] hover:text-orange-lava transition-all duration-300 flex items-center justify-center md:justify-start gap-2 hover:translate-x-1"><i className="fa-solid fa-angle-right"></i> ผลงานขนส่ง</Link></li>
-              <li><Link href="/contact" className="text-[#B0B8C4] hover:text-orange-lava transition-all duration-300 flex items-center justify-center md:justify-start gap-2 hover:translate-x-1"><i className="fa-solid fa-angle-right"></i> ติดต่อเรา</Link></li>
+              <li><Link href="/" className="text-[#B0B8C4] hover:text-orange-lava transition-all duration-300 flex items-center justify-center md:justify-start gap-2 hover:translate-x-1"><FaAngleRight aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> หน้าแรก</Link></li>
+              <li><Link href="/works" className="text-[#B0B8C4] hover:text-orange-lava transition-all duration-300 flex items-center justify-center md:justify-start gap-2 hover:translate-x-1"><FaAngleRight aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> ผลงานขนส่ง</Link></li>
+              <li><Link href="/contact" className="text-[#B0B8C4] hover:text-orange-lava transition-all duration-300 flex items-center justify-center md:justify-start gap-2 hover:translate-x-1"><FaAngleRight aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> ติดต่อเรา</Link></li>
             </ul>
           </div>
 
@@ -42,19 +43,19 @@ export const Footer: React.FC = () => {
               ติดต่อเรา
             </h4>
             <div className="flex justify-center md:justify-start items-start gap-4 mb-4">
-              <i className="fa-solid fa-location-dot text-orange-lava mt-1"></i>
+              <FaLocationDot aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava mt-1" />
               <span>ให้บริการหลัก: นครสวรรค์, กำแพงเพชร, พิจิตร, อุทัยธานี และวิ่งทั่วไทย</span>
             </div>
             <div className="flex justify-center md:justify-start items-start gap-4 mb-4">
-              <i className="fa-solid fa-phone text-orange-lava mt-1"></i>
+              <FaPhone aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava mt-1" />
               <span>095-801-0958 (คุณนิว)<br />บริการ 24 ชั่วโมง</span>
             </div>
             <div className="flex justify-center md:justify-start items-start gap-4 mb-4">
-              <i className="fa-brands fa-line text-orange-lava mt-1"></i>
+              <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava mt-1" />
               <span>Line ID: @952yyanc</span>
             </div>
             <div className="flex justify-center md:justify-start items-start gap-4 mb-4">
-              <i className="fa-brands fa-facebook text-orange-lava mt-1"></i>
+              <FaFacebookF aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava mt-1" />
               <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" rel="noopener noreferrer" aria-label="เยี่ยมชมเพจ Facebook ของ N&M18 TRANSPORT" className="hover:text-orange-lava transition-colors">N&m บริการ รถรับจ้าง กระบะตู้ทึบ ขนส่ง ทั่วไทย</a>
             </div>
           </div>

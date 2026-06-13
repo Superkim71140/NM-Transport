@@ -1,3 +1,4 @@
+import { FaPhone, FaLine, FaFacebookF } from 'react-icons/fa6';
 import React from 'react';
 import { Container } from '../ui/Container';
 import { Button } from '../ui/Button';
@@ -13,7 +14,7 @@ export const ContactSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           <div className="glass-card p-8 flex flex-col items-center">
             <div className="w-16 h-16 bg-orange-lava/10 text-orange-lava flex items-center justify-center text-3xl rounded-full mb-4">
-              <i className="fa-solid fa-phone"></i>
+              <FaPhone aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
             </div>
             <h3 className="text-xl font-bold mb-2">โทรศัพท์</h3>
             <p className="text-lg text-white font-medium mb-4">095-801-0958</p>
@@ -21,7 +22,7 @@ export const ContactSection: React.FC = () => {
           </div>
           <div className="glass-card p-8 flex flex-col items-center border-line-green/30">
             <div className="w-16 h-16 bg-line-green/10 text-line-green flex items-center justify-center text-3xl rounded-full mb-4">
-              <i className="fa-brands fa-line"></i>
+              <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
             </div>
             <h3 className="text-xl font-bold mb-2">LINE Official</h3>
             <p className="text-lg text-white font-medium mb-4">@952yyanc</p>
@@ -29,7 +30,7 @@ export const ContactSection: React.FC = () => {
           </div>
           <div className="glass-card p-8 flex flex-col items-center border-fb-blue/30">
             <div className="w-16 h-16 bg-fb-blue/10 text-fb-blue flex items-center justify-center text-3xl rounded-full mb-4">
-              <i className="fa-brands fa-facebook"></i>
+              <FaFacebookF aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
             </div>
             <h3 className="text-xl font-bold mb-2">Facebook</h3>
             <p className="text-lg text-white font-medium mb-4">ทักแชทเพจ</p>

@@ -1,3 +1,4 @@
+import { FaPhoneVolume, FaLine, FaShieldHalved, FaClock, FaThumbsUp } from 'react-icons/fa6';
 import React from 'react';
 import Image from 'next/image';
 import { Container } from '../ui/Container';
@@ -12,6 +13,7 @@ export const HeroSection: React.FC = () => {
         alt="N&M18 TRANSPORT Hero Background"
         fill
         priority
+        fetchPriority="high"
         className="object-cover object-center absolute inset-0 -z-20"
       />
       
@@ -36,22 +38,22 @@ export const HeroSection: React.FC = () => {
         
         <div className="flex flex-col md:flex-row gap-3 md:gap-4 justify-center items-center mb-8 w-full md:w-auto px-5 md:px-0">
           <Button href="tel:0958010958" aria-label="โทรติดต่อ N&M18 TRANSPORT เพื่อจองคิวรถรับจ้าง" className="w-full md:w-auto py-3 md:py-4 px-6 md:px-9 text-base md:text-xl">
-            <i className="fa-solid fa-phone-volume" aria-hidden="true"></i> โทรจองรถเลย!
+            <FaPhoneVolume aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> โทรจองรถเลย!
           </Button>
           <Button variant="line" href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" aria-label="แอดไลน์ N&M18 TRANSPORT เพื่อประเมินราคาค่าขนย้ายฟรี" className="w-full md:w-auto py-3 md:py-4 px-6 md:px-9 text-base md:text-xl">
-            <i className="fa-brands fa-line text-2xl" aria-hidden="true"></i> ทักไลน์จองคิว
+            <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-2xl" /> ทักไลน์จองคิว
           </Button>
         </div>
 
         <div className="flex justify-center gap-4 mt-8 flex-wrap">
           <div className="bg-white/5 border border-white/15 px-5 py-2 rounded-full text-[0.95rem] backdrop-blur-[5px] transition-all duration-300 hover:bg-white/10 hover:border-neon-blue hover:shadow-neon-blue hover:-translate-y-0.5">
-            <i className="fa-solid fa-shield-halved text-neon-blue mr-1.5"></i> รับประกันสินค้า
+            <FaShieldHalved aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-neon-blue mr-1.5" /> รับประกันสินค้า
           </div>
           <div className="bg-white/5 border border-white/15 px-5 py-2 rounded-full text-[0.95rem] backdrop-blur-[5px] transition-all duration-300 hover:bg-white/10 hover:border-neon-blue hover:shadow-neon-blue hover:-translate-y-0.5">
-            <i className="fa-solid fa-clock text-neon-blue mr-1.5"></i> บริการ 24 ชม.
+            <FaClock aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-neon-blue mr-1.5" /> บริการ 24 ชม.
           </div>
           <div className="bg-white/5 border border-white/15 px-5 py-2 rounded-full text-[0.95rem] backdrop-blur-[5px] transition-all duration-300 hover:bg-white/10 hover:border-neon-blue hover:shadow-neon-blue hover:-translate-y-0.5">
-            <i className="fa-solid fa-thumbs-up text-neon-blue mr-1.5"></i> ราคาเป็นกันเอง
+            <FaThumbsUp aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-neon-blue mr-1.5" /> ราคาเป็นกันเอง
           </div>
         </div>
       </Container>

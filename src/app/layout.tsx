@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Prompt } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 import { TopBar } from "../components/layout/TopBar";
@@ -159,11 +158,6 @@ export default function RootLayout({
         {children}
         <Footer />
         <MobileStickyBar />
-        <Script 
-          src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" 
-          strategy="afterInteractive" 
-          id="fontawesome-js" 
-        />
       </body>
     </html>
   );

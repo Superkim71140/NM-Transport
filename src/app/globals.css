@@ -11,13 +11,6 @@
     color: theme('colors.text-gray');
     line-height: 1.6;
     padding-bottom: 70px; /* For mobile sticky bar */
-    /* Global Background image for the whole site */
-    background-image: 
-      linear-gradient(rgba(5, 10, 20, 0.9), rgba(5, 10, 20, 0.95)), 
-      url('/images/portfolio/S__2531437.webp'); 
-    background-size: cover;      
-    background-position: center; 
-    background-attachment: scroll;
   }
 
   @media (min-width: 1024px) {

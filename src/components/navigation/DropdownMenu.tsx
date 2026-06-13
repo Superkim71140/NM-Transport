@@ -3,21 +3,23 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import type { IconType } from 'react-icons';
+import { FaChevronDown } from 'react-icons/fa6';
 
 type DropdownItem = {
   label: string;
   href: string;
-  icon?: string;
+  icon?: IconType;
 };
 
 type DropdownMenuProps = {
   label: string;
   items: DropdownItem[];
-  icon?: string;
+  icon?: IconType;
   onLinkClick?: () => void;
 };
 
-export const DropdownMenu: React.FC<DropdownMenuProps> = ({ label, items, icon, onLinkClick }) => {
+export const DropdownMenu: React.FC<DropdownMenuProps> = ({ label, items, icon: Icon, onLinkClick }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
@@ -55,8 +57,8 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({ label, items, icon, 
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
       >
-        {icon && <i className={`${icon} w-5`}></i>} {label} 
-        <i className={`fa-solid fa-chevron-down text-xs transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}></i>
+        {Icon && <Icon aria-hidden="true" focusable="false" className="w-5" />} {label} 
+        <FaChevronDown aria-hidden="true" focusable="false" className={`text-xs transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
       
       <div 
@@ -76,7 +78,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({ label, items, icon, 
               className={`px-5 py-3 text-sm block text-center md:text-left border-b border-white/5 hover:bg-orange-lava/10 hover:text-orange-lava transition-all last:border-b-0 bg-white/5 md:bg-transparent ${isItemActive ? 'text-orange-lava bg-orange-lava/10' : 'text-text-gray'}`}
               onClick={handleLinkClick}
             >
-              {item.icon && <i className={`${item.icon} w-5 inline-block text-left`}></i>} {item.label}
+              {item.icon && React.createElement(item.icon, { "aria-hidden": "true", focusable: "false", className: "w-5 inline-block text-left" })} {item.label}
             </Link>
           );
         })}

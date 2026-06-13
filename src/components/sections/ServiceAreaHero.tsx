@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Container } from '../ui/Container';
 
 type ServiceAreaHeroProps = {
@@ -14,10 +15,17 @@ export const ServiceAreaHero: React.FC<ServiceAreaHeroProps> = ({
 }) => {
   return (
     <section 
-      className="relative overflow-hidden text-center text-white py-20 bg-center bg-cover"
-      style={{ backgroundImage: `url('${backgroundImageUrl}')` }}
+      className="relative overflow-hidden text-center text-white py-20"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-[#050a14]/85 to-[#0f1c38]/90"></div>
+      <Image 
+        src={backgroundImageUrl} 
+        alt={title} 
+        fill 
+        priority 
+        fetchPriority="high"
+        className="object-cover absolute inset-0 -z-20"
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#050a14]/85 to-[#0f1c38]/90 -z-10"></div>
       <Container className="relative z-10">
         <h1 className="text-3xl md:text-5xl font-bold mb-4 text-orange-lava drop-shadow-[0_0_20px_rgba(255,69,0,0.4)]">{title}</h1>
         {subtitle && (

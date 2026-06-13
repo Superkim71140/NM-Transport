@@ -1,3 +1,5 @@
+import { FaBoxesPacking, FaWineGlass, FaTv, FaPenClip, FaShieldHalved, FaArrowRight } from 'react-icons/fa6';
+import { FaTruckRampBox, FaPhone, FaLine } from 'react-icons/fa6';
 import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -71,7 +73,7 @@ export default function PackingFragileItemsPage() {
         {/* Section 1: Packing Materials */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-boxes-packing text-orange-lava"></i> 1. การเตรียมวัสดุอุปกรณ์กันกระแทกที่เหมาะสม
+            <FaBoxesPacking aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 1. การเตรียมวัสดุอุปกรณ์กันกระแทกที่เหมาะสม
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             ห้ามใช้กล่องที่บางเกินไปหรือกล่องเก่าที่โครงสร้างยุบตัวง่าย ควรเลือกใช้:
@@ -87,7 +89,7 @@ export default function PackingFragileItemsPage() {
         {/* Section 2: Tableware & Glassware packing */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-wine-glass text-orange-lava"></i> 2. ขั้นตอนการแพ็คแก้วน้ำและจานชามเซรามิก
+            <FaWineGlass aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 2. ขั้นตอนการแพ็คแก้วน้ำและจานชามเซรามิก
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             แก้วน้ำและจานชามควรแพ็คห่อแยกชิ้น ห้ามวางแก้วซ้อนกันโดยไม่มีวัสดุกั้น:
@@ -102,7 +104,7 @@ export default function PackingFragileItemsPage() {
         {/* Section 3: Electronics Packing */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-tv text-orange-lava"></i> 3. วิธีการแพ็คและป้องกันเครื่องใช้ไฟฟ้า
+            <FaTv aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 3. วิธีการแพ็คและป้องกันเครื่องใช้ไฟฟ้า
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             สำหรับทีวีจอแบน มอนิเตอร์คอมพิวเตอร์ หรือไมโครเวฟ ควรห่อจอแสดงผลด้วยแผ่นโฟมบางหรือบับเบิ้ลหลายชั้น จากนั้นซีลทับด้วยเทปยึดสายไฟและอุปกรณ์เสริมให้ติดอยู่กับตัวเครื่องอย่างเป็นระเบียบ หากกล่องเดิมที่ซื้อมายังอยู่ ให้จัดวางเครื่องใช้ไฟฟ้ากลับเข้ากล่องเดิมพร้อมโฟมบล็อกมุม ซึ่งเป็นวิธีป้องกันการตกกระแทกที่มีประสิทธิภาพที่สุด
@@ -112,7 +114,7 @@ export default function PackingFragileItemsPage() {
         {/* Section 4: Box Labeling */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-pen-clip text-orange-lava"></i> 4. เทคนิคการเขียนระบุหน้ากล่องและติดป้ายเตือน
+            <FaPenClip aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 4. เทคนิคการเขียนระบุหน้ากล่องและติดป้ายเตือน
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             ใช้ปากกาเคมีหัวใหญ่เขียนคำว่า <strong>&ldquo;ระวังแตก&rdquo; (FRAGILE)</strong> หรือติดสติกเกอร์สีสะท้อนแสงที่เด่นชัดไว้ทุกด้านของกล่อง และเขียนลูกศรชี้ขึ้นแสดงทิศทางที่ต้องจัดตั้งกล่อง (THIS SIDE UP) เพื่อให้ทีมงานขนย้ายตระหนักและระมัดระวังในการจัดเรียงและยกขนกล่องใบนั้นเป็นพิเศษ
@@ -122,7 +124,7 @@ export default function PackingFragileItemsPage() {
         {/* Section 5: Arrangement on Truck */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-truck-ramp-box text-orange-lava"></i> 5. การจัดเรียงกล่องของแตกง่ายบนรถขนส่ง
+            <FaTruckRampBox aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 5. การจัดเรียงกล่องของแตกง่ายบนรถขนส่ง
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             ในขั้นตอนการเรียงของขึ้นรถขนส่ง ห้ามนำกล่องที่บรรจุแก้วหรือของแตกง่ายไปไว้ด้านล่างสุดของกองกล่อง เนื่องจากน้ำหนักของกล่องอื่นๆ ด้านบนจะกดทับจนกล่องบุบและสร้างความเสียหายได้ ควรวางกล่องประเภทนี้ไว้แถวบนสุด และจัดยึดด้วยสายรัดเพื่อป้องกันกล่องล้มเอียงขณะเลี้ยวโค้ง
@@ -132,7 +134,7 @@ export default function PackingFragileItemsPage() {
         {/* Section 6: Damage Warranty */}
         <section className="mb-10">
           <h2 className="text-[1.5rem] md:text-[1.8rem] font-bold text-white mb-4 flex items-center gap-3">
-            <i className="fa-solid fa-shield-check text-orange-lava"></i> 6. ประกันความเสียหายจากการขนย้าย
+            <FaShieldHalved aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> 6. ประกันความเสียหายจากการขนย้าย
           </h2>
           <p className="text-[#ccc] leading-relaxed mb-4">
             เพื่อความสบายใจสูงสุด ควรเลือกใช้ผู้ให้บริการรถรับจ้างที่มีการรับประกันความชำรุดเสียหายจากการขนส่ง ที่ N&M18 TRANSPORT เรามีประกันความเสียหายและดูแลรับผิดชอบความปลอดภัยของทรัพย์สินตลอดการเดินทางให้แก่ลูกค้าทุกท่านตามข้อตกลงที่ตกลงกันไว้
@@ -149,7 +151,7 @@ export default function PackingFragileItemsPage() {
             href="/blog/ultimate-moving-guide" 
             className="text-orange-lava hover:text-orange-glow font-bold underline inline-flex items-center gap-1.5 transition-colors"
           >
-            คู่มือย้ายบ้าน ย้ายคอนโด และย้ายหอพัก ฉบับครบถ้วน วางแผนขนย้ายปลอดภัย <i className="fa-solid fa-arrow-right text-sm"></i>
+            คู่มือย้ายบ้าน ย้ายคอนโด และย้ายหอพัก ฉบับครบถ้วน วางแผนขนย้ายปลอดภัย <FaArrowRight aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-sm" />
           </Link>
         </section>
 
@@ -184,7 +186,7 @@ export default function PackingFragileItemsPage() {
               href="tel:0958010958" 
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold bg-orange-lava text-white hover:bg-orange-glow transition-all shadow-neon-orange"
             >
-              <i className="fa-solid fa-phone"></i> โทร 095-801-0958
+              <FaPhone aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> โทร 095-801-0958
             </Link>
             <a 
               href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" 
@@ -192,7 +194,7 @@ export default function PackingFragileItemsPage() {
               rel="noopener noreferrer" 
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold bg-[#06C755] text-white hover:bg-[#05a84a] transition-all"
             >
-              <i className="fa-brands fa-line"></i> แอดไลน์ประเมินราคา (LINE)
+              <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> แอดไลน์ประเมินราคา (LINE)
             </a>
           </div>
         </footer>

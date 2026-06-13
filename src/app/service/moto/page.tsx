@@ -1,3 +1,4 @@
+import { FaPhoneVolume, FaLine, FaTruckRampBox, FaShieldCat, FaLock, FaClock, FaCamera, FaMapLocationDot, FaCheck } from 'react-icons/fa6';
 import React from 'react';
 import type { Metadata } from 'next';
 import Script from 'next/script';
@@ -56,14 +57,12 @@ export default function ServiceMotoPage() {
 
   return (
     <main 
-      className="bg-[#02040a] min-h-screen text-[#e2e8f0] pb-[70px] md:pb-0" 
-      style={{ 
-        backgroundImage: "linear-gradient(to bottom, rgba(2, 4, 10, 0.85), rgba(2, 4, 10, 0.98)), url('/images/portfolio/S__17556168.webp')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed"
-      }}
+      className="relative bg-[#02040a] min-h-screen text-[#e2e8f0] pb-[70px] md:pb-0" 
     >
+      <div className="fixed inset-0 w-full h-full -z-20 pointer-events-none">
+        <Image src="/images/portfolio/S__17556168.webp" alt="Background" fill priority fetchPriority="high" className="object-cover" />
+      </div>
+      <div className="fixed inset-0 w-full h-full bg-gradient-to-b from-[rgba(2,4,10,0.85)] to-[rgba(2,4,10,0.98)] -z-10 pointer-events-none"></div>
       <Script
         id="service-moto-jsonld"
         type="application/ld+json"
@@ -82,10 +81,10 @@ export default function ServiceMotoPage() {
           
           <div className="mt-[25px] flex justify-center gap-[15px] flex-wrap">
             <a href="tel:0958010958" className="inline-flex items-center justify-center gap-[10px] p-[12px_30px] rounded-[50px] font-bold border-none text-[1rem] cursor-pointer transition-all duration-300 bg-[#00f2ff] text-[#02040a] shadow-[0_0_15px_rgba(0,242,255,0.4)] hover:-translate-y-[2px] hover:shadow-[0_0_25px_rgba(0,242,255,0.7)] hover:bg-white w-[90%] md:w-auto max-w-[300px]">
-              <i className="fa-solid fa-phone-volume"></i> โทรประเมินราคา
+              <FaPhoneVolume aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> โทรประเมินราคา
             </a>
             <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-[10px] p-[12px_30px] rounded-[50px] font-bold border-2 border-[#06C755] text-[#06C755] text-[1rem] cursor-pointer transition-all duration-300 bg-transparent hover:bg-[#06C755] hover:text-white hover:shadow-[0_0_15px_#06C755] w-[90%] md:w-auto max-w-[300px]">
-              <i className="fa-brands fa-line"></i> ส่งรูปรถทาง LINE
+              <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> ส่งรูปรถทาง LINE
             </a>
           </div>
         </div>
@@ -97,7 +96,7 @@ export default function ServiceMotoPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[15px] md:gap-[20px] mb-[40px] md:mb-[60px] mt-[30px] md:mt-[50px]">
           <div className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-[16px] p-[20px] md:p-[25px] text-left transition-all duration-300 relative overflow-hidden group hover:-translate-y-[5px] hover:border-[#00f2ff] hover:bg-gradient-to-br hover:from-[rgba(0,242,255,0.05)] hover:to-[rgba(255,255,255,0.01)]">
             <div className="text-[2rem] text-[#00f2ff] mb-[15px] drop-shadow-[0_0_8px_rgba(0,242,255,0.5)]">
-              <i className="fa-solid fa-truck-ramp-box"></i>
+              <FaTruckRampBox aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
             </div>
             <h3 className="text-white mb-[8px] text-[1.2rem] font-medium">ทางลาดขึ้น-ลงสะดวก</h3>
             <p className="text-[#94a3b8] text-[0.9rem] leading-[1.5]">มีทางลาดอลูมิเนียมยาวพิเศษ รถโหลดเตี้ย หรือรถทรงสปอร์ตขึ้นได้ง่าย ไม่ติดใต้ท้องรถ</p>
@@ -105,7 +104,7 @@ export default function ServiceMotoPage() {
 
           <div className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-[16px] p-[20px] md:p-[25px] text-left transition-all duration-300 relative overflow-hidden group hover:-translate-y-[5px] hover:border-[#00f2ff] hover:bg-gradient-to-br hover:from-[rgba(0,242,255,0.05)] hover:to-[rgba(255,255,255,0.01)]">
             <div className="text-[2rem] text-[#00f2ff] mb-[15px] drop-shadow-[0_0_8px_rgba(0,242,255,0.5)]">
-              <i className="fa-solid fa-shield-cat"></i>
+              <FaShieldCat aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
             </div>
             <h3 className="text-white mb-[8px] text-[1.2rem] font-medium">แพ็คซีนกันรอย 100%</h3>
             <p className="text-[#94a3b8] text-[0.9rem] leading-[1.5]">เราห่อหุ้มจุดสัมผัสและตัวรถด้วยฟิล์มยืดอย่างดี ป้องกันรอยขีดข่วนระหว่างขนส่ง</p>
@@ -113,7 +112,7 @@ export default function ServiceMotoPage() {
 
           <div className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-[16px] p-[20px] md:p-[25px] text-left transition-all duration-300 relative overflow-hidden group hover:-translate-y-[5px] hover:border-[#00f2ff] hover:bg-gradient-to-br hover:from-[rgba(0,242,255,0.05)] hover:to-[rgba(255,255,255,0.01)]">
             <div className="text-[2rem] text-[#00f2ff] mb-[15px] drop-shadow-[0_0_8px_rgba(0,242,255,0.5)]">
-              <i className="fa-solid fa-lock"></i>
+              <FaLock aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
             </div>
             <h3 className="text-white mb-[8px] text-[1.2rem] font-medium">ล็อคล้อ 4 จุด</h3>
             <p className="text-[#94a3b8] text-[0.9rem] leading-[1.5]">ใช้อุปกรณ์ Wheel Chock ล็อคล้อหน้า และสายรัด Soft Strap ไม่กดทับแฟริ่งให้เสียหาย</p>
@@ -121,7 +120,7 @@ export default function ServiceMotoPage() {
 
           <div className="bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-[16px] p-[20px] md:p-[25px] text-left transition-all duration-300 relative overflow-hidden group hover:-translate-y-[5px] hover:border-[#00f2ff] hover:bg-gradient-to-br hover:from-[rgba(0,242,255,0.05)] hover:to-[rgba(255,255,255,0.01)]">
             <div className="text-[2rem] text-[#00f2ff] mb-[15px] drop-shadow-[0_0_8px_rgba(0,242,255,0.5)]">
-              <i className="fa-solid fa-clock"></i>
+              <FaClock aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
             </div>
             <h3 className="text-white mb-[8px] text-[1.2rem] font-medium">บริการ 24 ชั่วโมง</h3>
             <p className="text-[#94a3b8] text-[0.9rem] leading-[1.5]">วิ่งงานด่วน งานเหมา ทั่วไทย รับรถดึกแค่ไหนก็ไปรับได้ (นัดหมายล่วงหน้า)</p>
@@ -131,7 +130,7 @@ export default function ServiceMotoPage() {
         {/* GALLERY SECTION */}
         <div className="p-[20px] md:p-[40px] rounded-[20px] bg-[rgba(0,0,0,0.3)] border border-[rgba(255,255,255,0.05)] mb-[40px] md:mb-[60px]">
           <div className="text-center mb-[30px]">
-            <h2 className="text-white text-[1.5rem] md:text-[1.8rem] mb-[10px] font-bold"><i className="fa-solid fa-camera text-[#00f2ff] mr-2"></i> ภาพผลงานจริง</h2>
+            <h2 className="text-white text-[1.5rem] md:text-[1.8rem] mb-[10px] font-bold"><FaCamera aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#00f2ff] mr-2" /> ภาพผลงานจริง</h2>
             <p className="text-[#aaa] text-[0.9rem]">รถเล็ก รถใหญ่ รถเก่า รถวิบาก เรารับจบทุกคัน</p>
           </div>
           
@@ -160,31 +159,31 @@ export default function ServiceMotoPage() {
         {/* SERVICE AREA SECTION */}
         <section className="mt-[40px] mb-[60px] p-[30px] bg-[rgba(15,28,56,0.6)] rounded-[15px] border border-[rgba(255,255,255,0.05)]">
           <h3 className="text-white text-center mb-[25px] text-[1.5rem]">
-            <i className="fa-solid fa-map-location-dot text-[#00f2ff]"></i> พื้นที่รับ-ส่งยอดนิยม (รับถึงหน้าบ้าน)
+            <FaMapLocationDot aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#00f2ff]" /> พื้นที่รับ-ส่งยอดนิยม (รับถึงหน้าบ้าน)
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[20px] text-left text-[#d0d7e1]">
             <div>
               <h4 className="text-[#FF4500] text-[1.1rem] mb-[10px]">กรุงเทพ & ปริมณฑล</h4>
               <ul className="list-none font-[0.9rem] leading-[1.8]">
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> บางแค / ฝั่งธน / พระราม 2</li>
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> ลาดพร้าว / รังสิต / ดอนเมือง</li>
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> บางนา / สมุทรปราการ</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> บางแค / ฝั่งธน / พระราม 2</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> ลาดพร้าว / รังสิต / ดอนเมือง</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> บางนา / สมุทรปราการ</li>
               </ul>
             </div>
             <div>
               <h4 className="text-[#FF4500] text-[1.1rem] mb-[10px]">เส้นทางต่างจังหวัด</h4>
               <ul className="list-none font-[0.9rem] leading-[1.8]">
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> ภาคเหนือ (เชียงใหม่/นครสวรรค์)</li>
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> ภาคอีสาน (โคราช/ขอนแก่น)</li>
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> ภาคใต้ (หัวหิน/ภูเก็ต)</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> ภาคเหนือ (เชียงใหม่/นครสวรรค์)</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> ภาคอีสาน (โคราช/ขอนแก่น)</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> ภาคใต้ (หัวหิน/ภูเก็ต)</li>
               </ul>
             </div>
             <div>
               <h4 className="text-[#FF4500] text-[1.1rem] mb-[10px]">ประเภทรถที่รับขนส่ง</h4>
               <ul className="list-none font-[0.9rem] leading-[1.8]">
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> Big Bike ทุกรุ่น (Harley/BMW/Ducati)</li>
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> รถมอเตอร์ไซค์เล็ก / เวสป้า / รถป๊อป</li>
-                <li><i className="fa-solid fa-check text-[#06C755] mr-[5px]"></i> รถวิบาก / รถ ATV / รถกอล์ฟ</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> Big Bike ทุกรุ่น (Harley/BMW/Ducati)</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> รถมอเตอร์ไซค์เล็ก / เวสป้า / รถป๊อป</li>
+                <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#06C755] mr-[5px]" /> รถวิบาก / รถ ATV / รถกอล์ฟ</li>
               </ul>
             </div>
           </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { FaChevronLeft, FaChevronRight, FaQuoteLeft } from 'react-icons/fa6';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
@@ -101,14 +102,14 @@ export const ReviewsSlider: React.FC = () => {
         onClick={prevSlide}
         className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-0 w-[45px] h-[45px] rounded-full bg-white/5 border border-white/10 text-white items-center justify-center cursor-pointer transition-all duration-300 z-10 hover:bg-orange-lava hover:border-orange-lava hover:shadow-neon-orange"
       >
-        <i className="fa-solid fa-chevron-left"></i>
+        <FaChevronLeft aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
       </button>
       
       <button 
         onClick={nextSlide}
         className="hidden md:flex absolute top-1/2 -translate-y-1/2 right-0 w-[45px] h-[45px] rounded-full bg-white/5 border border-white/10 text-white items-center justify-center cursor-pointer transition-all duration-300 z-10 hover:bg-orange-lava hover:border-orange-lava hover:shadow-neon-orange"
       >
-        <i className="fa-solid fa-chevron-right"></i>
+        <FaChevronRight aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
       </button>
 
       <div className="relative w-full overflow-hidden">
@@ -124,7 +125,7 @@ export const ReviewsSlider: React.FC = () => {
               ${idx === activeIndex ? 'flex animate-[fadeIn_0.6s_ease]' : 'hidden'}
             `}
           >
-            <i className="fa-solid fa-quote-left text-5xl text-orange-lava/20 absolute top-5 left-8"></i>
+            <FaQuoteLeft aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-5xl text-orange-lava/20 absolute top-5 left-8" />
             
             <div className="w-[100px] h-[100px] rounded-full border-4 border-orange-lava p-1 mb-5 shadow-neon-orange relative shrink-0">
               <Image 
