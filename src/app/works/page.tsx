@@ -1,11 +1,12 @@
 import Image from "next/image";
 import { Metadata } from "next";
+import { portfolioItems } from "@/data/portfolio";
 
 export const metadata: Metadata = {
   title: "ผลงานของเรา - N&M18 TRANSPORT | รถกระบะรับจ้าง 4 ล้อ ตู้ทึบ",
   description: "ผลงานของเรา - N&M18 TRANSPORT | รถกระบะรับจ้าง 4 ล้อ ตู้ทึบ",
   alternates: {
-    canonical: "https://www.nm18transport.com/works",
+    canonical: "/works",
   },
   openGraph: {
     title: "ผลงานของเรา - N&M18 TRANSPORT | รถกระบะรับจ้าง 4 ล้อ ตู้ทึบ",
@@ -17,86 +18,11 @@ export const metadata: Metadata = {
 };
 
 export default function WorksPage() {
-  const portfolioItems = [
-    {
-      imgSrc: "/images/portfolio/S__17556168.jpg",
-      imgAlt: "ขนส่งมอเตอร์ไซค์ Big Bike 4 ล้อ",
-      tagIcon: "fa-solid fa-motorcycle",
-      tagText: "ขนส่งมอเตอร์ไซค์",
-      title: "Big Bike ส่งถึงที่ ปลอดภัย 100%",
-      desc: "รถใหญ่ touring เราก็รับจบ มีสะพานขึ้นลงมาตรฐาน ห่อหุ้มกันรอยรอบคัน มัดยึดแน่นหนาไม่ไหวติง",
-    },
-    {
-      imgSrc: "/images/portfolio/S__2531424.jpg",
-      imgAlt: "ย้ายหอของเยอะ รถกระบะตู้ทึบ",
-      tagIcon: "fa-solid fa-box-open",
-      tagText: "ย้ายหอพัก",
-      title: "ของเยอะแค่ไหน ก็จัดเรียงให้คุ้ม",
-      desc: "ทีมงานมืออาชีพ ช่วยจัดเรียงของขึ้นรถให้เต็มพื้นที่ คุ้มค่าจ้างที่สุด ไม่ต้องกลัวของตกหล่น",
-    },
-    {
-      imgSrc: "/images/portfolio/S__2531426.jpg",
-      imgAlt: "รถกระบะตู้ทึบหลังคาสูง รับงานเหมา",
-      tagIcon: "fa-solid fa-truck-pickup",
-      tagText: "รถตู้ทึบหลังคาสูง",
-      title: "กระบะตู้ทึบ จุของได้เยอะ",
-      desc: "สำหรับงานย้ายสำนักงาน หรือย้ายบ้านทั้งหลัง เรามีรถตู้ทึบหลังคาสูง 2.10 เมตร ใส่ของได้จุใจ พร้อมทีมงานขนยก",
-    },
-    {
-      imgSrc: "/images/portfolio/S__2531422.jpg",
-      imgAlt: "แพ็คเฟอร์นิเจอร์ป้องกันรอย",
-      tagIcon: "fa-solid fa-couch",
-      tagText: "ถนอมสินค้า",
-      title: "ห่อกันกระแทกทุกชิ้นใหญ่",
-      desc: "เฟอร์นิเจอร์ ตู้ เตียง เรามีบริการแรปพลาสติกและบับเบิ้ลกันกระแทกอย่างดี ป้องกันรอยขีดข่วน",
-    },
-    {
-      imgSrc: "/images/portfolio/S__17556173.jpg",
-      imgAlt: "ส่งของด่วน 24 ชม รถ 4 ล้อ",
-      tagIcon: "fa-solid fa-clock",
-      tagText: "บริการ 24 ชม.",
-      title: "ส่งด่วนได้ทุกเวลา",
-      desc: "ไม่ว่าจะเช้า หรือดึกแค่ไหน นัดเวลารับรถได้เลย เราพร้อมวิ่งงานทั่วประเทศ",
-    },
-    {
-      imgSrc: "/images/portfolio/S__17556170.jpg",
-      imgAlt: "ห่อรถมอเตอร์ไซค์กันรอย",
-      tagIcon: "fa-solid fa-shield-cat",
-      tagText: "ใส่ใจทุกรายละเอียด",
-      title: "แรปกันรอยรอบคัน",
-      desc: "ดูแลรถของคุณเหมือนรถของเรา ห่อหุ้มกันรอยขีดข่วนก่อนขึ้นรถทุกคัน สบายใจหายห่วง",
-    },
-    {
-      imgSrc: "/images/portfolio/S__2531423.jpg",
-      imgAlt: "ขนย้ายสัตว์เลี้ยงรถส่วนตัว",
-      tagIcon: "fa-solid fa-paw",
-      tagText: "สัตว์เลี้ยง",
-      title: "รับส่งน้องหมา น้องแมว",
-      desc: "อุปกรณ์สัตว์เลี้ยง กรงขนาดใหญ่ เราจัดวางให้อย่างดี มีพื้นที่เพียงพอ ไม่ทับเสียหาย",
-    },
-    {
-      imgSrc: "/images/portfolio/S__2531439.jpg",
-      imgAlt: "ย้ายหอพร้อมมอเตอร์ไซค์",
-      tagIcon: "fa-solid fa-truck-pickup",
-      tagText: "เหมาเที่ยวเดียวจบ",
-      title: "ย้ายห้อง + รถมอเตอร์ไซค์",
-      desc: "ไปพร้อมกันได้เลย ทั้งของใช้ในห้องและรถคู่ใจ ประหยัดกว่าแยกส่ง สะดวกเที่ยวเดียวจบ",
-    },
-    {
-      imgSrc: "/images/portfolio/S__17556176.jpg",
-      imgAlt: "ขนส่งมอเตอร์ไซค์หลายคัน",
-      tagIcon: "fa-solid fa-layer-group",
-      tagText: "เหมาหลายคัน",
-      title: "ขนส่งมอเตอร์ไซค์ ยกแก๊ง",
-      desc: "จะขนย้ายรถสะสม หรือออกทริปเป็นกลุ่ม เราจัดให้ได้ในเที่ยวเดียว ห่อหุ้มหนาพิเศษ แยกคันชัดเจน ปลอดภัย 100%",
-    },
-  ];
-
   return (
     <>
       <div 
         className="relative bg-cover bg-center text-white pt-[120px] px-5 pb-[80px] text-center border-b border-[rgba(255,69,0,0.2)]"
-        style={{ backgroundImage: "linear-gradient(to bottom, rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 1)), url('/images/portfolio/S__2531426.jpg')" }}
+        style={{ backgroundImage: "linear-gradient(to bottom, rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 1)), url('/images/portfolio/S__2531426.webp')" }}
       >
         <h1 className="text-[1.8rem] md:text-[3rem] font-bold mb-[15px] leading-[1.3] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#FF4500]" style={{ textShadow: "0 0 20px rgba(0,0,0,0.8)" }}>
           ผลงานที่ผ่านมา
@@ -109,20 +35,23 @@ export default function WorksPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px]">
             {portfolioItems.map((item, idx) => (
-              <div 
-                key={idx} 
-                className="group bg-[rgba(15,28,56,0.7)] border border-[rgba(255,255,255,0.08)] rounded-[20px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:-translate-y-[10px] hover:shadow-[0_15px_40px_rgba(255,69,0,0.2)] hover:border-[#FF4500] transition-all duration-300 flex flex-col relative"
+              <figure 
+                key={item.id} 
+                className="group m-0 bg-[rgba(15,28,56,0.7)] border border-[rgba(255,255,255,0.08)] rounded-[20px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:-translate-y-[10px] hover:shadow-[0_15px_40px_rgba(255,69,0,0.2)] hover:border-[#FF4500] transition-all duration-300 flex flex-col relative"
               >
                 <div className="h-[220px] md:h-[240px] overflow-hidden relative">
                   <Image 
                     src={item.imgSrc} 
-                    alt={item.imgAlt} 
+                    alt={item.imgAlt}
+                    title={item.imgTitle}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={idx < 3}
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-t from-[#0f1c38] to-transparent opacity-80 z-10 pointer-events-none"></div>
                 </div>
-                <div className="p-5 md:p-[25px] relative z-20 -mt-[30px] flex flex-col flex-grow">
+                <figcaption className="p-5 md:p-[25px] relative z-20 -mt-[30px] flex flex-col flex-grow">
                   <div className="mb-[15px]">
                     <span className="inline-block bg-[rgba(0,0,0,0.6)] text-[#FF4500] py-[5px] px-[15px] rounded-[50px] text-[0.85rem] font-semibold border border-[#FF4500] shadow-[0_0_10px_rgba(255,69,0,0.2)] backdrop-blur-[5px]">
                       <i className={`${item.tagIcon} mr-1`}></i> {item.tagText}
@@ -134,19 +63,35 @@ export default function WorksPage() {
                   <p className="text-[0.95rem] text-[#ccc] leading-[1.6]">
                     {item.desc}
                   </p>
-                </div>
-              </div>
+                </figcaption>
+              </figure>
             ))}
           </div>
 
-          <div className="bg-gradient-to-br from-[rgba(15,28,56,0.9)] to-[rgba(5,10,20,0.95)] border border-[rgba(255,255,255,0.1)] rounded-[15px] md:rounded-[25px] p-[40px_20px] md:p-[50px] mt-[40px] md:mt-[80px] flex flex-col md:flex-row items-center text-center md:text-left gap-[20px] md:gap-[50px] shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
+          <div className="mt-[60px] p-6 md:p-10 bg-[rgba(15,28,56,0.4)] border border-[rgba(255,255,255,0.05)] rounded-[20px]">
+            <h2 className="text-[1.5rem] md:text-[2rem] font-bold text-white mb-4">
+              ผลงานรถรับจ้างคุณภาพจาก N&M18 TRANSPORT
+            </h2>
+            <div className="text-[#B0B8C4] space-y-4 text-[1rem] leading-[1.8]">
+              <p>
+                รวมภาพผลงานจริงจากบริการของเรา ไม่ว่าจะเป็น <strong>รถกระบะรับจ้าง 4 ล้อ</strong> <strong>ย้ายบ้าน ย้ายหอพัก</strong> หรือ <strong>ขนส่งมอเตอร์ไซค์</strong> ข้ามจังหวัด เราใส่ใจทุกขั้นตอนตั้งแต่การแพ็คสินค้า การยกขึ้นรถ และการจัดเรียงภายในตู้ทึบอย่างเป็นระเบียบ เพื่อป้องกันความเสียหายระหว่างการเดินทาง
+              </p>
+              <p>
+                ด้วยประสบการณ์และทีมงานมืออาชีพ เราเลือกใช้รถสภาพใหม่ สะอาด พร้อมอุปกรณ์ช่วยยกที่ได้มาตรฐาน ทำให้ลูกค้าไว้วางใจใช้บริการขนส่งกับเราอย่างต่อเนื่อง หากคุณกำลังมองหา <em>รถรับจ้างราคาถูก</em> แต่คุณภาพระดับพรีเมียม ให้ภาพผลงานของเราเป็นเครื่องยืนยัน
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-br from-[rgba(15,28,56,0.9)] to-[rgba(5,10,20,0.95)] border border-[rgba(255,255,255,0.1)] rounded-[15px] md:rounded-[25px] p-[40px_20px] md:p-[50px] mt-[40px] md:mt-[60px] flex flex-col md:flex-row items-center text-center md:text-left gap-[20px] md:gap-[50px] shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
             <div className="absolute -top-[50%] -right-[10%] w-[300px] h-[300px] bg-[#FF4500] blur-[150px] opacity-20 pointer-events-none"></div>
             
             <div className="relative w-[140px] h-[140px] md:w-[180px] md:h-[180px] flex-shrink-0 mx-auto md:mx-0 shadow-[0_0_30px_rgba(255,69,0,0.4)] rounded-full border-[4px] border-[#0f1c38] outline outline-[3px] outline-[#FF4500]">
               <Image 
-                src="/images/portfolio/S__17556285.png" 
+                src="/images/portfolio/S__17556285.webp" 
                 alt="ทีมงาน N&M18 TRANSPORT" 
+                title="ทีมงานคุณภาพ N&M18 TRANSPORT"
                 fill
+                sizes="180px"
                 className="object-cover rounded-full"
               />
             </div>
@@ -180,6 +125,7 @@ export default function WorksPage() {
             "@type": "ImageGallery",
             "name": "ผลงาน N&M18 TRANSPORT",
             "description": "รวมภาพผลงานจริง บริการรถรับจ้าง 4 ล้อ ย้ายบ้าน ขนส่งมอเตอร์ไซค์",
+            "url": "https://www.nm18transport.com/works",
             "provider": {
               "@type": "TransportationService",
               "name": "N&M18 TRANSPORT",
@@ -193,7 +139,16 @@ export default function WorksPage() {
                   "addressRegion": "Bangkok",
                   "addressCountry": "TH"
               }
-            }
+            },
+            "hasPart": portfolioItems.map((item) => ({
+              "@type": "ImageObject",
+              "url": `https://www.nm18transport.com${item.imgSrc}`,
+              "contentUrl": `https://www.nm18transport.com${item.imgSrc}`,
+              "caption": item.imgAlt,
+              "name": item.title,
+              "description": item.desc,
+              "thumbnailUrl": `https://www.nm18transport.com${item.imgSrc}`
+            }))
           })
         }}
       />

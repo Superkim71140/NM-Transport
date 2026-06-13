@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description: 'บริการรถกระบะรับจ้าง โซนกรุงเทพชั้นใน สุขุมวิท อโศก ทองหล่อ สาทร พระราม 9 เชี่ยวชาญงานย้ายคอนโด ขึ้นตึกสูง รถตู้ทึบเข้าห้างได้ ราคาเริ่มต้น 300.- โทร 095-801-0958',
   keywords: 'รถรับจ้าง สุขุมวิท, ย้ายคอนโด พระราม 9, รถกระบะรับจ้าง รัชดา, ขนของ ทองหล่อ, รถ 4 ล้อใหญ่ สาทร, ย้ายหอพัก อโศก, รถรับจ้าง อนุสาวรีย์ชัย, N&M18 TRANSPORT',
   alternates: {
-    canonical: 'https://www.nm18transport.com/area/bangkok-inner',
+    canonical: "/area/bangkok-inner",
   },
   openGraph: {
     title: 'รถรับจ้าง กรุงเทพชั้นใน ย้ายคอนโด สุขุมวิท-รัชดา งานด่วน - N&M18 TRANSPORT',
     description: 'เชี่ยวชาญงานย้ายคอนโด โซนเมือง สุขุมวิท-สาทร-พระราม9 รถใหม่ ตู้ทึบ สะอาด บริการยกของ',
     url: 'https://www.nm18transport.com/area/bangkok-inner',
-    images: ['/images/portfolio/S__2531423.jpg'],
+    images: ['/images/portfolio/S__2531423.webp'],
     type: 'article',
   },
 };
@@ -50,7 +50,7 @@ export default function BangkokInnerAreaPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden text-center bg-cover bg-center" style={{ backgroundImage: "linear-gradient(to bottom, rgba(2, 6, 13, 0.8), rgba(15, 28, 56, 0.95)), url('/images/portfolio/S__2531437.jpg')" }}>
+      <section className="relative py-24 md:py-32 overflow-hidden text-center bg-cover bg-center" style={{ backgroundImage: "linear-gradient(to bottom, rgba(2, 6, 13, 0.8), rgba(15, 28, 56, 0.95)), url('/images/portfolio/S__2531437.webp')" }}>
         <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-orange-lava to-neon-blue shadow-[0_-5px_20px_rgba(255,69,0,0.5)]"></div>
         <Container className="relative z-10">
           <div className="text-sm md:text-base mb-6 tracking-wider text-text-gray uppercase">
@@ -136,7 +136,7 @@ export default function BangkokInnerAreaPage() {
             <div className="flex-1 w-full max-w-xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden border-2 border-orange-lava/20 shadow-[0_0_25px_rgba(255,69,0,0.3)]">
                 <Image 
-                  src="/images/portfolio/S__2531423.jpg" 
+                  src="/images/portfolio/S__2531423.webp" 
                   alt="ขนย้ายคอนโด กรุงเทพชั้นใน N&M18" 
                   width={800} 
                   height={600} 

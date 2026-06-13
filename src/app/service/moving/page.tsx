@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "บริการรถรับจ้างย้ายบ้าน ย้ายหอพัก ย้ายคอนโด ขนย้ายเฟอร์นิเจอร์ รถกระบะตู้ทึบ รถ 4 ล้อรับจ้าง พร้อมคนยกของ ราคาถูก ประเมินราคาฟรี วิ่งทั่วกรุงเทพฯ และต่างจังหวัด โทร 095-801-0958",
   keywords: "รถรับจ้างย้ายบ้าน, รถรับจ้างขนของ, ย้ายหอพัก, รถ 4 ล้อรับจ้าง, รถกระบะรับจ้างขนของ, จ้างรถขนของ, ย้ายบ้านราคาถูก, รถรับจ้าง กรุงเทพ, ขนย้ายเฟอร์นิเจอร์, N&M18 TRANSPORT",
   alternates: {
-    canonical: "https://www.nm18transport.com/service/moving",
+    canonical: "/service/moving",
   },
   openGraph: {
     title: "รถรับจ้างย้ายบ้าน ย้ายหอพัก คอนโด รถกระบะ/4ล้อ ตู้ทึบ ราคาถูก",
@@ -113,7 +113,7 @@ export default function ServiceMovingPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[15px] md:gap-[20px]">
             <div className="rounded-[15px] overflow-hidden relative border border-[rgba(255,255,255,0.1)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] group lg:col-span-2 aspect-[4/3] lg:aspect-[16/9]">
-              <Image src="/images/portfolio/S__2531438.jpg" alt="รถตู้ทึบขนของเต็มคัน N&M18" fill className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-70" />
+              <Image src="/images/portfolio/S__2531438.webp" alt="รถตู้ทึบขนของเต็มคัน N&M18" fill className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-70" />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[rgba(5,10,20,0.95)] to-[rgba(5,10,20,0.6)] p-[10px] md:p-[15px] text-white text-[0.9rem] md:text-[1rem] font-medium flex items-center gap-[10px] transition-all duration-400 opacity-100 md:opacity-0 md:translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
                 <i className="fa-solid fa-layer-group text-[#FF4500] text-[1.1rem]"></i> 
                 จัดเรียงของเป็นระเบียบ เต็มคันคุ้มค่า
@@ -121,7 +121,7 @@ export default function ServiceMovingPage() {
             </div>
             
             <div className="rounded-[15px] overflow-hidden relative border border-[rgba(255,255,255,0.1)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] group aspect-[4/3]">
-              <Image src="/images/portfolio/S__2531423.jpg" alt="การแพ็คกิ้งของในรถ" fill className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-70" />
+              <Image src="/images/portfolio/S__2531423.webp" alt="การแพ็คกิ้งของในรถ" fill className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-70" />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[rgba(5,10,20,0.95)] to-[rgba(5,10,20,0.6)] p-[10px] md:p-[15px] text-white text-[0.9rem] md:text-[1rem] font-medium flex items-center gap-[10px] transition-all duration-400 opacity-100 md:opacity-0 md:translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
                 <i className="fa-solid fa-box-open text-[#FF4500] text-[1.1rem]"></i> 
                 แพ็คกันกระแทกทุกชิ้น
@@ -137,7 +137,7 @@ export default function ServiceMovingPage() {
             </div>
 
             <div className="rounded-[15px] overflow-hidden relative border border-[rgba(255,255,255,0.1)] shadow-[0_10px_30px_rgba(0,0,0,0.3)] group aspect-[4/3]">
-              <Image src="/images/portfolio/S__17556285.png" alt="ขนย้ายหอพัก" fill className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-70" />
+              <Image src="/images/portfolio/S__17556285.webp" alt="ขนย้ายหอพัก" fill className="object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-70" />
               <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[rgba(5,10,20,0.95)] to-[rgba(5,10,20,0.6)] p-[10px] md:p-[15px] text-white text-[0.9rem] md:text-[1rem] font-medium flex items-center gap-[10px] transition-all duration-400 opacity-100 md:opacity-0 md:translate-y-full group-hover:opacity-100 group-hover:translate-y-0">
                 <i className="fa-solid fa-truck-fast text-[#FF4500] text-[1.1rem]"></i> 
                 ย้ายหอพัก/คอนโด รวดเร็ว
@@ -198,7 +198,7 @@ export default function ServiceMovingPage() {
           </div>
 
           <div className="flex-1 relative z-10 rounded-[20px] overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] border border-[rgba(255,255,255,0.1)] w-full aspect-[4/3] group">
-            <Image src="/images/portfolio/S__2531423.jpg" alt="อุปกรณ์แพ็คกิ้งครบครัน N&M18" fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
+            <Image src="/images/portfolio/S__2531423.webp" alt="อุปกรณ์แพ็คกิ้งครบครัน N&M18" fill className="object-cover transition-transform duration-500 group-hover:scale-105" />
           </div>
         </div>
 

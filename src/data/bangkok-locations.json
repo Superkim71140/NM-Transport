@@ -1,0 +1,564 @@
+[
+  {
+    "slug": "ladprao",
+    "thaiName": "ลาดพร้าว",
+    "englishName": "Ladprao",
+    "zone": "กรุงเทพเหนือ",
+    "searchTheme": "รถรับจ้างขนของ ลาดพร้าว",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน ลาดพร้าว", "ย้ายหอพัก ลาดพร้าว", "รถกระบะขนของ ลาดพร้าว"]
+  },
+  {
+    "slug": "chatuchak",
+    "thaiName": "จตุจักร",
+    "englishName": "Chatuchak",
+    "zone": "กรุงเทพเหนือ",
+    "searchTheme": "รถรับจ้างขนของ จตุจักร",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน จตุจักร", "รถรับจ้างขนของ จตุจักร", "รถกระบะรับจ้าง จตุจักร"]
+  },
+  {
+    "slug": "donmueang",
+    "thaiName": "ดอนเมือง",
+    "englishName": "Don Mueang",
+    "zone": "กรุงเทพเหนือ",
+    "searchTheme": "รถรับจ้างขนของ ดอนเมือง",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน ดอนเมือง", "ย้ายคอนโด ดอนเมือง", "รถรับจ้าง ดอนเมือง"]
+  },
+  {
+    "slug": "lak-si",
+    "thaiName": "หลักสี่",
+    "englishName": "Lak Si",
+    "zone": "กรุงเทพเหนือ",
+    "searchTheme": "รถรับจ้างขนของ หลักสี่",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง หลักสี่", "ย้ายหอพัก หลักสี่", "รถกระบะขนของ หลักสี่"]
+  },
+  {
+    "slug": "bang-khen",
+    "thaiName": "บางเขน",
+    "englishName": "Bang Khen",
+    "zone": "กรุงเทพเหนือ",
+    "searchTheme": "รถรับจ้างขนของ บางเขน",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างขนของ บางเขน", "ย้ายบ้าน บางเขน", "รถกระบะตู้ทึบ บางเขน"]
+  },
+  {
+    "slug": "sai-mai",
+    "thaiName": "สายไหม",
+    "englishName": "Sai Mai",
+    "zone": "กรุงเทพเหนือ",
+    "searchTheme": "รถรับจ้างขนของ สายไหม",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน สายไหม", "ย้ายคอนโด สายไหม", "รถขนของ สายไหม"]
+  },
+  {
+    "slug": "bangna",
+    "thaiName": "บางนา",
+    "englishName": "Bangna",
+    "zone": "กรุงเทพตะวันออก",
+    "searchTheme": "รถรับจ้างขนของ บางนา",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน บางนา", "ย้ายคอนโด บางนา", "รถกระบะตู้ทึบ บางนา"]
+  },
+  {
+    "slug": "bang-bon",
+    "thaiName": "บางบอน",
+    "englishName": "Bang Bon",
+    "zone": "ฝั่งธนบุรี",
+    "searchTheme": "รถรับจ้างขนของ บางบอน",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างขนของ บางบอน", "ย้ายหอ บางบอน", "รถกระบะคอก บางบอน"]
+  },
+  {
+    "slug": "bang-khae",
+    "thaiName": "บางแค",
+    "englishName": "Bang Khae",
+    "zone": "ฝั่งธนบุรี",
+    "searchTheme": "รถรับจ้างขนของ บางแค",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน บางแค", "ย้ายคอนโด บางแค", "รถตู้ทึบขนของ บางแค"]
+  },
+  {
+    "slug": "phetkasem",
+    "thaiName": "เพชรเกษม",
+    "englishName": "Phetkasem",
+    "zone": "ฝั่งธนบุรี",
+    "searchTheme": "รถรับจ้างขนของ เพชรเกษม",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน เพชรเกษม", "ย้ายหอ เพชรเกษม", "รถตู้ทึบ เพชรเกษม"]
+  },
+  {
+    "slug": "rama-2",
+    "thaiName": "พระราม 2",
+    "englishName": "Rama 2",
+    "zone": "ฝั่งธนบุรี",
+    "searchTheme": "รถรับจ้างขนของ พระราม 2",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง พระราม 2", "ย้ายคอนโด พระราม 2", "รถกระบะตู้ทึบ พระราม 2"]
+  },
+  {
+    "slug": "udomsuk",
+    "thaiName": "อุดมสุข",
+    "englishName": "Udomsuk",
+    "zone": "กรุงเทพตะวันออก",
+    "searchTheme": "รถรับจ้างขนของ อุดมสุข",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน อุดมสุข", "ย้ายคอนโด อุดมสุข", "รถขนของ อุดมสุข"]
+  },
+  {
+    "slug": "on-nut",
+    "thaiName": "อ่อนนุช",
+    "englishName": "On Nut",
+    "zone": "กรุงเทพตะวันออก",
+    "searchTheme": "รถรับจ้างขนของ อ่อนนุช",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน อ่อนนุช", "ย้ายคอนโด อ่อนนุช", "รถกระบะตู้ทึบ อ่อนนุช"]
+  },
+  {
+    "slug": "lat-krabang",
+    "thaiName": "ลาดกระบัง",
+    "englishName": "Lat Krabang",
+    "zone": "กรุงเทพตะวันออก",
+    "searchTheme": "รถรับจ้างขนของ ลาดกระบัง",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง ลาดกระบัง", "ย้ายบ้าน ลาดกระบัง", "รถกระบะรับจ้าง ลาดกระบัง"]
+  },
+  {
+    "slug": "suvarnabhumi",
+    "thaiName": "สุวรรณภูมิ",
+    "englishName": "Suvarnabhumi",
+    "zone": "กรุงเทพตะวันออก",
+    "searchTheme": "รถรับจ้างขนของ สุวรรณภูมิ",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน สุวรรณภูมิ", "รถตู้ทึบขนของ สุวรรณภูมิ", "รถขนของ สุวรรณภูมิ"]
+  },
+  {
+    "slug": "tha-kham",
+    "thaiName": "ท่าข้าม",
+    "englishName": "Tha Kham",
+    "zone": "ฝั่งธนบุรี",
+    "searchTheme": "รถรับจ้างขนของ ท่าข้าม",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน ท่าข้าม", "ย้ายหอ ท่าข้าม", "รถขนของ ท่าข้าม"]
+  },
+  {
+    "slug": "pinklao",
+    "thaiName": "ปิ่นเกล้า",
+    "englishName": "Pinklao",
+    "zone": "ฝั่งธนบุรี",
+    "searchTheme": "รถรับจ้างขนของ ปิ่นเกล้า",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน ปิ่นเกล้า", "ย้ายคอนโด ปิ่นเกล้า", "รถกระบะตู้ทึบ ปิ่นเกล้า"]
+  },
+  {
+    "slug": "taling-chan",
+    "thaiName": "ตลิ่งชัน",
+    "englishName": "Taling Chan",
+    "zone": "ฝั่งธนบุรี",
+    "searchTheme": "รถรับจ้างขนของ ตลิ่งชัน",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง ตลิ่งชัน", "ย้ายบ้าน ตลิ่งชัน", "รถตู้ทึบ ตลิ่งชัน"]
+  },
+  {
+    "slug": "ekkachai",
+    "thaiName": "เอกชัย",
+    "englishName": "Ekkachai",
+    "zone": "ฝั่งธนบุรี",
+    "searchTheme": "รถรับจ้างขนของ เอกชัย",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน เอกชัย", "ย้ายหอพัก เอกชัย", "รถขนของ เอกชัย"]
+  },
+  {
+    "slug": "sukhumvit",
+    "thaiName": "สุขุมวิท",
+    "englishName": "Sukhumvit",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ สุขุมวิท",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน สุขุมวิท", "ย้ายคอนโด สุขุมวิท", "รถตู้ทึบ สุขุมวิท"]
+  },
+  {
+    "slug": "ekkamai",
+    "thaiName": "เอกมัย",
+    "englishName": "Ekkamai",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ เอกมัย",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน เอกมัย", "ย้ายคอนโด เอกมัย", "รถกระบะตู้ทึบ เอกมัย"]
+  },
+  {
+    "slug": "rama-9",
+    "thaiName": "พระราม 9",
+    "englishName": "Rama 9",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ พระราม 9",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง พระราม 9", "ย้ายคอนโด พระราม 9", "รถกระบะตู้ทึบ พระราม 9"]
+  },
+  {
+    "slug": "ratchada",
+    "thaiName": "รัชดา",
+    "englishName": "Ratchada",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ รัชดา",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน รัชดา", "ย้ายหอพัก รัชดา", "รถขนของ รัชดา"]
+  },
+  {
+    "slug": "sathon",
+    "thaiName": "สาทร",
+    "englishName": "Sathon",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ สาทร",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน สาทร", "ย้ายคอนโด สาทร", "รถกระบะตู้ทึบ สาทร"]
+  },
+  {
+    "slug": "silom",
+    "thaiName": "สีลม",
+    "englishName": "Silom",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ สีลม",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง สีลม", "ย้ายคอนโด สีลม", "รถกระบะรับจ้าง สีลม"]
+  },
+  {
+    "slug": "victory-monument",
+    "thaiName": "อนุสาวรีย์ชัยฯ",
+    "englishName": "Victory Monument",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ อนุสาวรีย์ชัยฯ",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน อนุสาวรีย์ชัยฯ", "รถขนของ อนุสาวรีย์ชัยฯ", "ย้ายหอพัก อนุสาวรีย์ชัยฯ"]
+  },
+  {
+    "slug": "dindaeng",
+    "thaiName": "ดินแดง",
+    "englishName": "Din Daeng",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ ดินแดง",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง ดินแดง", "ย้ายหอพัก ดินแดง", "รถกระบะตู้ทึบ ดินแดง"]
+  },
+  {
+    "slug": "huai-khwang",
+    "thaiName": "ห้วยขวาง",
+    "englishName": "Huai Khwang",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ ห้วยขวาง",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน ห้วยขวาง", "ย้ายคอนโด ห้วยขวาง", "รถขนของ ห้วยขวาง"]
+  },
+  {
+    "slug": "khlong-toei",
+    "thaiName": "คลองเตย",
+    "englishName": "Khlong Toei",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ คลองเตย",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง คลองเตย", "ย้ายบ้าน คลองเตย", "รถตู้ทึบขนของ คลองเตย"]
+  },
+  {
+    "slug": "watthana",
+    "thaiName": "วัฒนา",
+    "englishName": "Watthana",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ วัฒนา",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน วัฒนา", "ย้ายคอนโด วัฒนา", "รถขนของ วัฒนา"]
+  },
+  {
+    "slug": "phaya-thai",
+    "thaiName": "พญาไท",
+    "englishName": "Phaya Thai",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ พญาไท",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง พญาไท", "ย้ายหอพัก พญาไท", "รถตู้ทึบ พญาไท"]
+  },
+  {
+    "slug": "ratchathewi",
+    "thaiName": "ราชเทวี",
+    "englishName": "Ratchathewi",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ ราชเทวี",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน ราชเทวี", "ย้ายหอพัก ราชเทวี", "รถขนของ ราชเทวี"]
+  },
+  {
+    "slug": "pathum-wan",
+    "thaiName": "ปทุมวัน",
+    "englishName": "Pathum Wan",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ ปทุมวัน",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน ปทุมวัน", "ย้ายคอนโด ปทุมวัน", "รถขนของ ปทุมวัน"]
+  },
+  {
+    "slug": "bang-sue",
+    "thaiName": "บางซื่อ",
+    "englishName": "Bang Sue",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ บางซื่อ",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน บางซื่อ", "ย้ายหอพัก บางซื่อ", "รถตู้ทึบ บางซื่อ"]
+  },
+  {
+    "slug": "dusit",
+    "thaiName": "ดุสิต",
+    "englishName": "Dusit",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ ดุสิต",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง ดุสิต", "ย้ายบ้าน ดุสิต", "รถกระบะรับจ้าง ดุสิต"]
+  },
+  {
+    "slug": "phra-nakhon",
+    "thaiName": "พระนคร",
+    "englishName": "Phra Nakhon",
+    "zone": "ใจกลางเมือง",
+    "searchTheme": "รถรับจ้างขนของ พระนคร",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง พระนคร", "ย้ายของ พระนคร", "รถขนของ พระนคร"]
+  },
+  {
+    "slug": "rangsit",
+    "thaiName": "รังสิต",
+    "englishName": "Rangsit",
+    "zone": "ปริมณฑล (ปทุมธานี)",
+    "searchTheme": "รถรับจ้างขนของ รังสิต",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน รังสิต", "ย้ายหอ รังสิต", "รถตู้ทึบ รังสิต"]
+  },
+  {
+    "slug": "pak-nam",
+    "thaiName": "ปากน้ำ",
+    "englishName": "Pak Nam",
+    "zone": "ปริมณฑล (สมุทรปราการ)",
+    "searchTheme": "รถรับจ้างขนของ ปากน้ำ",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง ปากน้ำ", "ย้ายบ้าน ปากน้ำ", "รถกระบะตู้ทึบ ปากน้ำ"]
+  },
+  {
+    "slug": "pak-kret",
+    "thaiName": "ปากเกร็ด",
+    "englishName": "Pak Kret",
+    "zone": "ปริมณฑล (นนทบุรี)",
+    "searchTheme": "รถรับจ้างขนของ ปากเกร็ด",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างย้ายบ้าน ปากเกร็ด", "ย้ายคอนโด ปากเกร็ด", "รถกระบะรับจ้าง ปากเกร็ด"]
+  },
+  {
+    "slug": "mueang-nonthaburi",
+    "thaiName": "เมืองนนทบุรี",
+    "englishName": "Mueang Nonthaburi",
+    "zone": "ปริมณฑล (นนทบุรี)",
+    "searchTheme": "รถรับจ้างขนของ เมืองนนทบุรี",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้างขนของ นนทบุรี", "ย้ายบ้าน นนทบุรี", "รถตู้ทึบขนของ นนทบุรี"]
+  },
+  {
+    "slug": "bang-bua-thong",
+    "thaiName": "บางบัวทอง",
+    "englishName": "Bang Bua Thong",
+    "zone": "ปริมณฑล (นนทบุรี)",
+    "searchTheme": "รถรับจ้างขนของ บางบัวทอง",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง บางบัวทอง", "ย้ายหอพัก บางบัวทอง", "รถขนของ บางบัวทอง"]
+  },
+  {
+    "slug": "bang-yai",
+    "thaiName": "บางใหญ่",
+    "englishName": "Bang Yai",
+    "zone": "ปริมณฑล (นนทบุรี)",
+    "searchTheme": "รถรับจ้างขนของ บางใหญ่",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง บางใหญ่", "ย้ายคอนโด บางใหญ่", "รถตู้ทึบ บางใหญ่"]
+  },
+  {
+    "slug": "mueang-pathum-thani",
+    "thaiName": "เมืองปทุมธานี",
+    "englishName": "Mueang Pathum Thani",
+    "zone": "ปริมณฑล (ปทุมธานี)",
+    "searchTheme": "รถรับจ้างขนของ เมืองปทุมธานี",
+    "startingPrice": 1000,
+    "status": "pending_verification",
+    "keywords": ["รถรับจ้าง ปทุมธานี", "ย้ายบ้าน ปทุมธานี", "รถขนของ ปทุมธานี"]
+  },
+  {
+    "slug": "khlong-luang",
+    "thaiName": "คลองหลวง",
+    "englishName": "Khlong Luang",
+    "zone": "ปริมณฑล (ปทุมธานี)",
+    "searchTheme": "รถรับจ้างขนของ คลองหลวง",
+    "startingPrice": 1000,
+    "status": "pending_verification",
+    "keywords": ["รถรับจ้าง คลองหลวง", "ย้ายหอพัก คลองหลวง", "รถกระบะตู้ทึบ คลองหลวง"]
+  },
+  {
+    "slug": "thanyaburi",
+    "thaiName": "ธัญบุรี",
+    "englishName": "Thanyaburi",
+    "zone": "ปริมณฑล (ปทุมธานี)",
+    "searchTheme": "รถรับจ้างขนของ ธัญบุรี",
+    "startingPrice": 1000,
+    "status": "pending_verification",
+    "keywords": ["รถรับจ้าง ธัญบุรี", "ย้ายหอพัก ธัญบุรี", "รถตู้ทึบ ธัญบุรี"]
+  },
+  {
+    "slug": "lam-luk-ka",
+    "thaiName": "ลำลูกกา",
+    "englishName": "Lam Luk Ka",
+    "zone": "ปริมณฑล (ปทุมธานี)",
+    "searchTheme": "รถรับจ้างขนของ ลำลูกกา",
+    "startingPrice": 1000,
+    "status": "pending_verification",
+    "keywords": ["รถรับจ้าง ลำลูกกา", "ย้ายบ้าน ลำลูกกา", "รถขนของ ลำลูกกา"]
+  },
+  {
+    "slug": "mueang-samut-prakan",
+    "thaiName": "เมืองสมุทรปราการ",
+    "englishName": "Mueang Samut Prakan",
+    "zone": "ปริมณฑล (สมุทรปราการ)",
+    "searchTheme": "รถรับจ้างขนของ เมืองสมุทรปราการ",
+    "startingPrice": 1000,
+    "status": "pending_verification",
+    "keywords": ["รถรับจ้าง สมุทรปราการ", "ย้ายบ้าน สมุทรปราการ", "รถขนของ สมุทรปราการ"]
+  },
+  {
+    "slug": "bang-phli",
+    "thaiName": "บางพลี",
+    "englishName": "Bang Phli",
+    "zone": "ปริมณฑล (สมุทรปราการ)",
+    "searchTheme": "รถรับจ้างขนของ บางพลี",
+    "startingPrice": 1000,
+    "status": "pending_verification",
+    "keywords": ["รถรับจ้าง บางพลี", "ย้ายหอพัก บางพลี", "รถตู้ทึบ บางพลี"]
+  },
+  {
+    "slug": "phra-pradaeng",
+    "thaiName": "พระประแดง",
+    "englishName": "Phra Pradaeng",
+    "zone": "ปริมณฑล (สมุทรปราการ)",
+    "searchTheme": "รถรับจ้างขนของ พระประแดง",
+    "startingPrice": 1000,
+    "status": "pending_verification",
+    "keywords": ["รถรับจ้าง พระประแดง", "ย้ายคอนโด พระประแดง", "รถตู้ทึบ พระประแดง"]
+  },
+  {
+    "slug": "phra-samut-chedi",
+    "thaiName": "พระสมุทรเจดีย์",
+    "englishName": "Phra Samut Chedi",
+    "zone": "ปริมณฑล (สมุทรปราการ)",
+    "searchTheme": "รถรับจ้างขนของ พระสมุทรเจดีย์",
+    "startingPrice": 1000,
+    "status": "pending_verification",
+    "keywords": ["รถรับจ้าง พระสมุทรเจดีย์", "ย้ายบ้าน พระสมุทรเจดีย์", "รถขนของ พระสมุทรเจดีย์"]
+  },
+  {
+    "slug": "sai-noi",
+    "thaiName": "ไทรน้อย",
+    "englishName": "Sai Noi",
+    "zone": "ปริมณฑล (นนทบุรี)",
+    "searchTheme": "รถรับจ้างขนของ ไทรน้อย",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง ไทรน้อย", "ย้ายบ้าน ไทรน้อย", "รถขนของ ไทรน้อย"]
+  },
+  {
+    "slug": "mueang-samut-sakhon",
+    "thaiName": "เมืองสมุทรสาคร",
+    "englishName": "Mueang Samut Sakhon",
+    "zone": "ปริมณฑล (สมุทรสาคร)",
+    "searchTheme": "รถรับจ้างขนของ เมืองสมุทรสาคร",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง สมุทรสาคร", "ย้ายบ้าน สมุทรสาคร", "รถกระบะขนของ สมุทรสาคร"]
+  },
+  {
+    "slug": "mahachai",
+    "thaiName": "มหาชัย",
+    "englishName": "Mahachai",
+    "zone": "ปริมณฑล (สมุทรสาคร)",
+    "searchTheme": "รถรับจ้างขนของ มหาชัย",
+    "startingPrice": 1000,
+    "status": "alias",
+    "canonicalSlug": "mueang-samut-sakhon",
+    "keywords": ["รถรับจ้าง มหาชัย", "ย้ายบ้าน มหาชัย", "รถขนของ มหาชัย"]
+  },
+  {
+    "slug": "krathum-baen",
+    "thaiName": "กระทุ่มแบน",
+    "englishName": "Krathum Baen",
+    "zone": "ปริมณฑล (สมุทรสาคร)",
+    "searchTheme": "รถรับจ้างขนของ กระทุ่มแบน",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง กระทุ่มแบน", "ย้ายหอพัก กระทุ่มแบน", "รถกระบะขนของ กระทุ่มแบน"]
+  },
+  {
+    "slug": "om-noi",
+    "thaiName": "อ้อมน้อย",
+    "englishName": "Om Noi",
+    "zone": "ปริมณฑล (สมุทรสาคร)",
+    "searchTheme": "รถรับจ้างขนของ อ้อมน้อย",
+    "startingPrice": 1000,
+    "status": "alias",
+    "canonicalSlug": "krathum-baen",
+    "keywords": ["รถรับจ้าง อ้อมน้อย", "ย้ายหอพัก อ้อมน้อย", "รถขนของ อ้อมน้อย"]
+  },
+  {
+    "slug": "ban-phaeo",
+    "thaiName": "บ้านแพ้ว",
+    "englishName": "Ban Phaeo",
+    "zone": "ปริมณฑล (สมุทรสาคร)",
+    "searchTheme": "รถรับจ้างขนของ บ้านแพ้ว",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง บ้านแพ้ว", "ย้ายบ้าน บ้านแพ้ว", "รถขนของ บ้านแพ้ว"]
+  }
+]

@@ -10,7 +10,7 @@ type ServiceAreaHeroProps = {
 export const ServiceAreaHero: React.FC<ServiceAreaHeroProps> = ({ 
   title, 
   subtitle, 
-  backgroundImageUrl = '/images/portfolio/S__2531437.jpg' 
+  backgroundImageUrl = '/images/portfolio/S__2531437.webp' 
 }) => {
   return (
     <section 

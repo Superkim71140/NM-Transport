@@ -63,7 +63,7 @@ export const Header: React.FC = () => {
     <header className="glass-header sticky top-0 z-[1000] py-2.5 border-b border-orange-lava/20 transition-all duration-300">
       <Container className="flex justify-between items-center px-2.5 md:px-5">
         <Link href="/" className="flex items-center justify-center p-0 relative h-[50px] md:h-[85px] w-[150px] md:w-[250px]" onClick={closeMobileMenu}>
-          <Image src="/images/logos/logo-nm18.png" alt="N&M18 TRANSPORT" fill priority className="object-contain contrast-110 transition-transform duration-300 hover:scale-105" />
+          <Image src="/images/logos/logo-nm18.webp" alt="N&M18 TRANSPORT" fill priority className="object-contain contrast-110 transition-transform duration-300 hover:scale-105" />
         </Link>
         
         {/* Mobile Menu Toggle Button */}
@@ -98,7 +98,7 @@ export const Header: React.FC = () => {
         <div 
           id="mobile-menu"
           className={`
-            md:hidden absolute top-full left-0 w-full bg-[#050a14]/98 flex flex-col pt-2 pb-6
+            md:hidden absolute top-full left-0 w-full bg-[#050a14] backdrop-blur-md flex flex-col pt-2 pb-6
             border-b-2 border-orange-lava shadow-[0_10px_20px_rgba(0,0,0,0.8)] z-[1100]
             transition-all duration-300 origin-top overflow-y-auto max-h-[calc(100vh-70px)]
             ${isMobileMenuOpen ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0'}

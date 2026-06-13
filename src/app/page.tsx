@@ -10,17 +10,40 @@ import { AreaCard } from '../components/cards/AreaCard';
 import { PortfolioCard } from '../components/cards/PortfolioCard';
 import { Container } from '../components/ui/Container';
 import { Counter } from '../components/ui/Counter';
-import { ReviewsSlider } from '../components/sections/ReviewsSlider';
+import { LazyReviewsSection } from '../components/performance/LazyBelowFoldSections';
 import { IndexFAQ } from './IndexFAQ';
 
 export const metadata: Metadata = {
   title: "N&M18 TRANSPORT - รถรับจ้างขนของ ย้ายคอนโด ย้ายหอพัก กรุงเทพ-ปริมณฑล เริ่ม 1,000.-",
   description: "N&M18 TRANSPORT บริการรถรับจ้างขนของ รถกระบะตู้ทึบ รถ 4 ล้อใหญ่ ย้ายหอพัก ย้ายคอนโด ย้ายบ้าน กรุงเทพ-ปริมณฑลและทั่วไทย เริ่มต้น 1,000 บาท โทร 095-801-0958",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function Home() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "หน้าแรก",
+        "item": "https://www.nm18transport.com"
+      }
+    ]
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        id="homepage-breadcrumb-jsonld"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c'),
+        }}
+      />
       {/* 1. Hero Section & Hero Badges */}
       <HeroSection />
 
@@ -70,32 +93,32 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-[15px]">
-            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] hover:-translate-y-1 group">
-              <Image src="/images/portfolio/S__2531437.jpg" alt="รถรับจ้างตู้ทึบ N&M18" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary lg:hover:border-orange-lava lg:hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] lg:hover:-translate-y-1 group">
+              <Image src="/images/portfolio/S__2531437.webp" alt="บริการรถกระบะรับจ้างตู้ทึบ ขนของ ย้ายบ้าน กรุงเทพ ปริมณฑล ราคาถูก N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 1023px) 50vw, (max-width: 1200px) 33vw, 300px" quality={75} className="object-cover transition-transform duration-500 lg:group-hover:scale-110" />
             </div>
-            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] hover:-translate-y-1 group">
-              <Image src="/images/portfolio/S__17556285.png" alt="ขนย้ายหอพัก ราคาถูก" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary lg:hover:border-orange-lava lg:hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] lg:hover:-translate-y-1 group">
+              <Image src="/images/portfolio/S__17556285.webp" alt="บริการขนย้ายหอพัก ย้ายคอนโด พร้อมทีมงานยกของ กรุงเทพ ปริมณฑล N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 1023px) 50vw, (max-width: 1200px) 33vw, 300px" quality={75} className="object-cover transition-transform duration-500 lg:group-hover:scale-110" />
             </div>
-            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] hover:-translate-y-1 group">
-              <Image src="/images/portfolio/S__2531426.jpg" alt="รถ 6 ล้อรับจ้าง ขนของเยอะ" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary lg:hover:border-orange-lava lg:hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] lg:hover:-translate-y-1 group">
+              <Image src="/images/portfolio/S__2531426.webp" alt="บริการรถ 6 ล้อรับจ้าง ขนของจำนวนมาก ย้ายบ้าน ย้ายสำนักงาน ทั่วประเทศ N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 1023px) 50vw, (max-width: 1200px) 33vw, 300px" quality={75} className="object-cover transition-transform duration-500 lg:group-hover:scale-110" />
             </div>
-            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] hover:-translate-y-1 group">
-              <Image src="/images/portfolio/S__17556168.jpg" alt="ขนส่ง Big Bike มอเตอร์ไซค์" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary lg:hover:border-orange-lava lg:hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] lg:hover:-translate-y-1 group">
+              <Image src="/images/portfolio/S__17556168.webp" alt="บริการขนส่งมอเตอร์ไซค์ Big Bike ด้วยรถรับจ้างตู้ทึบ ปลอดภัย ทั่วประเทศ N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 1023px) 50vw, (max-width: 1200px) 33vw, 300px" quality={75} className="object-cover transition-transform duration-500 lg:group-hover:scale-110" />
             </div>
-            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] hover:-translate-y-1 group">
-              <Image src="/images/portfolio/S__2531424.jpg" alt="แพ็คของขนย้าย ป้องกันกระแทก" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary lg:hover:border-orange-lava lg:hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] lg:hover:-translate-y-1 group">
+              <Image src="/images/portfolio/S__2531424.webp" alt="บริการแพ็คของกันกระแทก พร้อมทีมงานขนย้ายบ้าน ย้ายหอพัก อย่างปลอดภัย N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 1023px) 50vw, (max-width: 1200px) 33vw, 300px" quality={75} className="object-cover transition-transform duration-500 lg:group-hover:scale-110" />
             </div>
-            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] hover:-translate-y-1 group">
-              <Image src="/images/portfolio/S__2531422.jpg" alt="ขนส่งทั่วไป รถกระบะรับจ้าง" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary lg:hover:border-orange-lava lg:hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] lg:hover:-translate-y-1 group">
+              <Image src="/images/portfolio/S__2531422.webp" alt="บริการรถกระบะรับจ้างขนของทั่วไป รถตู้ทึบกันฝน กรุงเทพ ปริมณฑล และทั่วประเทศ N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 1023px) 50vw, (max-width: 1200px) 33vw, 300px" quality={75} className="object-cover transition-transform duration-500 lg:group-hover:scale-110" />
             </div>
           </div>
             
           <div className="text-center mt-10 flex gap-[15px] justify-center flex-wrap">
-            <Link href="/works" className="inline-flex items-center justify-center gap-2.5 px-[35px] py-[12px] rounded-full font-semibold border-2 border-orange-lava bg-orange-lava text-white shadow-neon-orange transition-all duration-300 hover:bg-orange-glow hover:shadow-[0_0_35px_rgba(255,69,0,1)] hover:-translate-y-[3px] hover:scale-105 z-10 overflow-hidden">
-              <i className="fa-solid fa-images"></i> ดูผลงานทั้งหมด
+            <Link href="/works" aria-label="ดูผลงานทั้งหมดของ N&M18 TRANSPORT" className="inline-flex items-center justify-center gap-2.5 px-[35px] py-[12px] rounded-full font-semibold border-2 border-orange-lava bg-orange-lava text-white shadow-neon-orange transition-all duration-300 hover:bg-orange-glow hover:shadow-[0_0_35px_rgba(255,69,0,1)] hover:-translate-y-[3px] hover:scale-105 z-10 overflow-hidden">
+              <i className="fa-solid fa-images" aria-hidden="true"></i> ดูผลงานทั้งหมด
             </Link>
-            <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2.5 px-[35px] py-[12px] rounded-full font-semibold border-2 border-[#1877F2] bg-[#1877F2] text-white shadow-[0_0_15px_rgba(24,119,242,0.6)] transition-all duration-300 hover:bg-[#1464c4] hover:shadow-[0_0_25px_rgba(24,119,242,0.8)] hover:-translate-y-[3px] z-10 overflow-hidden">
-              <i className="fa-brands fa-facebook"></i> ดูรีวิวเพิ่มเติม (คลิก)
+            <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" rel="noopener noreferrer" aria-label="ดูรีวิวเพิ่มเติมของ N&M18 TRANSPORT บน Facebook" className="inline-flex items-center justify-center gap-2.5 px-[35px] py-[12px] rounded-full font-semibold border-2 border-[#1877F2] bg-[#1877F2] text-white shadow-[0_0_15px_rgba(24,119,242,0.6)] transition-all duration-300 hover:bg-[#1464c4] hover:shadow-[0_0_25px_rgba(24,119,242,0.8)] hover:-translate-y-[3px] z-10 overflow-hidden">
+              <i className="fa-brands fa-facebook" aria-hidden="true"></i> ดูรีวิวเพิ่มเติม (คลิก)
             </a>
           </div>
         </Container>
@@ -161,7 +184,7 @@ export default function Home() {
           <p className="mb-5 text-[#ccc] text-[1.1rem]">บริษัท เอ็นแอนด์เอ็ม 18 ทรานสปอร์ต จำกัด (N&M 18 TRANSPORT)</p>
           
           <div className="max-w-[500px] mx-auto mt-5 overflow-hidden rounded-[10px] border-[4px] border-navy-primary shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300 hover:scale-[1.02] hover:border-gold relative aspect-[1.4/1]">
-            <Image src="/images/portfolio/S__17556166.jpg" alt="ใบอนุญาตประกอบการขนส่ง N&M 18 TRANSPORT" fill className="object-contain" />
+            <Image src="/images/portfolio/S__17556166.webp" alt="ใบอนุญาตประกอบการขนส่ง N&M 18 TRANSPORT" fill className="object-contain" />
           </div>
         </div>
       </section>
@@ -174,7 +197,7 @@ export default function Home() {
             <p className="text-text-gray">ความประทับใจจากลูกค้าที่ไว้วางใจ N&M18 TRANSPORT</p>
           </div>
           
-          <ReviewsSlider />
+          <LazyReviewsSection />
         </Container>
       </section>
 
@@ -245,11 +268,11 @@ export default function Home() {
           <p className="text-text-gray">ราคาขึ้นอยู่กับระยะทางและประเภทงาน (โทรสอบถามได้เลยครับ)</p>
           <br/>
           <div className="flex gap-[15px] justify-center flex-wrap mt-2">
-            <Link href="tel:0958010958" className="inline-flex items-center justify-center gap-2.5 px-[35px] py-[12px] rounded-full font-semibold border-2 border-orange-lava bg-orange-lava text-white shadow-neon-orange transition-all duration-300 hover:bg-orange-glow hover:shadow-[0_0_35px_rgba(255,69,0,1)] hover:-translate-y-[3px] hover:scale-105 z-10 overflow-hidden">
-              <i className="fa-solid fa-calculator"></i> เช็คราคาผ่านโทรศัพท์
+            <Link href="tel:0958010958" aria-label="โทรติดต่อ N&M18 TRANSPORT เพื่อจองคิวรถรับจ้าง" className="inline-flex items-center justify-center gap-2.5 px-[35px] py-[12px] rounded-full font-semibold border-2 border-orange-lava bg-orange-lava text-white shadow-neon-orange transition-all duration-300 hover:bg-orange-glow hover:shadow-[0_0_35px_rgba(255,69,0,1)] hover:-translate-y-[3px] hover:scale-105 z-10 overflow-hidden">
+              <i className="fa-solid fa-calculator" aria-hidden="true"></i> เช็คราคาผ่านโทรศัพท์
             </Link>
-            <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2.5 px-[35px] py-[12px] rounded-full font-semibold border-2 border-[#06C755] bg-[#06C755] text-white shadow-[0_0_15px_rgba(6,199,85,0.6)] transition-all duration-300 hover:bg-[#05a84a] hover:shadow-[0_0_25px_rgba(6,199,85,0.8)] hover:-translate-y-[3px] z-10 overflow-hidden">
-              <i className="fa-brands fa-line"></i> เช็คราคาผ่าน LINE
+            <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" rel="noopener noreferrer" aria-label="แอดไลน์ N&M18 TRANSPORT เพื่อประเมินราคาค่าขนย้ายฟรี" className="inline-flex items-center justify-center gap-2.5 px-[35px] py-[12px] rounded-full font-semibold border-2 border-[#06C755] bg-[#06C755] text-white shadow-[0_0_15px_rgba(6,199,85,0.6)] transition-all duration-300 hover:bg-[#05a84a] hover:shadow-[0_0_25px_rgba(6,199,85,0.8)] hover:-translate-y-[3px] z-10 overflow-hidden">
+              <i className="fa-brands fa-line" aria-hidden="true"></i> เช็คราคาผ่าน LINE
             </a>
           </div>
         </div>
@@ -320,49 +343,96 @@ export default function Home() {
 
       <section className="container mx-auto mt-[40px] mb-[40px] p-[30px] bg-[#0f1c38]/60 rounded-[15px] border border-white/5">
         <h3 className="text-white text-center mb-[25px] text-[1.5rem] font-bold">
-            <i className="fa-solid fa-map-location-dot text-orange-lava mr-2"></i> พื้นที่ให้บริการยอดนิยมในกรุงเทพฯ
+            <i className="fa-solid fa-map-location-dot text-orange-lava mr-2"></i> พื้นที่ให้บริการยอดนิยมในกรุงเทพฯ & ปริมณฑล
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[20px] text-left text-[#d0d7e1]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-[20px] text-left text-[#d0d7e1]">
             <div>
                 <h4 className="text-neon-blue text-[1.1rem] font-bold mb-[10px]">โซนกรุงเทพเหนือ</h4>
                 <ul className="list-none text-[0.9rem] leading-[1.8]">
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> ลาดพร้าว / จตุจักร</li>
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> ดอนเมือง / หลักสี่</li>
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> บางเขน / รามอินทรา</li>
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> สายไหม / รังสิต</li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/ladprao" className="hover:text-orange-lava transition-colors">ลาดพร้าว</Link> / <Link href="/location/chatuchak" className="hover:text-orange-lava transition-colors">จตุจักร</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/donmueang" className="hover:text-orange-lava transition-colors">ดอนเมือง</Link> / <Link href="/location/lak-si" className="hover:text-orange-lava transition-colors">หลักสี่</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/bang-khen" className="hover:text-orange-lava transition-colors">บางเขน</Link> / รามอินทรา</li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/sai-mai" className="hover:text-orange-lava transition-colors">สายไหม</Link> / <Link href="/location/rangsit" className="hover:text-orange-lava transition-colors">รังสิต</Link></li>
                 </ul>
             </div>
             <div>
                 <h4 className="text-neon-blue text-[1.1rem] font-bold mb-[10px]">โซนบางนา-สมุทรปราการ</h4>
                 <ul className="list-none text-[0.9rem] leading-[1.8]">
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> บางนา / อุดมสุข</li>
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> อ่อนนุช / ลาดกระบัง</li>
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> กิ่งแก้ว / สุวรรณภูมิ</li>
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> สมุทรปราการ / ปากน้ำ</li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/bangna" className="hover:text-orange-lava transition-colors">บางนา</Link> / <Link href="/location/udomsuk" className="hover:text-orange-lava transition-colors">อุดมสุข</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/on-nut" className="hover:text-orange-lava transition-colors">อ่อนนุช</Link> / <Link href="/location/lat-krabang" className="hover:text-orange-lava transition-colors">ลาดกระบัง</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> กิ่งแก้ว / <Link href="/location/suvarnabhumi" className="hover:text-orange-lava transition-colors">สุวรรณภูมิ</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/mueang-samut-prakan" className="hover:text-orange-lava transition-colors">สมุทรปราการ</Link> / <Link href="/location/pak-nam" className="hover:text-orange-lava transition-colors">ปากน้ำ</Link></li>
                 </ul>
             </div>
             <div>
                 <h4 className="text-neon-blue text-[1.1rem] font-bold mb-[10px]">โซนฝั่งธนบุรี</h4>
                 <ul className="list-none text-[0.9rem] leading-[1.8]">
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> บางแค / เพชรเกษม</li>
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> พระราม 2 / ท่าข้าม</li>
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> ปิ่นเกล้า / ตลิ่งชัน</li>
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> บางบอน / เอกชัย</li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/bang-khae" className="hover:text-orange-lava transition-colors">บางแค</Link> / <Link href="/location/phetkasem" className="hover:text-orange-lava transition-colors">เพชรเกษม</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/rama-2" className="hover:text-orange-lava transition-colors">พระราม 2</Link> / <Link href="/location/tha-kham" className="hover:text-orange-lava transition-colors">ท่าข้าม</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/pinklao" className="hover:text-orange-lava transition-colors">ปิ่นเกล้า</Link> / <Link href="/location/taling-chan" className="hover:text-orange-lava transition-colors">ตลิ่งชัน</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/bang-bon" className="hover:text-orange-lava transition-colors">บางบอน</Link> / <Link href="/location/ekkachai" className="hover:text-orange-lava transition-colors">เอกชัย</Link></li>
                 </ul>
             </div>
             <div>
                 <h4 className="text-neon-blue text-[1.1rem] font-bold mb-[10px]">โซนใจกลางเมือง</h4>
                 <ul className="list-none text-[0.9rem] leading-[1.8]">
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> สุขุมวิท / เอกมัย</li>
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> พระราม 9 / รัชดา</li>
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> สาทร / สีลม</li>
-                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> อนุสาวรีย์ชัยฯ / ดินแดง</li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/sukhumvit" className="hover:text-orange-lava transition-colors">สุขุมวิท</Link> / <Link href="/location/ekkamai" className="hover:text-orange-lava transition-colors">เอกมัย</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/rama-9" className="hover:text-orange-lava transition-colors">พระราม 9</Link> / <Link href="/location/ratchada" className="hover:text-orange-lava transition-colors">รัชดา</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/sathon" className="hover:text-orange-lava transition-colors">สาทร</Link> / <Link href="/location/silom" className="hover:text-orange-lava transition-colors">สีลม</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/victory-monument" className="hover:text-orange-lava transition-colors">อนุสาวรีย์ชัยฯ</Link> / <Link href="/location/dindaeng" className="hover:text-orange-lava transition-colors">ดินแดง</Link></li>
+                </ul>
+            </div>
+            <div>
+                <h4 className="text-neon-blue text-[1.1rem] font-bold mb-[10px]">โซนปริมณฑลยอดฮิต (นนทบุรี & สมุทรสาคร)</h4>
+                <ul className="list-none text-[0.9rem] leading-[1.8]">
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/pak-kret" className="hover:text-orange-lava transition-colors">ปากเกร็ด</Link> / <Link href="/location/bang-yai" className="hover:text-orange-lava transition-colors">บางใหญ่</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/bang-bua-thong" className="hover:text-orange-lava transition-colors">บางบัวทอง</Link> / <Link href="/location/sai-noi" className="hover:text-orange-lava transition-colors">ไทรน้อย</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/mahachai" className="hover:text-orange-lava transition-colors">มหาชัย</Link> / <Link href="/location/mueang-samut-sakhon" className="hover:text-orange-lava transition-colors">เมืองสมุทรสาคร</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/krathum-baen" className="hover:text-orange-lava transition-colors">กระทุ่มแบน</Link> / <Link href="/location/om-noi" className="hover:text-orange-lava transition-colors">อ้อมน้อย</Link></li>
+                    <li><i className="fa-solid fa-check text-line-green mr-[5px]"></i> <Link href="/location/ban-phaeo" className="hover:text-orange-lava transition-colors">บ้านแพ้ว</Link></li>
                 </ul>
             </div>
         </div>
         <p className="text-center mt-[20px] text-[#aaa] text-[0.9rem]">
-            *ให้บริการครอบคลุมทุกพื้นที่ในกรุงเทพและปริมณฑล (นนทบุรี, ปทุมธานี, สมุทรปราการ) ไม่เกี่ยงงาน ขึ้นตึกสูง คอนโด ซอยแคบ เราไปได้หมด
+            *ให้บริการครอบคลุมทุกพื้นที่ในกรุงเทพและปริมณฑล (นนทบุรี, ปทุมธานี, สมุทรปราการ, สมุทรสาคร) ไม่เกี่ยงงาน ขึ้นตึกสูง คอนโด ซอยแคบ เราไปได้หมด
         </p>
+      </section>
+
+      {/* POPULAR INTER-PROVINCIAL ROUTES SECTION */}
+      <section className="container mx-auto mt-[40px] mb-[40px] p-[30px] bg-[#0f1c38]/60 rounded-[15px] border border-white/5">
+        <h3 className="text-white text-center mb-[10px] text-[1.5rem] font-bold">
+          <i className="fa-solid fa-route text-orange-lava mr-2"></i> เส้นทางขนส่งต่างจังหวัดยอดฮิต
+        </h3>
+        <p className="text-center text-text-gray mb-[25px] text-[0.95rem]">
+          บริการรถรับจ้างขนของย้ายบ้านจากกรุงเทพฯ ไปต่างจังหวัด ครอบคลุมเส้นทางหลักทั่วประเทศ สะดวกรวดเร็ว ปลอดภัย
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-[20px] text-center text-[#d0d7e1]">
+          <Link href="/route/bangkok/phuket" className="flex flex-col items-center justify-center p-5 bg-navy-primary rounded-xl border border-white/10 hover:border-orange-lava hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] transition-all group">
+            <span className="text-[1.8rem] text-orange-lava mb-2 group-hover:scale-110 transition-transform">🏝️</span>
+            <span className="font-bold text-white group-hover:text-orange-lava transition-colors">กรุงเทพฯ - ภูเก็ต</span>
+            <span className="text-xs text-text-gray mt-1">สายใต้ (840 กม.)</span>
+          </Link>
+          <Link href="/route/bangkok/chiang-mai" className="flex flex-col items-center justify-center p-5 bg-navy-primary rounded-xl border border-white/10 hover:border-orange-lava hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] transition-all group">
+            <span className="text-[1.8rem] text-orange-lava mb-2 group-hover:scale-110 transition-transform">🏔️</span>
+            <span className="font-bold text-white group-hover:text-orange-lava transition-colors">กรุงเทพฯ - เชียงใหม่</span>
+            <span className="text-xs text-text-gray mt-1">สายเหนือ (690 กม.)</span>
+          </Link>
+          <Link href="/route/bangkok/khon-kaen" className="flex flex-col items-center justify-center p-5 bg-navy-primary rounded-xl border border-white/10 hover:border-orange-lava hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] transition-all group">
+            <span className="text-[1.8rem] text-orange-lava mb-2 group-hover:scale-110 transition-transform">🌾</span>
+            <span className="font-bold text-white group-hover:text-orange-lava transition-colors">กรุงเทพฯ - ขอนแก่น</span>
+            <span className="text-xs text-text-gray mt-1">สายอีสาน (450 กม.)</span>
+          </Link>
+          <Link href="/route/bangkok/rayong" className="flex flex-col items-center justify-center p-5 bg-navy-primary rounded-xl border border-white/10 hover:border-orange-lava hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] transition-all group">
+            <span className="text-[1.8rem] text-orange-lava mb-2 group-hover:scale-110 transition-transform">🏭</span>
+            <span className="font-bold text-white group-hover:text-orange-lava transition-colors">กรุงเทพฯ - ระยอง</span>
+            <span className="text-xs text-text-gray mt-1">สายตะวันออก (180 กม.)</span>
+          </Link>
+          <Link href="/route/bangkok/chonburi" className="flex flex-col items-center justify-center p-5 bg-navy-primary rounded-xl border border-white/10 hover:border-orange-lava hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] transition-all group">
+            <span className="text-[1.8rem] text-orange-lava mb-2 group-hover:scale-110 transition-transform">🌊</span>
+            <span className="font-bold text-white group-hover:text-orange-lava transition-colors">กรุงเทพฯ - ชลบุรี</span>
+            <span className="text-xs text-text-gray mt-1">สายตะวันออก (120 กม.)</span>
+          </Link>
+        </div>
       </section>
 
       {/* CTA SECTION */}

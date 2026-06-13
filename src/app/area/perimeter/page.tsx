@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description: 'บริการรถรับจ้างขนของ โซนปริมณฑล นนทบุรี ปากเกร็ด บางใหญ่ ปทุมธานี รังสิต สมุทรปราการ บางพลี ย้ายบ้าน ย้ายหอพัก รถกระบะตู้ทึบ ขนของข้ามจังหวัด ราคาเหมาเริ่มต้น 500.-',
   keywords: 'รถรับจ้าง นนทบุรี, รถกระบะรับจ้าง ปทุมธานี, ย้ายหอ รังสิต, ขนของ ปากเกร็ด, รถรับจ้าง สมุทรปราการ, ย้ายบ้าน บางใหญ่, รถ 4 ล้อใหญ่ บางพลี, รถรับจ้าง ลำลูกกา, N&M18 TRANSPORT',
   alternates: {
-    canonical: 'https://www.nm18transport.com/area/perimeter',
+    canonical: "/area/perimeter",
   },
   openGraph: {
     title: 'รถรับจ้าง ปริมณฑล นนทบุรี-ปทุม-สมุทรปราการ ย้ายบ้านราคาถูก - N&M18 TRANSPORT',
     description: 'บริการรถรับจ้างขนของ โซนปริมณฑล นนทบุรี ปากเกร็ด บางใหญ่ ปทุมธานี รังสิต สมุทรปราการ บางพลี ย้ายบ้าน ย้ายหอพัก รถกระบะตู้ทึบ ขนของข้ามจังหวัด ราคาเหมาเริ่มต้น 500.-',
     url: 'https://www.nm18transport.com/area/perimeter',
-    images: ['/images/portfolio/S__2531434.jpg'],
+    images: ['/images/portfolio/S__2531434.webp'],
     type: 'article',
   },
 };
@@ -51,7 +51,7 @@ export default function PerimeterAreaPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden text-center bg-cover bg-center" style={{ backgroundImage: "linear-gradient(to bottom, rgba(2, 6, 13, 0.8), rgba(15, 28, 56, 0.95)), url('/images/portfolio/S__2531437.jpg')" }}>
+      <section className="relative py-24 md:py-32 overflow-hidden text-center bg-cover bg-center" style={{ backgroundImage: "linear-gradient(to bottom, rgba(2, 6, 13, 0.8), rgba(15, 28, 56, 0.95)), url('/images/portfolio/S__2531437.webp')" }}>
         <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-orange-lava to-neon-blue shadow-[0_-5px_20px_rgba(255,69,0,0.5)]"></div>
         <Container className="relative z-10">
           <div className="text-sm md:text-base mb-6 tracking-wider text-text-gray uppercase">
@@ -137,7 +137,7 @@ export default function PerimeterAreaPage() {
             <div className="flex-1 w-full max-w-xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden border-2 border-orange-lava/20 shadow-[0_0_25px_rgba(255,69,0,0.3)]">
                 <Image 
-                  src="/images/portfolio/S__2531434.jpg" 
+                  src="/images/portfolio/S__2531434.webp" 
                   alt="ย้ายบ้าน นนทบุรี ปทุมธานี รถรับจ้าง N&M18" 
                   width={800} 
                   height={600} 

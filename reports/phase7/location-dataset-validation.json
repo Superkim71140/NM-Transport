@@ -1,0 +1,24 @@
+{
+  "timestamp": "2026-06-12T19:13:41.027Z",
+  "totalRecords": 56,
+  "activeCount": 46,
+  "draftCount": 8,
+  "aliasCount": 2,
+  "samutSakhonCount": 5,
+  "isValid": true,
+  "errors": [],
+  "warnings": [
+    "Record mueang-nonthaburi: keyword \"รถรับจ้างขนของ นนทบุรี\" does not contain the location name \"เมืองนนทบุรี\"",
+    "Record mueang-nonthaburi: keyword \"ย้ายบ้าน นนทบุรี\" does not contain the location name \"เมืองนนทบุรี\"",
+    "Record mueang-nonthaburi: keyword \"รถตู้ทึบขนของ นนทบุรี\" does not contain the location name \"เมืองนนทบุรี\"",
+    "Record mueang-pathum-thani: keyword \"รถรับจ้าง ปทุมธานี\" does not contain the location name \"เมืองปทุมธานี\"",
+    "Record mueang-pathum-thani: keyword \"ย้ายบ้าน ปทุมธานี\" does not contain the location name \"เมืองปทุมธานี\"",
+    "Record mueang-pathum-thani: keyword \"รถขนของ ปทุมธานี\" does not contain the location name \"เมืองปทุมธานี\"",
+    "Record mueang-samut-prakan: keyword \"รถรับจ้าง สมุทรปราการ\" does not contain the location name \"เมืองสมุทรปราการ\"",
+    "Record mueang-samut-prakan: keyword \"ย้ายบ้าน สมุทรปราการ\" does not contain the location name \"เมืองสมุทรปราการ\"",
+    "Record mueang-samut-prakan: keyword \"รถขนของ สมุทรปราการ\" does not contain the location name \"เมืองสมุทรปราการ\"",
+    "Record mueang-samut-sakhon: keyword \"รถรับจ้าง สมุทรสาคร\" does not contain the location name \"เมืองสมุทรสาคร\"",
+    "Record mueang-samut-sakhon: keyword \"ย้ายบ้าน สมุทรสาคร\" does not contain the location name \"เมืองสมุทรสาคร\"",
+    "Record mueang-samut-sakhon: keyword \"รถกระบะขนของ สมุทรสาคร\" does not contain the location name \"เมืองสมุทรสาคร\""
+  ]
+}

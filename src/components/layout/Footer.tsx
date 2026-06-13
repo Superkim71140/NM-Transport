@@ -9,7 +9,7 @@ export const Footer: React.FC = () => {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10 text-center md:text-left">
           <div className="footer-col">
-            <Image src="/images/logos/logo-nm18.png" alt="N&M18 TRANSPORT" width={200} height={80} className="h-[80px] w-auto mx-auto md:mx-0 mb-5 drop-shadow-[0_0_1px_white]" />
+            <Image src="/images/logos/logo-nm18.webp" alt="N&M18 TRANSPORT" width={200} height={80} className="h-[80px] w-auto mx-auto md:mx-0 mb-5 drop-shadow-[0_0_1px_white]" />
             <p className="mb-4">
               บริการรถกระบะรับจ้าง รถตู้ทึบ รถคอก ขนของ ย้ายบ้าน ย้ายคอนโด หอพัก ทั่วประเทศไทย บริการดี ยกของให้ ราคาคุ้มค่า
             </p>
@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
             </div>
             <div className="flex justify-center md:justify-start items-start gap-4 mb-4">
               <i className="fa-brands fa-facebook text-orange-lava mt-1"></i>
-              <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" rel="noopener noreferrer" className="hover:text-orange-lava transition-colors">N&m บริการ รถรับจ้าง กระบะตู้ทึบ ขนส่ง ทั่วไทย</a>
+              <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" rel="noopener noreferrer" aria-label="เยี่ยมชมเพจ Facebook ของ N&M18 TRANSPORT" className="hover:text-orange-lava transition-colors">N&m บริการ รถรับจ้าง กระบะตู้ทึบ ขนส่ง ทั่วไทย</a>
             </div>
           </div>
         </div>

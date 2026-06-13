@@ -17,7 +17,7 @@ export const ContactSection: React.FC = () => {
             </div>
             <h3 className="text-xl font-bold mb-2">โทรศัพท์</h3>
             <p className="text-lg text-white font-medium mb-4">095-801-0958</p>
-            <Button href="tel:0958010958" className="w-full">โทรเลย</Button>
+            <Button href="tel:0958010958" aria-label="โทรติดต่อ N&M18 TRANSPORT เพื่อจองคิวรถรับจ้าง" className="w-full">โทรเลย</Button>
           </div>
           <div className="glass-card p-8 flex flex-col items-center border-line-green/30">
             <div className="w-16 h-16 bg-line-green/10 text-line-green flex items-center justify-center text-3xl rounded-full mb-4">
@@ -25,7 +25,7 @@ export const ContactSection: React.FC = () => {
             </div>
             <h3 className="text-xl font-bold mb-2">LINE Official</h3>
             <p className="text-lg text-white font-medium mb-4">@952yyanc</p>
-            <Button variant="line" href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" className="w-full">แอดไลน์</Button>
+            <Button variant="line" href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" aria-label="แอดไลน์ N&M18 TRANSPORT เพื่อประเมินราคาค่าขนย้ายฟรี" className="w-full">แอดไลน์</Button>
           </div>
           <div className="glass-card p-8 flex flex-col items-center border-fb-blue/30">
             <div className="w-16 h-16 bg-fb-blue/10 text-fb-blue flex items-center justify-center text-3xl rounded-full mb-4">
@@ -33,7 +33,7 @@ export const ContactSection: React.FC = () => {
             </div>
             <h3 className="text-xl font-bold mb-2">Facebook</h3>
             <p className="text-lg text-white font-medium mb-4">ทักแชทเพจ</p>
-            <Button variant="blue" href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" className="w-full">ส่งข้อความ</Button>
+            <Button variant="blue" href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" aria-label="ส่งข้อความผ่าน Facebook N&M18 TRANSPORT" className="w-full">ส่งข้อความ</Button>
           </div>
         </div>
       </Container>

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "บริการขนส่งมอเตอร์ไซค์ รับส่งบิ๊กไบค์ (Big Bike) รถเล็ก รถวิบาก ฮาร์เลย์ เวสป้า ทั่วประเทศไทย ด้วยรถตู้ทึบ/รถสไลด์ มีประกันสินค้า 100% แพ็คกันรอยรอบคัน โทร 095-801-0958",
   keywords: "ขนส่งมอเตอร์ไซค์, รับส่งบิ๊กไบค์, รถสไลด์มอเตอร์ไซค์, ส่งรถมอไซค์ไปต่างจังหวัด, รถรับจ้างขนรถ, ขนย้ายบิ๊กไบค์, รถตู้ทึบขนมอเตอร์ไซค์, ส่งรถฮาร์เลย์, ส่งรถเวสป้า, N&M18 TRANSPORT",
   alternates: {
-    canonical: "https://www.nm18transport.com/service/moto",
+    canonical: "/service/moto",
   },
   openGraph: {
     title: "รับส่งมอเตอร์ไซค์ ขนส่งบิ๊กไบค์ รถสไลด์/ตู้ทึบ ไปต่างจังหวัด ราคาถูก",
@@ -58,7 +58,7 @@ export default function ServiceMotoPage() {
     <main 
       className="bg-[#02040a] min-h-screen text-[#e2e8f0] pb-[70px] md:pb-0" 
       style={{ 
-        backgroundImage: "linear-gradient(to bottom, rgba(2, 4, 10, 0.85), rgba(2, 4, 10, 0.98)), url('/images/portfolio/S__17556168.jpg')",
+        backgroundImage: "linear-gradient(to bottom, rgba(2, 4, 10, 0.85), rgba(2, 4, 10, 0.98)), url('/images/portfolio/S__17556168.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed"
@@ -137,22 +137,22 @@ export default function ServiceMotoPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[15px]">
             <div className="aspect-[16/9] md:aspect-[4/3] overflow-hidden rounded-[12px] border border-[rgba(255,255,255,0.1)] relative group transition-all duration-300 hover:border-[#00f2ff] hover:shadow-[0_0_15px_rgba(0,242,255,0.3)]">
-              <Image src="/images/portfolio/S__2531431.jpg" alt="ขนส่งรถบิ๊กไบค์ ขึ้นรถสไลด์" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+              <Image src="/images/portfolio/S__2531431.webp" alt="ขนส่งรถบิ๊กไบค์ ขึ้นรถสไลด์" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
             <div className="aspect-[16/9] md:aspect-[4/3] overflow-hidden rounded-[12px] border border-[rgba(255,255,255,0.1)] relative group transition-all duration-300 hover:border-[#00f2ff] hover:shadow-[0_0_15px_rgba(0,242,255,0.3)]">
-              <Image src="/images/portfolio/S__17556169.jpg" alt="แพ็คกันรอยรถบิ๊กไบค์ GS Adventure" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+              <Image src="/images/portfolio/S__17556169.webp" alt="แพ็คกันรอยรถบิ๊กไบค์ GS Adventure" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
             <div className="aspect-[16/9] md:aspect-[4/3] overflow-hidden rounded-[12px] border border-[rgba(255,255,255,0.1)] relative group transition-all duration-300 hover:border-[#00f2ff] hover:shadow-[0_0_15px_rgba(0,242,255,0.3)]">
-              <Image src="/images/portfolio/S__17556176.jpg" alt="ขนส่งรถคลาสสิคแบบเหมาคัน" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+              <Image src="/images/portfolio/S__17556176.webp" alt="ขนส่งรถคลาสสิคแบบเหมาคัน" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
             <div className="aspect-[16/9] md:aspect-[4/3] overflow-hidden rounded-[12px] border border-[rgba(255,255,255,0.1)] relative group transition-all duration-300 hover:border-[#00f2ff] hover:shadow-[0_0_15px_rgba(0,242,255,0.3)]">
-              <Image src="/images/portfolio/S__17556173.jpg" alt="บริการขนส่งรถมอเตอร์ไซค์ 24 ชม" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+              <Image src="/images/portfolio/S__17556173.webp" alt="บริการขนส่งรถมอเตอร์ไซค์ 24 ชม" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
             <div className="aspect-[16/9] md:aspect-[4/3] overflow-hidden rounded-[12px] border border-[rgba(255,255,255,0.1)] relative group transition-all duration-300 hover:border-[#00f2ff] hover:shadow-[0_0_15px_rgba(0,242,255,0.3)]">
-              <Image src="/images/portfolio/S__17556286.png" alt="ขนส่งรถวิบาก รถแข่งสนาม" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+              <Image src="/images/portfolio/S__17556286.webp" alt="ขนส่งรถวิบาก รถแข่งสนาม" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
             <div className="aspect-[16/9] md:aspect-[4/3] overflow-hidden rounded-[12px] border border-[rgba(255,255,255,0.1)] relative group transition-all duration-300 hover:border-[#00f2ff] hover:shadow-[0_0_15px_rgba(0,242,255,0.3)]">
-              <Image src="/images/portfolio/S__17556168.jpg" alt="รถตู้ทึบ N&M18 TRANSPORT" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
+              <Image src="/images/portfolio/S__17556168.webp" alt="รถตู้ทึบ N&M18 TRANSPORT" fill className="object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
           </div>
         </div>

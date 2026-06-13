@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description: 'บริการรถรับจ้างโซนฝั่งธนบุรี บางแค เพชรเกษม พระราม 2 ปิ่นเกล้า จรัญสนิทวงศ์ รถกระบะตู้ทึบ รถ 4 ล้อใหญ่ ย้ายหอ ย้ายคอนโด ฝั่งธน ราคาเริ่มต้น 300.- โทร 095-801-0958',
   keywords: 'รถรับจ้างฝั่งธน, ขนของบางแค, รถกระบะรับจ้าง เพชรเกษม, ย้ายหอพัก จรัญสนิทวงศ์, รถขนของ พระราม 2, ย้ายคอนโด ปิ่นเกล้า, รถ 4 ล้อใหญ่ ฝั่งธน, N&M18 TRANSPORT',
   alternates: {
-    canonical: 'https://www.nm18transport.com/area/thonburi',
+    canonical: "/area/thonburi",
   },
   openGraph: {
     title: 'รถรับจ้างฝั่งธน ขนของ ย้ายหอพัก โซนเพชรเกษม บางแค พระราม 2 - N&M18 TRANSPORT',
     description: 'จุดจอดบางแค มาไว ถึงใน 1 ชม. รถกระบะตู้ทึบ ย้ายหอพัก คอนโด ฝั่งธน เริ่มต้น 300 บาท',
     url: 'https://www.nm18transport.com/area/thonburi',
-    images: ['/images/portfolio/S__2531437.jpg'],
+    images: ['/images/portfolio/S__2531437.webp'],
     type: 'article',
   },
 };
@@ -51,7 +51,7 @@ export default function ThonburiAreaPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden text-center bg-cover bg-center" style={{ backgroundImage: "linear-gradient(to bottom, rgba(2, 6, 13, 0.8), rgba(15, 28, 56, 0.95)), url('/images/portfolio/S__2531437.jpg')" }}>
+      <section className="relative py-24 md:py-32 overflow-hidden text-center bg-cover bg-center" style={{ backgroundImage: "linear-gradient(to bottom, rgba(2, 6, 13, 0.8), rgba(15, 28, 56, 0.95)), url('/images/portfolio/S__2531437.webp')" }}>
         <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-orange-lava to-neon-blue shadow-[0_-5px_20px_rgba(255,69,0,0.5)]"></div>
         <Container className="relative z-10">
           <div className="text-sm md:text-base mb-6 tracking-wider text-text-gray uppercase">
@@ -137,7 +137,7 @@ export default function ThonburiAreaPage() {
             <div className="flex-1 w-full max-w-xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden border-2 border-orange-lava/20 shadow-[0_0_25px_rgba(255,69,0,0.3)]">
                 <Image 
-                  src="/images/portfolio/S__2531424.jpg" 
+                  src="/images/portfolio/S__2531424.webp" 
                   alt="ทีมงานขนย้ายมืออาชีพ N&M18" 
                   width={800} 
                   height={600} 

@@ -1,17 +1,16 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: "ติดต่อเรา จองคิวรถรับจ้าง ย้ายบ้าน 24 ชม. - N&M18 TRANSPORT",
-  description: "โทร 095-801-0958 จองคิวรถกระบะ รถ 4 ล้อใหญ่ ย้ายบ้าน ย้ายหอ ขนส่งสินค้าทั่วไทย ปรึกษาประเมินราคาฟรี",
-  keywords: "ติดต่อรถรับจ้าง, จองรถขนของ, เบอร์โทรถรับจ้าง, แผนที่ N&M18 TRANSPORT, รถรับจ้าง นครสวรรค์, รถรับจ้าง กรุงเทพ, ไลน์รถรับจ้าง, จองคิวรถย้ายบ้าน, ขนส่งสินค้าทั่วไทย",
+  description: "ติดต่อจองคิว N&M18 TRANSPORT บริการรถรับจ้างขนของ ย้ายบ้าน ย้ายคอนโด ย้ายหอพัก ครอบคลุมกรุงเทพฯ และปริมณฑล ประเมินราคาเบื้องต้นฟรี ติดต่อได้ทันที โทร 095-801-0958",
+  keywords: "ติดต่อรถรับจ้าง, จองรถขนของ, เบอร์โทรรถรับจ้าง, แผนที่ N&M18 TRANSPORT, รถรับจ้าง นครสวรรค์, รถรับจ้าง กรุงเทพ, ไลน์รถรับจ้าง, จองคิวรถย้ายบ้าน, ขนส่งสินค้าทั่วไทย",
   alternates: {
     canonical: "https://www.nm18transport.com/contact",
   },
   openGraph: {
     title: "ติดต่อเรา จองคิวรถรับจ้าง ย้ายบ้าน 24 ชม. - N&M18 TRANSPORT",
-    description: "โทร 095-801-0958 จองคิวรถกระบะ รถ 4 ล้อใหญ่ ย้ายบ้าน ย้ายหอ ขนส่งสินค้าทั่วไทย ปรึกษาประเมินราคาฟรี",
+    description: "ติดต่อจองคิว N&M18 TRANSPORT บริการรถรับจ้างขนของ ย้ายบ้าน ย้ายคอนโด ย้ายหอพัก ครอบคลุมกรุงเทพฯ และปริมณฑล ประเมินราคาเบื้องต้นฟรี ติดต่อได้ทันที โทร 095-801-0958",
     url: "https://www.nm18transport.com/contact",
     images: [{ url: "https://www.nm18transport.com/S__2531437.jpg" }],
     type: "website",
@@ -19,62 +18,102 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "TransportationService",
-    "name": "N&M18 TRANSPORT",
-    "telephone": "095-801-0958",
-    "image": "https://www.nm18transport.com/logo-nm18.png",
-    "url": "https://www.nm18transport.com/contact",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "232/8 หมู่ 3 ซอยมหาโพธิ 15/1",
-      "addressLocality": "เก้าเลี้ยว",
-      "addressRegion": "นครสวรรค์",
-      "postalCode": "60230",
-      "addressCountry": "TH"
+  const faqData = [
+    {
+      question: "ประเมินราคาฟรีหรือไม่?",
+      answer: "ประเมินราคาเบื้องต้นฟรีไม่มีค่าใช้จ่าย เพียงลูกค้าส่งรูปภาพสิ่งของที่จะขนย้าย พร้อมระบุต้นทาง-ปลายทาง และวันที่ต้องการขนย้ายผ่านช่องทาง Line ของเรา"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "15.8456", 
-      "longitude": "100.0871"
+    {
+      question: "จองคิวรถด่วนใช้เวลาเท่าไหร่?",
+      answer: "ลูกค้าสามารถติดต่อสอบถามคิวรถด่วนหรือคิวว่างที่ใกล้ที่สุดได้ทันทีตลอด 24 ชั่วโมง โดยเวลาในการเข้าหน้างานจะขึ้นอยู่กับระยะทาง ประเภทรถ และสถานะคิวงาน ณ ขณะนั้น"
     },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "095-801-0958",
-      "contactType": "customer service",
-      "areaServed": "TH",
-      "availableLanguage": "Thai"
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
-      ],
-      "opens": "00:00",
-      "closes": "23:59"
+    {
+      question: "ต้องแจ้งข้อมูลอะไรบ้างเพื่อประเมินราคา?",
+      answer: "ข้อมูลที่จำเป็นสำหรับการประเมินราคา ได้แก่ สถานที่ต้นทางและปลายทาง (จุดจอดรถและชั้นที่ขนย้าย), วันเวลาที่ต้องการขนย้าย, รายการสิ่งของหรือปริมาณคร่าวๆ, ประเภทรถที่ต้องการใช้งาน และความต้องการทีมยกของเพิ่ม"
     }
+  ];
+
+  const pageEntityGraph = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://www.nm18transport.com/contact#webpage",
+        "url": "https://www.nm18transport.com/contact",
+        "name": "ติดต่อเรา จองคิวรถรับจ้าง ย้ายบ้าน 24 ชม. - N&M18 TRANSPORT",
+        "description": "ติดต่อจองคิว N&M18 TRANSPORT บริการรถรับจ้างขนของ ย้ายบ้าน ย้ายคอนโด ย้ายหอพัก ครอบคลุมกรุงเทพฯ และปริมณฑล ประเมินราคาเบื้องต้นฟรี ติดต่อได้ทันที โทร 095-801-0958",
+        "isPartOf": {
+          "@id": "https://www.nm18transport.com/#website"
+        },
+        "mainEntity": {
+          "@id": "https://www.nm18transport.com/#organization"
+        },
+        "about": {
+          "@id": "https://www.nm18transport.com/contact#transportation-service"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.nm18transport.com/contact#transportation-service",
+        "name": "บริการรถรับจ้างขนของ N&M18 TRANSPORT",
+        "serviceType": "TransportationService",
+        "provider": {
+          "@id": "https://www.nm18transport.com/#organization"
+        },
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "กรุงเทพมหานคร"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "นนทบุรี"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "ปทุมธานี"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "สมุทรปราการ"
+          }
+        ],
+        "description": "บริการรถรับจ้างขนของ ย้ายบ้าน คอนโด หอพัก ครอบคลุมพื้นที่กรุงเทพมหานคร นนทบุรี ปทุมธานี และสมุทรปราการ"
+      }
+    ]
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
   };
 
   return (
     <main>
-      <Script
-        id="contact-jsonld"
+      <script
+        id="contact-page-entity-graph-jsonld"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageEntityGraph).replace(/</g, '\\u003c') }}
+      />
+      <script
+        id="contact-page-faq-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, '\\u003c') }}
       />
       
       <section className="py-[60px] pb-[100px] relative overflow-hidden bg-[#02040a] min-h-[calc(100vh-80px)]">
         {/* Background Overlay mapped from the HTML's background image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed" 
-          style={{ backgroundImage: "linear-gradient(to bottom, rgba(2, 4, 10, 0.85), rgba(2, 4, 10, 0.95)), url('/S__2531437.jpg')" }}
+          style={{ backgroundImage: "linear-gradient(to bottom, rgba(2, 4, 10, 0.85), rgba(2, 4, 10, 0.95)), url('/images/portfolio/S__2531437.webp')" }}
         ></div>
 
         {/* Glow Effects */}
@@ -95,9 +134,9 @@ export default function ContactPage() {
             
             <div className="flex flex-col gap-[20px]">
               
-              <a href="tel:0958010958" className="group flex items-center gap-[20px] p-[20px] bg-gradient-to-br from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.01)] border border-[rgba(255,255,255,0.08)] rounded-[16px] transition-all duration-400 cursor-pointer hover:-translate-y-[5px] hover:border-[#FF4500] hover:bg-gradient-to-br hover:from-[rgba(255,69,0,0.1)] hover:to-[rgba(255,255,255,0.01)] hover:shadow-[0_10px_20px_rgba(0,0,0,0.3)]">
+              <a href="tel:+66958010958" aria-label="โทรติดต่อ N&M18 TRANSPORT เพื่อประเมินราคาและจองคิวรถรับจ้าง" className="group flex items-center gap-[20px] p-[20px] bg-gradient-to-br from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.01)] border border-[rgba(255,255,255,0.08)] rounded-[16px] transition-all duration-400 cursor-pointer hover:-translate-y-[5px] hover:border-[#FF4500] hover:bg-gradient-to-br hover:from-[rgba(255,69,0,0.1)] hover:to-[rgba(255,255,255,0.01)] hover:shadow-[0_10px_20px_rgba(0,0,0,0.3)]">
                 <div className="w-[50px] h-[50px] rounded-[12px] bg-[rgba(255,255,255,0.05)] flex items-center justify-center text-[1.4rem] text-[#FF4500] transition-all duration-400 flex-shrink-0 group-hover:bg-[#FF4500] group-hover:text-white group-hover:shadow-[0_0_20px_#FF4500]">
-                  <i className="fa-solid fa-phone-volume"></i>
+                  <i className="fa-solid fa-phone-volume" aria-hidden="true"></i>
                 </div>
                 <div>
                   <h3 className="text-[0.9rem] text-[#94a3b8] font-medium mb-[2px]">โทรด่วน (คุณนัท)</h3>
@@ -108,7 +147,7 @@ export default function ContactPage() {
 
               <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" rel="noreferrer" className="group flex items-center gap-[20px] p-[20px] bg-gradient-to-br from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.01)] border border-[rgba(255,255,255,0.08)] rounded-[16px] transition-all duration-400 cursor-pointer hover:-translate-y-[5px] hover:border-[#FF4500] hover:bg-gradient-to-br hover:from-[rgba(255,69,0,0.1)] hover:to-[rgba(255,255,255,0.01)] hover:shadow-[0_10px_20px_rgba(0,0,0,0.3)]">
                 <div className="w-[50px] h-[50px] rounded-[12px] bg-[rgba(255,255,255,0.05)] flex items-center justify-center text-[1.4rem] text-[#FF4500] transition-all duration-400 flex-shrink-0 group-hover:bg-[#FF4500] group-hover:text-white group-hover:shadow-[0_0_20px_#FF4500]">
-                  <i className="fa-brands fa-line"></i>
+                  <i className="fa-brands fa-line" aria-hidden="true"></i>
                 </div>
                 <div>
                   <h3 className="text-[0.9rem] text-[#94a3b8] font-medium mb-[2px]">Line Official</h3>
@@ -119,7 +158,7 @@ export default function ContactPage() {
 
               <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" rel="noreferrer" className="group flex items-center gap-[20px] p-[20px] bg-gradient-to-br from-[rgba(255,255,255,0.03)] to-[rgba(255,255,255,0.01)] border border-[rgba(255,255,255,0.08)] rounded-[16px] transition-all duration-400 cursor-pointer hover:-translate-y-[5px] hover:border-[#FF4500] hover:bg-gradient-to-br hover:from-[rgba(255,69,0,0.1)] hover:to-[rgba(255,255,255,0.01)] hover:shadow-[0_10px_20px_rgba(0,0,0,0.3)]">
                 <div className="w-[50px] h-[50px] rounded-[12px] bg-[rgba(255,255,255,0.05)] flex items-center justify-center text-[1.4rem] text-[#FF4500] transition-all duration-400 flex-shrink-0 group-hover:bg-[#FF4500] group-hover:text-white group-hover:shadow-[0_0_20px_#FF4500]">
-                  <i className="fa-brands fa-facebook-messenger"></i>
+                  <i className="fa-brands fa-facebook-messenger" aria-hidden="true"></i>
                 </div>
                 <div>
                   <h3 className="text-[0.9rem] text-[#94a3b8] font-medium mb-[2px]">Facebook Page</h3>
@@ -128,16 +167,16 @@ export default function ContactPage() {
                 </div>
               </a>
 
-              <div className="mt-[10px] p-[20px] rounded-[16px] bg-[rgba(0,0,0,0.3)] border border-dashed border-[rgba(255,255,255,0.15)]">
+              <address className="mt-[10px] p-[20px] rounded-[16px] bg-[rgba(0,0,0,0.3)] border border-dashed border-[rgba(255,255,255,0.15)] not-italic">
                 <h4 className="text-[#00f2ff] text-[1rem] mb-[8px]">
-                  <i className="fa-solid fa-location-dot"></i> ที่ตั้งสำนักงาน
+                  <i className="fa-solid fa-location-dot" aria-hidden="true"></i> ที่ตั้งสำนักงาน
                 </h4>
                 <p className="text-[0.95rem] text-[#ccc] leading-[1.5]">
                   232/8 หมู่ 3 ซอยมหาโพธิ 15/1<br/>
                   ต.มหาโพธิ อ.เก้าเลี้ยว<br/>
                   จ.นครสวรรค์ 60230
                 </p>
-              </div>
+              </address>
 
             </div>
 
@@ -149,20 +188,42 @@ export default function ContactPage() {
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
                   className="absolute inset-0 w-full h-full border-0 grayscale invert-[1] contrast-[0.85] opacity-80"
+                  title="แผนที่ตั้งสำนักงาน N&M18 TRANSPORT"
                 ></iframe>
               </div>
 
               <div className="flex flex-col md:flex-row gap-[12px] md:gap-[15px] mt-[25px]">
-                <a href="tel:0958010958" className="inline-flex flex-1 items-center justify-center gap-[10px] py-[12px] rounded-[50px] font-semibold transition-all duration-300 tracking-[0.5px] bg-[#FF4500] text-white shadow-[0_0_15px_rgba(255,69,0,0.4)] hover:shadow-[0_0_25px_rgba(255,69,0,0.6)]">
-                  <i className="fa-solid fa-phone"></i> โทรสอบถาม
+                <a href="tel:+66958010958" aria-label="โทรติดต่อ N&M18 TRANSPORT เพื่อประเมินราคาและจองคิวรถรับจ้าง" className="inline-flex flex-1 items-center justify-center gap-[10px] py-[12px] rounded-[50px] font-semibold transition-all duration-300 tracking-[0.5px] bg-[#FF4500] text-white shadow-[0_0_15px_rgba(255,69,0,0.4)] hover:shadow-[0_0_25px_rgba(255,69,0,0.6)]">
+                  <i className="fa-solid fa-phone" aria-hidden="true"></i> โทรสอบถาม
                 </a>
                 <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" rel="noreferrer" className="inline-flex flex-1 items-center justify-center gap-[10px] py-[12px] rounded-[50px] font-semibold transition-all duration-300 tracking-[0.5px] bg-[#06C755] text-white shadow-[0_0_15px_rgba(6,199,85,0.4)] hover:shadow-[0_0_25px_rgba(6,199,85,0.6)]">
-                  <i className="fa-brands fa-line"></i> แอดไลน์จองคิว
+                  <i className="fa-brands fa-line" aria-hidden="true"></i> แอดไลน์จองคิว
                 </a>
               </div>
             </div>
 
           </div>
+
+          {/* FAQ Section */}
+          <section className="mt-[60px] pt-[50px] border-t border-[rgba(255,255,255,0.08)]">
+            <h2 className="text-[1.8rem] font-bold text-center mb-[30px] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#FF4500]">
+              คำถามที่พบบ่อย (FAQ)
+            </h2>
+            <div className="max-w-[800px] mx-auto flex flex-col gap-4">
+              {faqData.map((faq, index) => (
+                <div key={index} className="bg-[rgba(15,28,56,0.6)] border border-[rgba(255,255,255,0.08)] rounded-[16px] p-5 shadow-[0_4px_20px_rgba(0,0,0,0.2)]">
+                  <h3 className="text-[1.1rem] font-semibold text-white mb-2 flex items-start gap-2">
+                    <span className="text-[#FF4500] font-bold">Q:</span>
+                    <span>{faq.question}</span>
+                  </h3>
+                  <p className="text-[#94a3b8] text-[0.95rem] leading-[1.6] pl-6">
+                    {faq.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
         </div>
       </section>
     </main>

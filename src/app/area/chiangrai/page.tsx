@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description: 'บริการรถรับจ้างขนของ เชียงราย-กรุงเทพ แม่สาย เชียงแสน รับย้ายบ้าน ย้ายหอพัก ส่งสินค้าทั่วไทย รถกระบะตู้ทึบพร้อมคนยก ราคาเริ่มต้น 1,000 บาท โทร 095-801-0958',
   keywords: 'รถรับจ้าง เชียงราย, ย้ายหอ มฟล, ขนของ บ้านดู่, รถกระบะรับจ้าง แม่สาย, ขนส่ง เชียงราย กรุงเทพ, ย้ายบ้าน เชียงแสน, รถคอก พาน, ขนมอไซค์ เชียงราย, N&M18 TRANSPORT',
   alternates: {
-    canonical: 'https://www.nm18transport.com/area/chiangrai',
+    canonical: "/area/chiangrai",
   },
   openGraph: {
     title: 'รถรับจ้าง เชียงราย - กทม. ย้ายหอ มฟล. ขนของทั่วไป ราคาถูก - N&M18 TRANSPORT',
     description: 'บริการรถกระบะตู้ทึบ เชียงราย-กรุงเทพ รับย้ายหอพักนักศึกษา ย้ายบ้านทั่วจังหวัดเชียงราย ปลอดภัย 100%',
     url: 'https://www.nm18transport.com/area/chiangrai',
-    images: ['/images/portfolio/S__17556169.jpg'],
+    images: ['/images/portfolio/S__17556169.webp'],
     type: 'article',
   },
 };
@@ -50,7 +50,7 @@ export default function ChiangRaiAreaPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden text-center bg-cover bg-center" style={{ backgroundImage: "linear-gradient(to bottom, rgba(2, 6, 13, 0.7), rgba(15, 28, 56, 0.95)), url('/images/portfolio/S__17556169.jpg')" }}>
+      <section className="relative py-24 md:py-32 overflow-hidden text-center bg-cover bg-center" style={{ backgroundImage: "linear-gradient(to bottom, rgba(2, 6, 13, 0.7), rgba(15, 28, 56, 0.95)), url('/images/portfolio/S__17556169.webp')" }}>
         <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-[#10B981] to-neon-blue shadow-[0_-5px_20px_rgba(16,185,129,0.5)]"></div>
         <Container className="relative z-10">
           <div className="text-sm md:text-base mb-6 tracking-wider text-text-gray uppercase">
@@ -154,7 +154,7 @@ export default function ChiangRaiAreaPage() {
             <div className="flex-1 w-full max-w-xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden border-2 border-[#10B981]/20 shadow-[0_0_25px_rgba(16,185,129,0.3)]">
                 <Image 
-                  src="/images/portfolio/S__17556169.jpg" 
+                  src="/images/portfolio/S__17556169.webp" 
                   alt="ขนย้ายรถมอเตอร์ไซค์ เชียงราย N&M18" 
                   width={800} 
                   height={600} 

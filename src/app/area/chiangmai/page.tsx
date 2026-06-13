@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description: 'บริการรถรับจ้างเชียงใหม่ รถกระบะตู้ทึบ รับขนย้ายของ ย้ายบ้าน ย้ายหอพัก ขนส่งสินค้า กรุงเทพ-เชียงใหม่ ให้บริการครอบคลุมทุกอำเภอ ปลอดภัย ราคาเหมาจ่าย เริ่มต้น 1,000 บาท โทร 095-801-0958',
   keywords: 'รถรับจ้าง เชียงใหม่, ย้ายหอ เชียงใหม่, ขนของ หลัง มช, รถกระบะรับจ้าง หางดง, ขนส่ง กรุงเทพ เชียงใหม่, ย้ายบ้าน สันทราย, รถคอก แม่ริม, ขนมอไซค์ เชียงใหม่, N&M18 TRANSPORT',
   alternates: {
-    canonical: 'https://www.nm18transport.com/area/chiangmai',
+    canonical: "/area/chiangmai",
   },
   openGraph: {
     title: 'รถรับจ้าง เชียงใหม่ - กรุงเทพ ย้ายหอ ย้ายบ้าน ชำนาญทางดอย - N&M18 TRANSPORT',
     description: 'บริการรถกระบะตู้ทึบ เชียงใหม่-กรุงเทพ วิ่งงานทั่วไทย ชำนาญเส้นทางเขา ปลอดภัย 100%',
     url: 'https://www.nm18transport.com/area/chiangmai',
-    images: ['/images/portfolio/S__17556172.jpg'],
+    images: ['/images/portfolio/S__17556172.webp'],
     type: 'article',
   },
 };
@@ -50,7 +50,7 @@ export default function ChiangMaiAreaPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden text-center bg-cover bg-center" style={{ backgroundImage: "linear-gradient(to bottom, rgba(2, 6, 13, 0.7), rgba(15, 28, 56, 0.95)), url('/images/portfolio/S__17556172.jpg')" }}>
+      <section className="relative py-24 md:py-32 overflow-hidden text-center bg-cover bg-center" style={{ backgroundImage: "linear-gradient(to bottom, rgba(2, 6, 13, 0.7), rgba(15, 28, 56, 0.95)), url('/images/portfolio/S__17556172.webp')" }}>
         <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-[#D92B2B] to-neon-blue shadow-[0_-5px_20px_rgba(217,43,43,0.5)]"></div>
         <Container className="relative z-10">
           <div className="text-sm md:text-base mb-6 tracking-wider text-text-gray uppercase">
@@ -154,7 +154,7 @@ export default function ChiangMaiAreaPage() {
             <div className="flex-1 w-full max-w-xl mx-auto">
               <div className="relative rounded-2xl overflow-hidden border-2 border-[#D92B2B]/20 shadow-[0_0_25px_rgba(217,43,43,0.3)]">
                 <Image 
-                  src="/images/portfolio/S__17556172.jpg" 
+                  src="/images/portfolio/S__17556172.webp" 
                   alt="ขนส่งรถมอเตอร์ไซค์ เชียงใหม่ N&M18" 
                   width={800} 
                   height={600} 
