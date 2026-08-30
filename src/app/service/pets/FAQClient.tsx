@@ -1,23 +1,24 @@
 "use client";
 
 import React, { useState } from 'react';
+import { FaWind, FaBoxOpen, FaClock, FaChevronDown, FaCircleQuestion } from 'react-icons/fa6';
 
 export default function FAQClient() {
   const faqs = [
     {
-      question: "เจ้าของนั่งรถไปด้วยได้ไหม?",
-      answer: "<strong>ได้ครับ!</strong> เนื่องจากเราใช้รถเก๋ง/SUV ส่วนตัว ลูกค้าสามารถนั่งไปกับน้องได้เลย (1 ท่าน) ช่วยให้ประหยัดค่าเดินทางและได้ดูแลน้องอย่างใกล้ชิดครับ",
-      icon: "fa-solid fa-user-plus"
+      question: "เดินทางด้วยรถปรับอากาศ น้องจะร้อนหรืออึดอัดไหม?",
+      answer: "<strong>เย็นสบายและปลอดภัยแน่นอนครับ!</strong> ทางเราให้บริการด้วยรถห้องโดยสารปรับอากาศ 100% เปิดแอร์เย็นฉ่ำตลอดการเดินทาง ไม่อบอ้าว ไม่นำน้องไปตากแดดหรือขังหลังกระบะ น้องหายใจสะดวก ผ่อนคลาย และปลอดภัยเหมือนนั่งรถครอบครัวครับ",
+      icon: FaWind
     },
     {
-      question: "ไม่มีกรง น้องขึ้นรถได้ไหม?",
-      answer: "แนะนำให้ใส่กรงหรือ Box เดินทางเพื่อความปลอดภัยสูงสุดครับ แต่ถ้าน้องเชื่องมากและลูกค้าเตรียมผ้ารองกันเปื้อนมาเอง สามารถสอบถามเป็นกรณีไปได้ครับ",
-      icon: "fa-solid fa-box"
+      question: "หากไม่มีกรงหรือ Box เดินทาง น้องขึ้นรถได้ไหม?",
+      answer: "เพื่อความปลอดภัยสูงสุดของน้อง แนะนำให้ใส่กรงหรือ Box เดินทางที่แข็งแรงครับ แต่กรณีที่น้องตัวใหญ่หรือมีความคุ้นชินกับการนั่งรถ ลูกค้าสามารถเตรียมผ้ารองกันเปื้อนและสายรัดนิรภัยสำหรับสัตว์เลี้ยงมาเองได้ สามารถสอบถามและประเมินเป็นรายกรณีได้ตลอด 24 ชม. ครับ",
+      icon: FaBoxOpen
     },
     {
-      question: "ต้องจองล่วงหน้ากี่วัน?",
-      answer: "แนะนำให้จองล่วงหน้า <strong>1-3 วัน</strong> ครับ โดยเฉพาะช่วงเสาร์-อาทิตย์ หรือวันหยุดยาว คิวจะเต็มเร็วมาก แต่ถ้าเคสด่วนลองโทรเช็คคิวได้ตลอด 24 ชม. ครับ",
-      icon: "fa-solid fa-clock"
+      question: "ต้องจองคิวรถล่วงหน้ากี่วัน?",
+      answer: "แนะนำให้จองล่วงหน้า <strong>1 - 3 วัน</strong> ครับ โดยเฉพาะช่วงวันหยุดสุดสัปดาห์หรือเทศกาลวันหยุดยาว คิวจะเต็มค่อนข้างเร็ว แต่หากเป็นเคสเร่งด่วนสามารถโทรเช็คคิวรถกับเจ้าหน้าที่ได้ตลอด 24 ชั่วโมงครับ",
+      icon: FaClock
     }
   ];
 
@@ -28,37 +29,59 @@ export default function FAQClient() {
   };
 
   return (
-    <section className="mb-[60px] max-w-[800px] mx-auto">
-      <div className="text-center mb-[20px]">
-        <h2 className="text-[1.5rem] md:text-[2rem] text-white font-bold">คำถามที่พบบ่อย (FAQ)</h2>
+    <section className="mb-16 md:mb-24 max-w-3xl mx-auto">
+      <div className="text-center mb-8">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold text-amber-400 bg-amber-500/10 border border-amber-500/20 mb-3">
+          <FaCircleQuestion className="text-amber-400 text-xs shrink-0" />
+          <span>FREQUENTLY ASKED QUESTIONS</span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl text-white font-bold tracking-tight">
+          คำถามที่พบบ่อย (FAQ)
+        </h2>
+        <p className="text-slate-400 text-xs sm:text-sm mt-2">
+          ข้อสงสัยยอดนิยมเกี่ยวกับการใช้บริการรับส่งสัตว์เลี้ยง Pet Taxi
+        </p>
       </div>
       
-      <div className="px-[15px] md:px-0">
+      <div className="space-y-3.5 px-2 sm:px-0">
         {faqs.map((faq, index) => {
           const isActive = activeIndex === index;
+          const IconComponent = faq.icon;
           return (
             <div 
               key={index} 
-              className={`mb-[15px] border border-[rgba(255,255,255,0.1)] rounded-[12px] bg-[rgba(15,28,56,0.6)] overflow-hidden transition-all duration-300 hover:border-[#FFD700] hover:shadow-[0_0_15px_rgba(255,215,0,0.2)] ${isActive ? 'bg-[#0f1c38] border-[#FFD700]' : ''}`}
+              className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
+                isActive 
+                  ? 'bg-slate-900/80 border-amber-400/40 shadow-lg shadow-amber-500/5' 
+                  : 'bg-slate-900/40 backdrop-blur-md border-white/[0.08] hover:border-amber-400/25 hover:bg-slate-900/60'
+              }`}
             >
               <button 
-                className="w-full p-[20px] bg-none border-none text-white text-[1.1rem] font-medium text-left flex justify-between items-center cursor-pointer outline-none font-sans"
+                type="button"
+                className="w-full p-5 sm:p-6 text-left flex justify-between items-center cursor-pointer outline-none transition-colors"
                 onClick={() => toggleFAQ(index)}
+                aria-expanded={isActive}
               >
-                <span>
-                  <i className={`${faq.icon} mr-[10px]`} style={{ color: '#FFD700' }}></i> 
-                  {faq.question}
+                <span className="flex items-center gap-3 text-slate-100 font-medium text-sm sm:text-base pr-4">
+                  <span className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
+                    <IconComponent className="text-sm" />
+                  </span>
+                  <span>{faq.question}</span>
                 </span>
-                <i className={`fa-solid fa-chevron-down transition-transform duration-300 ${isActive ? 'rotate-180' : ''}`}></i>
+                <span className={`w-7 h-7 rounded-full bg-white/[0.04] flex items-center justify-center text-slate-400 transition-transform duration-300 shrink-0 ${isActive ? 'rotate-180 text-amber-400 bg-amber-500/10' : ''}`}>
+                  <FaChevronDown className="text-xs" />
+                </span>
               </button>
+              
               <div 
-                className={`overflow-hidden transition-[max-height] duration-300 ease-out bg-[rgba(0,0,0,0.2)]`}
-                style={{ maxHeight: isActive ? '200px' : '0' }}
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  isActive ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
               >
-                <p 
-                  className="p-[20px] text-[#ccc] leading-[1.6] border-t border-[rgba(255,255,255,0.05)]"
+                <div 
+                  className="p-5 sm:p-6 pt-0 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-white/[0.05]"
                   dangerouslySetInnerHTML={{ __html: faq.answer }}
-                ></p>
+                />
               </div>
             </div>
           );
