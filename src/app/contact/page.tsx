@@ -14,8 +14,21 @@ export const metadata: Metadata = {
     title: "ติดต่อเรา จองคิวรถรับจ้าง ย้ายบ้าน 24 ชม. - N&M18 TRANSPORT",
     description: "ติดต่อจองคิว N&M18 TRANSPORT บริการรถรับจ้างขนของ ย้ายบ้าน ย้ายคอนโด ย้ายหอพัก ครอบคลุมกรุงเทพฯ และปริมณฑล ประเมินราคาเบื้องต้นฟรี ติดต่อได้ทันที โทร 095-801-0958",
     url: "https://www.nm18transport.com/contact",
-    images: [{ url: "https://www.nm18transport.com/S__2531437.jpg" }],
+    siteName: "N&M18 TRANSPORT",
+    locale: "th_TH",
+    images: [{ 
+      url: "https://www.nm18transport.com/images/portfolio/S__2531437.webp",
+      width: 1200,
+      height: 630,
+      alt: "ติดต่อเรา N&M18 TRANSPORT"
+    }],
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ติดต่อเรา จองคิวรถรับจ้าง ย้ายบ้าน 24 ชม. - N&M18 TRANSPORT",
+    description: "ติดต่อจองคิว N&M18 TRANSPORT บริการรถรับจ้างขนของ ย้ายบ้าน ย้ายคอนโด ย้ายหอพัก โทร 095-801-0958",
+    images: ["https://www.nm18transport.com/images/portfolio/S__2531437.webp"],
   },
 };
 
@@ -111,9 +124,17 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, '\\u003c') }}
       />
       
-      <section className="py-[60px] pb-[100px] relative overflow-hidden bg-[#02040a] min-h-[calc(100vh-80px)]">
+      <section className="py-[60px] pb-[100px] relative overflow-hidden bg-[#02040a] min-h-[calc(100vh-80px)] bg-slate-900">
         {/* Background Overlay mapped from the HTML's background image */}
-        <Image src="/images/portfolio/S__2531437.webp" alt="Background" fill priority fetchPriority="high" className="object-cover absolute inset-0 -z-20" />
+        <Image 
+          src="/images/portfolio/S__2531437.webp" 
+          alt="Background" 
+          fill 
+          priority={true} 
+          fetchPriority="high" 
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
+          className="object-cover absolute inset-0 -z-20" 
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-[rgba(2,4,10,0.85)] to-[rgba(2,4,10,0.95)] -z-10"></div>
 
         {/* Glow Effects */}

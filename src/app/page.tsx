@@ -1,444 +1,603 @@
-import { FaMoneyBillWave, FaMapLocationDot, FaUserShield, FaImages, FaFacebookF, FaTag, FaCheck, FaXmark, FaShieldCat, FaQuestion, FaTruckRampBox, FaUmbrella, FaHeadset, FaCertificate, FaTruckFast, FaFaceSmile, FaClock, FaCalculator, FaLine, FaPhoneVolume, FaRoute, FaHouseCircleCheck, FaMotorcycle, FaBoxOpen, FaTruckPickup } from 'react-icons/fa6';
+import { 
+  FaMoneyBillWave, 
+  FaMapLocationDot, 
+  FaUserShield, 
+  FaImages, 
+  FaFacebookF, 
+  FaTag, 
+  FaCheck, 
+  FaXmark, 
+  FaShieldCat, 
+  FaQuestion, 
+  FaTruckRampBox, 
+  FaUmbrella, 
+  FaHeadset, 
+  FaCertificate, 
+  FaCalculator, 
+  FaLine, 
+  FaPhoneVolume, 
+  FaRoute, 
+  FaHouseCircleCheck, 
+  FaMotorcycle, 
+  FaBoxOpen, 
+  FaPaw 
+} from 'react-icons/fa6';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import type { Metadata } from 'next';
-import { HeroSection } from '../components/sections/HeroSection';
+import { HeroCarousel } from '../components/home/HeroCarousel';
+import { ServiceHighlightBanner } from '../components/home/ServiceHighlightBanner';
 import { CTASection } from '../components/sections/CTASection';
-import { ContactSection } from '../components/sections/ContactSection';
 import { ServiceCard } from '../components/cards/ServiceCard';
-import { AreaCard } from '../components/cards/AreaCard';
-import { PortfolioCard } from '../components/cards/PortfolioCard';
 import { Container } from '../components/ui/Container';
+import { FleetAuthoritySection } from '../components/home/FleetAuthoritySection';
 import { LazyReviewsSection } from '../components/performance/LazyBelowFoldSections';
 import dynamic from 'next/dynamic';
+import { ProgrammaticHub } from '../components/seo/ProgrammaticHub';
 
-const Counter = dynamic(() => import('../components/ui/Counter').then(m => m.Counter), { ssr: true });
 const IndexFAQ = dynamic(() => import('./IndexFAQ').then(m => m.IndexFAQ), { ssr: true });
 
 export const metadata: Metadata = {
-  title: "N&M18 TRANSPORT - รถรับจ้างขนของ ย้ายคอนโด ย้ายหอพัก กรุงเทพ-ปริมณฑล เริ่ม 1,000.-",
-  description: "N&M18 TRANSPORT บริการรถรับจ้างขนของ รถกระบะตู้ทึบ รถ 4 ล้อใหญ่ ย้ายหอพัก ย้ายคอนโด ย้ายบ้าน กรุงเทพ-ปริมณฑลและทั่วไทย เริ่มต้น 1,000 บาท โทร 095-801-0958",
+  title: "N&M18 TRANSPORT - รถกระบะตู้ทึบ/รถ 4 ล้อใหญ่รับจ้างขนของ ย้ายบ้าน เริ่ม 1,000.-",
+  description: "N&M18 TRANSPORT บริการรถกระบะตู้ทึบรับจ้าง รถ 4 ล้อใหญ่ย้ายบ้าน ย้ายหอพัก คอนโด กรุงเทพ-ปริมณฑลและทั่วไทย ราคาถูก ปลอดภัย เริ่มต้น 1,000 บาท โทร 095-801-0958",
   alternates: {
-    canonical: "/",
+    canonical: "https://www.nm18transport.com/",
+  },
+  openGraph: {
+    title: "N&M18 TRANSPORT - รถกระบะตู้ทึบ/รถ 4 ล้อใหญ่รับจ้างขนของ ย้ายบ้าน",
+    description: "บริการรถกระบะตู้ทึบรับจ้าง รถ 4 ล้อใหญ่ย้ายบ้าน ย้ายหอพัก คอนโด กรุงเทพ-ปริมณฑลและทั่วไทย โทร 095-801-0958",
+    url: "https://www.nm18transport.com/",
+    siteName: "N&M18 TRANSPORT",
+    locale: "th_TH",
+    type: "website",
+    images: [
+      {
+        url: "https://www.nm18transport.com/images/logos/logo-nm18.png",
+        width: 1200,
+        height: 630,
+        alt: "N&M18 TRANSPORT บริการรถกระบะรับจ้างขนของ",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "N&M18 TRANSPORT - รถกระบะตู้ทึบ/รถ 4 ล้อใหญ่รับจ้างขนของ ย้ายบ้าน",
+    description: "บริการรถกระบะตู้ทึบรับจ้าง รถ 4 ล้อใหญ่ย้ายบ้าน ย้ายหอพัก คอนโด กรุงเทพ-ปริมณฑลและทั่วไทย โทร 095-801-0958",
+    images: ["https://www.nm18transport.com/images/logos/logo-nm18.png"],
   },
 };
 
 export default function Home() {
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "หน้าแรก",
-        "item": "https://www.nm18transport.com"
-      }
-    ]
-  };
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "หน้าแรก",
+          "item": "https://www.nm18transport.com"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "คิดค่าบริการขนส่งอย่างไร?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ราคาขึ้นอยู่กับ ระยะทาง + ประเภทรถ + จำนวนคนยกของ ครับ แนะนำให้ทักแชทหรือโทรแจ้งต้นทาง-ปลายทาง เพื่อให้เราประเมินราคาเหมาจ่ายที่คุ้มที่สุดให้ฟรีครับ"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "สินค้าจะปลอดภัยไหม มีประกันหรือเปล่า?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "มั่นใจได้ 100% ครับ เรามีทีมงานมืออาชีพช่วยแพ็คกันกระแทก และมีการรัดตึงสินค้าไม่ให้ขยับระหว่างขนส่ง หากเกิดความเสียหายจากการขนส่ง เรารับผิดชอบตามตกลงครับ"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "มีคนช่วยยกของให้ด้วยไหม?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "มีครับ! ท่านสามารถแจ้งได้เลยว่าต้องการคนช่วยยกกี่คน ทางเรามีทีมงานพร้อมบริการยกของขึ้น-ลงรถ และจัดเรียงเข้าบ้านให้เรียบร้อย ท่านไม่ต้องเหนื่อยเองครับ"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ควรจองคิวรถล่วงหน้ากี่วัน?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "แนะนำให้จองล่วงหน้า 1-2 วัน เพื่อล็อคคิวรถและเวลาที่แน่นอนครับ แต่ถ้าเป็นงานด่วน เรามีบริการรถสแตนด์บายตลอด 24 ชม. โทรเช็คคิวได้ทันทีครับ"
+          }
+        }
+      ]
+    }
+  ];
 
   return (
-    <main>
+    <main className="bg-[#050a14] min-h-screen">
       <script
         type="application/ld+json"
-        id="homepage-breadcrumb-jsonld"
+        id="homepage-jsonld"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema).replace(/</g, '\\u003c'),
+          __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
         }}
       />
-      {/* 1. Hero Section & Hero Badges */}
-      <HeroSection />
+      
+      {/* 1. Auto-Sliding Hero Carousel */}
+      <HeroCarousel />
 
-      {/* 2. Why Choose Us (Feature Grid) */}
-      <section className="relative z-10 pb-12 -mt-10">
+      {/* 2. Value Props / Feature Highlights Grid */}
+      <section className="relative z-10 pb-12 -mt-10 sm:-mt-12">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div className="bg-gradient-to-br from-[#0f1c38]/90 to-[#050a14]/95 border border-orange-lava/20 p-6 rounded-2xl flex items-start gap-4 transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1 hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.2)]">
-              <div className="min-w-[60px] h-[60px] bg-orange-lava/10 rounded-xl flex items-center justify-center text-[1.8rem] text-orange-lava border border-orange-lava/30">
-                <FaMoneyBillWave aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
+            
+            <div className="glass-card glass-card-hover p-6 rounded-2xl flex items-start gap-4">
+              <div className="w-14 h-14 bg-orange-lava/10 rounded-2xl flex items-center justify-center text-2xl text-orange-lava border border-orange-lava/30 shrink-0">
+                <FaMoneyBillWave aria-hidden="true" focusable="false" className="shrink-0" />
               </div>
               <div>
-                <h2 className="text-white text-[1.1rem] font-bold mb-[5px]">ราคาจริงใจ ไม่มีบวกเพิ่ม</h2>
-                <p className="text-text-gray text-[0.9rem] leading-[1.5]">ตกลงราคาก่อนเริ่มงาน จบที่เท่าไหร่จ่ายเท่านั้น ไม่มีการเรียกเก็บค่าใช้จ่ายแฝงหน้างาน สบายใจได้</p>
+                <h2 className="text-white text-lg font-bold mb-1.5">ราคาจริงใจ ไม่มีบวกเพิ่ม</h2>
+                <p className="text-text-gray text-sm leading-relaxed">ตกลงราคาก่อนเริ่มงาน จบที่เท่าไหร่จ่ายเท่านั้น ไม่มีการเรียกเก็บค่าใช้จ่ายแฝงหน้างาน สบายใจ 100%</p>
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-[#0f1c38]/90 to-[#050a14]/95 border border-orange-lava/20 p-6 rounded-2xl flex items-start gap-4 transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1 hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.2)]">
-              <div className="min-w-[60px] h-[60px] bg-orange-lava/10 rounded-xl flex items-center justify-center text-[1.8rem] text-orange-lava border border-orange-lava/30">
-                <FaMapLocationDot aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
+            <div className="glass-card glass-card-hover p-6 rounded-2xl flex items-start gap-4">
+              <div className="w-14 h-14 bg-orange-lava/10 rounded-2xl flex items-center justify-center text-2xl text-orange-lava border border-orange-lava/30 shrink-0">
+                <FaMapLocationDot aria-hidden="true" focusable="false" className="shrink-0" />
               </div>
               <div>
-                <h2 className="text-white text-[1.1rem] font-bold mb-[5px]">ติดตามสถานะได้ตลอด</h2>
-                <p className="text-text-gray text-[0.9rem] leading-[1.5]">รู้ความเคลื่อนไหวตลอดการขนส่ง แจ้งพิกัดชัดเจน สินค้าถึงมือผู้รับตรงเวลา ไม่ต้องกังวล</p>
+                <h2 className="text-white text-lg font-bold mb-1.5">ติดตามสถานะได้ตลอด</h2>
+                <p className="text-text-gray text-sm leading-relaxed">รู้ความเคลื่อนไหวตลอดเส้นทาง แจ้งพิกัดชัดเจน สินค้าถึงมือผู้รับตรงเวลา ปลอดภัย ไร้กังวล</p>
               </div>
             </div>
             
-            <div className="bg-gradient-to-br from-[#0f1c38]/90 to-[#050a14]/95 border border-orange-lava/20 p-6 rounded-2xl flex items-start gap-4 transition-all duration-300 shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:-translate-y-1 hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.2)]">
-              <div className="min-w-[60px] h-[60px] bg-orange-lava/10 rounded-xl flex items-center justify-center text-[1.8rem] text-orange-lava border border-orange-lava/30">
-                <FaUserShield aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" />
+            <div className="glass-card glass-card-hover p-6 rounded-2xl flex items-start gap-4">
+              <div className="w-14 h-14 bg-orange-lava/10 rounded-2xl flex items-center justify-center text-2xl text-orange-lava border border-orange-lava/30 shrink-0">
+                <FaUserShield aria-hidden="true" focusable="false" className="shrink-0" />
               </div>
               <div>
-                <h2 className="text-white text-[1.1rem] font-bold mb-[5px]">ทีมงานมืออาชีพ</h2>
-                <p className="text-text-gray text-[0.9rem] leading-[1.5]">พนักงานสุภาพ ผ่านการอบรมการแพ็คและยกของ ช่วยดูแลสินค้าของคุณเหมือนเป็นของตัวเอง</p>
+                <h2 className="text-white text-lg font-bold mb-1.5">ทีมงานมืออาชีพ</h2>
+                <p className="text-text-gray text-sm leading-relaxed">พนักงานสุภาพ ผ่านการฝึกอบรมการแพ็คและยกของ ดูแลสินค้าของคุณอย่างทะนุถนอมเหมือนของตัวเอง</p>
               </div>
             </div>
+
           </div>
         </Container>
       </section>
 
-      {/* WORKS & GALLERY */}
-      <section className="py-[80px] bg-[#0f1c38]/30" id="gallery">
+      {/* 2.5 Service Highlight Banner */}
+      <ServiceHighlightBanner />
+
+      {/* 3. Core Services Section */}
+      <section className="relative py-24 bg-[#050A14] overflow-hidden" id="services">
+        {/* Ambient Color Lighting (Depth & Brand Glow) */}
+        <div 
+          className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[800px] h-[350px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none z-0" 
+          aria-hidden="true" 
+        />
+        <div 
+          className="absolute bottom-10 right-0 w-[400px] md:w-[600px] h-[300px] bg-[#FF4500]/10 rounded-full blur-[130px] pointer-events-none z-0" 
+          aria-hidden="true" 
+        />
+
+        {/* Background Decorative Graphic */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 overflow-hidden">
+          <div className="relative w-full max-w-[1400px] h-full min-h-[550px] opacity-25 lg:opacity-30">
+            <Image
+              src="/nm18backg.png"
+              alt="แผนที่เส้นทางโลจิสติกส์ N&M18 TRANSPORT ขนส่งทั่วไทย"
+              fill
+              loading="lazy"
+              sizes="(max-width: 1280px) 100vw, 1400px"
+              className="object-contain object-center scale-100 lg:scale-105"
+            />
+          </div>
+        </div>
+
+        <Container className="relative z-10">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mb-4">
+              บริการรถกระบะรับจ้าง <span className="bg-gradient-to-r from-orange-lava via-orange-glow to-amber-400 bg-clip-text text-transparent">ยอดนิยม</span>
+            </h2>
+            <p className="text-text-gray max-w-2xl mx-auto text-base md:text-lg">
+              ตอบโจทย์ทุกการขนย้าย ด้วยรถกระบะตู้ทึบมาตรฐานสูง กันน้ำ 100% พร้อมบริการทั่วไทย
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+            
+            <ServiceCard
+              title="ขนย้ายบ้าน / ย้ายหอพัก"
+              description="ขนย้ายเฟอร์นิเจอร์ ตู้เย็น เครื่องซักผ้า รถตู้ทึบกันฝน 100% มีทีมงานช่วยยกของ จัดเรียงเข้าที่เรียบร้อย"
+              icon={FaBoxOpen}
+              href="/service/moving"
+              imageSrc="/NM18-house-condo-moving-service.webp"
+              imageAlt="บริการย้ายบ้าน ย้ายหอ และย้ายคอนโดด้วยรถกระบะตู้ทึบ N&M18 TRANSPORT"
+              priceBadge="เริ่มต้น 1,000.-"
+            />
+
+            <ServiceCard
+              title="รับส่งมอเตอร์ไซค์ / บิ๊กไบค์"
+              description="มีทางลาดขึ้น-ลง อุปกรณ์ล็อคล้อ Wheel Chock สายรัด Soft Strap มัดแน่นหนา ไม่ล้ม ไม่เป็นรอย ส่งถึงหน้าบ้าน"
+              icon={FaMotorcycle}
+              href="/service/moto"
+              imageSrc="/NM18-motorcycle-bigbike-transport.webp"
+              imageAlt="บริการรับส่งมอเตอร์ไซค์และบิ๊กไบค์ด้วยรถกระบะตู้ทึบ N&M18 TRANSPORT"
+              priceBadge="ดูแลพิเศษ 100%"
+            />
+
+            <ServiceCard
+              title="รับส่งสัตว์เลี้ยง Pet Transport"
+              description="เดินทางปลอดภัยด้วยรถกระบะตู้ทึบดูแลอุณหภูมิ ถ่ายรูปและคลิปวิดีโออัปเดตตลอดทาง ดูแลอย่างทะนุถนอม"
+              icon={FaPaw}
+              href="/service/pets"
+              imageSrc="/NM18-freight-cargo-chartered-truck.webp"
+              imageAlt="บริการรับส่งสัตว์เลี้ยงและสินค้าเหมาคัน N&M18 TRANSPORT"
+              priceBadge="VIP Service"
+            />
+
+          </div>
+        </Container>
+      </section>
+
+      {/* 4. Portfolio Works Showcase */}
+      <section className="py-20 bg-[#0f1c38]/30 border-y border-white/5" id="gallery">
         <Container>
-          <div className="text-center mb-[60px] -mt-[20px]">
-            <h2 className="text-[2.5rem] font-bold text-white mb-5 relative inline-block after:content-[''] after:block after:w-[80px] after:h-[5px] after:bg-orange-lava after:my-[15px] after:mx-auto after:shadow-neon-orange after:rounded-[5px]">ผลงานการขนส่ง</h2>
-            <p className="text-text-gray">ตัวอย่างงานจริง มั่นใจได้ทุกการขนส่ง</p>
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+              ภาพผลงาน <span className="text-orange-lava underline decoration-orange-lava/40 decoration-4 underline-offset-8">การขนส่งจริง</span>
+            </h2>
+            <p className="text-text-gray max-w-xl mx-auto">ตัวอย่างงานจริงกว่า 1,500+ เที่ยว มั่นใจได้ทุกการขนส่ง</p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-[15px]">
-            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary lg:hover:border-orange-lava lg:hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] lg:hover:-translate-y-1 group">
-              <Image src="/images/portfolio/S__2531437.webp" alt="บริการรถกระบะรับจ้างตู้ทึบ ขนของ ย้ายบ้าน กรุงเทพ ปริมณฑล ราคาถูก N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 1023px) 50vw, (max-width: 1200px) 33vw, 300px" quality={75} className="object-cover transition-transform duration-500 lg:group-hover:scale-110" />
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
+            
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden relative border border-white/10 bg-slate-900 group hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] transition-all duration-300">
+              <Image src="/images/portfolio/S__2531437.webp" alt="บริการรถกระบะรับจ้างตู้ทึบ ขนของ ย้ายบ้าน กรุงเทพ ปริมณฑล ราคาถูก N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 768px) 50vw, 33vw" quality={75} className="object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
-            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary lg:hover:border-orange-lava lg:hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] lg:hover:-translate-y-1 group">
-              <Image src="/images/portfolio/S__17556285.webp" alt="บริการขนย้ายหอพัก ย้ายคอนโด พร้อมทีมงานยกของ กรุงเทพ ปริมณฑล N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 1023px) 50vw, (max-width: 1200px) 33vw, 300px" quality={75} className="object-cover transition-transform duration-500 lg:group-hover:scale-110" />
+
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden relative border border-white/10 bg-slate-900 group hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] transition-all duration-300">
+              <Image src="/images/portfolio/S__17556285.webp" alt="บริการขนย้ายหอพัก ย้ายคอนโด พร้อมทีมงานยกของ กรุงเทพ ปริมณฑล N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 768px) 50vw, 33vw" quality={75} className="object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
-            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary lg:hover:border-orange-lava lg:hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] lg:hover:-translate-y-1 group">
-              <Image src="/images/portfolio/S__2531426.webp" alt="บริการรถ 6 ล้อรับจ้าง ขนของจำนวนมาก ย้ายบ้าน ย้ายสำนักงาน ทั่วประเทศ N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 1023px) 50vw, (max-width: 1200px) 33vw, 300px" quality={75} className="object-cover transition-transform duration-500 lg:group-hover:scale-110" />
+
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden relative border border-white/10 bg-slate-900 group hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] transition-all duration-300">
+              <Image src="/images/portfolio/S__2531426.webp" alt="บริการรถ 6 ล้อรับจ้าง ขนของจำนวนมาก ย้ายบ้าน ย้ายสำนักงาน ทั่วประเทศ N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 768px) 50vw, 33vw" quality={75} className="object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
-            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary lg:hover:border-orange-lava lg:hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] lg:hover:-translate-y-1 group">
-              <Image src="/images/portfolio/S__17556168.webp" alt="บริการขนส่งมอเตอร์ไซค์ Big Bike ด้วยรถรับจ้างตู้ทึบ ปลอดภัย ทั่วประเทศ N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 1023px) 50vw, (max-width: 1200px) 33vw, 300px" quality={75} className="object-cover transition-transform duration-500 lg:group-hover:scale-110" />
+
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden relative border border-white/10 bg-slate-900 group hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] transition-all duration-300">
+              <Image src="/images/portfolio/S__17556168.webp" alt="บริการขนส่งมอเตอร์ไซค์ Big Bike ด้วยรถรับจ้างตู้ทึบ ปลอดภัย ทั่วประเทศ N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 768px) 50vw, 33vw" quality={75} className="object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
-            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary lg:hover:border-orange-lava lg:hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] lg:hover:-translate-y-1 group">
-              <Image src="/images/portfolio/S__2531424.webp" alt="บริการแพ็คของกันกระแทก พร้อมทีมงานขนย้ายบ้าน ย้ายหอพัก อย่างปลอดภัย N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 1023px) 50vw, (max-width: 1200px) 33vw, 300px" quality={75} className="object-cover transition-transform duration-500 lg:group-hover:scale-110" />
+
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden relative border border-white/10 bg-slate-900 group hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] transition-all duration-300">
+              <Image src="/images/portfolio/S__2531424.webp" alt="บริการแพ็คของกันกระแทก พร้อมทีมงานขนย้ายบ้าน ย้ายหอพัก อย่างปลอดภัย N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 768px) 50vw, 33vw" quality={75} className="object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
-            <div className="aspect-[4/3] rounded-[15px] overflow-hidden relative border border-white/10 transition-all duration-300 bg-navy-primary lg:hover:border-orange-lava lg:hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] lg:hover:-translate-y-1 group">
-              <Image src="/images/portfolio/S__2531422.webp" alt="บริการรถกระบะรับจ้างขนของทั่วไป รถตู้ทึบกันฝน กรุงเทพ ปริมณฑล และทั่วประเทศ N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 1023px) 50vw, (max-width: 1200px) 33vw, 300px" quality={75} className="object-cover transition-transform duration-500 lg:group-hover:scale-110" />
+
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden relative border border-white/10 bg-slate-900 group hover:border-orange-lava hover:shadow-[0_0_20px_rgba(255,69,0,0.3)] transition-all duration-300">
+              <Image src="/images/portfolio/S__2531422.webp" alt="บริการรถกระบะรับจ้างขนของทั่วไป รถตู้ทึบกันฝน กรุงเทพ ปริมณฑล และทั่วประเทศ N&M18 TRANSPORT" fill loading="lazy" sizes="(max-width: 768px) 50vw, 33vw" quality={75} className="object-cover transition-transform duration-500 group-hover:scale-110" />
             </div>
+
           </div>
             
-          <div className="text-center mt-10 flex gap-[15px] justify-center flex-wrap">
-            <Link href="/works" aria-label="ดูผลงานทั้งหมดของ N&M18 TRANSPORT" className="inline-flex items-center justify-center gap-2.5 px-[35px] py-[12px] rounded-full font-semibold border-2 border-orange-lava bg-orange-lava text-white shadow-neon-orange transition-all duration-300 hover:bg-orange-glow hover:shadow-[0_0_35px_rgba(255,69,0,1)] hover:-translate-y-[3px] hover:scale-105 z-10 overflow-hidden">
-              <FaImages aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> ดูผลงานทั้งหมด
+          <div className="text-center mt-10 flex gap-4 justify-center flex-wrap">
+            <Link 
+              href="/works" 
+              aria-label="ดูผลงานทั้งหมดของ N&M18 TRANSPORT" 
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-sm md:text-base border-2 border-orange-lava bg-orange-lava text-white shadow-neon-orange transition-all duration-300 hover:bg-orange-glow hover:shadow-[0_0_30px_rgba(255,69,0,0.9)] hover:-translate-y-0.5"
+            >
+              <FaImages className="shrink-0" />
+              <span>ดูผลงานทั้งหมด</span>
             </Link>
-            <a href="https://www.facebook.com/profile.php?id=100085299521050" target="_blank" rel="noopener noreferrer" aria-label="ดูรีวิวเพิ่มเติมของ N&M18 TRANSPORT บน Facebook" className="inline-flex items-center justify-center gap-2.5 px-[35px] py-[12px] rounded-full font-semibold border-2 border-[#1877F2] bg-[#1877F2] text-white shadow-[0_0_15px_rgba(24,119,242,0.6)] transition-all duration-300 hover:bg-[#1464c4] hover:shadow-[0_0_25px_rgba(24,119,242,0.8)] hover:-translate-y-[3px] z-10 overflow-hidden">
-              <FaFacebookF aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> ดูรีวิวเพิ่มเติม (คลิก)
+            <a 
+              href="https://www.facebook.com/profile.php?id=100085299521050" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="ดูรีวิวเพิ่มเติมของ N&M18 TRANSPORT บน Facebook" 
+              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-sm md:text-base border-2 border-[#1877F2] bg-[#1877F2] text-white shadow-[0_0_15px_rgba(24,119,242,0.6)] transition-all duration-300 hover:bg-[#1464c4] hover:shadow-[0_0_25px_rgba(24,119,242,0.8)] hover:-translate-y-0.5"
+            >
+              <FaFacebookF className="shrink-0" />
+              <span>ดูรีวิวบน Facebook</span>
             </a>
           </div>
         </Container>
       </section>
 
-      {/* 3. Comparison Table */}
-      <section className="py-[60px] bg-[#0f1c38]/40 mb-[40px]">
-        <Container>
-          <div className="text-center mb-[60px] -mt-[20px]">
-            <h2 className="text-[2.5rem] font-bold text-white mb-5 relative inline-block after:content-[''] after:block after:w-[80px] after:h-[5px] after:bg-orange-lava after:my-[15px] after:mx-auto after:shadow-neon-orange after:rounded-[5px]">ทำไมต้องเลือก N&M18 TRANSPORT?</h2>
-            <p className="text-text-gray">เปรียบเทียบให้เห็นชัดๆ ว่าเราแตกต่างและคุ้มค่ากว่าอย่างไร</p>
+      {/* 4.5 Fleet & Authority Section */}
+      <FleetAuthoritySection />
+
+      {/* 5. Feature Comparison Table */}
+      <section className="relative py-24 bg-[#050A14] overflow-hidden">
+        {/* Ambient Color Lighting (Depth & Glow) */}
+        <div 
+          className="absolute top-1/6 left-10 w-[450px] h-[350px] bg-[#FF4500]/10 rounded-full blur-[140px] pointer-events-none z-0" 
+          aria-hidden="true" 
+        />
+        <div 
+          className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[650px] h-[400px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none z-0" 
+          aria-hidden="true" 
+        />
+
+        {/* Background Decorative Graphic */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-0 overflow-hidden">
+          <div className="relative w-full max-w-[1400px] h-full min-h-[600px] opacity-25 lg:opacity-30">
+            <Image
+              src="/nm18backg1.png"
+              alt="จุดเด่นและข้อได้เปรียบของบริการขนส่ง N&M18 TRANSPORT"
+              fill
+              loading="lazy"
+              sizes="(max-width: 1280px) 100vw, 1400px"
+              className="object-contain object-center scale-100 lg:scale-110"
+            />
+          </div>
+        </div>
+
+        <Container className="relative z-10">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+              ทำไมต้องเลือก <span className="text-orange-lava drop-shadow-[0_0_12px_rgba(255,69,0,0.4)]">N&M18 TRANSPORT?</span>
+            </h2>
+            <p className="text-text-gray max-w-xl mx-auto">เปรียบเทียบความแตกต่างเพื่อความคุ้มค่าและปลอดภัยสูงสุดของคุณ</p>
           </div>
           
-          <div className="bg-navy-primary rounded-[20px] border border-white/5 overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)] max-w-[900px] mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 bg-black/30 border-b border-white/5 text-center font-bold text-white text-[0.9rem] md:text-base">
-              <div>หัวข้อเปรียบเทียบ</div>
-              <div className="text-orange-lava">N&M18 TRANSPORT</div>
-              <div className="hidden md:block text-[#94a3b8]">รถรับจ้างทั่วไป</div>
+          <div className="bg-navy-primary rounded-3xl border border-white/10 overflow-hidden shadow-2xl max-w-4xl mx-auto">
+            
+            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 md:p-6 bg-black/40 border-b border-white/10 text-center font-bold text-white text-sm md:text-base">
+              <div className="text-left">หัวข้อบริการ</div>
+              <div className="text-orange-lava drop-shadow-[0_0_8px_rgba(255,69,0,0.4)]">N&M18 TRANSPORT</div>
+              <div className="hidden md:block text-slate-400">รถรับจ้างทั่วไป</div>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 border-b border-white/5 items-center transition-all duration-200 hover:bg-white/5 text-[0.9rem] md:text-base">
-              <div className="text-text-gray font-medium flex items-center gap-2.5"><FaTag aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> ราคาค่าบริการ</div>
-              <div className="text-orange-lava font-bold text-center md:text-[1.1rem] drop-shadow-[0_0_10px_rgba(255,69,0,0.3)]"><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-1.5 text-[1.2rem]" /> ชัดเจน จบที่ตกลง</div>
-              <div className="hidden md:block text-[#64748b] text-center line-through opacity-70"><FaXmark aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#ef4444] text-[1.2rem]" /> อาจมีบวกเพิ่มหน้างาน</div>
+            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 md:p-6 border-b border-white/5 items-center transition-colors hover:bg-white/5 text-sm md:text-base">
+              <div className="text-text-gray font-medium flex items-center gap-2.5">
+                <FaTag className="text-orange-lava shrink-0" />
+                <span>ราคาค่าบริการ</span>
+              </div>
+              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-2">
+                <FaCheck className="text-line-green shrink-0 text-lg" />
+                <span>ราคาชัดเจน จบที่ตกลง</span>
+              </div>
+              <div className="hidden md:flex items-center justify-center gap-2 text-slate-500 line-through opacity-70">
+                <FaXmark className="text-red-500 shrink-0 text-lg" />
+                <span>มักมีบวกเพิ่มหน้างาน</span>
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 border-b border-white/5 items-center transition-all duration-200 hover:bg-white/5 text-[0.9rem] md:text-base">
-              <div className="text-text-gray font-medium flex items-center gap-2.5"><FaShieldCat aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> การรับประกัน</div>
-              <div className="text-orange-lava font-bold text-center md:text-[1.1rem] drop-shadow-[0_0_10px_rgba(255,69,0,0.3)]"><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-1.5 text-[1.2rem]" /> รับผิดชอบ 100%</div>
-              <div className="hidden md:block text-[#64748b] text-center line-through opacity-70"><FaQuestion aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#f59e0b] text-[1.2rem]" /> ไม่แน่นอน</div>
+            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 md:p-6 border-b border-white/5 items-center transition-colors hover:bg-white/5 text-sm md:text-base">
+              <div className="text-text-gray font-medium flex items-center gap-2.5">
+                <FaShieldCat className="text-orange-lava shrink-0" />
+                <span>การรับประกันสินค้า</span>
+              </div>
+              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-2">
+                <FaCheck className="text-line-green shrink-0 text-lg" />
+                <span>รับผิดชอบ 100% ตามจริง</span>
+              </div>
+              <div className="hidden md:flex items-center justify-center gap-2 text-slate-500 line-through opacity-70">
+                <FaQuestion className="text-amber-500 shrink-0 text-lg" />
+                <span>ไม่มีรับประกัน</span>
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 border-b border-white/5 items-center transition-all duration-200 hover:bg-white/5 text-[0.9rem] md:text-base">
-              <div className="text-text-gray font-medium flex items-center gap-2.5"><FaTruckRampBox aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> บริการยกของ</div>
-              <div className="text-orange-lava font-bold text-center md:text-[1.1rem] drop-shadow-[0_0_10px_rgba(255,69,0,0.3)]"><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-1.5 text-[1.2rem]" /> ทีมงานมืออาชีพ</div>
-              <div className="hidden md:block text-[#64748b] text-center line-through opacity-70"><FaXmark aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#ef4444] text-[1.2rem]" /> คนขับคนเดียว/ไม่ช่วยยก</div>
+            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 md:p-6 border-b border-white/5 items-center transition-colors hover:bg-white/5 text-sm md:text-base">
+              <div className="text-text-gray font-medium flex items-center gap-2.5">
+                <FaTruckRampBox className="text-orange-lava shrink-0" />
+                <span>บริการช่วยยกของ</span>
+              </div>
+              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-2">
+                <FaCheck className="text-line-green shrink-0 text-lg" />
+                <span>ทีมงานมืออาชีพช่วยยก</span>
+              </div>
+              <div className="hidden md:flex items-center justify-center gap-2 text-slate-500 line-through opacity-70">
+                <FaXmark className="text-red-500 shrink-0 text-lg" />
+                <span>คนขับไม่ช่วย / ทำเอง</span>
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 border-b border-white/5 items-center transition-all duration-200 hover:bg-white/5 text-[0.9rem] md:text-base">
-              <div className="text-text-gray font-medium flex items-center gap-2.5"><FaUmbrella aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> สภาพรถ</div>
-              <div className="text-orange-lava font-bold text-center md:text-[1.1rem] drop-shadow-[0_0_10px_rgba(255,69,0,0.3)]"><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-1.5 text-[1.2rem]" /> ตู้ทึบกันฝน ใหม่สะอาด</div>
-              <div className="hidden md:block text-[#64748b] text-center line-through opacity-70"><FaXmark aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#ef4444] text-[1.2rem]" /> รถเก่า/ผ้าใบรั่วซึม</div>
+            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 md:p-6 border-b border-white/5 items-center transition-colors hover:bg-white/5 text-sm md:text-base">
+              <div className="text-text-gray font-medium flex items-center gap-2.5">
+                <FaUmbrella className="text-orange-lava shrink-0" />
+                <span>สภาพตู้และตัวรถ</span>
+              </div>
+              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-2">
+                <FaCheck className="text-line-green shrink-0 text-lg" />
+                <span>ตู้ทึบกันฝน 100% สะอาด</span>
+              </div>
+              <div className="hidden md:flex items-center justify-center gap-2 text-slate-500 line-through opacity-70">
+                <FaXmark className="text-red-500 shrink-0 text-lg" />
+                <span>ผ้าใบคลุมเสี่ยงรั่วซึม</span>
+              </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 items-center transition-all duration-200 hover:bg-white/5 text-[0.9rem] md:text-base">
-              <div className="text-text-gray font-medium flex items-center gap-2.5"><FaHeadset aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava" /> การติดต่อ</div>
-              <div className="text-orange-lava font-bold text-center md:text-[1.1rem] drop-shadow-[0_0_10px_rgba(255,69,0,0.3)]"><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-1.5 text-[1.2rem]" /> แอดมินดูแล 24 ชม.</div>
-              <div className="hidden md:block text-[#64748b] text-center line-through opacity-70"><FaXmark aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-[#ef4444] text-[1.2rem]" /> ติดต่อยาก/ทิ้งงาน</div>
+            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 md:p-6 items-center transition-colors hover:bg-white/5 text-sm md:text-base">
+              <div className="text-text-gray font-medium flex items-center gap-2.5">
+                <FaHeadset className="text-orange-lava shrink-0" />
+                <span>การประสานงาน</span>
+              </div>
+              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-2">
+                <FaCheck className="text-line-green shrink-0 text-lg" />
+                <span>แอดมินดูแล 24 ชั่วโมง</span>
+              </div>
+              <div className="hidden md:flex items-center justify-center gap-2 text-slate-500 line-through opacity-70">
+                <FaXmark className="text-red-500 shrink-0 text-lg" />
+                <span>ติดต่อยาก เสี่ยงทิ้งงาน</span>
+              </div>
+            </div>
+
+          </div>
+        </Container>
+      </section>
+
+      {/* 6. Legal Registration & Trust Badge */}
+      <section className="py-12">
+        <Container>
+          <div className="glass-card p-8 md:p-12 rounded-3xl border-2 border-orange-lava/30 text-center max-w-4xl mx-auto relative overflow-hidden shadow-2xl">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold text-gold bg-gold/10 border border-gold/30 mb-4">
+              <FaCertificate className="text-gold text-sm shrink-0" />
+              <span>จดทะเบียนถูกต้องตามกฎหมาย</span>
+            </div>
+            
+            <h2 className="text-2xl md:text-3xl font-extrabold text-white mb-2">
+              บริษัท เอ็นแอนด์เอ็ม 18 ทรานสปอร์ต จำกัด
+            </h2>
+            <p className="text-slate-300 text-sm md:text-base mb-6 max-w-xl mx-auto">
+              มั่นใจได้ในความปลอดภัยและการบริการที่ได้มาตรฐาน มีตัวตนชัดเจน ตรวจสอบได้
+            </p>
+            
+            <div className="max-w-md mx-auto rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl relative aspect-[1.4/1] bg-slate-900">
+              <Image 
+                src="/images/portfolio/S__17556166.webp" 
+                alt="ใบอนุญาตประกอบการขนส่ง N&M 18 TRANSPORT" 
+                fill 
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 450px"
+                className="object-contain bg-navy-dark" 
+              />
             </div>
           </div>
         </Container>
       </section>
 
-      {/* 4. Trust Badge & Licensing section */}
-      <section className="container mx-auto px-5">
-        <div className="text-center mb-[60px] bg-gradient-to-br from-white/5 to-[#0f1c38]/90 py-[40px] px-[30px] rounded-[20px] border-2 border-transparent relative shadow-[0_0_30px_rgba(0,0,0,0.5)] bg-clip-padding before:content-[''] before:absolute before:inset-0 before:-z-10 before:-m-[2px] before:rounded-[22px] before:bg-gradient-to-r before:from-orange-lava before:via-gold before:to-orange-lava before:opacity-60">
-          <h2 className="text-white mb-[15px] text-[1.3rem] font-bold inline-block">
-            <span className="block text-[1.6rem] bg-gradient-to-r from-white to-[#ffb700] bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] mb-[10px] font-bold">
-              <FaCertificate aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-gold" /> มั่นใจได้!
-            </span>
-            เราจดทะเบียนขนส่งถูกต้องตามกฎหมาย
-          </h2>
-          <p className="mb-5 text-[#ccc] text-[1.1rem]">บริษัท เอ็นแอนด์เอ็ม 18 ทรานสปอร์ต จำกัด (N&M 18 TRANSPORT)</p>
-          
-          <div className="max-w-[500px] mx-auto mt-5 overflow-hidden rounded-[10px] border-[4px] border-navy-primary shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300 hover:scale-[1.02] hover:border-gold relative aspect-[1.4/1]">
-            <Image src="/images/portfolio/S__17556166.webp" alt="ใบอนุญาตประกอบการขนส่ง N&M 18 TRANSPORT" fill className="object-contain" />
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Reviews Slider */}
-      <section className="py-[80px] bg-gradient-to-b from-[#0f1c38]/30 to-[#050a14]/95 relative">
+      {/* 7. Real Customer Reviews */}
+      <section className="py-20 bg-gradient-to-b from-[#050a14] via-[#0f1c38]/40 to-[#050a14]">
         <Container>
-          <div className="text-center mb-[60px] -mt-[20px]">
-            <h2 className="text-[2.5rem] font-bold text-white mb-5 relative inline-block after:content-[''] after:block after:w-[80px] after:h-[5px] after:bg-orange-lava after:my-[15px] after:mx-auto after:shadow-neon-orange after:rounded-[5px]">รีวิวจากผู้ใช้งานจริง</h2>
-            <p className="text-text-gray">ความประทับใจจากลูกค้าที่ไว้วางใจ N&M18 TRANSPORT</p>
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+              รีวิวจากลูกค้าที่ไว้วางใจ
+            </h2>
+            <p className="text-text-gray max-w-xl mx-auto">ความประทับใจจากการบริการขนย้ายของ N&M18 TRANSPORT</p>
           </div>
           
           <LazyReviewsSection />
         </Container>
       </section>
 
-      {/* 6. Stats Section */}
-      <section className="py-[60px] bg-gradient-to-r from-[#0f1c38]/60 to-[#050a14]/90 border-y border-white/5 my-[40px]">
+      {/* 9. Special Pricing Promotion Banner */}
+      <section className="py-16">
         <Container>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-[15px] md:gap-[30px] text-center">
-            <div className="p-5 border-none md:border-r border-b md:border-b-0 border-white/10">
-              <div className="text-[1.5rem] md:text-[2.5rem] text-neon-blue mb-[10px] drop-shadow-[0_0_10px_#00f2ff]"><FaTruckFast aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /></div>
-              <Counter end={1500} className="text-[2rem] md:text-[3.5rem] font-extrabold text-white leading-none mb-[5px] font-prompt" />
-              <p className="text-text-gray text-[1.1rem]">เที่ยวขนส่งสำเร็จ</p>
+          <div className="glass-card text-center py-10 md:py-16 px-6 md:px-12 rounded-3xl max-w-4xl mx-auto border-2 border-orange-lava/40 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-4 -right-10 bg-orange-lava text-white text-xs font-black py-1.5 px-12 rotate-45 shadow-lg">
+              PROMOTION
             </div>
-            <div className="p-5 border-none md:border-r border-b md:border-b-0 border-white/10">
-              <div className="text-[1.5rem] md:text-[2.5rem] text-neon-blue mb-[10px] drop-shadow-[0_0_10px_#00f2ff]"><FaFaceSmile aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /></div>
-              <Counter end={100} className="text-[2rem] md:text-[3.5rem] font-extrabold text-orange-lava leading-none mb-[5px] font-prompt drop-shadow-[0_0_15px_rgba(255,69,0,0.6)]" />
-              <p className="text-text-gray text-[1.1rem]">% ลูกค้าพึงพอใจ</p>
+            
+            <p className="text-orange-200 text-sm md:text-base font-semibold mb-2">โปรโมชั่นพิเศษ จองคิวล่วงหน้าราคาพิเศษสุดคุ้ม</p>
+            <h2 className="text-2xl md:text-3xl font-extrabold text-white">ค่าบริการรถกระบะรับจ้างเริ่มต้นเพียง</h2>
+            
+            <div className="text-5xl md:text-7xl font-black text-orange-lava my-4 animate-[neonPulse_3s_infinite_alternate]">
+              1,000.-
             </div>
-            <div className="p-5 border-none md:border-r border-white/10">
-              <div className="text-[1.5rem] md:text-[2.5rem] text-neon-blue mb-[10px] drop-shadow-[0_0_10px_#00f2ff]"><FaMapLocationDot aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /></div>
-              <Counter end={77} className="text-[2rem] md:text-[3.5rem] font-extrabold text-white leading-none mb-[5px] font-prompt" />
-              <p className="text-text-gray text-[1.1rem]">จังหวัดให้บริการ</p>
-            </div>
-            <div className="p-5">
-              <div className="text-[1.5rem] md:text-[2.5rem] text-neon-blue mb-[10px] drop-shadow-[0_0_10px_#00f2ff]"><FaClock aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /></div>
-              <Counter end={24} className="text-[2rem] md:text-[3.5rem] font-extrabold text-white leading-none mb-[5px] font-prompt" />
-              <p className="text-text-gray text-[1.1rem]">ชั่วโมงพร้อมลุย</p>
+            
+            <p className="text-slate-300 text-sm md:text-base mb-8">ราคาประเมินตามระยะทางจริงและประเภทของ ปรึกษาและเช็คราคาฟรี</p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a 
+                href="tel:0958010958" 
+                aria-label="โทรเช็คราคากับเจ้าหน้าที่ 095-801-0958" 
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-base text-white bg-gradient-to-r from-orange-lava to-orange-glow shadow-neon-orange transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,69,0,0.9)]"
+              >
+                <FaCalculator className="shrink-0" />
+                <span>โทรเช็คราคาด่วน</span>
+              </a>
+
+              <a 
+                href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="เช็คราคาผ่าน LINE ตลอด 24 ชม." 
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-base text-white bg-line-green shadow-neon-green transition-all duration-300 hover:scale-105 hover:bg-[#05b84e]"
+              >
+                <FaLine className="text-xl shrink-0" />
+                <span>เช็คราคาผ่าน LINE (24 ชม.)</span>
+              </a>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* SERVICES */}
-      <section className="py-[80px]" id="services">
+      {/* 10. 4-Step Easy Booking Workflow */}
+      <section className="py-20 bg-[#0f1c38]/40 border-t border-white/5" id="how-it-works">
         <Container>
-          <div className="text-center mb-[60px] -mt-[20px]">
-            <h2 className="text-[2.5rem] font-bold text-white mb-5 relative inline-block after:content-[''] after:block after:w-[80px] after:h-[5px] after:bg-orange-lava after:my-[15px] after:mx-auto after:shadow-neon-orange after:rounded-[5px]">บริการของเรา</h2>
-            <p className="text-text-gray max-w-2xl mx-auto">ตอบโจทย์ทุกการขนย้าย ด้วยรถกระบะตู้ทึบมาตรฐาน</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
-            <ServiceCard 
-              title="รับส่งมอเตอร์ไซค์" 
-              description="มีอุปกรณ์ล็อคล้อ เชือกมัดแน่นหนา ยกขึ้น-ลงให้ ไม่ต้องเหนื่อยเอง ส่งถึงหน้าบ้าน"
-              icon={FaMotorcycle}
-              href="/service/moto"
-            />
-            <ServiceCard 
-              title="ย้ายบ้าน / ย้ายหอ" 
-              description="ขนย้ายเฟอร์นิเจอร์ ตู้เย็น เครื่องซักผ้า รถตู้ทึบกันฝน 100% ของเยอะแค่ไหนก็จัดให้คุ้ม"
-              icon={FaBoxOpen}
-              href="/service/moving"
-            />
-            <ServiceCard 
-              title="ฝากส่งสินค้า/เหมาคัน" 
-              description="รับฝากส่งสินค้าชิ้นใหญ่ ชิ้นเล็ก ไปต่างจังหวัด วิ่งงานด่วน งานเหมา ทั่วราชอาณาจักร"
-              icon={FaTruckPickup}
-              href="/contact"
-            />
-          </div>
-        </Container>
-      </section>
-
-      {/* 7. Pricing Banner */}
-      <section className="container mx-auto px-5">
-        <div className="bg-gradient-to-br from-navy-primary to-navy-dark text-center py-[30px] md:py-[60px] px-[15px] md:px-[30px] rounded-[25px] my-[20px] md:my-[40px] max-w-[1000px] mx-auto border-2 border-orange-lava/30 shadow-[0_0_30px_rgba(255,69,0,0.1)] relative overflow-hidden before:content-['SPECIAL'] before:absolute before:top-[10px] before:-right-[30px] before:bg-orange-lava before:text-white before:py-[5px] before:px-[40px] before:rotate-45 before:font-bold before:text-[0.8rem] before:shadow-[0_0_10px_rgba(0,0,0,0.5)]">
-          <p className="text-white text-[1.1rem] mb-[5px]">โปรโมชั่นพิเศษ! จองล่วงหน้ามีราคาพิเศษ</p>
-          <h2 className="text-white font-bold text-2xl mt-4">ค่าบริการเริ่มต้นเพียง</h2>
-          <div className="text-[3.5rem] md:text-[5rem] font-bold text-orange-lava leading-none my-[10px] md:my-[15px] animate-[neonPulse_3s_infinite_alternate]">1,000.-</div>
-          <p className="text-text-gray">ราคาขึ้นอยู่กับระยะทางและประเภทงาน (โทรสอบถามได้เลยครับ)</p>
-          <br/>
-          <div className="flex gap-[15px] justify-center flex-wrap mt-2">
-            <Link href="tel:0958010958" aria-label="โทรติดต่อ N&M18 TRANSPORT เพื่อจองคิวรถรับจ้าง" className="inline-flex items-center justify-center gap-2.5 px-[35px] py-[12px] rounded-full font-semibold border-2 border-orange-lava bg-orange-lava text-white shadow-neon-orange transition-all duration-300 hover:bg-orange-glow hover:shadow-[0_0_35px_rgba(255,69,0,1)] hover:-translate-y-[3px] hover:scale-105 z-10 overflow-hidden">
-              <FaCalculator aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> เช็คราคาผ่านโทรศัพท์
-            </Link>
-            <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc" target="_blank" rel="noopener noreferrer" aria-label="แอดไลน์ N&M18 TRANSPORT เพื่อประเมินราคาค่าขนย้ายฟรี" className="inline-flex items-center justify-center gap-2.5 px-[35px] py-[12px] rounded-full font-semibold border-2 border-[#06C755] bg-[#06C755] text-white shadow-[0_0_15px_rgba(6,199,85,0.6)] transition-all duration-300 hover:bg-[#05a84a] hover:shadow-[0_0_25px_rgba(6,199,85,0.8)] hover:-translate-y-[3px] z-10 overflow-hidden">
-              <FaLine aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0" /> เช็คราคาผ่าน LINE
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. How it Works */}
-      <section className="py-[80px] bg-[#0f1c38]/50" id="how-it-works">
-        <Container>
-          <div className="text-center mb-[60px] -mt-[20px]">
-            <h2 className="text-[2.5rem] font-bold text-white mb-5 relative inline-block after:content-[''] after:block after:w-[80px] after:h-[5px] after:bg-orange-lava after:my-[15px] after:mx-auto after:shadow-neon-orange after:rounded-[5px]">4 ขั้นตอนง่ายๆ ในการใช้บริการ</h2>
-            <p className="text-text-gray">สะดวก รวดเร็ว ไม่ยุ่งยาก</p>
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+              4 ขั้นตอนง่ายๆ <span className="text-orange-glow">ในการใช้บริการ</span>
+            </h2>
+            <p className="text-text-gray max-w-xl mx-auto">สะดวก รวดเร็ว พร้อมให้บริการตลอด 24 ชั่วโมง</p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-[15px] md:gap-[40px] text-center mt-[20px] md:mt-[50px]">
-            <div className="relative p-2.5 transition-all duration-300 group">
-              <div className="absolute top-[-5px] right-1/2 translate-x-[20px] md:translate-x-[45px] w-[25px] h-[25px] md:w-[38px] md:h-[38px] bg-gradient-to-br from-orange-lava to-[#ff2a00] text-white border-[3px] border-navy-dark rounded-full flex items-center justify-center font-extrabold text-[0.9rem] md:text-[1.1rem] shadow-[0_5px_15px_rgba(0,0,0,0.3)] z-10 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-neon-blue group-hover:to-[#0099ff] group-hover:rotate-[360deg]">1</div>
-              <div className="w-[60px] h-[60px] md:w-[110px] md:h-[110px] mx-auto mb-[10px] md:mb-[25px] rounded-full flex items-center justify-center text-[1.4rem] md:text-[2.5rem] text-white relative z-0 bg-[#0f1c38]/40 backdrop-blur-[5px] shadow-[0_10px_30px_rgba(0,0,0,0.3)] border-2 border-transparent bg-clip-padding transition-all duration-400 group-hover:-translate-y-[10px] group-hover:scale-105 group-hover:shadow-[0_0_25px_rgba(0,242,255,0.4)] group-hover:border-transparent before:content-[''] before:absolute before:inset-0 before:-z-10 before:-m-[2px] before:rounded-full before:bg-gradient-to-br before:from-neon-blue before:to-orange-lava group-hover:before:from-orange-lava group-hover:before:to-neon-blue">
-                <FaPhoneVolume aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 group-hover:animate-[pulse-icon_1.5s_infinite] group-hover:drop-shadow-[0_0_15px_white]" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div className="glass-card p-6 rounded-2xl text-center relative group">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-orange-lava to-orange-glow text-white font-extrabold flex items-center justify-center absolute -top-4 left-1/2 -translate-x-1/2 shadow-neon-orange">
+                1
               </div>
-              <h3 className="text-white font-bold text-[0.95rem] md:text-[1.2rem] mb-2">โทร/ไลน์ จองคิว</h3>
-              <p className="hidden md:block text-text-gray text-[0.9rem]">แจ้งต้นทาง-ปลายทาง และรายละเอียดของ</p>
-              <div className="hidden lg:block absolute top-[55px] -right-1/2 w-full h-[2px] bg-gradient-to-r from-neon-blue to-transparent opacity-30 -z-10"></div>
+              <div className="w-16 h-16 rounded-2xl bg-orange-lava/10 border border-orange-lava/30 text-orange-lava text-2xl flex items-center justify-center mx-auto my-4 transition-transform group-hover:scale-110">
+                <FaPhoneVolume />
+              </div>
+              <h3 className="text-white font-bold text-lg mb-2">โทร / ไลน์จองคิว</h3>
+              <p className="text-slate-300 text-xs md:text-sm leading-relaxed">แจ้งต้นทาง-ปลายทาง และรายการของเพื่อประเมินราคาฟรี</p>
             </div>
 
-            <div className="relative p-2.5 transition-all duration-300 group">
-              <div className="absolute top-[-5px] right-1/2 translate-x-[20px] md:translate-x-[45px] w-[25px] h-[25px] md:w-[38px] md:h-[38px] bg-gradient-to-br from-orange-lava to-[#ff2a00] text-white border-[3px] border-navy-dark rounded-full flex items-center justify-center font-extrabold text-[0.9rem] md:text-[1.1rem] shadow-[0_5px_15px_rgba(0,0,0,0.3)] z-10 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-neon-blue group-hover:to-[#0099ff] group-hover:rotate-[360deg]">2</div>
-              <div className="w-[60px] h-[60px] md:w-[110px] md:h-[110px] mx-auto mb-[10px] md:mb-[25px] rounded-full flex items-center justify-center text-[1.4rem] md:text-[2.5rem] text-white relative z-0 bg-[#0f1c38]/40 backdrop-blur-[5px] shadow-[0_10px_30px_rgba(0,0,0,0.3)] border-2 border-transparent bg-clip-padding transition-all duration-400 group-hover:-translate-y-[10px] group-hover:scale-105 group-hover:shadow-[0_0_25px_rgba(0,242,255,0.4)] group-hover:border-transparent before:content-[''] before:absolute before:inset-0 before:-z-10 before:-m-[2px] before:rounded-full before:bg-gradient-to-br before:from-neon-blue before:to-orange-lava group-hover:before:from-orange-lava group-hover:before:to-neon-blue">
-                <FaTruckRampBox aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 group-hover:animate-[pulse-icon_1.5s_infinite] group-hover:drop-shadow-[0_0_15px_white]" />
+            <div className="glass-card p-6 rounded-2xl text-center relative group">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-orange-lava to-orange-glow text-white font-extrabold flex items-center justify-center absolute -top-4 left-1/2 -translate-x-1/2 shadow-neon-orange">
+                2
               </div>
-              <h3 className="text-white font-bold text-[0.95rem] md:text-[1.2rem] mb-2">รถเข้ารับสินค้า</h3>
-              <p className="hidden md:block text-text-gray text-[0.9rem]">ทีมงานเข้ายกของ และแพ็คป้องกันตามนัดหมาย</p>
-              <div className="hidden lg:block absolute top-[55px] -right-1/2 w-full h-[2px] bg-gradient-to-r from-neon-blue to-transparent opacity-30 -z-10"></div>
+              <div className="w-16 h-16 rounded-2xl bg-orange-lava/10 border border-orange-lava/30 text-orange-lava text-2xl flex items-center justify-center mx-auto my-4 transition-transform group-hover:scale-110">
+                <FaTruckRampBox />
+              </div>
+              <h3 className="text-white font-bold text-lg mb-2">รถเข้ารับของตรงเวลา</h3>
+              <p className="text-slate-300 text-xs md:text-sm leading-relaxed">ทีมงานเข้าช่วยยกของ และแพ็คกันกระแทกอย่างดีตามนัดหมาย</p>
             </div>
 
-            <div className="relative p-2.5 transition-all duration-300 group">
-              <div className="absolute top-[-5px] right-1/2 translate-x-[20px] md:translate-x-[45px] w-[25px] h-[25px] md:w-[38px] md:h-[38px] bg-gradient-to-br from-orange-lava to-[#ff2a00] text-white border-[3px] border-navy-dark rounded-full flex items-center justify-center font-extrabold text-[0.9rem] md:text-[1.1rem] shadow-[0_5px_15px_rgba(0,0,0,0.3)] z-10 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-neon-blue group-hover:to-[#0099ff] group-hover:rotate-[360deg]">3</div>
-              <div className="w-[60px] h-[60px] md:w-[110px] md:h-[110px] mx-auto mb-[10px] md:mb-[25px] rounded-full flex items-center justify-center text-[1.4rem] md:text-[2.5rem] text-white relative z-0 bg-[#0f1c38]/40 backdrop-blur-[5px] shadow-[0_10px_30px_rgba(0,0,0,0.3)] border-2 border-transparent bg-clip-padding transition-all duration-400 group-hover:-translate-y-[10px] group-hover:scale-105 group-hover:shadow-[0_0_25px_rgba(0,242,255,0.4)] group-hover:border-transparent before:content-[''] before:absolute before:inset-0 before:-z-10 before:-m-[2px] before:rounded-full before:bg-gradient-to-br before:from-neon-blue before:to-orange-lava group-hover:before:from-orange-lava group-hover:before:to-neon-blue">
-                <FaRoute aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 group-hover:animate-[pulse-icon_1.5s_infinite] group-hover:drop-shadow-[0_0_15px_white]" />
+            <div className="glass-card p-6 rounded-2xl text-center relative group">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-orange-lava to-orange-glow text-white font-extrabold flex items-center justify-center absolute -top-4 left-1/2 -translate-x-1/2 shadow-neon-orange">
+                3
               </div>
-              <h3 className="text-white font-bold text-[0.95rem] md:text-[1.2rem] mb-2">ขนส่งปลอดภัย</h3>
-              <p className="hidden md:block text-text-gray text-[0.9rem]">ขับขี่อย่างระมัดระวัง ตรวจสอบสถานะได้</p>
-              <div className="hidden lg:block absolute top-[55px] -right-1/2 w-full h-[2px] bg-gradient-to-r from-neon-blue to-transparent opacity-30 -z-10"></div>
+              <div className="w-16 h-16 rounded-2xl bg-orange-lava/10 border border-orange-lava/30 text-orange-lava text-2xl flex items-center justify-center mx-auto my-4 transition-transform group-hover:scale-110">
+                <FaRoute />
+              </div>
+              <h3 className="text-white font-bold text-lg mb-2">ขนส่งปลอดภัย</h3>
+              <p className="text-slate-300 text-xs md:text-sm leading-relaxed">ตู้ทึบกันฝน 100% ล็อคแน่นหนา ขับขี่ระมัดระวัง เช็คสถานะได้</p>
             </div>
 
-            <div className="relative p-2.5 transition-all duration-300 group">
-              <div className="absolute top-[-5px] right-1/2 translate-x-[20px] md:translate-x-[45px] w-[25px] h-[25px] md:w-[38px] md:h-[38px] bg-gradient-to-br from-orange-lava to-[#ff2a00] text-white border-[3px] border-navy-dark rounded-full flex items-center justify-center font-extrabold text-[0.9rem] md:text-[1.1rem] shadow-[0_5px_15px_rgba(0,0,0,0.3)] z-10 transition-all duration-500 group-hover:bg-gradient-to-br group-hover:from-neon-blue group-hover:to-[#0099ff] group-hover:rotate-[360deg]">4</div>
-              <div className="w-[60px] h-[60px] md:w-[110px] md:h-[110px] mx-auto mb-[10px] md:mb-[25px] rounded-full flex items-center justify-center text-[1.4rem] md:text-[2.5rem] text-white relative z-0 bg-[#0f1c38]/40 backdrop-blur-[5px] shadow-[0_10px_30px_rgba(0,0,0,0.3)] border-2 border-transparent bg-clip-padding transition-all duration-400 group-hover:-translate-y-[10px] group-hover:scale-105 group-hover:shadow-[0_0_25px_rgba(0,242,255,0.4)] group-hover:border-transparent before:content-[''] before:absolute before:inset-0 before:-z-10 before:-m-[2px] before:rounded-full before:bg-gradient-to-br before:from-neon-blue before:to-orange-lava group-hover:before:from-orange-lava group-hover:before:to-neon-blue">
-                <FaHouseCircleCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 group-hover:animate-[pulse-icon_1.5s_infinite] group-hover:drop-shadow-[0_0_15px_white]" />
+            <div className="glass-card p-6 rounded-2xl text-center relative group">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-orange-lava to-orange-glow text-white font-extrabold flex items-center justify-center absolute -top-4 left-1/2 -translate-x-1/2 shadow-neon-orange">
+                4
               </div>
-              <h3 className="text-white font-bold text-[0.95rem] md:text-[1.2rem] mb-2">ส่งถึงที่หมาย</h3>
-              <p className="hidden md:block text-text-gray text-[0.9rem]">ส่งมอบสินค้าถึงมือผู้รับปลายทางอย่างปลอดภัย</p>
+              <div className="w-16 h-16 rounded-2xl bg-orange-lava/10 border border-orange-lava/30 text-orange-lava text-2xl flex items-center justify-center mx-auto my-4 transition-transform group-hover:scale-110">
+                <FaHouseCircleCheck />
+              </div>
+              <h3 className="text-white font-bold text-lg mb-2">ส่งมอบถึงที่หมาย</h3>
+              <p className="text-slate-300 text-xs md:text-sm leading-relaxed">ส่งมอบและยกของจัดวางเข้าที่เรียบร้อย ปลอดภัย 100%</p>
             </div>
+
           </div>
         </Container>
       </section>
 
-      {/* 9. FAQ Section */}
-      <section className="py-[80px]" id="faq">
+      {/* 11. FAQ Section */}
+      <section className="py-20" id="faq">
         <Container>
-          <div className="text-center mb-[60px] -mt-[20px]">
-            <h2 className="text-[2.5rem] font-bold text-white mb-5 relative inline-block after:content-[''] after:block after:w-[80px] after:h-[5px] after:bg-orange-lava after:my-[15px] after:mx-auto after:shadow-neon-orange after:rounded-[5px]">คำถามที่พบบ่อย</h2>
-            <p className="text-text-gray">คลายข้อสงสัย เพื่อความมั่นใจก่อนจ้างงาน</p>
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+              คำถามที่พบบ่อย <span className="text-orange-lava">(FAQ)</span>
+            </h2>
+            <p className="text-text-gray max-w-xl mx-auto">ข้อสงสัยยอดนิยมเกี่ยวกับการใช้บริการรถกระบะรับจ้าง</p>
           </div>
           
           <IndexFAQ />
         </Container>
       </section>
 
-      <section className="container mx-auto mt-[40px] mb-[40px] p-[30px] bg-[#0f1c38]/60 rounded-[15px] border border-white/5">
-        <h2 className="text-white text-center mb-[25px] text-[1.5rem] font-bold">
-            <FaMapLocationDot aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava mr-2" /> พื้นที่ให้บริการยอดนิยมในกรุงเทพฯ & ปริมณฑล
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-[20px] text-left text-[#d0d7e1]">
-            <div>
-                <h3 className="text-neon-blue text-[1.1rem] font-bold mb-[10px]">โซนกรุงเทพเหนือ</h3>
-                <ul className="list-none text-[0.9rem] leading-[1.8]">
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/ladprao" className="hover:text-orange-lava transition-colors">ลาดพร้าว</Link> / <Link href="/location/chatuchak" className="hover:text-orange-lava transition-colors">จตุจักร</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/donmueang" className="hover:text-orange-lava transition-colors">ดอนเมือง</Link> / <Link href="/location/lak-si" className="hover:text-orange-lava transition-colors">หลักสี่</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/bang-khen" className="hover:text-orange-lava transition-colors">บางเขน</Link> / รามอินทรา</li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/sai-mai" className="hover:text-orange-lava transition-colors">สายไหม</Link> / <Link href="/location/rangsit" className="hover:text-orange-lava transition-colors">รังสิต</Link></li>
-                </ul>
-            </div>
-            <div>
-                <h3 className="text-neon-blue text-[1.1rem] font-bold mb-[10px]">โซนบางนา-สมุทรปราการ</h3>
-                <ul className="list-none text-[0.9rem] leading-[1.8]">
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/bangna" className="hover:text-orange-lava transition-colors">บางนา</Link> / <Link href="/location/udomsuk" className="hover:text-orange-lava transition-colors">อุดมสุข</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/on-nut" className="hover:text-orange-lava transition-colors">อ่อนนุช</Link> / <Link href="/location/lat-krabang" className="hover:text-orange-lava transition-colors">ลาดกระบัง</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> กิ่งแก้ว / <Link href="/location/suvarnabhumi" className="hover:text-orange-lava transition-colors">สุวรรณภูมิ</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/mueang-samut-prakan" className="hover:text-orange-lava transition-colors">สมุทรปราการ</Link> / <Link href="/location/pak-nam" className="hover:text-orange-lava transition-colors">ปากน้ำ</Link></li>
-                </ul>
-            </div>
-            <div>
-                <h3 className="text-neon-blue text-[1.1rem] font-bold mb-[10px]">โซนฝั่งธนบุรี</h3>
-                <ul className="list-none text-[0.9rem] leading-[1.8]">
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/bang-khae" className="hover:text-orange-lava transition-colors">บางแค</Link> / <Link href="/location/phetkasem" className="hover:text-orange-lava transition-colors">เพชรเกษม</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/rama-2" className="hover:text-orange-lava transition-colors">พระราม 2</Link> / <Link href="/location/tha-kham" className="hover:text-orange-lava transition-colors">ท่าข้าม</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/pinklao" className="hover:text-orange-lava transition-colors">ปิ่นเกล้า</Link> / <Link href="/location/taling-chan" className="hover:text-orange-lava transition-colors">ตลิ่งชัน</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/bang-bon" className="hover:text-orange-lava transition-colors">บางบอน</Link> / <Link href="/location/ekkachai" className="hover:text-orange-lava transition-colors">เอกชัย</Link></li>
-                </ul>
-            </div>
-            <div>
-                <h3 className="text-neon-blue text-[1.1rem] font-bold mb-[10px]">โซนใจกลางเมือง</h3>
-                <ul className="list-none text-[0.9rem] leading-[1.8]">
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/sukhumvit" className="hover:text-orange-lava transition-colors">สุขุมวิท</Link> / <Link href="/location/ekkamai" className="hover:text-orange-lava transition-colors">เอกมัย</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/rama-9" className="hover:text-orange-lava transition-colors">พระราม 9</Link> / <Link href="/location/ratchada" className="hover:text-orange-lava transition-colors">รัชดา</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/sathon" className="hover:text-orange-lava transition-colors">สาทร</Link> / <Link href="/location/silom" className="hover:text-orange-lava transition-colors">สีลม</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/victory-monument" className="hover:text-orange-lava transition-colors">อนุสาวรีย์ชัยฯ</Link> / <Link href="/location/dindaeng" className="hover:text-orange-lava transition-colors">ดินแดง</Link></li>
-                </ul>
-            </div>
-            <div>
-                <h3 className="text-neon-blue text-[1.1rem] font-bold mb-[10px]">โซนปริมณฑลยอดฮิต (นนทบุรี & สมุทรสาคร)</h3>
-                <ul className="list-none text-[0.9rem] leading-[1.8]">
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/pak-kret" className="hover:text-orange-lava transition-colors">ปากเกร็ด</Link> / <Link href="/location/bang-yai" className="hover:text-orange-lava transition-colors">บางใหญ่</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/bang-bua-thong" className="hover:text-orange-lava transition-colors">บางบัวทอง</Link> / <Link href="/location/sai-noi" className="hover:text-orange-lava transition-colors">ไทรน้อย</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/mahachai" className="hover:text-orange-lava transition-colors">มหาชัย</Link> / <Link href="/location/mueang-samut-sakhon" className="hover:text-orange-lava transition-colors">เมืองสมุทรสาคร</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/krathum-baen" className="hover:text-orange-lava transition-colors">กระทุ่มแบน</Link> / <Link href="/location/om-noi" className="hover:text-orange-lava transition-colors">อ้อมน้อย</Link></li>
-                    <li><FaCheck aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-line-green mr-[5px]" /> <Link href="/location/ban-phaeo" className="hover:text-orange-lava transition-colors">บ้านแพ้ว</Link></li>
-                </ul>
-            </div>
-        </div>
-        <p className="text-center mt-[20px] text-[#aaa] text-[0.9rem]">
-            *ให้บริการครอบคลุมทุกพื้นที่ในกรุงเทพและปริมณฑล (นนทบุรี, ปทุมธานี, สมุทรปราการ, สมุทรสาคร) ไม่เกี่ยงงาน ขึ้นตึกสูง คอนโด ซอยแคบ เราไปได้หมด
-        </p>
-      </section>
+      {/* 12. Programmatic Hub */}
+      <ProgrammaticHub />
 
-      {/* POPULAR INTER-PROVINCIAL ROUTES SECTION */}
-      <section className="container mx-auto mt-[40px] mb-[40px] p-[30px] bg-[#0f1c38]/60 rounded-[15px] border border-white/5">
-        <h3 className="text-white text-center mb-[10px] text-[1.5rem] font-bold">
-          <FaRoute aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-orange-lava mr-2" /> เส้นทางขนส่งต่างจังหวัดยอดฮิต
-        </h3>
-        <p className="text-center text-text-gray mb-[25px] text-[0.95rem]">
-          บริการรถรับจ้างขนของย้ายบ้านจากกรุงเทพฯ ไปต่างจังหวัด ครอบคลุมเส้นทางหลักทั่วประเทศ สะดวกรวดเร็ว ปลอดภัย
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-[20px] text-center text-[#d0d7e1]">
-          <Link href="/route/bangkok/phuket" className="flex flex-col items-center justify-center p-5 bg-navy-primary rounded-xl border border-white/10 hover:border-orange-lava hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] transition-all group">
-            <span className="text-[1.8rem] text-orange-lava mb-2 group-hover:scale-110 transition-transform">🏝️</span>
-            <span className="font-bold text-white group-hover:text-orange-lava transition-colors">กรุงเทพฯ - ภูเก็ต</span>
-            <span className="text-xs text-text-gray mt-1">สายใต้ (840 กม.)</span>
-          </Link>
-          <Link href="/route/bangkok/chiang-mai" className="flex flex-col items-center justify-center p-5 bg-navy-primary rounded-xl border border-white/10 hover:border-orange-lava hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] transition-all group">
-            <span className="text-[1.8rem] text-orange-lava mb-2 group-hover:scale-110 transition-transform">🏔️</span>
-            <span className="font-bold text-white group-hover:text-orange-lava transition-colors">กรุงเทพฯ - เชียงใหม่</span>
-            <span className="text-xs text-text-gray mt-1">สายเหนือ (690 กม.)</span>
-          </Link>
-          <Link href="/route/bangkok/khon-kaen" className="flex flex-col items-center justify-center p-5 bg-navy-primary rounded-xl border border-white/10 hover:border-orange-lava hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] transition-all group">
-            <span className="text-[1.8rem] text-orange-lava mb-2 group-hover:scale-110 transition-transform">🌾</span>
-            <span className="font-bold text-white group-hover:text-orange-lava transition-colors">กรุงเทพฯ - ขอนแก่น</span>
-            <span className="text-xs text-text-gray mt-1">สายอีสาน (450 กม.)</span>
-          </Link>
-          <Link href="/route/bangkok/rayong" className="flex flex-col items-center justify-center p-5 bg-navy-primary rounded-xl border border-white/10 hover:border-orange-lava hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] transition-all group">
-            <span className="text-[1.8rem] text-orange-lava mb-2 group-hover:scale-110 transition-transform">🏭</span>
-            <span className="font-bold text-white group-hover:text-orange-lava transition-colors">กรุงเทพฯ - ระยอง</span>
-            <span className="text-xs text-text-gray mt-1">สายตะวันออก (180 กม.)</span>
-          </Link>
-          <Link href="/route/bangkok/chonburi" className="flex flex-col items-center justify-center p-5 bg-navy-primary rounded-xl border border-white/10 hover:border-orange-lava hover:shadow-[0_0_15px_rgba(255,69,0,0.3)] transition-all group">
-            <span className="text-[1.8rem] text-orange-lava mb-2 group-hover:scale-110 transition-transform">🌊</span>
-            <span className="font-bold text-white group-hover:text-orange-lava transition-colors">กรุงเทพฯ - ชลบุรี</span>
-            <span className="text-xs text-text-gray mt-1">สายตะวันออก (120 กม.)</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* CTA SECTION */}
+      {/* 13. High-Conversion Bottom CTA Section */}
       <CTASection />
 
     </main>

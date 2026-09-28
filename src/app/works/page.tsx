@@ -4,31 +4,63 @@ import { Metadata } from "next";
 import { portfolioItems } from "@/data/portfolio";
 
 export const metadata: Metadata = {
-  title: "ผลงานของเรา - N&M18 TRANSPORT | รถกระบะรับจ้าง 4 ล้อ ตู้ทึบ",
-  description: "ผลงานของเรา - N&M18 TRANSPORT | รถกระบะรับจ้าง 4 ล้อ ตู้ทึบ",
+  title: "ผลงานการขนย้ายจริง - N&M18 TRANSPORT | รถกระบะรับจ้าง 4 ล้อ ตู้ทึบ",
+  description: "รวมภาพผลงานการขนย้ายจริงกว่า 1,500+ เที่ยววิ่ง ย้ายบ้าน ย้ายหอพัก คอนโด ขนส่งบิ๊กไบค์ สัตว์เลี้ยง ด้วยรถกระบะตู้ทึบและรถ 4 ล้อใหญ่ N&M18 TRANSPORT",
   alternates: {
-    canonical: "/works",
+    canonical: "https://www.nm18transport.com/works",
   },
   openGraph: {
-    title: "ผลงานของเรา - N&M18 TRANSPORT | รถกระบะรับจ้าง 4 ล้อ ตู้ทึบ",
-    description: "ผลงานของเรา - N&M18 TRANSPORT | รถกระบะรับจ้าง 4 ล้อ ตู้ทึบ",
+    title: "ผลงานการขนย้ายจริง - N&M18 TRANSPORT | รถกระบะรับจ้าง 4 ล้อ ตู้ทึบ",
+    description: "รวมภาพผลงานการขนย้ายจริงกว่า 1,500+ เที่ยววิ่ง ย้ายบ้าน ย้ายหอพัก คอนโด ขนส่งบิ๊กไบค์ สัตว์เลี้ยง ด้วยรถกระบะตู้ทึบและรถ 4 ล้อใหญ่",
     url: "https://www.nm18transport.com/works",
-    images: [{ url: "/images/portfolio/works.jpg" }],
-    type: "article",
+    siteName: "N&M18 TRANSPORT",
+    locale: "th_TH",
+    images: [{ 
+      url: "https://www.nm18transport.com/images/portfolio/S__2531426.webp",
+      width: 1200,
+      height: 630,
+      alt: "ภาพผลงานการขนย้ายจริง N&M18 TRANSPORT"
+    }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ผลงานการขนย้ายจริง - N&M18 TRANSPORT",
+    description: "รวมภาพผลงานการขนย้ายจริงกว่า 1,500+ เที่ยววิ่ง ย้ายบ้าน ย้ายหอพัก คอนโด ขนส่งบิ๊กไบค์ สัตว์เลี้ยง",
+    images: ["https://www.nm18transport.com/images/portfolio/S__2531426.webp"],
   },
 };
 
 export default function WorksPage() {
   return (
     <>
-      <div className="relative text-white pt-[120px] px-5 pb-[80px] text-center border-b border-[rgba(255,69,0,0.2)] overflow-hidden">
-        <Image src="/images/portfolio/S__2531426.webp" alt="Background" fill priority fetchPriority="high" className="object-cover absolute inset-0 -z-20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(5,10,20,0.7)] to-[rgba(5,10,20,1)] -z-10"></div>
-        <h1 className="relative z-10 text-[1.8rem] md:text-[3rem] font-bold mb-[15px] leading-[1.3] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#FF4500]" style={{ textShadow: "0 0 20px rgba(0,0,0,0.8)" }}>
-          ผลงานที่ผ่านมา
-        </h1>
-        <p className="relative z-10 text-[1.2rem] opacity-90 text-[#B0B8C4]">ภาพจริงจากหน้างาน ลูกค้าจริง การันตีความใส่ใจทุกเที่ยววิ่ง</p>
-      </div>
+      {/* HERO SECTION */}
+      <section className="relative w-full min-h-[380px] md:min-h-[450px] flex items-center justify-center overflow-hidden border-b border-[rgba(255,69,0,0.2)]">
+        {/* 1. Background Image Layer */}
+        <div className="absolute inset-0 z-0 bg-slate-900">
+          <Image 
+            src="/images/portfolio/S__2531426.webp" 
+            alt="ผลงานการขนย้ายจริง รถกระบะตู้ทึบ" 
+            fill 
+            priority 
+            sizes="100vw"
+            className="object-cover object-center" 
+          />
+        </div>
+
+        {/* 2. Dark Overlay Layer */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#070b14]/85 via-[#070b14]/75 to-[#070b14]/95 backdrop-blur-[1px]" />
+
+        {/* 3. Foreground Content Layer */}
+        <div className="relative z-20 container mx-auto px-4 py-16 text-center">
+          <h1 className="text-[1.8rem] md:text-[3rem] font-bold mb-[15px] leading-[1.3] text-transparent bg-clip-text bg-gradient-to-r from-white to-[#FF4500]" style={{ textShadow: "0 0 20px rgba(0,0,0,0.8)" }}>
+            ผลงานที่ผ่านมา
+          </h1>
+          <p className="text-[1.2rem] opacity-90 text-[#B0B8C4] max-w-2xl mx-auto">
+            ภาพจริงจากหน้างาน ลูกค้าจริง การันตีความใส่ใจทุกเที่ยววิ่ง
+          </p>
+        </div>
+      </section>
 
       <section className="py-[60px]">
         <div className="max-w-[1200px] mx-auto px-5">
@@ -39,14 +71,14 @@ export default function WorksPage() {
                 key={item.id} 
                 className="group m-0 bg-[rgba(15,28,56,0.7)] border border-[rgba(255,255,255,0.08)] rounded-[20px] overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:-translate-y-[10px] hover:shadow-[0_15px_40px_rgba(255,69,0,0.2)] hover:border-[#FF4500] transition-all duration-300 flex flex-col relative"
               >
-                <div className="h-[220px] md:h-[240px] overflow-hidden relative">
+                <div className="h-[220px] md:h-[240px] overflow-hidden relative bg-slate-900">
                   <Image 
                     src={item.imgSrc} 
                     alt={item.imgAlt}
                     title={item.imgTitle}
                     fill
+                    loading="lazy"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority={idx < 3}
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-t from-[#0f1c38] to-transparent opacity-80 z-10 pointer-events-none"></div>
@@ -85,12 +117,13 @@ export default function WorksPage() {
           <div className="bg-gradient-to-br from-[rgba(15,28,56,0.9)] to-[rgba(5,10,20,0.95)] border border-[rgba(255,255,255,0.1)] rounded-[15px] md:rounded-[25px] p-[40px_20px] md:p-[50px] mt-[40px] md:mt-[60px] flex flex-col md:flex-row items-center text-center md:text-left gap-[20px] md:gap-[50px] shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
             <div className="absolute -top-[50%] -right-[10%] w-[300px] h-[300px] bg-[#FF4500] blur-[150px] opacity-20 pointer-events-none"></div>
             
-            <div className="relative w-[140px] h-[140px] md:w-[180px] md:h-[180px] flex-shrink-0 mx-auto md:mx-0 shadow-[0_0_30px_rgba(255,69,0,0.4)] rounded-full border-[4px] border-[#0f1c38] outline outline-[3px] outline-[#FF4500]">
+            <div className="relative w-[140px] h-[140px] md:w-[180px] md:h-[180px] flex-shrink-0 mx-auto md:mx-0 shadow-[0_0_30px_rgba(255,69,0,0.4)] rounded-full border-[4px] border-[#0f1c38] outline outline-[3px] outline-[#FF4500] bg-slate-900">
               <Image 
                 src="/images/portfolio/S__17556285.webp" 
                 alt="ทีมงาน N&M18 TRANSPORT" 
                 title="ทีมงานคุณภาพ N&M18 TRANSPORT"
                 fill
+                loading="lazy"
                 sizes="180px"
                 className="object-cover rounded-full"
               />

@@ -1,7 +1,13 @@
 "use client";
 
 import React, { useState } from 'react';
-import { FaWind, FaBoxOpen, FaClock, FaChevronDown, FaCircleQuestion } from 'react-icons/fa6';
+import { 
+  FaWind, 
+  FaBoxOpen, 
+  FaClock, 
+  FaChevronDown, 
+  FaCircleQuestion 
+} from 'react-icons/fa6';
 
 export default function FAQClient() {
   const faqs = [
@@ -31,7 +37,7 @@ export default function FAQClient() {
   return (
     <section className="mb-16 md:mb-24 max-w-3xl mx-auto">
       <div className="text-center mb-8">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold text-amber-400 bg-amber-500/10 border border-amber-500/20 mb-3">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold text-amber-400 bg-amber-500/10 border border-amber-500/20 mb-3">
           <FaCircleQuestion className="text-amber-400 text-xs shrink-0" />
           <span>FREQUENTLY ASKED QUESTIONS</span>
         </div>
@@ -39,21 +45,21 @@ export default function FAQClient() {
           คำถามที่พบบ่อย (FAQ)
         </h2>
         <p className="text-slate-400 text-xs sm:text-sm mt-2">
-          ข้อสงสัยยอดนิยมเกี่ยวกับการใช้บริการรับส่งสัตว์เลี้ยง Pet Taxi
+          ข้อสงสัยยอดนิยมเกี่ยวกับการบริการรับส่งสัตว์เลี้ยง Pet Transport
         </p>
       </div>
       
       <div className="space-y-3.5 px-2 sm:px-0">
         {faqs.map((faq, index) => {
           const isActive = activeIndex === index;
-          const IconComponent = faq.icon;
+          const Icon = faq.icon;
           return (
             <div 
               key={index} 
               className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
                 isActive 
-                  ? 'bg-slate-900/80 border-amber-400/40 shadow-lg shadow-amber-500/5' 
-                  : 'bg-slate-900/40 backdrop-blur-md border-white/[0.08] hover:border-amber-400/25 hover:bg-slate-900/60'
+                  ? 'bg-slate-900/90 border-amber-400/40 shadow-[0_0_20px_rgba(245,158,11,0.15)]' 
+                  : 'bg-slate-900/40 backdrop-blur-md border-white/10 hover:border-amber-400/30 hover:bg-slate-900/60'
               }`}
             >
               <button 
@@ -64,11 +70,11 @@ export default function FAQClient() {
               >
                 <span className="flex items-center gap-3 text-slate-100 font-medium text-sm sm:text-base pr-4">
                   <span className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center shrink-0">
-                    <IconComponent className="text-sm" />
+                    <Icon className="text-sm" />
                   </span>
                   <span>{faq.question}</span>
                 </span>
-                <span className={`w-7 h-7 rounded-full bg-white/[0.04] flex items-center justify-center text-slate-400 transition-transform duration-300 shrink-0 ${isActive ? 'rotate-180 text-amber-400 bg-amber-500/10' : ''}`}>
+                <span className={`w-7 h-7 rounded-full bg-white/5 flex items-center justify-center text-slate-400 transition-transform duration-300 shrink-0 ${isActive ? 'rotate-180 text-amber-400 bg-amber-500/10' : ''}`}>
                   <FaChevronDown className="text-xs" />
                 </span>
               </button>
@@ -79,7 +85,7 @@ export default function FAQClient() {
                 }`}
               >
                 <div 
-                  className="p-5 sm:p-6 pt-0 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-white/[0.05]"
+                  className="p-5 sm:p-6 pt-0 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-white/5"
                   dangerouslySetInnerHTML={{ __html: faq.answer }}
                 />
               </div>

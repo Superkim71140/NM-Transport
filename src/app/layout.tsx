@@ -87,7 +87,7 @@ const schemaObject = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "MovingCompany",
+      "@type": ["MovingCompany", "LocalBusiness"],
       "@id": "https://www.nm18transport.com/#organization",
       "name": "N&M18 TRANSPORT",
       "image": "https://www.nm18transport.com/images/logos/logo-nm18.png",
@@ -145,7 +145,6 @@ export default function RootLayout({
   return (
     <html lang="th" className={`${prompt.variable}`}>
       <head>
-        <link rel="preload" as="image" href="/images/portfolio/S__2531437.webp" fetchPriority="high" type="image/webp" />
       </head>
       <body>
         <script

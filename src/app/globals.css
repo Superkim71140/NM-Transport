@@ -2,15 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-navy-dark: #050a14;
+  --color-navy-primary: #0f1c38;
+  --color-orange-lava: #FF4500;
+  --color-orange-glow: #ff6b35;
+  --color-neon-blue: #00f2ff;
+  --color-text-gray: #B0B8C4;
+  --color-line-green: #06C755;
+  --color-gold: #FFD700;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
   }
+
   body {
-    background-color: theme('colors.navy.dark');
-    color: theme('colors.text-gray');
+    background-color: theme('colors.navy.dark', #050a14);
+    color: theme('colors.text-gray', #B0B8C4);
+    font-family: var(--font-prompt), sans-serif;
     line-height: 1.6;
-    padding-bottom: 70px; /* For mobile sticky bar */
+    padding-bottom: 70px; /* Reserves space for fixed mobile bottom navigation */
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 768px) {
+    body {
+      padding-bottom: 0;
+    }
   }
 
   @media (min-width: 1024px) {
@@ -18,35 +39,91 @@
       background-attachment: fixed;
     }
   }
+
+  /* Custom Sleek Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #050a14;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1a2c4e;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 69, 0, 0.2);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FF4500;
+  }
 }
 
 @layer utilities {
   .glass-card {
-    background: theme('backgroundImage.glass-gradient');
+    background: linear-gradient(145deg, rgba(15, 28, 56, 0.9), rgba(5, 10, 20, 0.95));
     border: 1px solid rgba(255, 69, 0, 0.2);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+  }
+
+  .glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card-hover:hover {
+    border-color: #FF4500;
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(255, 69, 0, 0.2);
   }
   
   .glass-header {
-    background: rgba(15, 28, 56, 0.95);
-    backdrop-filter: blur(15px);
+    background: rgba(15, 28, 56, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
 
   .text-shadow-neon {
     text-shadow: 0 0 15px rgba(255, 69, 0, 0.8);
   }
   
+  .text-shadow-blue {
+    text-shadow: 0 0 15px rgba(0, 242, 255, 0.8);
+  }
+
   .glow-blue {
     box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
   }
 
-  /* Keyframes for animations defined in Step 4 */
-  @keyframes shine { 
-    0% { left: -50%; } 
-    100% { left: 150%; } 
+  .glow-orange {
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
   }
+
+  /* Shimmer and pulse animations */
+  @keyframes shine { 
+    0% { left: -60%; } 
+    100% { left: 160%; } 
+  }
+  
   @keyframes neonPulse { 
-    0% { text-shadow: 0 0 10px rgba(255,69,0,0.4); } 
-    100% { text-shadow: 0 0 25px rgba(255,69,0,0.8); } 
+    0% { 
+      text-shadow: 0 0 10px rgba(255, 69, 0, 0.4);
+      filter: drop-shadow(0 0 5px rgba(255, 69, 0, 0.4));
+    } 
+    100% { 
+      text-shadow: 0 0 25px rgba(255, 69, 0, 0.9);
+      filter: drop-shadow(0 0 15px rgba(255, 69, 0, 0.8));
+    } 
+  }
+
+  @keyframes pulseIcon {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
   }
 }

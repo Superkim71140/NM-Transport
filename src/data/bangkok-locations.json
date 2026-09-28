@@ -560,5 +560,125 @@
     "startingPrice": 1000,
     "status": "active",
     "keywords": ["รถรับจ้าง บ้านแพ้ว", "ย้ายบ้าน บ้านแพ้ว", "รถขนของ บ้านแพ้ว"]
+  },
+  {
+    "slug": "mueang-chiang-mai",
+    "thaiName": "เมืองเชียงใหม่",
+    "englishName": "Mueang Chiang Mai",
+    "zone": "เชียงใหม่",
+    "searchTheme": "รถรับจ้างขนของ เมืองเชียงใหม่",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง เชียงใหม่", "ย้ายหอ มช", "รถขนของ นิมมาน"]
+  },
+  {
+    "slug": "san-sai",
+    "thaiName": "สันทราย",
+    "englishName": "San Sai",
+    "zone": "เชียงใหม่",
+    "searchTheme": "รถรับจ้างขนของ สันทราย",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง สันทราย", "ย้ายหอ แม่โจ้", "รถกระบะขนของ สันทราย"]
+  },
+  {
+    "slug": "hang-dong",
+    "thaiName": "หางดง",
+    "englishName": "Hang Dong",
+    "zone": "เชียงใหม่",
+    "searchTheme": "รถรับจ้างขนของ หางดง",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง หางดง", "ย้ายบ้าน หางดง", "รถขนของ แม่เหียะ"]
+  },
+  {
+    "slug": "mae-rim",
+    "thaiName": "แม่ริม",
+    "englishName": "Mae Rim",
+    "zone": "เชียงใหม่",
+    "searchTheme": "รถรับจ้างขนของ แม่ริม",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง แม่ริม", "ย้ายของ แม่ริม", "รถกระบะตู้ทึบ แม่ริม"]
+  },
+  {
+    "slug": "saraphi",
+    "thaiName": "สารภี",
+    "englishName": "Saraphi",
+    "zone": "เชียงใหม่",
+    "searchTheme": "รถรับจ้างขนของ สารภี",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง สารภี", "ย้ายบ้าน สารภี", "รถขนของ ซุปเปอร์ไฮเวย์"]
+  },
+  {
+    "slug": "san-kamphaeng",
+    "thaiName": "สันกำแพง",
+    "englishName": "San Kamphaeng",
+    "zone": "เชียงใหม่",
+    "searchTheme": "รถรับจ้างขนของ สันกำแพง",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง สันกำแพง", "ย้ายบ้าน สันกำแพง", "รถรับจ้าง บ่อสร้าง"]
+  },
+  {
+    "slug": "mueang-chiang-rai",
+    "thaiName": "เมืองเชียงราย",
+    "englishName": "Mueang Chiang Rai",
+    "zone": "เชียงราย",
+    "searchTheme": "รถรับจ้างขนของ เมืองเชียงราย",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง เชียงราย", "ย้ายหอ บ้านดู่", "รถขนของ เชียงราย"]
+  },
+  {
+    "slug": "mae-sai",
+    "thaiName": "แม่สาย",
+    "englishName": "Mae Sai",
+    "zone": "เชียงราย",
+    "searchTheme": "รถรับจ้างขนของ แม่สาย",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง แม่สาย", "ขนส่งสินค้า แม่สาย", "ย้ายบ้าน แม่สาย"]
+  },
+  {
+    "slug": "mae-chan",
+    "thaiName": "แม่จัน",
+    "englishName": "Mae Chan",
+    "zone": "เชียงราย",
+    "searchTheme": "รถรับจ้างขนของ แม่จัน",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง แม่จัน", "ย้ายหอ มฟล", "รถกระบะขนของ แม่ฟ้าหลวง"]
+  },
+  {
+    "slug": "chiang-saen",
+    "thaiName": "เชียงแสน",
+    "englishName": "Chiang Saen",
+    "zone": "เชียงราย",
+    "searchTheme": "รถรับจ้างขนของ เชียงแสน",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง เชียงแสน", "ย้ายของ สามเหลี่ยมทองคำ", "รถขนของ เชียงแสน"]
+  },
+  {
+    "slug": "phan",
+    "thaiName": "พาน",
+    "englishName": "Phan",
+    "zone": "เชียงราย",
+    "searchTheme": "รถรับจ้างขนของ พาน",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง อำเภอพาน", "ย้ายบ้าน อำเภอพาน", "รถกระบะตู้ทึบ พาน"]
+  },
+  {
+    "slug": "wiang-pa-pao",
+    "thaiName": "เวียงป่าเป้า",
+    "englishName": "Wiang Pa Pao",
+    "zone": "เชียงราย",
+    "searchTheme": "รถรับจ้างขนของ เวียงป่าเป้า",
+    "startingPrice": 1000,
+    "status": "active",
+    "keywords": ["รถรับจ้าง เวียงป่าเป้า", "ย้ายของ แม่สรวย", "ขนส่ง เวียงป่าเป้า"]
   }
 ]

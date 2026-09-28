@@ -1,23 +1,30 @@
 "use client";
 
 import React, { useState } from 'react';
+import { 
+  FaCalculator, 
+  FaBoxOpen, 
+  FaUsers, 
+  FaChevronDown, 
+  FaCircleQuestion 
+} from 'react-icons/fa6';
 
 export default function FAQClient() {
   const faqs = [
     {
       question: "คิดราคาค่าขนย้ายยังไงครับ?",
-      answer: "ราคาขึ้นอยู่กับ 3 ปัจจัยหลักครับ: <strong>1. ระยะทาง (ต้นทาง-ปลายทาง)</strong> <strong>2. ประเภทรถที่ใช้ (กระบะ/6ล้อ)</strong> และ <strong>3. จำนวนคนยกของ</strong> แนะนำให้ทักแชทแจ้งรายละเอียดเพื่อรับราคาเหมาที่คุ้มค่าที่สุดครับ",
-      icon: "fa-solid fa-calculator"
+      answer: "ราคาขึ้นอยู่กับ 3 ปัจจัยหลักครับ: <strong>1. ระยะทาง (ต้นทาง-ปลายทาง)</strong> <strong>2. ประเภทรถที่ใช้ (กระบะตู้ทึบ/4 ล้อใหญ่)</strong> และ <strong>3. จำนวนคนช่วยยกของ</strong> แนะนำให้ทักแชทแจ้งรายการของและสถานที่เพื่อรับราคาเหมาจ่ายที่คุ้มค่าที่สุดได้ฟรีครับ",
+      icon: FaCalculator
     },
     {
       question: "ต้องเก็บของลงกล่องเองไหม?",
-      answer: "สำหรับของจุกจิก เสื้อผ้า หนังสือ แนะนำให้ลูกค้าใส่กล่องหรือถุงไว้เพื่อความรวดเร็วครับ ส่วน <strong>เฟอร์นิเจอร์ชิ้นใหญ่</strong> (ตู้, เตียง, ทีวี) ทางทีมงานจะช่วยห่อกันกระแทกและยกให้ครับ",
-      icon: "fa-solid fa-box"
+      answer: "สำหรับของใช้ส่วนตัว เสื้อผ้า หนังสือ แนะนำให้ลูกค้าใส่กล่องหรือถุงไว้ล่วงหน้าเพื่อความรวดเร็วครับ ส่วน <strong>เฟอร์นิเจอร์ชิ้นใหญ่</strong> เช่น ตู้ เตียง ฟูกที่นอน ทีวี ตู้เย็น ทางทีมงานจะช่วยห่อฟิล์มกันกระแทกและยกขนย้ายให้อย่างปลอดภัยครับ",
+      icon: FaBoxOpen
     },
     {
       question: "ไปช่วยขนด้วยได้ไหม นั่งไปกับรถได้ไหม?",
-      answer: "ได้ครับ! ลูกค้าสามารถติดรถไปกับคนขับได้ 1 ท่าน (สำหรับรถกระบะ) และถ้าลูกค้ามีคนช่วยยกอยู่แล้ว สามารถจ้างเฉพาะรถอย่างเดียวได้ ราคาจะถูกลงครับ",
-      icon: "fa-solid fa-users"
+      answer: "ได้ครับ! ลูกค้าสามารถนั่งติดรถไปกับคนขับได้ 1 ท่าน (สำหรับรถกระบะ) และหากลูกค้ามีคนช่วยยกอยู่แล้ว สามารถจ้างเฉพาะรถพร้อมคนขับได้ ราคาจะประหยัดลงครับ",
+      icon: FaUsers
     }
   ];
 
@@ -28,38 +35,59 @@ export default function FAQClient() {
   };
 
   return (
-    <section className="mb-[60px]">
-      <div className="text-center mb-[30px]">
-        <h2 className="text-[2rem] text-white mb-[10px] font-bold">คำถามที่พบบ่อย (FAQ)</h2>
-        <p className="text-[#aaa]">ข้อสงสัยเกี่ยวกับการขนย้ายบ้าน/หอพัก</p>
+    <section className="mb-16 md:mb-24 max-w-3xl mx-auto">
+      <div className="text-center mb-8">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold text-orange-lava bg-orange-lava/10 border border-orange-lava/20 mb-3">
+          <FaCircleQuestion className="text-orange-lava text-xs shrink-0" />
+          <span>FREQUENTLY ASKED QUESTIONS</span>
+        </div>
+        <h2 className="text-2xl sm:text-3xl text-white font-bold tracking-tight">
+          คำถามที่พบบ่อย (FAQ)
+        </h2>
+        <p className="text-slate-400 text-xs sm:text-sm mt-2">
+          ข้อสงสัยยอดนิยมเกี่ยวกับการบริการขนย้ายบ้านและหอพัก
+        </p>
       </div>
       
-      <div className="max-w-[800px] mx-auto px-5 md:px-0">
+      <div className="space-y-3.5 px-2 sm:px-0">
         {faqs.map((faq, index) => {
           const isActive = activeIndex === index;
+          const Icon = faq.icon;
           return (
             <div 
               key={index} 
-              className={`mb-[15px] border border-[rgba(255,255,255,0.1)] rounded-[12px] bg-[rgba(15,28,56,0.6)] overflow-hidden transition-all duration-300 hover:border-[#FF4500] hover:shadow-[0_0_15px_rgba(255,69,0,0.2)] ${isActive ? 'bg-[#0f1c38] border-[#FF4500]' : ''}`}
+              className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
+                isActive 
+                  ? 'bg-navy-primary border-orange-lava shadow-[0_0_20px_rgba(255,69,0,0.15)]' 
+                  : 'bg-[#0f1c38]/60 backdrop-blur-md border-white/10 hover:border-orange-lava/50 hover:bg-[#0f1c38]/80'
+              }`}
             >
               <button 
-                className="w-full p-[20px] bg-none border-none text-white text-[1.1rem] font-medium text-left flex justify-between items-center cursor-pointer outline-none font-sans"
+                type="button"
+                className="w-full p-5 sm:p-6 text-left flex justify-between items-center cursor-pointer outline-none transition-colors"
                 onClick={() => toggleFAQ(index)}
+                aria-expanded={isActive}
               >
-                <span>
-                  <i className={`${faq.icon} mr-[10px]`} style={{ color: '#FF4500' }}></i> 
-                  {faq.question}
+                <span className="flex items-center gap-3.5 text-white font-medium text-sm sm:text-base pr-4">
+                  <span className="w-9 h-9 rounded-xl bg-orange-lava/10 border border-orange-lava/30 text-orange-lava flex items-center justify-center shrink-0">
+                    <Icon className="text-base" />
+                  </span>
+                  <span>{faq.question}</span>
                 </span>
-                <i className={`fa-solid fa-chevron-down transition-transform duration-300 ${isActive ? 'rotate-180' : ''}`}></i>
+                <span className={`w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-slate-400 transition-transform duration-300 shrink-0 ${isActive ? 'rotate-180 text-orange-lava bg-orange-lava/10' : ''}`}>
+                  <FaChevronDown className="text-xs" />
+                </span>
               </button>
+              
               <div 
-                className={`overflow-hidden transition-[max-height] duration-300 ease-out bg-[rgba(0,0,0,0.2)]`}
-                style={{ maxHeight: isActive ? '200px' : '0' }}
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  isActive ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
               >
-                <p 
-                  className="p-[20px] text-[#ccc] leading-[1.6] border-t border-[rgba(255,255,255,0.05)]"
+                <div 
+                  className="p-5 sm:p-6 pt-0 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-white/5"
                   dangerouslySetInnerHTML={{ __html: faq.answer }}
-                ></p>
+                />
               </div>
             </div>
           );

@@ -15,14 +15,15 @@ export const ServiceAreaHero: React.FC<ServiceAreaHeroProps> = ({
 }) => {
   return (
     <section 
-      className="relative overflow-hidden text-center text-white py-20"
+      className="relative overflow-hidden text-center text-white py-20 bg-slate-900"
     >
       <Image 
         src={backgroundImageUrl} 
         alt={title} 
         fill 
-        priority 
+        priority={true}
         fetchPriority="high"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
         className="object-cover absolute inset-0 -z-20"
       />
       <div className="absolute inset-0 bg-gradient-to-br from-[#050a14]/85 to-[#0f1c38]/90 -z-10"></div>

@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10 text-center md:text-left">
           <div className="footer-col">
-            <Image src="/images/logos/logo-nm18.webp" alt="N&M18 TRANSPORT" width={200} height={80} className="h-[80px] w-auto mx-auto md:mx-0 mb-5 drop-shadow-[0_0_1px_white]" />
+            <Image src="/images/logos/logo-nm18.webp" alt="N&M18 TRANSPORT" width={200} height={80} loading="lazy" className="h-[80px] w-auto mx-auto md:mx-0 mb-5 drop-shadow-[0_0_1px_white]" />
             <p className="mb-4">
               บริการรถกระบะรับจ้าง รถตู้ทึบ รถคอก ขนของ ย้ายบ้าน ย้ายคอนโด หอพัก ทั่วประเทศไทย บริการดี ยกของให้ ราคาคุ้มค่า
             </p>

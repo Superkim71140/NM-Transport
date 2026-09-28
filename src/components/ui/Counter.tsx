@@ -22,6 +22,9 @@ export const Counter: React.FC<CounterProps> = ({
   const counterRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentElement = counterRef.current;
+    if (!currentElement) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
@@ -31,14 +34,10 @@ export const Counter: React.FC<CounterProps> = ({
       { threshold: 0.1 }
     );
 
-    if (counterRef.current) {
-      observer.observe(counterRef.current);
-    }
+    observer.observe(currentElement);
 
     return () => {
-      if (counterRef.current) {
-        observer.unobserve(counterRef.current);
-      }
+      observer.unobserve(currentElement);
     };
   }, [hasAnimated]);
 
@@ -46,6 +45,8 @@ export const Counter: React.FC<CounterProps> = ({
     if (!hasAnimated) return;
 
     let startTime: number | null = null;
+    let animationFrameId: number;
+
     const updateCount = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = timestamp - startTime;
@@ -57,13 +58,19 @@ export const Counter: React.FC<CounterProps> = ({
       setCount(Math.ceil(easePercentage * end));
 
       if (progress < duration) {
-        requestAnimationFrame(updateCount);
+        animationFrameId = requestAnimationFrame(updateCount);
       } else {
         setCount(end);
       }
     };
 
-    requestAnimationFrame(updateCount);
+    animationFrameId = requestAnimationFrame(updateCount);
+
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, [hasAnimated, end, duration]);
 
   return (

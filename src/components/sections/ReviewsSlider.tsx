@@ -127,11 +127,13 @@ export const ReviewsSlider: React.FC = () => {
           >
             <FaQuoteLeft aria-hidden="true" focusable="false" className="h-[1em] w-[1em] shrink-0 text-5xl text-orange-lava/20 absolute top-5 left-8" />
             
-            <div className="w-[100px] h-[100px] rounded-full border-4 border-orange-lava p-1 mb-5 shadow-neon-orange relative shrink-0">
+            <div className="w-[100px] h-[100px] rounded-full border-4 border-orange-lava p-1 mb-5 shadow-neon-orange relative shrink-0 bg-slate-900">
               <Image 
                 src={review.img} 
                 alt={`รีวิวลูกค้า ${idx + 1}`} 
                 fill
+                loading="lazy"
+                sizes="100px"
                 className="rounded-full object-cover"
               />
             </div>

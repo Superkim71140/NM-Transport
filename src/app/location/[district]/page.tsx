@@ -28,7 +28,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const isDraft = location.status === "pending_verification";
 
   const title = `รถรับจ้างขนของ ${location.thaiName} ย้ายบ้าน ย้ายหอพัก คอนโด เริ่ม 1,000.- | N&M18 TRANSPORT`;
-  const description = `บริการรถรับจ้างขนของในพื้นที่ ${location.thaiName} รถกระบะตู้ทึบ รถ 4 ล้อใหญ่ ขนส่งย้ายบ้าน คอนโด หอพัก ทั่วกรุงเทพ-ปริมณฑล พร้อมคนช่วยยกของ ราคาเป็นกันเอง ตกลงราคาชัดเจน โทร 095-801-0958`;
+  const regionalScope = location.zone.includes('เชียง') ? `จังหวัด${location.zone}และเส้นทางเชื่อมต่อ` : 'กรุงเทพ-ปริมณฑล';
+  const description = `บริการรถรับจ้างขนของในพื้นที่ ${location.thaiName} รถกระบะตู้ทึบ รถ 4 ล้อใหญ่ ขนส่งย้ายบ้าน คอนโด หอพัก ครอบคลุม${regionalScope} พร้อมคนช่วยยกของ ราคาเป็นกันเอง ตกลงราคาชัดเจน โทร 095-801-0958`;
 
   const canonicalPath = isAlias ? `/location/${(location as any).canonicalSlug}` : `/location/${location.slug}`;
 
@@ -105,7 +106,7 @@ export default function LocationPage({ params }: Props) {
               รถรับจ้างขนของ {location.thaiName} บริการตลอด 24 ชั่วโมง
             </h1>
             <p className="text-text-gray text-base leading-relaxed">
-              บริการย้ายบ้าน ย้ายคอนโด ย้ายหอพัก ขนย้ายเฟอร์นิเจอร์ หรือขนส่งสินค้าในเขต {location.thaiName} และพื้นที่ใกล้เคียง สะดวก รวดเร็ว ด้วยทีมงานมืออาชีพและรถกระบะรับจ้างตู้ทึบกันฝน 100% ประเมินราคาจริงใจเริ่มต้นเพียง {location.startingPrice} บาท
+              บริการย้ายบ้าน ย้ายคอนโด ย้ายหอพัก ขนย้ายเฟอร์นิเจอร์ หรือขนส่งสินค้าในพื้นที่ {location.thaiName} และเส้นทางเชื่อมต่อ สะดวก ปลอดภัย ด้วยทีมงานมืออาชีพและรถกระบะรับจ้างตู้ทึบปิดมิดชิด ป้องกันแดดและละอองฝนระหว่างขนส่ง ประเมินราคาจริงใจเริ่มต้นเพียง {location.startingPrice} บาท
             </p>
           </header>
 
@@ -114,7 +115,7 @@ export default function LocationPage({ params }: Props) {
               ทำไมต้องเลือกใช้บริการรถขนของในพื้นที่ {location.thaiName} กับ N&M18 TRANSPORT?
             </h2>
             <p className="text-[#ccc] leading-relaxed mb-4">
-              ที่เขต {location.thaiName} เรามีรถวิ่งสแตนด์บายคอยรับบริการอยู่ตลอดเวลา ทำให้สามารถเข้าจัดส่งหรือขนย้ายได้อย่างรวดเร็วทันใจ พร้อมพนักงานช่วยยกของที่มีประสบการณ์สูง สุภาพ และทำงานอย่างประณีต
+              เรามีความคุ้นเคยกับเส้นทางและลักษณะพื้นที่ {location.thaiName} เป็นอย่างดี สามารถวางแผนนัดหมายเวลาเข้ารับหรือส่งมอบได้อย่างเป็นระบบ พร้อมพนักงานช่วยยกของที่มีประสบการณ์ สุภาพ และดูแลทรัพย์สินอย่างทะนุถนอม
             </p>
             <ul className="list-disc pl-6 space-y-2 text-[#ccc]">
               {location.keywords.map((kw, idx) => (
@@ -140,6 +141,12 @@ export default function LocationPage({ params }: Props) {
           <div className="border-t border-white/10 pt-8 mt-12 mb-10">
             <h4 className="text-white font-bold text-lg mb-3">บริการขนย้ายที่เกี่ยวข้องของเรา:</h4>
             <div className="flex gap-4 flex-wrap">
+              <Link 
+                href="/area" 
+                className="px-5 py-2.5 rounded-lg bg-navy-primary border border-white/10 hover:border-orange-lava hover:text-orange-lava transition-all text-sm font-semibold"
+              >
+                พื้นที่ให้บริการทั้งหมด
+              </Link>
               <Link 
                 href="/service/moving" 
                 className="px-5 py-2.5 rounded-lg bg-navy-primary border border-white/10 hover:border-orange-lava hover:text-orange-lava transition-all text-sm font-semibold"
