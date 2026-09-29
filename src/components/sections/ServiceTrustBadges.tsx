@@ -3,11 +3,11 @@ import { FaShieldHalved, FaTruckFront, FaDropletSlash, FaLock } from 'react-icon
 
 export default function ServiceTrustBadges() {
   return (
-    <section className="py-12 md:py-16 bg-[#040812] border-y border-white/5 relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-[#040812] border-y border-white/5 relative overflow-hidden w-full">
       {/* Background glowing effects */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-32 bg-orange-500/10 blur-[100px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90vw] max-w-[600px] h-32 bg-orange-500/10 blur-[100px] pointer-events-none" />
       
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 relative z-10 text-center">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-4">
           มั่นใจด้วย <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">รถกระบะตู้ทึบ 100%</span>
         </h2>

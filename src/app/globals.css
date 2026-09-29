@@ -17,6 +17,8 @@
   html {
     scroll-behavior: smooth;
     color-scheme: dark;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   body {
@@ -26,6 +28,9 @@
     line-height: 1.6;
     padding-bottom: 70px; /* Reserves space for fixed mobile bottom navigation */
     overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    position: relative;
   }
 
   @media (min-width: 768px) {

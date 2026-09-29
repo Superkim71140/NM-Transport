@@ -99,23 +99,31 @@ export default function Home() {
           "name": "สินค้าจะปลอดภัยไหม มีประกันหรือเปล่า?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "มั่นใจได้ 100% ครับ เรามีทีมงานมืออาชีพช่วยแพ็คกันกระแทก และมีการรัดตึงสินค้าไม่ให้ขยับระหว่างขนส่ง หากเกิดความเสียหายจากการขนส่ง เรารับผิดชอบตามตกลงครับ"
+            "text": "ปลอดภัยแน่นอนครับ รถทุกคันเป็นตู้ทึบอลูมิเนียมกันน้ำฝน 100% มีอุปกรณ์เซฟตี้รัดของแน่นหนา และมีประกันความเสียหายกรณีเกิดอุบัติเหตุตามเงื่อนไขที่ตกลงกันครับ"
           }
         },
         {
           "@type": "Question",
-          "name": "มีคนช่วยยกของให้ด้วยไหม?",
+          "name": "มีบริการช่วยยกของด้วยไหม?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "มีครับ! ท่านสามารถแจ้งได้เลยว่าต้องการคนช่วยยกกี่คน ทางเรามีทีมงานพร้อมบริการยกของขึ้น-ลงรถ และจัดเรียงเข้าบ้านให้เรียบร้อย ท่านไม่ต้องเหนื่อยเองครับ"
+            "text": "มีครับ! เรามีทีมงานมืออาชีพพร้อมช่วยยกของ จัดเรียง และดูแลสินค้าของท่านอย่างระมัดระวังตลอดการขนย้ายครับ"
           }
         },
         {
           "@type": "Question",
-          "name": "ควรจองคิวรถล่วงหน้ากี่วัน?",
+          "name": "ต้องจองคิวล่วงหน้ากี่วัน?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "แนะนำให้จองล่วงหน้า 1-2 วัน เพื่อล็อคคิวรถและเวลาที่แน่นอนครับ แต่ถ้าเป็นงานด่วน เรามีบริการรถสแตนด์บายตลอด 24 ชม. โทรเช็คคิวได้ทันทีครับ"
+            "text": "จองล่วงหน้า 1-3 วันเพื่อให้ได้เวลาที่ต้องการที่สุด หรือกรณีงานด่วนสามารถติดต่อสอบถามคิวรถว่างในแต่ละวันได้ทันทีตลอด 24 ชม. ครับ"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "รถกระบะตู้ทึบ บรรทุกของได้เยอะแค่ไหน?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ตู้ทึบสูง 2.10 เมตร สามารถบรรทุกตู้เย็นขนาดใหญ่ ที่นอน 6 ฟุต เครื่องซักผ้า และกล่องพัสดุได้เป็นจำนวนมาก เหมาะมากสำหรับการย้ายห้องพัก หอพัก และคอนโดครับ"
           }
         }
       ]
@@ -123,7 +131,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="bg-[#050a14] min-h-screen">
+    <main className="w-full bg-[#050a14] min-h-screen overflow-x-hidden">
       <script
         type="application/ld+json"
         id="homepage-jsonld"
@@ -136,7 +144,7 @@ export default function Home() {
       <HeroCarousel />
 
       {/* 2. Value Props / Feature Highlights Grid */}
-      <section className="relative z-10 pb-12 -mt-10 sm:-mt-12">
+      <section className="relative z-10 pb-12 -mt-10 sm:-mt-12 w-full overflow-hidden">
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             
@@ -178,14 +186,14 @@ export default function Home() {
       <ServiceHighlightBanner />
 
       {/* 3. Core Services Section */}
-      <section className="relative py-24 bg-[#050A14] overflow-hidden" id="services">
+      <section className="relative py-24 bg-[#050A14] overflow-hidden w-full" id="services">
         {/* Ambient Color Lighting (Depth & Brand Glow) */}
         <div 
-          className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[800px] h-[350px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none z-0" 
+          className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85vw] max-w-[800px] h-[350px] bg-blue-600/10 rounded-full blur-[140px] pointer-events-none z-0" 
           aria-hidden="true" 
         />
         <div 
-          className="absolute bottom-10 right-0 w-[400px] md:w-[600px] h-[300px] bg-[#FF4500]/10 rounded-full blur-[130px] pointer-events-none z-0" 
+          className="absolute bottom-10 right-0 w-[85vw] max-w-[600px] h-[300px] bg-[#FF4500]/10 rounded-full blur-[130px] pointer-events-none z-0" 
           aria-hidden="true" 
         />
 
@@ -250,7 +258,7 @@ export default function Home() {
       </section>
 
       {/* 4. Portfolio Works Showcase */}
-      <section className="py-20 bg-[#0f1c38]/30 border-y border-white/5" id="gallery">
+      <section className="py-20 bg-[#0f1c38]/30 border-y border-white/5 w-full overflow-hidden" id="gallery">
         <Container>
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
@@ -287,11 +295,11 @@ export default function Home() {
 
           </div>
             
-          <div className="text-center mt-10 flex gap-4 justify-center flex-wrap">
+          <div className="text-center mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <Link 
               href="/works" 
               aria-label="ดูผลงานทั้งหมดของ N&M18 TRANSPORT" 
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-sm md:text-base border-2 border-orange-lava bg-orange-lava text-white shadow-neon-orange transition-all duration-300 hover:bg-orange-glow hover:shadow-[0_0_30px_rgba(255,69,0,0.9)] hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-full font-bold text-sm sm:text-base border-2 border-orange-lava bg-orange-lava text-white shadow-neon-orange transition-all duration-300 hover:bg-orange-glow hover:shadow-[0_0_30px_rgba(255,69,0,0.9)] hover:-translate-y-0.5"
             >
               <FaImages className="shrink-0" />
               <span>ดูผลงานทั้งหมด</span>
@@ -301,7 +309,7 @@ export default function Home() {
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="ดูรีวิวเพิ่มเติมของ N&M18 TRANSPORT บน Facebook" 
-              className="inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-sm md:text-base border-2 border-[#1877F2] bg-[#1877F2] text-white shadow-[0_0_15px_rgba(24,119,242,0.6)] transition-all duration-300 hover:bg-[#1464c4] hover:shadow-[0_0_25px_rgba(24,119,242,0.8)] hover:-translate-y-0.5"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-full font-bold text-sm sm:text-base border-2 border-[#1877F2] bg-[#1877F2] text-white shadow-[0_0_15px_rgba(24,119,242,0.6)] transition-all duration-300 hover:bg-[#1464c4] hover:shadow-[0_0_25px_rgba(24,119,242,0.8)] hover:-translate-y-0.5"
             >
               <FaFacebookF className="shrink-0" />
               <span>ดูรีวิวบน Facebook</span>
@@ -314,14 +322,14 @@ export default function Home() {
       <FleetAuthoritySection />
 
       {/* 5. Feature Comparison Table */}
-      <section className="relative py-24 bg-[#050A14] overflow-hidden">
+      <section className="relative py-24 bg-[#050A14] overflow-hidden w-full">
         {/* Ambient Color Lighting (Depth & Glow) */}
         <div 
-          className="absolute top-1/6 left-10 w-[450px] h-[350px] bg-[#FF4500]/10 rounded-full blur-[140px] pointer-events-none z-0" 
+          className="absolute top-1/6 left-10 w-[85vw] max-w-[450px] h-[350px] bg-[#FF4500]/10 rounded-full blur-[140px] pointer-events-none z-0" 
           aria-hidden="true" 
         />
         <div 
-          className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[650px] h-[400px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none z-0" 
+          className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[85vw] max-w-[650px] h-[400px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none z-0" 
           aria-hidden="true" 
         />
 
@@ -347,21 +355,21 @@ export default function Home() {
             <p className="text-text-gray max-w-xl mx-auto">เปรียบเทียบความแตกต่างเพื่อความคุ้มค่าและปลอดภัยสูงสุดของคุณ</p>
           </div>
           
-          <div className="bg-navy-primary rounded-3xl border border-white/10 overflow-hidden shadow-2xl max-w-4xl mx-auto">
+          <div className="bg-navy-primary rounded-3xl border border-white/10 overflow-hidden shadow-2xl max-w-4xl mx-auto w-full">
             
-            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 md:p-6 bg-black/40 border-b border-white/10 text-center font-bold text-white text-sm md:text-base">
+            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-3.5 sm:p-5 md:p-6 bg-black/40 border-b border-white/10 text-center font-bold text-white text-xs sm:text-sm md:text-base">
               <div className="text-left">หัวข้อบริการ</div>
               <div className="text-orange-lava drop-shadow-[0_0_8px_rgba(255,69,0,0.4)]">N&M18 TRANSPORT</div>
               <div className="hidden md:block text-slate-400">รถรับจ้างทั่วไป</div>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 md:p-6 border-b border-white/5 items-center transition-colors hover:bg-white/5 text-sm md:text-base">
-              <div className="text-text-gray font-medium flex items-center gap-2.5">
-                <FaTag className="text-orange-lava shrink-0" />
+            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-3.5 sm:p-5 md:p-6 border-b border-white/5 items-center transition-colors hover:bg-white/5 text-xs sm:text-sm md:text-base">
+              <div className="text-text-gray font-medium flex items-center gap-2 sm:gap-2.5">
+                <FaTag className="text-orange-lava shrink-0 text-sm sm:text-base" />
                 <span>ราคาค่าบริการ</span>
               </div>
-              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-2">
-                <FaCheck className="text-line-green shrink-0 text-lg" />
+              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-1.5 sm:gap-2">
+                <FaCheck className="text-line-green shrink-0 text-base sm:text-lg" />
                 <span>ราคาชัดเจน จบที่ตกลง</span>
               </div>
               <div className="hidden md:flex items-center justify-center gap-2 text-slate-500 line-through opacity-70">
@@ -370,13 +378,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 md:p-6 border-b border-white/5 items-center transition-colors hover:bg-white/5 text-sm md:text-base">
-              <div className="text-text-gray font-medium flex items-center gap-2.5">
-                <FaShieldCat className="text-orange-lava shrink-0" />
+            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-3.5 sm:p-5 md:p-6 border-b border-white/5 items-center transition-colors hover:bg-white/5 text-xs sm:text-sm md:text-base">
+              <div className="text-text-gray font-medium flex items-center gap-2 sm:gap-2.5">
+                <FaShieldCat className="text-orange-lava shrink-0 text-sm sm:text-base" />
                 <span>การรับประกันสินค้า</span>
               </div>
-              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-2">
-                <FaCheck className="text-line-green shrink-0 text-lg" />
+              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-1.5 sm:gap-2">
+                <FaCheck className="text-line-green shrink-0 text-base sm:text-lg" />
                 <span>รับผิดชอบ 100% ตามจริง</span>
               </div>
               <div className="hidden md:flex items-center justify-center gap-2 text-slate-500 line-through opacity-70">
@@ -385,13 +393,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 md:p-6 border-b border-white/5 items-center transition-colors hover:bg-white/5 text-sm md:text-base">
-              <div className="text-text-gray font-medium flex items-center gap-2.5">
-                <FaTruckRampBox className="text-orange-lava shrink-0" />
+            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-3.5 sm:p-5 md:p-6 border-b border-white/5 items-center transition-colors hover:bg-white/5 text-xs sm:text-sm md:text-base">
+              <div className="text-text-gray font-medium flex items-center gap-2 sm:gap-2.5">
+                <FaTruckRampBox className="text-orange-lava shrink-0 text-sm sm:text-base" />
                 <span>บริการช่วยยกของ</span>
               </div>
-              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-2">
-                <FaCheck className="text-line-green shrink-0 text-lg" />
+              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-1.5 sm:gap-2">
+                <FaCheck className="text-line-green shrink-0 text-base sm:text-lg" />
                 <span>ทีมงานมืออาชีพช่วยยก</span>
               </div>
               <div className="hidden md:flex items-center justify-center gap-2 text-slate-500 line-through opacity-70">
@@ -400,13 +408,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 md:p-6 border-b border-white/5 items-center transition-colors hover:bg-white/5 text-sm md:text-base">
-              <div className="text-text-gray font-medium flex items-center gap-2.5">
-                <FaUmbrella className="text-orange-lava shrink-0" />
+            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-3.5 sm:p-5 md:p-6 border-b border-white/5 items-center transition-colors hover:bg-white/5 text-xs sm:text-sm md:text-base">
+              <div className="text-text-gray font-medium flex items-center gap-2 sm:gap-2.5">
+                <FaUmbrella className="text-orange-lava shrink-0 text-sm sm:text-base" />
                 <span>สภาพตู้และตัวรถ</span>
               </div>
-              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-2">
-                <FaCheck className="text-line-green shrink-0 text-lg" />
+              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-1.5 sm:gap-2">
+                <FaCheck className="text-line-green shrink-0 text-base sm:text-lg" />
                 <span>ตู้ทึบกันฝน 100% สะอาด</span>
               </div>
               <div className="hidden md:flex items-center justify-center gap-2 text-slate-500 line-through opacity-70">
@@ -415,13 +423,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-5 md:p-6 items-center transition-colors hover:bg-white/5 text-sm md:text-base">
-              <div className="text-text-gray font-medium flex items-center gap-2.5">
-                <FaHeadset className="text-orange-lava shrink-0" />
+            <div className="grid grid-cols-2 md:grid-cols-[1.2fr_1.2fr_1fr] p-3.5 sm:p-5 md:p-6 items-center transition-colors hover:bg-white/5 text-xs sm:text-sm md:text-base">
+              <div className="text-text-gray font-medium flex items-center gap-2 sm:gap-2.5">
+                <FaHeadset className="text-orange-lava shrink-0 text-sm sm:text-base" />
                 <span>การประสานงาน</span>
               </div>
-              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-2">
-                <FaCheck className="text-line-green shrink-0 text-lg" />
+              <div className="text-orange-lava font-bold text-center flex items-center justify-center gap-1.5 sm:gap-2">
+                <FaCheck className="text-line-green shrink-0 text-base sm:text-lg" />
                 <span>แอดมินดูแล 24 ชั่วโมง</span>
               </div>
               <div className="hidden md:flex items-center justify-center gap-2 text-slate-500 line-through opacity-70">
@@ -435,9 +443,9 @@ export default function Home() {
       </section>
 
       {/* 6. Legal Registration & Trust Badge */}
-      <section className="py-12">
+      <section className="py-12 w-full overflow-hidden">
         <Container>
-          <div className="glass-card p-8 md:p-12 rounded-3xl border-2 border-orange-lava/30 text-center max-w-4xl mx-auto relative overflow-hidden shadow-2xl">
+          <div className="glass-card p-5 sm:p-8 md:p-12 rounded-3xl border-2 border-orange-lava/30 text-center max-w-4xl mx-auto relative overflow-hidden shadow-2xl w-full">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold text-gold bg-gold/10 border border-gold/30 mb-4">
               <FaCertificate className="text-gold text-sm shrink-0" />
               <span>จดทะเบียนถูกต้องตามกฎหมาย</span>
@@ -450,13 +458,13 @@ export default function Home() {
               มั่นใจได้ในความปลอดภัยและการบริการที่ได้มาตรฐาน มีตัวตนชัดเจน ตรวจสอบได้
             </p>
             
-            <div className="max-w-md mx-auto rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl relative aspect-[1.4/1] bg-slate-900">
+            <div className="max-w-md w-full mx-auto rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl relative aspect-[1.4/1] bg-slate-900">
               <Image 
                 src="/images/portfolio/S__17556166.webp" 
                 alt="ใบอนุญาตประกอบการขนส่ง N&M 18 TRANSPORT" 
                 fill 
-                loading="lazy"
-                sizes="(max-width: 768px) 100vw, 450px"
+                loading="lazy" 
+                sizes="(max-width: 768px) 100vw, 450px" 
                 className="object-contain bg-navy-dark" 
               />
             </div>
@@ -465,7 +473,7 @@ export default function Home() {
       </section>
 
       {/* 7. Real Customer Reviews */}
-      <section className="py-20 bg-gradient-to-b from-[#050a14] via-[#0f1c38]/40 to-[#050a14]">
+      <section className="py-20 bg-gradient-to-b from-[#050a14] via-[#0f1c38]/40 to-[#050a14] w-full overflow-hidden">
         <Container>
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
@@ -479,9 +487,9 @@ export default function Home() {
       </section>
 
       {/* 9. Special Pricing Promotion Banner */}
-      <section className="py-16">
+      <section className="py-16 w-full overflow-hidden">
         <Container>
-          <div className="glass-card text-center py-10 md:py-16 px-6 md:px-12 rounded-3xl max-w-4xl mx-auto border-2 border-orange-lava/40 shadow-2xl relative overflow-hidden">
+          <div className="glass-card text-center py-10 md:py-16 px-4 sm:px-6 md:px-12 rounded-3xl max-w-4xl mx-auto border-2 border-orange-lava/40 shadow-2xl relative overflow-hidden w-full">
             <div className="absolute top-4 -right-10 bg-orange-lava text-white text-xs font-black py-1.5 px-12 rotate-45 shadow-lg">
               PROMOTION
             </div>
@@ -495,11 +503,11 @@ export default function Home() {
             
             <p className="text-slate-300 text-sm md:text-base mb-8">ราคาประเมินตามระยะทางจริงและประเภทของ ปรึกษาและเช็คราคาฟรี</p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
               <a 
                 href="tel:0958010958" 
                 aria-label="โทรเช็คราคากับเจ้าหน้าที่ 095-801-0958" 
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-base text-white bg-gradient-to-r from-orange-lava to-orange-glow shadow-neon-orange transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,69,0,0.9)]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-full font-bold text-sm sm:text-base text-white bg-gradient-to-r from-orange-lava to-orange-glow shadow-neon-orange transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(255,69,0,0.9)]"
               >
                 <FaCalculator className="shrink-0" />
                 <span>โทรเช็คราคาด่วน</span>
@@ -510,7 +518,7 @@ export default function Home() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="เช็คราคาผ่าน LINE ตลอด 24 ชม." 
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full font-bold text-base text-white bg-line-green shadow-neon-green transition-all duration-300 hover:scale-105 hover:bg-[#05b84e]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 rounded-full font-bold text-sm sm:text-base text-white bg-line-green shadow-neon-green transition-all duration-300 hover:scale-105 hover:bg-[#05b84e]"
               >
                 <FaLine className="text-xl shrink-0" />
                 <span>เช็คราคาผ่าน LINE (24 ชม.)</span>
@@ -521,7 +529,7 @@ export default function Home() {
       </section>
 
       {/* 10. 4-Step Easy Booking Workflow */}
-      <section className="py-20 bg-[#0f1c38]/40 border-t border-white/5" id="how-it-works">
+      <section className="py-20 bg-[#0f1c38]/40 border-t border-white/5 w-full overflow-hidden" id="how-it-works">
         <Container>
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
@@ -581,7 +589,7 @@ export default function Home() {
       </section>
 
       {/* 11. FAQ Section */}
-      <section className="py-20" id="faq">
+      <section className="py-20 w-full overflow-hidden" id="faq">
         <Container>
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">

@@ -11,7 +11,7 @@ export const ServiceHighlightBanner: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full bg-gradient-to-b from-[#0A1B38] via-[#071326] to-[#050A14] pt-12 md:pt-16 pb-16 md:pb-20 mt-12 md:mt-16">
+    <section className="relative w-full bg-gradient-to-b from-[#0A1B38] via-[#071326] to-[#050A14] pt-12 md:pt-16 pb-16 md:pb-20 mt-12 md:mt-16 overflow-hidden">
       {/* 1. Convex Upward SVG Wave Divider on Top */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none -translate-y-[98%] pointer-events-none">
         <svg 
@@ -25,11 +25,11 @@ export const ServiceHighlightBanner: React.FC = () => {
 
       {/* 2. Ambient Glow Effects */}
       <div 
-        className="absolute -top-24 left-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" 
+        className="absolute -top-24 left-1/4 w-72 sm:w-96 h-72 sm:h-96 max-w-[80vw] bg-blue-600/15 rounded-full blur-3xl pointer-events-none" 
         aria-hidden="true" 
       />
       <div 
-        className="absolute bottom-10 right-1/4 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" 
+        className="absolute bottom-10 right-1/4 w-64 sm:w-80 h-64 sm:h-80 max-w-[70vw] bg-orange-500/10 rounded-full blur-3xl pointer-events-none" 
         aria-hidden="true" 
       />
 
@@ -74,14 +74,14 @@ export const ServiceHighlightBanner: React.FC = () => {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-row gap-4 flex-wrap">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center">
                 {/* Button 1 (LINE) */}
                 <a
                   href="https://liff.line.me/1645278921-kWRPP32q/?accountId=952yyanc"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="แอดไลน์ขอประเมินราคาขนส่งฟรี"
-                  className="bg-[#F59E0B] hover:bg-[#d97706] text-black font-bold px-7 py-3.5 rounded-full text-sm sm:text-base inline-flex items-center gap-2.5 transition-all shadow-md hover:scale-105"
+                  className="w-full sm:w-auto justify-center bg-[#F59E0B] hover:bg-[#d97706] text-black font-bold px-5 sm:px-7 py-3.5 rounded-full text-sm sm:text-base inline-flex items-center gap-2.5 transition-all shadow-md hover:scale-105"
                 >
                   <FaLine className="text-xl" />
                   <span>ขอประเมินราคาฟรี</span>
@@ -91,7 +91,7 @@ export const ServiceHighlightBanner: React.FC = () => {
                 <a
                   href="tel:0958010958"
                   aria-label="โทรติดต่อ N&M18 TRANSPORT เบอร์ 095-801-0958"
-                  className="bg-[#132238] hover:bg-[#1a2d48] text-white border border-slate-700/80 font-bold px-7 py-3.5 rounded-full text-sm sm:text-base inline-flex items-center gap-2.5 transition-all hover:scale-105"
+                  className="w-full sm:w-auto justify-center bg-[#132238] hover:bg-[#1a2d48] text-white border border-slate-700/80 font-bold px-5 sm:px-7 py-3.5 rounded-full text-sm sm:text-base inline-flex items-center gap-2.5 transition-all hover:scale-105"
                 >
                   <FaPhoneVolume className="text-sm text-[#F59E0B]" />
                   <span>โทรเลย 095-801-0958</span>

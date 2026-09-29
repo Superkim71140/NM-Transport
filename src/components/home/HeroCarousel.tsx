@@ -31,7 +31,7 @@ export const HeroCarousel: React.FC = () => {
   }, [isPaused, nextSlide]);
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-2 sm:px-6 pt-2 sm:pt-4">
+    <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 pt-2 sm:pt-4">
       <div 
         className="relative w-full aspect-[16/9] min-h-[380px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[660px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900"
         onMouseEnter={() => setIsPaused(true)}

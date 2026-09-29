@@ -4,7 +4,7 @@ import { Container } from '../ui/Container';
 
 export default function ServiceWorkflow() {
   return (
-    <section className="py-16 md:py-24 bg-[#02040a]">
+    <section className="py-16 md:py-24 bg-[#02040a] w-full overflow-hidden">
       <Container className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold text-orange-400 bg-orange-500/10 border border-orange-500/20 mb-4">

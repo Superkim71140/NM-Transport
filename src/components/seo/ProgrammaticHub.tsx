@@ -43,19 +43,19 @@ export function ProgrammaticHub() {
   ];
 
   return (
-    <section className="container mx-auto mt-[40px] mb-[40px] p-[30px] bg-[#0f1c38]/60 rounded-[15px] border border-white/5">
-      <h2 className="text-white text-center mb-[25px] text-[1.5rem] font-bold">
+    <section className="w-[calc(100%-2rem)] max-w-[1200px] mx-auto mt-10 mb-10 p-4 sm:p-8 bg-[#0f1c38]/60 rounded-2xl border border-white/5 overflow-hidden">
+      <h2 className="text-white text-center mb-6 text-xl sm:text-2xl font-bold">
         บริการรถกระบะตู้ทึบ/รถ 4 ล้อใหญ่รับจ้างขนของ แยกตามพื้นที่และเส้นทาง
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left text-[#d0d7e1]">
         <div>
-          <h3 className="text-neon-blue text-[1.2rem] font-bold mb-[15px]">พื้นที่ให้บริการยอดนิยม (กรุงเทพฯ และปริมณฑล)</h3>
+          <h3 className="text-neon-blue text-base sm:text-lg font-bold mb-4">พื้นที่ให้บริการยอดนิยม (กรุงเทพฯ และปริมณฑล)</h3>
           <div className="flex flex-wrap gap-2">
             {districts.map(district => (
               <Link 
                 key={district.id} 
                 href={`/location/${district.id}`}
-                className="text-[0.85rem] bg-black/20 px-3 py-1.5 rounded-full hover:bg-orange-lava hover:text-white transition-colors border border-white/5 whitespace-nowrap"
+                className="text-xs sm:text-[0.85rem] bg-black/20 px-3 py-1.5 rounded-full hover:bg-orange-lava hover:text-white transition-colors border border-white/5 whitespace-nowrap"
                 title={`รถรับจ้าง${district.name}`}
               >
                 รถรับจ้าง{district.name}
@@ -64,13 +64,13 @@ export function ProgrammaticHub() {
           </div>
         </div>
         <div>
-          <h3 className="text-neon-blue text-[1.2rem] font-bold mb-[15px]">เส้นทางขนส่งต่างจังหวัดยอดนิยม</h3>
+          <h3 className="text-neon-blue text-base sm:text-lg font-bold mb-4">เส้นทางขนส่งต่างจังหวัดยอดนิยม</h3>
           <div className="flex flex-wrap gap-2">
             {routes.map(route => (
               <Link 
                 key={`${route.origin}-${route.destination}`} 
                 href={`/route/${route.origin}/${route.destination}`}
-                className="text-[0.85rem] bg-black/20 px-3 py-1.5 rounded-full hover:bg-orange-lava hover:text-white transition-colors border border-white/5 whitespace-nowrap"
+                className="text-xs sm:text-[0.85rem] bg-black/20 px-3 py-1.5 rounded-full hover:bg-orange-lava hover:text-white transition-colors border border-white/5 whitespace-nowrap"
                 title={`รถรับจ้าง${route.name}`}
               >
                 รถรับจ้าง{route.name}

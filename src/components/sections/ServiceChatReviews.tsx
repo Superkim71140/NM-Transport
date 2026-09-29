@@ -52,8 +52,8 @@ export default function ServiceChatReviews() {
   ];
 
   return (
-    <section className="py-16 bg-[#02040a] relative overflow-hidden">
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-[#06C755]/10 blur-[120px] rounded-full pointer-events-none" />
+    <section className="py-16 bg-[#02040a] relative overflow-hidden w-full">
+      <div className="absolute top-1/2 right-0 w-[80vw] max-w-[500px] h-[80vw] max-h-[500px] bg-[#06C755]/10 blur-[120px] rounded-full pointer-events-none" />
       
       <Container className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
@@ -80,11 +80,11 @@ export default function ServiceChatReviews() {
 
         <div 
           ref={scrollRef}
-          className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar"
+          className="flex overflow-x-auto gap-4 sm:gap-6 pb-8 snap-x snap-mandatory hide-scrollbar"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {mockReviews.map((review) => (
-            <div key={review.id} className="min-w-[320px] max-w-[350px] w-full shrink-0 snap-start bg-[#0a0f1a] rounded-3xl p-6 border border-white/10 relative group">
+            <div key={review.id} className="min-w-[270px] sm:min-w-[320px] max-w-[350px] w-[85vw] sm:w-full shrink-0 snap-start bg-[#0a0f1a] rounded-3xl p-5 sm:p-6 border border-white/10 relative group">
               {/* Fake LINE Header */}
               <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-4">
                 <div className="flex items-center gap-3">

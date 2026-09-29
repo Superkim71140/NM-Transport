@@ -73,7 +73,7 @@ const fleetData: FleetCardData[] = [
 
 export const FleetAuthoritySection: React.FC = () => {
   return (
-    <section id="fleet" className="relative w-full bg-[#050A14] flex flex-col pt-16 sm:pt-20">
+    <section id="fleet" className="relative w-full bg-[#050A14] flex flex-col pt-16 sm:pt-20 overflow-hidden">
       
       {/* 1. UPPER SECTION: Dark Top Canvas & 4 Fleet Cards */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-4 pb-4">
@@ -147,7 +147,7 @@ export const FleetAuthoritySection: React.FC = () => {
       </div>
 
       {/* 2. THE SWEEPING ARCH & CARD OVERLAP (Pulled upwards behind the cards) */}
-      <div className="relative w-full bg-gradient-to-b from-[#0B254E] to-[#071731] -mt-40 md:-mt-52 lg:-mt-60 pt-48 md:pt-60 lg:pt-72 pb-24 md:pb-28">
+      <div className="relative w-full bg-gradient-to-b from-[#0B254E] to-[#071731] -mt-40 md:-mt-52 lg:-mt-60 pt-48 md:pt-60 lg:pt-72 pb-24 md:pb-28 overflow-hidden">
         
         {/* Convex SVG Wave Header */}
         <div className="absolute top-0 left-0 w-full overflow-hidden leading-none -translate-y-[98%] pointer-events-none">
@@ -161,7 +161,7 @@ export const FleetAuthoritySection: React.FC = () => {
         </div>
 
         {/* 3. MID-SECTION CONTENT (Inside the Blue Curved Canvas) */}
-        <div className="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column (lg:col-span-7) */}
           <div className="lg:col-span-7 text-center lg:text-left">
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">
@@ -179,7 +179,7 @@ export const FleetAuthoritySection: React.FC = () => {
           <div className="lg:col-span-5 flex justify-center lg:justify-end relative">
             {/* Subtle radial warm backlight */}
             <div 
-              className="w-64 sm:w-72 h-64 sm:h-72 bg-[#FF5A00]/25 blur-3xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none rounded-full" 
+              className="w-56 sm:w-72 h-56 sm:h-72 max-w-full bg-[#FF5A00]/25 blur-3xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none rounded-full" 
               aria-hidden="true"
             />
             <Image
@@ -188,7 +188,7 @@ export const FleetAuthoritySection: React.FC = () => {
               width={380}
               height={380}
               loading="lazy"
-              className="max-w-[320px] sm:max-w-[380px] w-full h-auto object-contain drop-shadow-2xl relative z-10"
+              className="max-w-[260px] sm:max-w-[380px] w-full h-auto object-contain drop-shadow-2xl relative z-10"
             />
           </div>
         </div>
@@ -196,7 +196,7 @@ export const FleetAuthoritySection: React.FC = () => {
 
       {/* 4. THE FLOATING WHITE STAT BOX (Overlapping the bottom edge) */}
       <div className="relative z-30 max-w-4xl mx-auto px-4 -mt-16 md:-mt-20 mb-8 md:mb-12 w-full">
-        <div className="bg-white rounded-3xl sm:rounded-[32px] p-6 sm:p-8 shadow-[0_25px_60px_rgba(0,0,0,0.5)] border border-slate-100">
+        <div className="bg-white rounded-3xl sm:rounded-[32px] p-4 sm:p-8 shadow-[0_25px_60px_rgba(0,0,0,0.5)] border border-slate-100">
           
           {/* Top Row: 4 Statistics Columns */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-4 md:gap-y-0 text-center md:divide-x divide-slate-200">

@@ -143,10 +143,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="th" className={`${prompt.variable}`}>
+    <html lang="th" className={`${prompt.variable} overflow-x-hidden`}>
       <head>
       </head>
-      <body>
+      <body className="overflow-x-hidden w-full relative min-h-screen flex flex-col">
         <script
           id="moving-company-jsonld"
           type="application/ld+json"
@@ -154,7 +154,9 @@ export default function RootLayout({
         />
         <TopBar />
         <Header />
-        {children}
+        <div className="flex-1 w-full overflow-x-hidden">
+          {children}
+        </div>
         <Footer />
         <MobileStickyBar />
       </body>
