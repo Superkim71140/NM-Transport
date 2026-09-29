@@ -33,7 +33,7 @@ export const HeroCarousel: React.FC = () => {
   return (
     <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 pt-2 sm:pt-4">
       <div 
-        className="relative w-full aspect-[4/3] sm:aspect-[16/9] md:aspect-[21/9] lg:aspect-[2.5/1] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900"
+        className="relative w-full aspect-[16/9] md:aspect-[21/9] lg:aspect-[2.5/1] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         aria-label="N&M18 TRANSPORT แบนเนอร์บริการรถกระบะรับจ้าง"
@@ -55,7 +55,7 @@ export const HeroCarousel: React.FC = () => {
                 priority={index === 0}
                 loading={index === 0 ? undefined : "lazy"}
                 fetchPriority={index === 0 ? "high" : "low"}
-                className="object-contain sm:object-cover object-center"
+                className="object-cover object-center"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
               />
             </div>
